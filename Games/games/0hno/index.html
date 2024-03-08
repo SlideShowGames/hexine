@@ -1,0 +1,387 @@
+<!DOCTYPE html><html class="signed-out"><head>
+    <title>0h n0</title>
+
+    <meta name="description" content="It's 0h h1's companion! By Q42.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+
+    <link rel="manifest" href="manifest.js">
+    <link rel="icon" type="image/png" href="images/icon-1024-transparent.png">
+    <link rel="shortcut icon" href="images/icon-1024-transparent.png">
+    <link rel="apple-touch-icon-precomposed" href="images/icon-1024.png">
+    
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@q42">
+    <meta name="twitter:creator" content="@mrtnkl">
+    <meta name="twitter:title" content="0h n0">
+    <meta name="twitter:description" content="It's 0h h1's companion! By Q42.">
+    <meta name="twitter:image" content="http://0hn0.com/img/twitter-promotion.png">
+    <meta name="twitter:url" content="http://0hn0.com/">
+
+    <meta property="og:url" content="http://0hn0.com/">
+    <meta property="og:site_name" content="0h n0">
+    <meta property="og:title" content="0h n0">
+    <meta property="og:description" content="It's 0h h1's companion! By Q42.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/facebook-promotion.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/theme2.css" type="text/css" rel="stylesheet">
+    <link href="css/theme3.css" type="text/css" rel="stylesheet">
+    <link href="css/fonts.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+        <div id="grain"></div>
+        <div id="gameContainer">
+        <div id="title" class="screen hide-title hide0 hide1 hide-subtitle" data-action="close-titleScreen">
+            <div class="vertical">
+                <h1>Oh no</h1>
+                <div id="titlegrid" class="board">
+<table data-grid="titlegrid" cellpadding="0" cellspacing="0"><tbody><tr><td class="odd"><div class="tile tile-2"><div class="inner"></div></div></td><td class="even"><div class="tile tile-1"><div class="inner"></div></div></td></tr></tbody></table>
+                </div>
+                <p>
+                  <text>It's 0h h1's companion!</text><br><text class="by by1">A game by Q42</text><br><text class="by by2">Created by Martin Kool</text><br><img id="q42" src="images/q42.png">
+                </p>
+            </div>
+        </div>
+
+        <div id="menu" class="screen">
+            <div class="vertical">
+            <h2>Oh no</h2>
+                <p data-action="tutorial">
+                <text>How to play</text>
+                </p>
+                <p data-action="play" data-config="unlimited">
+                <text data-config="playLabelPlay">Play</text>
+                <text data-config="playLabelFree">Free play</text>
+                </p>
+                <p data-action="play-daily" data-config="daily" class="rel">
+                <span class="new" data-config="newLabel"><text>New</text></span>
+                <text>Today's puzzles</text>    
+                </p>
+                <p data-action="settings">
+                <text>Settings</text>
+                </p>
+                <p data-action="about">
+                <text>About</text>
+                </p>
+                <p data-action="thanks">
+                <text>Thanks</text>
+                </p>
+            </div>
+            <div id="bar">
+                <div class="iconcon" data-action="playcenter"><div id="playcenter" class="icon"></div></div>
+                <div class="iconcon" data-action="show-lovie"><div id="lovieheart" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="about" class="screen text" data-action="rules">
+            <div class="vertical">
+            <h3><text>About</text></h3>
+            <span data-version></span>
+            <div class="side-padded">
+                <p>
+                <text>0h n0 is a little logic game<br>that complements 0h h1.<br>It was created by<br>Martin Kool.</text>
+                <br>
+                <br>
+                <text>The concept is inspired by <br>the Japanese Kuromasu.</text>
+                <br>                
+                <img id="q42" src="images/q42.png"><br>
+                © 2018 · <text class="web-link">Q42.com</text> · <span class="web-link">0hn0.com</span>
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="rules" class="screen text" data-action="apps">
+            <div class="vertical">
+            <h3><text>Rules</text></h3>
+                <div class="side-padded">
+                <p>
+                  <text>Blue dots can see others <br>in their own row and column</text>. <br><text>They see at least one</text>.
+                </p>
+                <p>
+                  <text>Their numbers tell how many</text>.
+                </p>
+                <p>
+                  <text>Red dots block their view</text>.
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="thanks" class="screen text" data-action="afterThanks">
+            <div class="vertical">
+            <h3><text>Thanks</text></h3>
+                <div class="side-padded">
+                <p>
+                  <text>Thank you for supporting<br> 0h n0</text>.
+                </p>
+                <p>
+                  <text>Please feel free to leave me a message about the game anytime</text>!
+                </p>
+                <p>
+                  Martin<br>
+                  martin@q42.nl<br>
+                  @mrtnkl
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="apps" class="screen text" data-action="games">
+            <div class="vertical">
+            <h3><text>Apps</text></h3>
+                <div class="side-padded">
+                <p>
+                  <text>The 0h n0 app is also free</text>:
+                </p>
+                <p>
+                    <a target="_blank" href="https://itunes.apple.com/us/app/0h-n0/id957191082?mt=8">iOS</a>
+                </p>
+                <p>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.q42.ohno">Android</a>
+                </p>
+                <p>
+                    <a target="_blank" href="http://www.windowsphone.com/s?appid=dbd043e9-6b7c-4e7c-8f36-a424f7f14017">Windows Phone</a>
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="ohhi" class="screen text" data-action="games">
+            <div class="vertical">
+            <h3>Oh hi</h3>
+                <div class="side-padded">
+                <p>
+                  <text>Our game 0h h1 is also available as a free app</text>:
+                </p>
+                <p>
+                    <a target="_blank" href="https://itunes.apple.com/us/app/0h-h1/id936504196?mt=8">iOS</a>
+                </p>
+                <p>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.q42.ohhi">Android</a>
+                </p>
+                <p>
+                    <a target="_blank" href="http://www.windowsphone.com/en-us/store/app/0h-h1/0846c771-cc12-484e-8cc3-ac2287534f63">Windows Phone</a>
+                </p>
+                <p>
+                  <br>
+                  <text>And playable on the web</text>:
+                </p>
+                <p>
+                    <a target="_blank" href="https://0hh1.com">0hh1.com</a>
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="games" class="screen text" data-action="back">
+            <div class="vertical">
+            <h3><text>Games</text></h3>
+                <div class="side-padded">
+                <p>
+                  <text>Enjoy our other games too</text>!
+                </p>
+                <p>
+                    <a target="_blank" href="#" id="game_link_0hh1">0h h1</a>
+                </p>
+                <p>
+                    <a target="_blank" href="#" id="game_link_quento">Quento</a>
+                </p>
+                <p>
+                    <a target="_blank" href="#" id="game_link_numolition">Numolition</a>
+                </p>
+                <p>
+                  <a target="_blank" href="#" id="game_link_contranoid">Contranoid</a>
+                </p>
+                <p>
+                    <a target="_blank" href="#" id="game_link_flippybit">Flippy Bit</a>
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="back" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="message" class="screen text" data-action="back">
+            <div class="vertical">
+                <div class="side-padded">
+                <p id="message-body">
+                  <text>This is a message</text>.
+                </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="loading" class="screen">
+            <div class="vertical">
+                <h2><text>Loading</text></h2>
+                <p></p>
+                <div id="loadinggrid" class="board">
+<table data-grid="loadinggrid" cellpadding="0" cellspacing="0"><tbody><tr><td class="odd"><div class="tile tile-2 loading"><div class="inner"></div></div></td></tr></tbody></table>
+</div>
+            </div>
+        </div>
+
+        <div id="game" class="screen">
+            <p id="hintMsg" class="topMsg"></p>
+            <p id="chooseSize" class="topMsg"><text>Select a size to play...</text></p>
+            <h2 id="boardsize"></h2>
+            <div id="board" class="vertical board"></div>
+
+            <div id="menugrid" class="menugrid vertical board hidden">
+<table data-grid="menugrid" cellpadding="0" cellspacing="0"><tbody>
+<tr>
+<td class="odd"><div class="tile tile-2"><div data-action="startGame" data-size="1" class="inner"></div></div></td>
+<td class="even"><div class="tile tile-1"><div data-action="startGame" data-size="2" class="inner"></div></div></td>
+<td class="odd"><div class="tile tile-2"><div data-action="startGame" data-size="3" class="inner"></div></div></td>
+</tr>
+<tr>
+<td class="even"><div class="tile tile-1"><div data-action="startGame" data-size="4" class="inner"></div></div></td>
+<td class="odd"><div class="tile tile-2"><div data-action="startGame" data-size="5" class="inner"></div></div></td>
+<td class="even"><div class="tile tile-1"><div data-action="startGame" data-size="6" class="inner"></div></div></td>
+</tr>
+</tbody></table>
+            </div>
+
+            <div id="score">
+                <div id="donate">
+                    <text>if 0h n0 is worth a $</text>
+                    <span class="link" data-action="toggleDonate"><text>tap here</text></span>
+                </div>
+                <span id="scorelabel">Score </span><span id="scorenr">42</span>
+            </div>
+            <span id="times">
+                <div id="time">
+                    <span id="timer">
+                        <span id="minutes-l" class="digit"></span>
+                        <span id="minutes-r" class="digit"></span>
+                        <span>:</span>
+                        <span id="seconds-l" class="digit"></span>
+                        <span id="seconds-r" class="digit"></span>
+                    </span>
+                    <span id="percentage"><span class="sep"> · </span><span class="value">100%</span></span>
+                </div>
+            </span>
+            <div id="bar">
+                <div class="iconcon" data-action="back"><div id="back" class="icon"></div></div>
+                <div class="iconcon" data-action="achievements"><div id="achievements" class="icon"></div></div>
+                <div class="iconcon" data-action="leaderboards"><div id="leaderboards" class="icon"></div></div>
+                <div class="iconcon" data-action="undo"><div id="undo" class="icon"></div></div>
+                <a class="iconcon" id="facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php" data-action="facebook" data-link="social"><span id="facebookicon" class="icon"></span></a>
+                <a class="iconcon" id="tweeturl" target="_blank" href="about:blank" data-link="social" data-action="tweet"><span id="tweet" class="icon"></span></a>
+                <div class="iconcon" data-action="help"><div id="help" class="icon"></div></div>
+                <div class="iconcon" data-action="settings"><div id="cog" class="icon"></div></div>
+                <div class="iconcon" data-action="in-game-about"><div id="rules" class="icon"></div></div>
+                <div class="iconcon" data-action="continue"><div id="continue" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="online" class="screen text">
+            <div class="vertical">
+            <h3>Google<br>Play</h3>
+                <div class="status-signed-in side-padded">
+                    <p>
+                      <text>You are currently signed in</text>.
+                    </p>
+                    <p data-action="sign-out">
+                        <span class="link"><text>Sign out</text></span>
+                    </p>
+                </div>
+                <div class="status-signed-out side-padded">
+                    <p>
+                      <text>Sign in to unlock fun achievements, earn experience points and compete with friends in leaderboards</text>.
+                    </p>
+                    <p data-action="sign-in">
+                        <span class="link"><text>Sign in</text></span>
+                    </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon" data-action="back"><div id="back" class="icon"></div></div>
+                <div class="iconcon" data-action="achievements"><div id="achievements" class="icon"></div></div>
+                <div class="iconcon" data-action="leaderboards"><div id="leaderboards" class="icon"></div></div>
+            </div>
+        </div>
+
+        <div id="settings" class="screen text" data-action="back">
+            <div class="vertical">
+                <h3><text>Settings</text></h3>
+                <div class="side-padded">
+                    <p>
+                        <span data-action="toggleTimeTrial" data-value="1"><text>Show elapsed time</text> -</span>
+                        <span id="toggleTimeTrialValue" class="link" data-action="toggleTimeTrial"><text>No</text></span>
+                    </p>
+                    <p>
+                        <span data-action="toggleHintIcon" data-value="1"><text>Show hint icon</text> -</span>
+                        <span id="toggleHintIcon" class="link" data-action="toggleHintIcon"><text>Yes</text></span>
+                    </p>
+                    <div class="pick-theme pick-theme-1" data-config="colorTheme">
+                        <p>
+                            <span data-action="color-theme" data-value="1"><text>Color theme</text> -</span>
+                            <span class="link" data-action="color-theme" data-value="1">0h n0</span>
+                        </p>
+                        </div>
+                    <div class="pick-theme pick-theme-2" data-config="colorTheme">
+                        <p>
+                            <span data-action="color-theme" data-value="2"><text>Color theme</text> -</span>
+                            <span class="link" data-action="color-theme" data-value="2">0h h1</span>
+                        </p>
+                    </div>
+                    <div class="pick-theme pick-theme-3" data-config="colorTheme">
+                        <p>
+                            <span data-action="color-theme" data-value="3"><text>Color theme</text> -</span>
+                            <span class="link" data-action="color-theme" data-value="3">Contranoid</span>
+                        </p>
+                    </div>
+                    <p data-config="languageSwitch">
+                        <span data-action="toggleLanguage"><text>Language</text> -</span>
+                        <span id="toggleLanguage" class="link" data-action="toggleLanguage"></span>
+                    </p>
+                    <p id="toggleDontae">
+                        <span data-action="toggleDonate" data-value="1"><text>0h n0 is worth a $</text> -</span>
+                        <span id="toggleDonateValue" class="link" data-action="toggleDonate"><text>No</text></span>
+                    </p>
+                </div>
+            </div>
+            <div id="bar">
+                <div class="iconcon" data-action="back"><div id="back" class="icon"></div></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="feelsize"><span id="hiddendigit">5</span></div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>')</script><script src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/0hn0.js"></script>
+  
+</body></html>

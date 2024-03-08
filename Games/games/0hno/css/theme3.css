@@ -1,0 +1,153 @@
+/* new elements */
+#scratch-canvas {
+  pointer-events: none;
+  z-index: 100;
+  display: none;
+}
+canvas {
+  position: absolute;
+  left: 0; top: 0;
+  image-rendering: optimizeSpeed;             /* Older versions of FF */
+  image-rendering: -moz-crisp-edges;          /* FF 6.0+ */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non standard naming) */
+  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+  image-rendering: crisp-edges;               /* Possible future browsers. */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE (non standard naming) */
+}
+/* theme */
+.theme3,
+.theme3 body,
+.theme3 #container {
+	background: #000;
+	color: #fff;
+}
+.theme3 #scratch-canvas {
+	display: block;
+}
+.theme3 .board {
+	background: #000;
+}
+.theme3 h1,
+.theme3 h2,
+.theme3 h3,
+.theme3 p {
+  color: #fff;
+}
+.theme3 body .tile .inner.done:before {
+  border-radius: none !important;
+  background-color: transparent;
+  right: -10px; top: -10px;
+}
+.theme3 .tile.tile- .inner {
+	background: transparent;
+	border: solid #111 2px;
+}
+.theme3 .tile-2 .inner,
+.theme3 #nextdot {
+	background: #FFF !important;
+	color: #000 !important;
+}
+.theme3 .tile-1 .inner,
+.theme3 #nextdot.red {
+	background: #444 !important;
+}
+.theme3 .tile .inner:after {
+  display: none;
+}
+.theme3 .tile.marked .inner:after {
+  display: none;
+}
+.theme3 .tile.marked .inner:before {
+  content:''; display: block; color: transparent;
+  width: 100%; height: 100%;
+  position: absolute; left: 0; top: 0;
+  border: solid #945C1C 4px !important;
+  border-radius: 1000px !important;
+  z-index: 20;
+}
+
+.theme3 #score.show,
+.theme3 #bar .iconcon,
+.theme3 #time {
+	opacity: 1;
+}
+
+.theme3 #board .tile.system:after { opacity: .8; }
+
+.theme3 #back.icon { background-image: url(../images/close_1.png); }
+.theme3 #retry.icon { background-image: url(../images/loop_1.png); }
+.theme3 #undo.icon { background-image: url(../images/history_1.png); }
+.theme3 #help.icon { background-image: url(../images/eye_1.png); }
+.theme3 #next.icon { background-image: url(../images/arrow-right_1.png); }
+.theme3 #tweet.icon { background-image: url(../images/twitter_1.png); }
+.theme3 #facebookicon.icon { background-image: url(../images/facebook_1.png); }
+.theme3 #rules.icon { background-image: url(../images/question_1.png); }
+.theme3 #continue.icon { background-image: url(../images/play_1.png); }
+.theme3 #apps.icon { background-image: url(../images/mobile_1.png); }
+.theme3 #achievements.icon { background-image: url(../images/achievements_1.png); }
+.theme3 #leaderboards.icon { background-image: url(../images/leaderboards_1.png); }
+.theme3 #stopwatch.icon { background-image: url(../images/stopwatch_1.png); }
+.theme3 #cog.icon { background-image: url(../images/cog_1.png); }
+.theme3 #playcenter.icon { background-image: url(../images/controller_1.png); }
+.theme3.signed-in #playcenter.icon { background-image: url(../images/controller_1.png); }
+.theme3.playcenter.ios.signed-out #menu #bar #playcenter.icon { background-image: url(../images/gamecenter_bw.png); }
+
+.theme3.playcenter.android.signed-out #playcenter.icon { opacity: .5; }
+.theme3.playcenter.android.signed-in #playcenter.icon { opacity: 1; }
+
+.theme3 .pick-theme { display: none; }
+.theme3 .pick-theme-3 { display: block; }
+
+.theme3 #donate { color: #fff; }
+
+
+.theme3 h1,.theme3 h2,.theme3 h3 {
+	font-family: 'parisish';	
+}
+.theme3 #title h1,
+.theme3 #menu h2 {
+	text-transform: uppercase;
+}
+.theme3 h2#boardsize,
+.theme3 p,
+.theme3 .inner,
+.theme3 #time,
+.theme3 #hiddendigit,
+.theme3 .topMsg,
+.theme3 #score {
+	font-family: 'parisish';
+}
+
+#grain {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: url(../images/filmgrain.png) center center;
+  background-size: 100% 100%;
+  opacity: .3;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  display: none;
+}
+.theme3 #grain {
+	display: block;
+}
+.theme3 #apps a, 
+.theme3 #ohhi a, 
+.theme3 .link, 
+.theme3 #message a,
+.theme3 #games a {
+  border-bottom: solid #945C1C 2px;
+}
+.theme3.playcenter.android.signed-out #menu #bar #playcenter.icon { opacity: .5; }
+
+.theme3 #percentage {
+  opacity: 1;
+}

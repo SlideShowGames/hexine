@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="128"
+   width="128"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="Facebook-f_Logo-Blue-Logo.wine.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     width="128px"
+     borderlayer="true"
+     inkscape:zoom="5.9679812"
+     inkscape:cx="75.821284"
+     inkscape:cy="64.008244"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <g
+     id="g24"
+     transform="scale(0.09375002)">
+    <path
+       d="M 1365.333,682.667 C 1365.333,305.64 1059.693,0 682.667,0 305.64,0 0,305.64 0,682.667 c 0,340.738 249.641,623.16 576,674.373 V 880 H 402.667 V 682.667 H 576 v -150.4 c 0,-171.094 101.917,-265.6 257.853,-265.6 74.69,0 152.814,13.333 152.814,13.333 v 168 h -86.083 c -84.804,0 -111.25,52.623 -111.25,106.61 V 682.667 H 978.667 L 948.4,880 H 789.333 v 477.04 c 326.359,-51.213 576,-333.635 576,-674.373"
+       fill="#1877f2"
+       id="path2" />
+    <path
+       d="M 948.4,880 978.667,682.667 H 789.333 V 554.609 C 789.333,500.623 815.78,448 900.584,448 h 86.083 V 280 c 0,0 -78.124,-13.333 -152.814,-13.333 -155.936,0 -257.853,94.506 -257.853,265.6 v 150.4 H 402.667 V 880 H 576 v 477.04 a 687.805,687.805 0 0 0 106.667,8.293 c 36.288,0 71.91,-2.84 106.666,-8.293 V 880 H 948.4"
+       fill="#ffffff"
+       id="path4" />
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="128"
+   width="128"
+   fill="none"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="TikTok-Icon-White-Logo.wine.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     borderlayer="true"
+     inkscape:zoom="4.22"
+     inkscape:cx="93.246446"
+     inkscape:cy="68.720379"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12"
+     scale-x="1" />
+  <g
+     id="g328">
+    <path
+       id="rect152"
+       style="fill:#000000;stroke-width:2.97701"
+       d="M -1.771512e-6,3.0996628e-6 H 128 V 128 H -1.771512e-6 Z" />
+    <g
+       id="g23"
+       transform="matrix(3.1460791,0,0,3.1578844,22.000001,16.000006)">
+      <path
+         fill="#25f4ee"
+         d="m 10.4,11.9999 v -1.2 C 10,10.6999 9.6,10.7 9.2,10.7 4.1,10.7 0,14.7999 0,19.8999 c 0,3.1 1.6,5.9 3.9,7.5 l -0.1,-0.1 C 2.3,25.6999 1.5,23.5 1.5,21.2 c 0,-5.1 4,-9.1001 8.9,-9.2001 z"
+         id="path2" />
+      <path
+         fill="#25f4ee"
+         d="m 10.6002,25.4 c 2.3,0 4.1,-1.8 4.2,-4.1 v -20 h 3.6 c -0.1,-0.4 -0.1,-0.8 -0.1,-1.3 h -5 v 20 c -0.1,2.2 -1.9,4 -4.2,4 -0.7,0 -1.4,-0.2 -1.9,-0.5 0.8,1.1 2,1.9 3.4,1.9 z M 25.3,8.1 V 6.9 c -1.4,0 -2.7,-0.4 -3.8,-1.1 1,1.1 2.3,2 3.8,2.3 z"
+         id="path4" />
+      <path
+         fill="#fe2c55"
+         d="m 21.4999,5.8 c -1.1,-1.2 -1.7,-2.8 -1.7,-4.6 h -1.4 c 0.4,2 1.6,3.6 3.1,4.6 z M 9.2,15.5999 c -2.3,0 -4.2,1.9 -4.2,4.2 0,1.6 1,3 2.3,3.7 -0.5,-0.7 -0.8,-1.5 -0.8,-2.4 0,-2.3 1.9,-4.2 4.2,-4.2 0.4,0 0.8,0.1 1.2,0.2 v -5.1 c -0.4,-0.1 -0.8,-0.1 -1.2,-0.1 h -0.2 v 3.8 c -0.5,0 -0.9,-0.1 -1.3,-0.1 z"
+         id="path6" />
+      <path
+         fill="#fe2c55"
+         d="m 25.2999,8.1001 v 3.8 c -2.6,0 -5,-0.8 -6.9,-2.2 v 10.2 c 0,5.1 -4.1,9.2 -9.2,9.2 -2,0 -3.8,-0.6 -5.3,-1.6 1.7,1.8 4.1,2.9 6.7,2.9 5.1,0 9.2,-4.1 9.2,-9.2 v -10.2 c 2,1.4 4.4,2.2 6.9,2.2 v -5 c -0.4,0 -0.9,0 -1.4,-0.1 z"
+         id="path8" />
+      <path
+         fill="#ffffff"
+         d="m 18.3999,19.8999 v -10.2 c 2,1.4001 4.4,2.2 6.9,2.2 v -3.9 c -1.5,-0.3 -2.8,-1.1 -3.8,-2.2 -1.6,-1 -2.7,-2.7 -3,-4.6 h -3.7 V 21.2 c -0.1,2.2 -1.9,4 -4.2,4 -1.4,0 -2.6,-0.7001 -3.4,-1.7001 -1.3,-0.6 -2.2,-2 -2.2,-3.6 0,-2.3 1.9,-4.1999 4.2,-4.1999 0.4,0 0.8,0.0999 1.2,0.1999 v -3.9 c -5,0.1 -9,4.2001 -9,9.2001 0,2.4 0.9,4.5999 2.5,6.2999 1.5,1 3.3,1.7001 5.3,1.7001 5.1,-0.1 9.2,-4.3001 9.2,-9.3001 z"
+         id="path10" />
+    </g>
+  </g>
+</svg>

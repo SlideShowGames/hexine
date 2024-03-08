@@ -1,0 +1,147 @@
+<!-- bomberfish --><!DOCTYPE html><html lang="en"><head>
+    <meta name="google-adsense-account" content="ca-pub-6049884042008401">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexine Network</title>
+    <meta name="description" content="RMASmoke by FWSmasher">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="theme-color" content="var(--accent)">
+  </head>
+  <body class="mocha">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6049884042008401"
+     crossorigin="anonymous"></script>
+    <script>
+      document.body.classList = [localStorage.getItem("theme") || "mocha"]
+    </script>
+    <main>
+      <select name="Theme" id="theme">
+		  <option value="hexine">Hexine Style</option>
+        <option value="latte">Catppuccin Latté</option>
+        <option value="frappe">Catppuccin Frappé</option>
+        <option value="macchiato">Catppuccin Macchiato</option>
+        <option value="mocha" selected="">Catppuccin Mocha</option>
+      </select>
+      <nav id="nav">
+        <h1>Hexine Network</h1>
+        <span id="nav-toggle">
+            <img src="images/hamburger.png" width="24" height="24" alt="">
+        </span>
+        <ul>
+          <li class="active"><a href="#instructions">About Hexine</a></li>
+          <li><a href="#libs">Games</a></li>
+          <li><a href="#explainer">Proxies</a></li>
+			 <li><a href="#hacks">Exploits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#credits">Credits</a></li>
+        </ul>
+      </nav>
+      <span id="instructions"></span>
+      <article>
+        <section id="howto">
+          <h2>About The Hexine Network</h2>
+          <p>
+            The Hexine Network is a team of 4 people who are dedicated to FOSS software and anti censorship. Even though we are new this new world of coding, root/jalibreaking, and linux/bsd/solaris/unix we still try to do our best by at least redistbuting blocked/censored software.
+
+            <a href="https://github.com/Hexine-Network/">Our Github</a>
+          </p>
+          <p>
+           Currently we are forking proxies and expermenting with them, i.e. changing the docker to differnet distros.
+			  We also are planning to create ports of the Hg workshop and FWS's projects to different Kernels.
+          </p>
+        </section>
+        <section id="libs">
+          <h2>Games</h2>
+          <p>
+            Most of the people from my old site are most likely just here for games so...
+          </p>
+			 <a href="Games/index.html">Games</a>
+			<p></p>
+			<p>You can download some roms yourself</p>
+			 <p>We also have a builtin proxy for poki or something.</p>
+			 <a href="Apatite/index.html">Apatite</a>
+        </section>
+        <section id="explainer">
+          <h2>Proxies</h2>
+          <p>
+            I recommend Nebula but you can try our UV based ones too! Like Apatite or Hexine.
+          </p>
+			  <a href="https://nebulaproxy.io/">Nebula (Not ours)</a>
+          <p>
+			 <a href="https://yappiest-cynthy-callusoftwares.koyeb.app/">Hexine Proxy</a>
+          </p>
+			<p>You can also deploy our proxies by git cloning them. (This only tells you how to deploy it on a local network)</p>
+			<p>For example on my OS (Arch Linux) You would do,</p>
+          <pre>sudo pacman -S git npm
+</pre>
+			<p>Then after that you git clone it</p>
+          <p>
+			 <pre>git clone https://github.com/Hexine-Network/Apatite-App</pre>
+			 <pre>cd Apatite-App</pre>
+			 </p>
+			 <p>Or if you want to deploy Hexine Proxy,</p>
+			 <p>
+			 <pre>git clone https://github.com/Hexine-Network/Hexine-Proxy</pre>
+			 <pre>cd Hexine-Proxy</pre>
+			 </p>
+			 <p>Then you can set up the localhost server</p>
+			 <pre>npm install</pre>
+			 <pre>npm install --omit=dev</pre>
+			 <pre>npm start</pre>
+          </p>
+        </section>
+        <section id="hacks">
+          <h2>Exploits and Stuff</h2>
+          <p>
+            Cool exploits I found or made
+          </p>
+			 <h3>CauDNS | TN</h3>
+			 <p>Its simple!</p>
+			 <p>Go into settings, click on the network you are connected to,</p>
+			 <p>then click on network, custom dns servers or whatever, and then make it, </p>
+			 <p></p>
+			 <p><bold>167.86.91.171</bold></p>
+			 <p><bold>0.0.0.0</bold></p>
+			 <p><bold>0.0.0.0</bold></p>
+			 <p><bold>0.0.0.0</bold></p>
+			 <p></p>
+			 <h3>CrOS Update Fetcher</h3>
+			 <a href="https://www.online-python.com/LXmlSdgNu8">Link</a>
+			 <h3>Archlinux on a Chromebook</h3>
+			 <p>You can download the TerraOS .img and flash it to a flash drive.</p>
+			 <p>Once you've flashed it you can copy it to your chromebook storage with. </p>
+			 <p>Use gparted or fdisk and replace mmcblkX with the flash drive's partitions.</p>
+			 <pre>sudo dd if=<image> of=/dev/mmcblkX status=progress bs=16M oflag=direct</pre>
+			</section>
+        <section id="faq">
+          <h2>Q&A / FAQ</h2>
+          <ul>
+            <li><h3>Do I get in trouble for this</h3></li>
+            <ul>
+              <li>Nah...</li>
+            </ul>
+            <li><h3>What's a skid?</h3></li>
+            <ul>
+              <li>You.</li>
+            </ul>
+            <li><h3>Did you make these games and the website?</h3></li>
+            <ul>
+              <li>I messed around with the css and text, so I using it as a free templete.</li>
+            </ul>
+            
+          </ul>
+        </section>
+        <section id="credits">
+            <h2>Credits</h2>
+            <ul>
+                <li><a href="https://github.com/FWSmasher">FWSmasher</a> – Cryptomsite and RMASMOKE</li>
+                <li><a href="https://github.com/BomberFish>">BomberFish</a> – Original Website</li>
+            </ul>
+				<li><a
+	href="https://github.com/Hexine-Network">Hexine Network</a> – Being Skiddy and forking this site and I guess other stuff</li></li>
+        </section>
+      </article>
+    </main>
+  
+  <script src="js/script.js"></script>
+
+</body></html>

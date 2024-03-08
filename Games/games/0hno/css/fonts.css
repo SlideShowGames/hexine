@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'molle';
+  src: url('../fonts/Molle-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'parisish';
+  src: url('../fonts/Parisish.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

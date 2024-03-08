@@ -1,0 +1,92 @@
+/* 
+$blue #30A7C2
+$red #D55336
+*/
+.theme2,
+.theme2 body,
+.theme2 #container {
+	background: #222;
+	color: #fff;
+}
+.theme2 .board {
+	background: #222;
+}
+.theme2 h1,
+.theme2 h2,
+.theme2 h3,
+.theme2 p {
+  color: #fff;
+}
+.theme2 body .tile .inner {
+	border-radius: 13px !important;
+}
+.theme2 body .tile .inner.done:before {
+	border-radius: 3px !important;
+	width: 20px; height: 20px; right: -2px; top: -2px;
+	border: solid rgba(255,255,255,.4) 1px;
+}
+.theme2 .tile-1 .inner:after, 
+.theme2 .tile-2 .inner:after {
+  content: ''; display: block; position: absolute;
+  left: 0; bottom: 0; width: 100%; height: 12%;
+  top: auto; 
+  background-color: rgba(0,0,0,.2);
+  border: none;
+}
+
+.theme2 .tile.tile- .inner {
+	background: #2A2A2A;
+}
+.theme2 .tile-2 .inner,
+.theme2 #nextdot {
+	background: #30A7C2 !important;
+}
+.theme2 .tile-1 .inner,
+.theme2 #nextdot.red {
+	background: #D55336 !important;
+}
+.theme2 .tile.marked .inner:after {
+	display: none;
+}
+.theme2 .tile.marked .inner:before {
+	content:''; display: block; color: transparent;
+	width: 100%; height: 100%;
+	position: absolute; left: 0; top: 0;
+	border: solid #fff 4px !important;
+	border-radius: 13px !important;
+}
+.theme2 #score.show,
+.theme2 #bar .iconcon,
+.theme2 #time {
+	opacity: 1;
+}
+
+.theme2 #back.icon { background-image: url(../images/close_1.png); }
+.theme2 #retry.icon { background-image: url(../images/loop_1.png); }
+.theme2 #undo.icon { background-image: url(../images/history_1.png); }
+.theme2 #help.icon { background-image: url(../images/eye_1.png); }
+.theme2 #next.icon { background-image: url(../images/arrow-right_1.png); }
+.theme2 #tweet.icon { background-image: url(../images/twitter_1.png); }
+.theme2 #facebookicon.icon { background-image: url(../images/facebook_1.png); }
+.theme2 #rules.icon { background-image: url(../images/question_1.png); }
+.theme2 #continue.icon { background-image: url(../images/play_1.png); }
+.theme2 #apps.icon { background-image: url(../images/mobile_1.png); }
+.theme2 #achievements.icon { background-image: url(../images/achievements_1.png); }
+.theme2 #leaderboards.icon { background-image: url(../images/leaderboards_1.png); }
+.theme2 #stopwatch.icon { background-image: url(../images/stopwatch_1.png); }
+.theme2 #cog.icon { background-image: url(../images/cog_1.png); }
+.theme2 #playcenter.icon { background-image: url(../images/controller_1.png); }
+.theme2.signed-in #playcenter.icon { background-image: url(../images/controller_1.png); }
+
+.theme2.playcenter.android.signed-out #playcenter.icon { opacity: .5; }
+.theme2.playcenter.android.signed-in #playcenter.icon { opacity: 1; }
+.theme2.playcenter.android.signed-out #menu #bar #playcenter.icon { opacity: .5; }
+
+.theme2 .pick-theme { display: none; }
+.theme2 .pick-theme-2 { display: block; }
+
+.theme2 #donate { color: #fff; }
+
+.theme2 #percentage {
+	opacity: 1;
+}

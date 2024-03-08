@@ -1,0 +1,203 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+
+<title>JavaScript Elite</title>
+<script type="text/javascript">
+
+var KEY_ENTER         =  10,
+    KEY_RETURN        =  13,
+    KEY_LEFT          =  37,
+    KEY_UP            =  38,
+    KEY_RIGHT         =  39,
+    KEY_DOWN          =  40;
+
+function onkey(e)
+{
+    if( !this.history )
+    {
+        this.history = [];
+        this.historypos = -1;
+    }
+
+    e = e ? e : window.event;
+    var key = e.keyCode  ? e.keyCode :
+              e.charCode ? e.charCode :
+              e.which ? e.which : 0;
+
+    var consume = false;
+
+    switch( key )
+    {
+        case KEY_ENTER:
+        case KEY_RETURN:
+            var v = this.value;
+            if( v !== "" )
+            {
+                this.value = '';
+                this.history.push( v );
+                this.historypos = -1;
+
+                this.oncommand( v );
+            }
+            consume = true;
+            break;
+
+        case KEY_UP:
+            if( this.history.length > 0 )
+            {
+                if( this.historypos === -1 )
+                {
+                    this.historypos = this.history.length - 1;
+                }
+                else
+                {
+                    this.historypos = ( this.historypos === 0 ) ? this.history.length - 1 : this.historypos - 1;
+                }
+                this.value = this.history[ this.historypos ];
+            }
+            consume = true;
+            break;
+
+        case KEY_DOWN:
+            if( this.history.length > 0 )
+            {
+                if( this.historypos === -1 )
+                {
+                    this.historypos = 0;
+                }
+                else
+                {
+                    this.historypos = ( this.historypos === this.history.length - 1 ) ? 0 : this.historypos + 1;
+                }
+                this.value = this.history[ this.historypos ];
+            }
+            consume = true;
+            break;
+    }
+
+    if( consume )
+    {
+        e.cancelBubble = true; // IE
+        e.returnValue = false;
+        if( e.stopPropagation ) { e.stopPropagation(); } // W3C
+        if( e.preventDefault  ) { e.preventDefault();  } // e.g. to block arrows from scrolling the page
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+function escapeHTML(s) {
+    return s.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+}
+
+// Implement console API that jselite is expecting
+var Console = {};
+Console.puts = function(s) {
+    var display = document.getElementById('display');
+    // preserve spaces, but allow wrapping
+    display.innerHTML += escapeHTML(s).replace(/  /g, '  ').replace(/\n/g, '<br>');
+    display.scrollTop = display.scrollHeight;
+};
+Console.quit = function(s) { document.getElementById('entry').disabled = true; };
+Console.blocking = false;
+
+var Elite; // will be initialized by jselite.js
+window.onload = function() {
+
+    var entry = document.getElementById('entry');
+    entry.onkeydown = onkey;
+    entry.focus();
+
+    document.getElementById('display').onclick = function() {
+        entry.focus();
+    };
+
+
+    Elite.init();
+    entry.oncommand = function(s) {
+        Elite.command(s);
+    };
+};
+
+</script>
+<script type="text/javascript" src="js/jselite.js"></script>
+<style type="text/css">
+    body {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+    }
+    #everything {
+        text-align: left;
+        width: 665px;
+        background-color: #200000;
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto 0 auto;
+    }
+    body, table, select, input {
+        font-size: 10pt;
+        font-family: Sans-Serif;
+        color: #e0e0e0;
+        background-color: #000000;
+    }
+    a {
+        color: #e02020;
+    }
+
+    #display {
+         width: 660px;
+         height: 440px;
+         font-family: monospace;
+         font-size: 10pt;
+         border: solid 1px #e0e0e0;
+         overflow: scroll;
+         overflow-x: hidden;
+         color: #e0e0e0;
+         background-color: #000000;
+    }
+    #entry {
+        width: 660px;
+        font-family: monospace;
+        color: #e0e0e0;
+        background-color: #000000;
+    }
+
+    h1:before, h1:after { content: "----"; }
+    h1 {
+        font-size: 16pt;
+        letter-spacing: 10pt;
+        text-align: center;
+        text-transform: uppercase;
+    }
+</style>
+
+</head><body><div id="everything">
+<h1>JavaScript Elite</h1>
+<p>Based on <a href="http://www.iancgbell.clara.net/elite/text/index.htm">Text Elite</a> sources by Elite's co-creator, <a href="http://www.iancgbell.clara.net">Ian Bell</a>. JavaScript conversion by <a href="mailto:inexorabletash@hotmail.com">Joshua Bell</a> (no relation).</p>
+<div id="display">
+</div>
+<div>
+<input id="entry" type="text">
+</div>
+
+<p>
+The <a href="jselite.js">script</a> be downloaded and run from the command line using <a href="http://technet.microsoft.com/en-us/library/bb490816.aspx">Windows Cscript</a> or <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a>.
+When run on the command line and using the <a href="http://www.iancgbell.clara.net/elite/text/sinclair.txt">Sinclair</a> command file, the output is identical to the TXTELITE version - typos, weird formatting and everything.
+</p>
+</div>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TLC5NBQK58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TLC5NBQK58');
+</script>
+</body></html>
