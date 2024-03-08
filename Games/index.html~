@@ -7,6 +7,7 @@
 	<body>
 		
 		<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+		<header>There are some errors withh GitHub Games are limited.</header>
 		<h1>Made with love from Bradley :)</h1>
 		<h1>Look for secrets...</h1>
 		<p>Shamus if you are reading this, I can add ads to your site lol also please dont fork this</p>
@@ -21,7 +22,6 @@
 		<h1>First Games:</h1>
 		<a href="/games/games/chroma-exp/"><img src="Images/chroma.png" alt="chroma"></a>
 		<a href="/games/games/fnf/"><img src="Images/fnf.webp" alt="fnf"></a>
-		<a href="/games/games/drive/"><img src="Images/drive.avif" alt="drivemad"></a>
 		<p>
 		</p>
 		<h1>Retro Games:</h1>
@@ -68,7 +68,6 @@
 		<a href="/games/games/zurich/"><img src="Images/zurich.png" alt="zurich"></a>
 		<a href="/games/games/spb/"><img src="Images/saint.jpg" alt="spb"></a>
 		<a href="/games/games/contran/"><img src="Images/contran.png" alt="contran"></a>
-		<a href="/games/games/fruit/"><img src="Images/fruit.webp" alt="fn"></a>
 		<p>
 		</p>
 		<h1>Classics:</h1>
@@ -91,7 +90,6 @@
 		<a href="/games/games/superhot/"><img src="Images/super.avif" alt="sh"></a>
 		<a href="/games/games/20flap/"><img src="Images/20flap.png" alt="20482"></a>
 		<a href="/games/games/flakboy/"><img src="Images/flak.webp" alt="flakboy"></a>
-		<a href="/games/games/sand/"><img src="Images/sand.webp" alt="sand"></a>
 		<p>
 		</p>
 		<h1>Broken:</h1>
