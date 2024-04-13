@@ -35,7 +35,7 @@ function Scene_Credits(){
     createdByText.y = Game.height / 2 - 41;
     c[1].addChild(createdByText);
     
-    var authorText = new PIXI.Text(textStrings["NickyCase"], {font: "86px Cairo", fill:"#FFFFFF", align: "left"});
+    var authorText = new PIXI.Text(textStrings["Shaan Jain"], {font: "86px Cairo", fill:"#FFFFFF", align: "left"});
     authorText.anchor.x = 0.0;
     authorText.anchor.y = 0.5;
     authorText.x = Game.width / 2 - 240;

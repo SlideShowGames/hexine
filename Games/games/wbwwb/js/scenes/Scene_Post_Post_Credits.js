@@ -61,10 +61,10 @@ function Scene_Post_Post_Credits(){
 
 	};
 	_addButton(250, 2, function(){
-		window.open("http://afzl95.github.io/");
+		window.open("http://github.com/thecoding-time/");
 	});
 	_addButton(480, 3, function(){
-		window.open("https://twitter.com/ali_fzl95");
+		window.open("https://twitter.com/");
 	});
 	_addButton(710, 4, function(){
 		Game.sceneManager.gotoScene("Quote");
@@ -104,7 +104,6 @@ function Scene_Post_Post_Credits(){
 	});
 	_addSocialButton(Game.width/2 + 13, "twitter", function(){
 		var href = "https://twitter.com/intent/tweet?text="+text+"%0a"+url;
-		//var href = "https://twitter.com/intent/tweet?text="+text+"%20"+url+"&via=ncasenmare";
 		window.open(href);
 	});
 

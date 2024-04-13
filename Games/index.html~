@@ -22,18 +22,12 @@
 		<a href="/games/apps/Exploits/index.html"><img src="https://user-images.githubusercontent.com/58097612/191354621-bf7ff072-b9d7-46b5-994a-4d2adbf0e4f3.png" alt="ext-remover"></a>
 		<p>
 		</p>
-		<h1>Flash Games:</h1>
+		<h1>Games:</h1>
 		<a href="/games/games/run2/"><img src="Images/run2.jpg" alt="run2"></a>
 		<a href="/games/games/stickgta/"><img src="Images/stickgta.jpg" alt="gta"></a>
-		<p>
-		</p>
-		<h1>First Games:</h1>
 		<a href="/games/games/chroma-exp/"><img src="Images/chroma.png" alt="chroma"></a>
 		<a href="/games/games/fnf/"><img src="Images/fnf.webp" alt="fnf"></a>
 		<a href="/games/games/drive/"><img src="Images/drive.avif" alt="mad"></a>
-		<p>
-		</p>
-		<h1>Retro Games:</h1>
 		<a href="/games/games/shimgame/celeste.html"><img src="Images/cel.avif" alt="shimmerref"></a>
 		<a href="/games/games/minesweeper/"><img src="Images/bosnia.png" alt="bosniaeasteregg"></a>
 		<a href="/games/games/msfs/"><img src="Images/msfs.jpg" alt="flightsim"></a>
@@ -45,24 +39,14 @@
 		<a href="/games/games/doom/"><img src="Images/doom.png" alt="doom"></a>
 		<a href="/games/games/space/"><img src="Images/space.png" alt="space invadr"></a>
 		<a href="/games/games/sand/"><img src="Images/sand.webp" alt="sand"></a>
-		<h1>Text Games:</h1>
 		<a href="/games/games/Elite/"><img src="Images/elite.jpeg" alt="elite"></a>
 		<a href="/games/games/darkroom/"><img src="Images/dark.png" alt="darkroom"></a>
-		<p>
-		</p>
-		<h1>.lol Games:</h1>
 		<a href="/games/games/1v1lol/"><img src="Images/1v1.png" alt="1v1lol"></a>
 		<a href="/games/games/justfall/"><img src="Images/fall.png" alt="justfall"></a>
-		<p>
-		</p>
-		<h1>OpenGL Games:</h1>
 		<a href="/games/games/hex/"><img src="Images/hex.png" alt="agario"></a>
 		<a href="/games/games/rollingsky/"><img src="Images/roll.jpeg" alt="roll"></a>
 		<a href="/games/games/gd/"><img src="Images/gd.png" alt="gd"></a>
 		<a href="/games/games/planes/"><img src="Images/plane.jpg" alt="planes"></a>
-		<p>
-		</p>
-		<h1>Educational Games:</h1>
 		<a href="/games/games/2048/"><img src="Images/2048.png" alt="2048"></a>
 		<a href="/games/games/wordle/"><img src="Images/wordle.png" alt="wordle"></a>
 		<a href="/games/games/0hno/"><img src="Images/n0.png" alt="0hn0"></a>
@@ -70,13 +54,10 @@
 		<a href="/games/games/powdertoy/"><img src="Images/powder.png" alt="powdertoy"></a>
 		<a href="/games/games/sandbox/"><img src="Images/sandbox.jpg" alt="sandbox"></a>
 		<a href="/games/games/flagguess/"><img src="Images/flags.jpeg" alt="flag"></a>
-		<a href="/games/games/trust/"><img src="Images/flags.jpeg" alt="trust"></a>
-		<a href="/games/games/wbwwb/"><img src="/games/games/wbwwb/cover.png" alt="wbwwb"></a>
+		<a href="/games/games/trust/"><img src="/games/games/trust/favicon.png" alt="trust"></a>
+		<a href="/games/games/wbwwb/"><img src="Images/wbwwb.png" alt="wbwwb"></a>
 		<a href="/games/games/neurons/"><img src="Images/ne.jpg" alt="neurons"></a>
 		<a href="/games/games/door/"><img src="/games/games/door/thumbnail.png" alt="door"></a>
-		<p>
-		</p>
-		<h1>Mobile Games:</h1>
 		<a href="/games/games/flappybird/"><img src="Images/flap.png" alt="flappybird"></a>
 		<a href="/games/games/uno/"><img src="Images/uno.avif" alt="uno"></a>
 		<a href="/games/games/bali/"><img src="Images/bali.jpg" alt="bali"></a>
@@ -84,9 +65,6 @@
 		<a href="/games/games/spb/"><img src="Images/saint.jpg" alt="spb"></a>
 		<a href="/games/games/contran/"><img src="Images/contran.png" alt="contran"></a>
 		<a href="/games/games/fruit/"><img src="Images/fruit.webp" alt="fruit"></a>
-		<p>
-		</p>
-		<h1>Classics:</h1>
 		<a href="/games/games/cookie/"><img src="Images/cookie.webp" alt="cc"></a>
 		<a href="/games/run3/"><img src="Images/run3.png" alt="run3"></a>
 		<a href="/games/games/turbo/"><img src="Images/turbo.png" alt="tw"></a>
@@ -96,23 +74,17 @@
 		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
 		<a href="/games/games/no/"><img src="Images/no.jpg" alt="nogame"></a>
 		<a href="/games/games/ucn/"><img src="Images/ucn.jpeg" alt="ucn"></a>
-		<p>
-		</p>
-		<h1>Misc:</h1>
 		<a href="/games/games/agar/"><img src="Images/agar.png" alt="agarmini"></a>
 		<a href="/games/games/ritz/"><img src="Images/ritz.png" alt="ritz"></a>
 		<a href="/games/games/sans/"><img src="Images/sans.jpeg" alt="sansfight"></a>
 		<a href="/games/games/cell/"><img src="Images/cell.png" alt="cell"></a>
+		<a href="/games/games/baldi/"><img src="Images/baldi.png" alt="cell"></a>
 		<a href="/games/games/superhot/"><img src="Images/super.avif" alt="sh"></a>
 		<a href="/games/games/20flap/"><img src="Images/20flap.png" alt="20482"></a>
 		<a href="/games/games/flakboy/"><img src="Images/flak.webp" alt="flakboy"></a>
 		<a href="/games/games/sand2/"><img src="Images/sand.jpeg" alt="sand"></a>
-		<p>
-		</p>
-		<h1>Broken:</h1>
-		<a href="/games/games/astray/"><img src="Images/astray.png" alt="ball"></a>
-		<a href="/games/games/truck/"><img src="Images/fire.jpg" alt="truck"></a>
-		<a href="/games/games/supertux/"><img src="Images/SuperTux.jpg" alt="sp"></a>
+		<a href="/games/games/hextris/"><img src="Images/hextris.jpeg" alt="hex"></a>
+		<a href="/games/games/workshop/"><img src="Images/workshop.jpg" alt="work"></a>
 		<p>
 		</p>
 		<h1>Apps:</h1>

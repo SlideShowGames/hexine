@@ -18,18 +18,18 @@ var textStrings_EN = {
 	// Act 2
 	"crazySquareAttacks": "CRAZED SQUARE ATTACKS",
 	"justMissed": "oooooh just missed it",
-	"somethingInteresting": "(ya gotta catch 'em doing *something* interesting...)",
+	"somethingInteresting": "(ya gotta catch 'em doing something interesting...)",
 	"whoIsScreaming": "(ya gotta catch who's screaming at 'em)",
 	"circleFearsSquares": "CIRCLE FEARS SQUARES",
-	"whoScaresThem": "(ya gotta also catch *who* they're scared by)",
-	"areTheyScared": "(ya gotta catch 'em *being* scared by a square)", // not used
+	"whoScaresThem": "(ya gotta also catch who they're scared by)",
+	"areTheyScared": "(ya gotta catch 'em being scared by a square)", // not used
 	"squaresSnubCircles": "SQUARES SNUB CIRCLES",
-	"areTheySnubbed": "(ya gotta catch 'em *while* snubbing a circle)", // not used
+	"areTheySnubbed": "(ya gotta catch 'em while snubbing a circle)", // not used
 	"everyoneHates": "EVERYONE HATES EVERYONE!!1!",
 	"almostEveryoneHates": "ALMOST EVERYONE HATES EVERYONE...",
 	"squaresHateCircles": "SQUARES HATE CIRCLES",
 	"circlesHateSquares": "CIRCLES HATE SQUARES",
-	"areTheyYelling": "(ya gotta catch 'em *yelling* at others)", // not used
+	"areTheyYelling": "(ya gotta catch 'em yelling at others)", // not used
 	"nerdsNow": "what are these nerds doing now",
 	"schockedPeep": "why's this peep shocked?",
 	"whatever": "whatever",
@@ -42,7 +42,7 @@ var textStrings_EN = {
 	// MANIFESTO
 	"manifesto": [
 		//"as if you viewers want GOOD news"       ,
-		"who tunes in to watch *people get along?*",
+		"who tunes in to watch people get along?",
 		"peace is boring. violence goes viral.",
 		//"peace is boring. conflict gets clicks." ,
 		"and every story needs a conflict, so...",
@@ -60,11 +60,11 @@ var textStrings_EN = {
 	"pointAndClick": "POINT & CLICK",
 
 	// (chyron3.png)
-	"chyronNothing": "WOWWEE, IT'S *NOTHING*",
+	"chyronNothing": "WOWWEE, IT'S NOTHING",
 
 	// (credits0001.png)
 	"createdBy": "created by",
-	"NickyCase": "Nicky Case",
+	"Shaan Jain": "Shaan Jain",
 
 	// (credits0002.png)
 	"manyThanks": "many thanks to my playtesters:",
@@ -122,18 +122,18 @@ var textStrings_DE = {
 	// Act 2
 	"crazySquareAttacks": "Verr\xFCcktes Quadrat greift an!",
 	"justMissed": "Ooooh, knapp verpasst.",
-	"somethingInteresting": "(laaangweilig *g\xE4hn*)",
-	"whoIsScreaming": "(*wer* schreit sie denn an?)",
+	"somethingInteresting": "(laaangweilig g\xE4hn)",
+	"whoIsScreaming": "(wer schreit sie denn an?)",
 	"circleFearsSquares": "KREIS F\xDCRCHTET QUADRATE!",
-	"whoScaresThem": "(*wen* f\xFCrchten sie denn?)",
-	"areTheyScared": "(erwische sie, *wenn* sie fl\xFCchten)",
+	"whoScaresThem": "(wen f\xFCrchten sie denn?)",
+	"areTheyScared": "(erwische sie, wenn sie fl\xFCchten)",
 	"squaresSnubCircles": "QUADRAT: Anschuldigungen von KREISEN l\xE4cherlich.",
-	"areTheySnubbed": "(erwische sie, *w\xE4hrend* sie angreifen)",
+	"areTheySnubbed": "(erwische sie, w\xE4hrend sie angreifen)",
 	"everyoneHates": "ALLE HASSEN JEDEN!!1!",
 	"almostEveryoneHates": "FAST JEDER HASST ALLE...",
 	"squaresHateCircles": "QUADRATE HASSEN KREISE",
 	"circlesHateSquares": "KREISE HASSEN QUADRATE",
-	"areTheyYelling": "(erwische sie, *w\xE4hrend* sie sich gegenseitig anschreien)",
+	"areTheyYelling": "(erwische sie, w\xE4hrend sie sich gegenseitig anschreien)",
 	"nerdsNow": "Was machen diese Nerds jetzt?",
 	"schockedPeep": "Warum ist er geschockt?",
 	"whatever": "Egal...",
@@ -164,11 +164,11 @@ var textStrings_DE = {
 	"pointAndClick": "POINT & CLICK", // I'd leave that in English, even for the German translation. /stefan
 
 	// (chyron3.png)
-	"chyronNothing": "Oh wow, *NICHTS*!",
+	"chyronNothing": "Oh wow, NICHTS!",
 
 	// (credits0001.png)
 	"createdBy": "created by", // I'd leave that in English, even for the German translation. /stefan
-	"NickyCase": "Nicky Case", // name; just here in case you want to display text instead of graphic. /stefan
+	"Shaan Jain": "Shaan Jain", // name; just here in case you want to display text instead of graphic. /stefan
 
 	// (credits0002.png)
 	"manyThanks": "Vielen Dank an alle Tester:",
@@ -209,8 +209,6 @@ var textStrings_DE = {
 };
 
 // Persian translation. همرنگ جماعت شو
-//
-// by Ali FZL https://twitter.com/ali_fzl95
 
 var textStrings_FA = {
 	// Act 1
@@ -272,7 +270,7 @@ var textStrings_FA = {
 
 	// (credits0001.png)
 	"createdBy": ":ترجمه از",
-	"NickyCase": "Ali Fazeli",
+	"Shaan Jain": "Shaan Jain",
 
 	// (credits0002.png)
 	"manyThanks": " :ممنون از",
@@ -311,412 +309,5 @@ var textStrings_FA = {
 	// (quote0004.png)
 	"misatrributed": "(!با مقداری تغییر)",
 };
-// Brazilian Portuguese translation.
-// by Filipe Daineze https://github.com/fddaineze
-var textStrings_PT = {
-	// Act 1
-	"niceHat": 			"OOH CHAPÉU MANEIRO",
-	"outtaHere": 			"Isso, cai fora daqui",
-	"getARoom": 			"AFF, VAI PRA UM QUARTO",
-	"notCoolAnymore": 		"Ok, chapéus não são legais",
-	"tvOnTv": 			"Uma TV ... NA TV!",
-	"cricky": 			"LOL' UM GRILO <3",
-	"tooManyCrickets": 		"ok, são muitos grilos",
-	"normalPeep": 			"Apenas uma pessoa normal",
-	"normalPeeps": 			"Apenas algumas pessoas normais",
-	"wowNothing": 			"WOOOWW, NÃO É NADA!",
 
-	// Act 2
-	"crazySquareAttacks": 		"QUADRADOS LOUCOS ATACAM",
-	"justMissed": 			"aaaaah eu perdi isso",
-	"somethingInteresting": 	"(precisa ser *algo* interessante...)",
-	"whoIsScreaming": 		"(mas *quem* está gritando com eles?)",
-	"circleFearsSquares": 		"CÍRCULOS TEMEM QUADRADOS",
-	"whoScaresThem": 		"(pegue também *de quem* estão com medo)",
-	"areTheyScared": 		"pegue-os *sendo assustados* por um quadrado)", // not used
-	"squaresSnubCircles": 		"QUADR. ESNOBAM CÍRCULOS",
-	"areTheySnubbed": 		"(pegue *enquanto* esnobam um círculo)", // not used
-	"everyoneHates": 		"TODO MUNDO ODEIA TODO MUNDO!!1!",
-	"almostEveryoneHates": 		"QUASE TODO MUNDO ODEIA TODO MUNDO..",
-	"squaresHateCircles": 		"QUADRADOS ODEIAM CÍRCULOS",
-	"circlesHateSquares": 		"CÍRCULOS ODEIAM QUADRADOS",
-	"areTheyYelling": 		"(pegue-os *gritando* com os outros)", // not used
-	"nerdsNow": 			"o que esses nerds estão fazendo agora",
-	"schockedPeep": 		"por que esse povo está chocado?",
-	"whatever": 			"tanto faz",
-
-	// Act 3
-	"ellipsis": 			". . .",
-	"coolNoMore": 			"Chapéus não são legais, não ouviu?",
-	"beScared": 			"TENHA MEDO. TENHA RAIVA.",
-
-	// MANIFESTO
-	"manifesto": [
-		//"as if you viewers want GOOD news"       ,
-		"quem vê TV pra ver *boas notícias?*",
-		"paz é um tédio. violência é viral.",
-		//"peace is boring. conflict gets clicks." ,
-		"toda história precisa de conflitos...",
-		//"...GIVE THE AUDIENCE WHAT THEY WANT."   ,
-		"DÊ AO PÚBLICO O QUE QUEREM."
-	],
-
-	// -- Strings currently in graphics resources --
-
-	// (bg_preload.png) Preload screen
-	"playingTime": 			"tempo de jogo: 5 minutos",
-	"warning": "aviso: o seguinte programa\ncontém cenas de esnobismo,\ngrosseria e assassinato em massa.\na discrição ao assistir é aconselhada.",
-
-	// (cam-instructions.png) Camera Instructions
-	"pointAndClick": 		"APONTE E CLIQUE",
-
-	// (chyron3.png)
-	"chyronNothing": 		"WOOOWW, NÃO É *NADA*",
-
-	// (credits0001.png)
-	"createdBy": 			"Criado por",
-	"NickyCase": 			"Nicky Case",
-
-	// (credits0002.png)
-	"manyThanks": 			"muito obrigado aos meus playtesters:",
-
-	// (credits000[3,4,5,6].png)
-	"patreonSupporters": 		"e a meus apoiadores do patreon:",
-
-	// (credits0007.png)
-	"lastButNotLeast": 		"e por último mas não menos importante,",
-
-	// (credits0008.png)
-	"thankYouForPlaying": 		"obrigado a VOCÊ por jogar!",
-
-	// (preload_play.png)
-	"playButton": "JOGAR",
-
-	// (end_button.png) Post Credits
-	"otherWorkButton": 		"veja meus outros trabalhos",
-	"buyCoffeeButton": 		"me compre um café",
-	"replayButton": 		"repita essa bagunça",
-
-	// (logo.png) Post Credits
-	"logoWBWWB": 			"COMPARTILHE A DOR:",
-
-	// (end_prototype.png)
-	"endOfPrototype": 		"FIM DO PROTÓTIPO",
-	"toBeContinued": 		"(continua!)",
-
-	// (quote0002.png)
-	"WBWWB": 			"Nos tornamos o que vemos.",
-	"WSOTATOTSU": 			"Nós moldamos nossas ferramentas e, em seguida, nossas ferramentas nos moldam.",
-
-	// (quote0003.png)
-	"MarshallMcLuhan": 		"Marshall McLuhan",
-
-	// (quote0004.png)
-	"misatrributed": 		"(atribuído erroneamente)",
-};
-
-var textStrings_PT_BR = { //I put that way because portuguese from Brazil (PT_BR) is a little different than portuguese from Portugal (PT_PT)
-	// Act 1
-	"niceHat": "OH BELO CHAPÉU",
-	"outtaHere": "sim, saia daqui",
-	"getARoom": "ECA! VÁ FAZER ISSO NUM QUARTO",
-	"notCoolAnymore": "chapéus não são mais legais",
-	"tvOnTv": "UMA TV... NA TV!",
-	"cricky": "UM PEQUENO GRILO <3",
-	"tooManyCrickets": "ok, agora são MUITOS grilos",
-	"normalPeep": "apenas pessoas comuns",
-	"normalPeeps": "apenas algumas pessoas comuns",
-	"wowNothing": "AAAAA, NÃO É NADA",
-
-	// Act 2
-	"crazySquareAttacks": "UM QUADRADO MALUCO ATACOU",
-	"justMissed": "oooooh perdi isso!",
-	"somethingInteresting": "(você tem que pegá-los fazendo *algo* interessante...)",
-	"whoIsScreaming": "(você tem que pegar quem está gritando pra eles)",
-	"circleFearsSquares": "CÍRCULOS TEMEM QUADRADOS",
-	"whoScaresThem": "(você também tem que pegar *quem* está assustando eles)",
-	"areTheyScared": "(você tem que pegar eles *sendo* assustados por um quadrado)", // not used
-	"squaresSnubCircles": "QUADRADOS AFRONTAM CÍRCULOS",
-	"areTheySnubbed": "(você tem que pegá-los *enquanto* eles afrontam os círculos)", // not used
-	"everyoneHates": "TODO MUNDO ODEIA TODO MUNDO!!1!",
-	"almostEveryoneHates": "QUASE TODO MUNDO ODEIA TODO MUNDO...",
-	"squaresHateCircles": "QUADRADOS ODEIAM CÍRCULOS",
-	"circlesHateSquares": "CÍRCULOS ODEIAM QUADRADOS",
-	"areTheyYelling": "(você tem que pegá-los *gritando* com os outros)", // not used
-	"nerdsNow": "o que esses nerds estão fazendo agora?",
-	"schockedPeep": "por que estas pessoas estão chocadas?",
-	"whatever": "tanto faz",
-
-	// Act 3
-	"ellipsis": ". . .",
-	"coolNoMore": "chapéus não são mais legais, você não soube?",
-	"beScared": "FIQUE COM MEDO! FIQUE COM RAIVA.",
-
-	// MANIFESTO
-	"manifesto": [
-		//"as if you viewers want GOOD news"       ,
-		"quem se preocupa em assistir *pessoas se dando bem?*",
-		"paz é entediante. violência é viral.",
-		//"peace is boring. conflict gets clicks." ,
-		"e toda história precisa de um conflito, logo...",
-		//"...GIVE THE AUDIENCE WHAT THEY WANT."   ,
-		"DÊ A SUA AUDIÊNCIA O QUE ELES QUEREM!"
-	],
-
-	// -- Strings currently in graphics resources --
-
-	// (bg_preload.png) Preload screen
-	"playingTime": "tempo de jogo: 5 minutos",
-	"warning": "atenção: este programa\ncontém cenas de afrontas,\ngrosseria e assassinatos em massa.\naconselha-se discrição do espectador.",
-
-	// (cam-instructions.png) Camera Instructions
-	"pointAndClick": "POINT & CLICK", //This term is used here in Brazil, so I didn't translate it
-
-	// (chyron3.png)
-	"chyronNothing": "AAAAAA, NÃO É *NADA*",
-
-	// (credits0001.png)
-	"createdBy": "criado por",
-	"NickyCase": "Nicky Case",
-
-	// (credits0002.png)
-	"manyThanks": "muitos agradecimentos aos meus jogadores de teste:",
-
-	// (credits000[3,4,5,6].png)
-	"patreonSupporters": "e aos meus apoiadores no patreon:", //the PATREON portal is also used here in Brazil without translation. But, if you prefer in portuguese, is "DOADOR"
-
-	// (credits0007.png)
-	"lastButNotLeast": "e por último, mas não menos importante,",
-
-	// (credits0008.png)
-	"thankYouForPlaying": "muito obrigado a VOCÊ por jogar!",
-
-	// (preload_play.png)
-	"playButton": "JOGAR",
-
-	// (end_button.png) Post Credits
-	"otherWorkButton": "veja meus outros trabalhos",
-	"buyCoffeeButton": "me pague um café",
-	"replayButton": "joge novamente",
-
-	// (logo.png) Post Credits
-	"logoWBWWB": "COMPARTILHE:",
-
-	// (end_prototype.png)
-	"endOfPrototype": "FIM DO PROTÓTIPO",
-	"toBeContinued": "(continua!)",
-
-	// (quote0002.png)
-	"WBWWB": "Nós nos tornamos quem nós vemos.", //I don't know if is cool the name be translated, but here it is
-	"WSOTATOTSU": "Nós moldamos nossas ferramentas e então nossas ferramentas nos moldam.",
-
-	// (quote0003.png)
-	"MarshallMcLuhan": "Marshall McLuhan",
-
-	// (quote0004.png)
-	"misatrributed": "(atribuído erroneamente)",
-};
-
-var textStrings_ES = {
-	// Act 1
-	"niceHat": "OOH QUE BUEN SOMBRERO",
-	"outtaHere": "Vete de aquí",
-	"getARoom": "ASQUEROSO, VAYAN A UNA HABIATACIÓN",
-	"notCoolAnymore": "olvidenlo los sombreros ya no son geniales",
-	"tvOnTv": "Una TV... EN UNA TV!",
-	"cricky": "PEQUEÑO GRILLO <3",
-	"tooManyCrickets": "ok esos son demasiados grillos",
-	"normalPeep": "solo una mirada",
-	"normalPeeps": "solo algunas miradas",
-	"wowNothing": "WOWW, LA NADA",
-
-	// Act 2
-	"crazySquareAttacks": "EL CUADRADO LOCO ATACA",
-	"justMissed": "oooooh solo dejalo pasar",
-	"somethingInteresting": "(tienes que pillarlos haciendo *algo* interesante...)",
-	"whoIsScreaming": "(Tienes que enfocar al que grita)",
-	"circleFearsSquares": "CIRCULO TEME A CUADRADOS",
-	"whoScaresThem": "(también tienes que atrapar a *quién* les asusta)",
-	"areTheyScared": "(tienes que atraparlos *siendo* asustados por un cuadrado)", // not used
-	"squaresSnubCircles": "CUADRADOS DESPRECIAN A CIRCULOS",
-	"areTheySnubbed": "(ya gotta catch 'em *while* snubbing a circle)", // not used
-	"everyoneHates": "TODOS SE ODIAN!!1!",
-	"almostEveryoneHates": "CASI TODOS SE ODIAN...",
-	"squaresHateCircles": "CUADRADOS ODIAN A CIRCULOS",
-	"circlesHateSquares": "CIRCLES HATE SQUARES",
-	"areTheyYelling": "(ya gotta catch 'em *yelling* at others)", // not used
-	"nerdsNow": "que estan haciendo esos nerds",
-	"schockedPeep": "why's this peep shocked?",
-	"whatever": "Lo que sea",
-
-	// Act 3
-	"ellipsis": ". . .",
-	"coolNoMore": "los sombreros ya no son cool, no lo has oido?",
-	"beScared": "ASUSTATE. ENOJATE.",
-
-	// MANIFESTO
-	"manifesto": [
-		//"as if you viewers want GOOD news"       ,
-		"Quien prende la TV para ver *como se lleva la gente?*",
-		"la paz es aburrida. la violencia es viral.",
-		//"peace is boring. conflict gets clicks." ,
-		"y todos necesitan un conflicto, entonces...",
-		//"...GIVE THE AUDIENCE WHAT THEY WANT."   ,
-		"DALE A LA GENTE LO QUE PIDEN."
-	],
-
-	// -- Strings currently in graphics resources --
-
-	// (bg_preload.png) Preload screen
-	"playingTime": "tiempo jugando: 5 minutos",
-	"warning": "advertencia: el siguente programa contiene escenas esnobismo,\nrudeza & asesinato masivo.\ntelevidente tenga discreción.",
-
-	// (cam-instructions.png) Camera Instructions
-	"pointAndClick": "APUNTA Y CLICK",
-
-	// (chyron3.png)
-	"chyronNothing": "WOWW, LA *NADA*",
-
-	// (credits0001.png)
-	"createdBy": "creado por",
-	"NickyCase": "Nicky Case",
-
-	// (credits0002.png)
-	"manyThanks": "Muchas gracias a todos los jugadores:",
-
-	// (credits000[3,4,5,6].png)
-	"patreonSupporters": "y a mis subscriptores de patreon:",
-
-	// (credits0007.png)
-	"lastButNotLeast": "y por último, pero no menos importante,",
-
-	// (credits0008.png)
-	"thankYouForPlaying": "GRACIAS por jugar!",
-
-	// (preload_play.png)
-	"playButton": "JUGAR",
-
-	// (end_button.png) Post Credits
-	"otherWorkButton": "mira mis otros trabajos",
-	"buyCoffeeButton": "buy me a coffee",
-	"replayButton": "repite el desmadre",
-
-	// (logo.png) Post Credits
-	"logoWBWWB": "COMPARTE EL DOLOR:",
-
-	// (end_prototype.png)
-	"endOfPrototype": "FIN DEL PROTOTIPO",
-	"toBeContinued": "(continuará!)",
-
-	// (quote0002.png)
-	"WBWWB": "We become what we behold.",
-	"WSOTATOTSU": "Nosotros damos forma a nuestras herramientas y luego nuestras herramientas nos dan forma a nosotros.",
-
-	// (quote0003.png)
-	"MarshallMcLuhan": "Marshall McLuhan",
-
-	// (quote0004.png)
-	"misatrributed": "(misattributed)",
-};
-
-var textStrings_ZH_TW = {
-    // Act 1
-    "niceHat"              : "嗯哼 很棒的帽子"                                          ,
-    "outtaHere"            : "沒錯，掌握住那裡的失控"                                ,
-    "getARoom"             : "噁，何不去開房間？"                                  ,
-    "notCoolAnymore"       : "這頂帽子已經不再酷炫"                          ,
-    "tvOnTv"               : "一台上了電視的...電視！"                                    ,
-    "cricky"               : "小蟋蟀 <3"                                        ,
-    "tooManyCrickets"      : "夠了，這就太多蟋蟀了"                         ,
-    "normalPeep"           : "只是個普通的民眾"                                    ,
-    "normalPeeps"          : "只是一群普通的民眾"                                ,
-    "wowNothing"           : "哇嗚, 你的鏡頭下什麼東西都沒有"                             ,
-
-    // Act 2
-    "crazySquareAttacks"   : "有瘋狂的 方形 四處攻擊"                                 ,
-    "justMissed"           : "喔, 有什麼被錯過了..."                                 ,
-    "somethingInteresting" : "(對！去拍下他們做了 *什麼* 有趣的事...)" ,
-    "whoIsScreaming"       : "(對！去拍下 *誰* 對他們大吼大叫)"               ,
-    "circleFearsSquares"   : "圓形們 害怕 方形"                                  ,
-    "whoScaresThem"        : "(對！去拍下他們 *誰* 使他們恐懼)"         ,
-    "areTheyScared"        : "(對！去拍下他們被 方形 *恐嚇* 時的樣子)"       , // not used
-    "squaresSnubCircles"   : "方形們 不屑 圓形"                                  ,
-    "areTheySnubbed"       : "(對！去拍下他們不屑 圓形的 *瞬間* )"        , // not used
-    "everyoneHates"        : "多數人皆討厭著其他人！！！"                           ,
-    "almostEveryoneHates"  : "幾乎所有人討厭著所有人..."                     ,
-    "squaresHateCircles"   : "方形們 討厭 圓形"                                  ,
-    "circlesHateSquares"   : "圓形們 討厭 方形"                                  ,
-    "areTheyYelling"       : "(對！去拍下他們朝別人 *嘶吼* 的樣子)"              , // not used
-    "nerdsNow"             : "現在，這些書呆子們在幹麻？"                        ,
-    "schockedPeep"         : "是什麼使這位民眾感到驚嚇?"                              ,
-    "whatever"             : "無所謂"                                              ,
-
-    // Act 3
-    "ellipsis"             : ". . ."                                                 ,
-    "coolNoMore"           : "這些帽子已經不酷了, 你沒聽說嗎？"           ,
-    "beScared"             : "恐懼吧. 憤怒吧."                                  ,
-
-    // MANIFESTO
-    "manifesto" : [
-       //"as if you viewers want GOOD news"       ,
-       "誰會想看 *這些人的互動* ?",
-       "和平只帶來無趣. 暴力則有助散播."    ,
-       //"peace is boring. conflict gets clicks." ,
-       "每個故事都需要一點衝突, 所以..."  ,
-       //"...GIVE THE AUDIENCE WHAT THEY WANT."   ,
-       "給我拿出觀眾們想看的！"
-    ] ,
-
-    // -- Strings currently in graphics resources --
-
-    // (bg_preload.png) Preload screen
-    "playingTime"        : "遊戲時間約 5 分鐘" ,
-    "warning"            : "警告: 這個遊戲包含了\n勢利、粗魯、暴力血腥的場景,\n請遊戲者慎重斟酌體驗" ,
-
-    // (cam-instructions.png) Camera Instructions
-    "pointAndClick"      : "對準 & 點擊" ,
-
-    // (chyron3.png)
-    "chyronNothing"      : "哇嗚, 你的鏡頭下 *什麼東西都沒有*" ,
-
-    // (credits0001.png)
-    "createdBy"          : "製作來自" ,
-    "NickyCase"          : "Nicky Case" ,
-
-    // (credits0002.png)
-    "manyThanks"         : "對許多遊戲測試者的感謝:" ,
-
-    // (credits000[3,4,5,6].png)
-    "patreonSupporters"  : "以及我的贊助支持者們:" ,
-
-    // (credits0007.png)
-    "lastButNotLeast"    : "最後，但不僅於此," ,
-
-    // (credits0008.png)
-    "thankYouForPlaying" : "感謝你的遊玩！" ,
-
-    // (preload_play.png)
-    "playButton"         : "PLAY" ,
-
-    // (end_button.png) Post Credits
-    "otherWorkButton"    : "原作者的其他作品" ,
-    "buyCoffeeButton"    : "贊助作者一杯咖啡" ,
-    "replayButton"       : "重新體驗遊戲" ,
-
-    // (logo.png) Post Credits
-    "logoWBWWB"          : "分享這份傷痛：" ,
-
-    // (end_prototype.png)
-    "endOfPrototype"     : "試玩版本結束" ,
-    "toBeContinued"      : "(敬請期待後續)" ,
-
-    // (quote0002.png)
-    "WBWWB"              : "我們的所見會塑造我們." ,
-    "WSOTATOTSU"         : "我們塑造了我們的工具，然後工具再塑造我們." ,
-
-    // (quote0003.png)
-    "MarshallMcLuhan"    : "Marshall McLuhan" ,
-
-    // (quote0004.png)
-    "misatrributed"      : "(沒有說過)" ,
-};
+var textStrings = textStrings_EN
