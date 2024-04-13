@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<title>Games - Hexine Net</title>
+<title>Hidden - Hexine Net</title>
 </head>
 	<body>
 		
@@ -12,99 +12,8 @@
 		<h1>Look for secrets...</h1>
 		<p>Shamus if you are reading this, I can add ads to your site lol also please dont fork this</p>
 		<p></p>
-		<h1>Emulators:</h1>
-		<a href="/games//emulator/"><img src="Images/unnamed.png" alt="retroarch"></a>
-		<a href="/games/ruffle/"><img src="Images/ji.jpeg" alt="ruffle"></a>
-		<a href="/games/games/dos/"><img src="Images/dos.png" alt="dos"></a>
-		<a href="/games/apps/vmlinux/"><img src="Images/linux.png" alt="linux"></a>
-		<p>
-		</p>
-		<h1>First Games:</h1>
-		<a href="/games/games/chroma-exp/"><img src="Images/chroma.png" alt="chroma"></a>
-		<a href="/games/games/fnf/"><img src="Images/fnf.webp" alt="fnf"></a>
-		<a href="/games/games/drive/"><img src="Images/drive.avif" alt="mad"></a>
-		<p>
-		</p>
-		<h1>Retro Games:</h1>
-		<a href="/games/games/shimgame/celeste.html"><img src="Images/cel.avif" alt="shimmerref"></a>
-		<a href="/games/games/minesweeper/"><img src="Images/bosnia.png" alt="bosniaeasteregg"></a>
-		<a href="/games/games/msfs/"><img src="Images/msfs.jpg" alt="flightsim"></a>
-		<a href="/games/games/retro/"><img src="Images/retro.png" alt="retrobowl"></a>
-		<a href="/games/games/sm64/"><img src="Images/sm64.jpg" alt="sm64"></a>
-		<a href="/games/games/pacman/"><img src="Images/pacman.png" alt="pacman"></a>
-		<a href="/games/games/classic/"><img src="Images/classic.jpg" alt="mcclassic"></a>
-		<a href="/games/games/quake/"><img src="Images/quake.png" alt="quake"></a>
-		<a href="/games/games/doom/"><img src="Images/doom.png" alt="doom"></a>
-		<a href="/games/games/space/"><img src="Images/space.png" alt="space invadr"></a>
-		<a href="/games/games/sand/"><img src="Images/sand.webp" alt="sand"></a>
-		<h1>Text Games:</h1>
-		<a href="/games/games/Elite/"><img src="Images/elite.jpeg" alt="elite"></a>
-		<a href="/games/games/darkroom/"><img src="Images/dark.png" alt="darkroom"></a>
-		<p>
-		</p>
-		<h1>.lol Games:</h1>
-		<a href="/games/games/1v1lol/"><img src="Images/1v1.png" alt="1v1lol"></a>
-		<a href="/games/games/justfall/"><img src="Images/fall.png" alt="justfall"></a>
-		<p>
-		</p>
-		<h1>OpenGL Games:</h1>
-		<a href="/games/games/hex/"><img src="Images/hex.png" alt="agario"></a>
-		<a href="/games/games/rollingsky/"><img src="Images/roll.jpeg" alt="roll"></a>
-		<a href="/games/games/gd/"><img src="Images/gd.png" alt="gd"></a>
-		<p>
-		</p>
-		<h1>Educational Games:</h1>
-		<a href="/games/games/2048/"><img src="Images/2048.png" alt="2048"></a>
-		<a href="/games/games/wordle/"><img src="Images/wordle.png" alt="wordle"></a>
-		<a href="/games/games/0hno/"><img src="Images/n0.png" alt="0hn0"></a>
-		<a href="/games/games/0hh1/"><img src="Images/0h.png" alt="0hh1"></a>
-		<a href="/games/games/powdertoy/"><img src="Images/powder.png" alt="powdertoy"></a>
-		<a href="/games/games/sandbox/"><img src="Images/sandbox.jpg" alt="sandbox"></a>
-		<a href="/games/games/flagguess/"><img src="Images/flags.jpeg" alt="flag"></a>
-		<p>
-		</p>
-		<h1>Mobile Games:</h1>
-		<a href="/games/games/flappybird/"><img src="Images/flap.png" alt="flappybird"></a>
-		<a href="/games/games/uno/"><img src="Images/uno.avif" alt="uno"></a>
-		<a href="/games/games/bali/"><img src="Images/bali.jpg" alt="bali"></a>
-		<a href="/games/games/zurich/"><img src="Images/zurich.png" alt="zurich"></a>
-		<a href="/games/games/spb/"><img src="Images/saint.jpg" alt="spb"></a>
-		<a href="/games/games/contran/"><img src="Images/contran.png" alt="contran"></a>
-		<a href="/games/games/fruit/"><img src="Images/fruit.webp" alt="fruit"></a>
-		<p>
-		</p>
-		<h1>Classics:</h1>
-		<a href="/games/games/cookie/"><img src="Images/cookie.webp" alt="cc"></a>
-		<a href="/games/run3/"><img src="Images/run3.png" alt="run3"></a>
-		<a href="/games/games/turbo/"><img src="Images/turbo.png" alt="tw"></a>
-		<a href="/games/games/soc/"><img src="Images/soc.jpeg" alt="soc"></a>
-		<a href="/games/games/vex5/"><img src="Images/vex5.jpeg" alt="vex5"></a>
-		<a href="/games/games/chromedino.html"><img src="Images/dino.png" alt="dinoreal"></a>
-		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
-		<a href="/games/games/no/"><img src="Images/no.jpg" alt="nogame"></a>
-		<a href="/games/games/vex5/"><img src="Images/vex5.jpeg" alt="vex5"></a>
-		<p>
-		</p>
-		<h1>Misc:</h1>
-		<a href="/games/games/agar/"><img src="Images/agar.png" alt="agarmini"></a>
-		<a href="/games/games/ritz/"><img src="Images/ritz.png" alt="ritz"></a>
-		<a href="/games/games/sans/"><img src="Images/sans.jpeg" alt="sansfight"></a>
-		<a href="/games/games/cell/"><img src="Images/cell.png" alt="cell"></a>
-		<a href="/games/games/superhot/"><img src="Images/super.avif" alt="sh"></a>
-		<a href="/games/games/20flap/"><img src="Images/20flap.png" alt="20482"></a>
-		<a href="/games/games/flakboy/"><img src="Images/flak.webp" alt="flakboy"></a>
-		<p>
-		</p>
-		<h1>Broken:</h1>
-		<a href="/games/games/astray/"><img src="Images/astray.png" alt="ball"></a>
-		<a href="/games/games/truck/"><img src="Images/fire.jpg" alt="truck"></a>
-		<a href="/games/games/supertux/"><img src="Images/SuperTux.jpg" alt="sp"></a>
-		<p>
-		</p>
-		<h1>Apps:</h1>
-		<a href="/games/games/turbo/"><img src="Images/turbo.png" alt="tw"></a>
-		<a href="/games/apps/yt"><img src="Images/yt.svg" alt="yt"></a>			
-	   <a href="/games/app/uv/index.xht"><img src="Images/uv.png" alt="uv"></a>
+		<h1>Hidden Stuff:</h1>
+		<a href="/games/games/flappy-plane/"><img src="Images/flappy.webp" alt="flappy plane"></a>
 	   <p></p>
 	</body>								
 	<footer><p>There are some easter eggs with icons and in the names</p>
