@@ -1,7 +1,8 @@
 <!DOCTYPE Html Public>
 <html>
 <head>
-<script>javascript:(function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })();</script>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
 <link rel="stylesheet" href="style.css">
 <title>Games - Hexine Net</title>
 </head>
