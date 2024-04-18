@@ -20,6 +20,9 @@
 		<a href="/games/games/flappy-plane/"><img src="Images/flappy.webp" alt="flappy plane"></a>
 		<a href="/games/games/ar-wbwwb/"><img src="Images/arabic.png" alt="ar-wbwwb"></a>
 		<h1>debug:</h1>
+	    <h1>Game Variants:</h1>
+	  	<a href="/games/games/reactle/"><img src="Images/react.png" alt="reactle"></a>
+	  	
 		<a href="/games/games/2048hacked/"><img src="Images/2048.png" alt="flappy plane"></a>
 		<a href="/games/games/v86/debug.html"><img src="Images/x86-debug.png" alt="v86-DEBUG"></a>
 		<a href="/games/games/iwbtc/editor.html"><img src="Images/edit.png" alt="iwbtc-level-edit"></a>
