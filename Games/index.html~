@@ -32,6 +32,13 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
+		<a href="/games/games/crossy/"><img src="Images/crossy.jpg" alt="crossy-road"></a>
+		<a href="/games/games/slope/"><img src="Images/slope.jpeg" alt="slope"></a>
+		<a href="/games/games/slope2/"><img src="Images/slope2.png" alt="slope2"></a>
+		<a href="/games/games/deathrun/"><img src="Images/deathrun.jpg" alt="deathrun"></a>
+ 		<a href="/games/games/temple-run-2/"><img src="Images/tr2.jpg" alt="temple2"></a>
+ 		<a href="/games/games/ovo/"><img src="Images/ovo.png" alt="ovo"></a>
 		<a href="/games/games/cars-simulator/"><img src="Images/cars.png" alt="cars"></a>
 		<a href="/games/games/exe/"><img src="Images/exe.jpeg" alt="exe"></a>
 		<a href="/games/games/backrooms/"><img src="Images/backrooms.jpg" alt="fnaf1"></a>
@@ -91,7 +98,6 @@
 		<a href="/games/games/soc/"><img src="Images/soc.jpeg" alt="soc"></a>
 		<a href="/games/games/vex5/"><img src="Images/vex5.jpeg" alt="vex5"></a>
 		<a href="/games/games/chromedino.html"><img src="Images/dino.png" alt="dinoreal"></a>
-		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
 		<a href="/games/games/no/"><img src="Images/no.jpg" alt="nogame"></a>
 		<a href="/games/games/ucn/"><img src="Images/ucn.jpeg" alt="ucn"></a>
 		<a href="/games/games/agar/"><img src="Images/agar.png" alt="agarmini"></a>
@@ -115,6 +121,5 @@
 	</body>								
 	<footer><p>There are some easter eggs with icons and in the names</p>
 	<p>Want to get your game or another game on this site? Fill out this form!</p>
-	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdY1xhIBD4S12SYyv3XEQhc-5k6hM2rCPlFKjH5URJRtNwo3Q/viewform?embedded=true" width="640" height="1143" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSczBEo_lT57SkmlwBDNmUhS01bT62L4iJlQ-bzxcn-7TFVr1Q/viewform?embedded=true" width="640" height="586" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 	</footer>
 </html>
