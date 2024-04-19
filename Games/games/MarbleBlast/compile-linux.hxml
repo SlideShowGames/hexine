@@ -1,6 +1,0 @@
--cp src
--lib heaps
--lib hlsdl
--D highDPI
--hl native/marblegame.c
---main Main
