@@ -1,32 +1,49 @@
-# Marble Blast Web
-This project is a clean-room web port of the 3D platformer games Marble Blast Gold and Marble Blast Platinum (including Marble Blast Ultra), implemented in TypeScript.
+# MBHaxe
+A Haxe port of Marble Blast Gold, name subject to change.
+The marble physics code was taken from [OpenMBU](https://github.com/MBU-Team/OpenMBU) along with my own collision detection code, game logic was partially from scratch and taken with permission from [Marble Blast Web Port](https://github.com/Vanilagy/MarbleBlast).
+The browser version of this port is hosted [here](https://mbhaxe.netlify.app/)
 
-Play it here: https://marbleblast.vaniverse.io/<br>
-TAS Rewind version here: https://github.com/RandomityGuy/MBG-Web-Rewind
+# Why Haxe?
+I chose Haxe because its a good language that can target other languages, meaning any Haxe code can be converted and used in Python, C++, Java very easily so that nobody has to take effort in porting the code to different languages, atleast thats what my mindset was when I started it, but unfortunately because of the 3d engine I used, it only compiles to C and Javascript. You will have to isolate the engine specific features yourself if you want to use this for other programming languages.
 
-## Features
-In this game, the objective is to roll your marble to the finish pad in the fastest time possible, while avoiding hazards and collecting gems and power-ups. It includes almost 4000 levels, including 220 original MBG/MBP/MBU levels (69 beginner, 79 intermediate, 108 advanced, 25 expert) and more than 3900 community custom levels. It implements all gameplay elements, sounds, music and UI/menu components from both Marble Blast Gold, Platinum and Ultra - additional features include a replay system and online leaderboards. The two games (Gold/Platinum) can be switched between seamlessly and without reloading in the main menu. The game can be played using a keyboard, mouse, gamepad or on your mobile device.
+# Build
+Requires Haxe 4.2.2 or above
+You require the following Haxe libraries: 
+- heaps: The specific version located [here](https://github.com/RandomityGuy/heaps)
+- hlsdl (Obtain the haxelib version of hlsdl, then patch it with these files [here](https://github.com/RandomityGuy/hashlink/tree/master/libs/sdl)) (Hashlink/C native target)
+- stb_ogg_sound (JS/Browser target)
+- zip 1.1.0 (JS/Browser target)
 
-[View version history](https://github.com/Vanilagy/MarbleBlast/blob/master/version_history.md)
+## Hashlink/Native
+The version of hashlink to be compiled is located [here](https://github.com/RandomityGuy/hashlink).  
+After all that has been setup, compile to hashlink by doing `haxe compile.hxml` and then running the game by `hl marblegame.hl`.  
+To compile to C, do `haxe compile-c.hxml` and use the instructions in https://gist.github.com/Yanrishatum/d69ed72e368e35b18cbfca726d81279a
 
-## Screenshots
-<img src="./screenshots/natural_selection.png" width="640">
-<img src="./screenshots/king_of_the_marble.png" width="640">
-<img src="./screenshots/whirl.png" width="640">
-<img src="./screenshots/mobile.jpg" width="640">
-<img src="./screenshots/twisting.png" width="640">
-<img src="./screenshots/marble_mini_golf_smorgasbord.png" width="640">
-<img src="./screenshots/avi_training_2.png" width="640">
-<img src="./screenshots/mbp_level_select.png" width="640">
-<img src="./screenshots/mbg_options.png" width="640">
+## Javascript/Browser
+If the build dependencies are fullfilled, compile with `haxe compile-js.hxml` and run the game by running a web server in the same directory as the repo where index.html is located.
 
-## Technical overview
-The game is fully implemented in TypeScript and utilizes its own custom rendering and physics engine. Its levels and assets weren't rebuilt from scratch; instead, they are read and imported from .dif, .dts and .mis files used internally by the Torque 3D Engine, on which the original game runs. All the game's internal logic was implemented from scratch, however. The physics simulation runs at a fixed rate of 120 Hz and utilizes continuous collision detection - it was tuned to feel like a Marble Blast game, but there are still differences in the physics, because of which times in this game shouldn't be compared to those in the original. Resources are lazily loaded over the network when required for levels, making the initial load time of the website relatively short. The UIs are all implemented in plain HTML and CSS, and local persistence for settings, scores and replays is provided by IndexedDB. The game features a state-based replay system which guarantees deterministic playback - replays are compressed using [pako](https://github.com/nodeca/pako) and stored locally. Custom levels are supplied by [Marbleland](https://github.com/Vanilagy/Marbleland) and are cached on the server. The backend itself is implemented using Node.js and mostly handles resource loading and leaderboard updates. An SQLite database is used to store online scores. The built-in video renderer is implemented using the WebCodecs API and [my own multiplexing library](https://github.com/Vanilagy/webm-muxer).
+# FAQ
 
-## Building and developing
-If you wish to build the game yourself, simply clone the repository, then run `npm install --legacy-peer-deps` and `npm run compile`, which will compile the TypeScript code using [rollup](https://rollupjs.org/guide/en/). Then run `npm start` to start up the server (runs on :8080 by default). If you want to configure the port and other server options, modify `server/data/config.json`. For fast development run `npm run watch-fast` (or `npm run watch` for a slower, but typechecked version). If you wish to bundle the project, run `npm run bundle`, which uses [Sarcina](https://github.com/Vanilagy/Sarcina) and writes to `dist/`.
+## Help I am able to reproduce a crash!
+If you are on browser, please send the browser console log to me
+If you are on native, please run marbleblast-debug.bat and reproduce the crash, send the resulting stacktrace that occurs during the crash to me.
 
-**Note:** This project has a dependency that requires `node-gyp`. Install `node-gyp` _before_ running `npm install` on this project with `npm install -g node-gyp`, and if you're on Windows, make sure to run `npm install --global --production windows-build-tools` right afterwards in an _elevated command prompt_ (one with admin rights) to handle the annoying installation stuff.
+## Help it shows a black screen when playing a level!
+Your PC does not support the game, please upgrade it, there is nothing I can do about it to fix it.
 
-## Notes
-The current version only runs on the newest versions of Chromium-based browsers, Firefox and Safari, both on desktop and on mobile. Android support should be top-notch, and Safari is as best as it can be given Apple's restrictive PWA features on iOS. Older versions of this project utilized [three.js](https://github.com/mrdoob/three.js/) for rendering and [OimoPhysics](https://github.com/saharan/OimoPhysics) for physics - without them, this project wouldn't even exist. Additional thanks to the maintainers of [pako](https://github.com/nodeca/pako) and [jszip](https://github.com/Stuk/jszip) for making other parts of this project possible, as well as to [Jeff](https://github.com/JeffProgrammer), [RandomityGuy](https://github.com/RandomityGuy) and [Whirligig](https://github.com/Whirligig231) for helping me out with parts of the code, and to the entire Marble Blast community for their feedback and support. The gameplay itself wasn't my idea at all and I highly recommend you check out GarageGames's original version of Marble Blast Gold, as well as the game's community, here: https://marbleblast.com/
+## How accurate are the marble physics?
+Very accurate with up to 1% deviation from the original physics. The deviations are due to traplaunches being slightly different and occassional internal edge collisions, and the lower delta t values for physics simulations.
+
+## How do I change my resolution?
+In browser, you can just resize your window. You can use the browser zoom feature (ctrl + scroll) to change the UI size.  
+In native version, you can just resize the window if windowed or use the resolution options in the menu or just directly modify settings.json  
+
+## How do I change my FOV?
+Edit settings.json for native version, edit the MBHaxeSettings key in LocalStorage in browser
+
+## How do I unlock/lock FPS?
+You cannot unlock fps in the browser, it is forever set to vsync.
+In the native version, edit settings.json
+
+## Hey can you please add this new feature?
+If this new feature of yours already exists in MBG but not in this port, then I will try to add it, if I get time to do so, otherwise chances are, I won't add it since I have other things to do and would rather not waste my time on this any further. You are free to do pull requests if you have already implemented said feature.
