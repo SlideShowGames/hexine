@@ -129,7 +129,8 @@
 		</p>
 		<h1>Apps:</h1>
 		<a href="/games/games/turbo/"><img src="Images/turbo.png" alt="tw"></a>	
-	        <a href="/games/games/calculator"><img src="Images/des.png" alt="desmos"></a>
+	    <a href="/games/games/calculator"><img src="Images/des.png" alt="desmos"></a>
+	  	 <a href="/games/games/world/"><img src="Images/world.jpg" alt="app"></a>	
 	   <p></p>
 	</body>								
 	<footer><p>There are some easter eggs with icons and in the names</p>
