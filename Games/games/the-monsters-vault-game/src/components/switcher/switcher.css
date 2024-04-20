@@ -1,0 +1,24 @@
+.quality-0 :global(.plain) {
+    background: #936f4f;
+}
+.quality-1 :global(.plain),
+.quality-2 .handle :global(.plain) {
+    background: url(./wood.jpg) 50% 50% / cover;
+}
+
+.handle {
+    position: absolute;
+    transition: transform .5s ease-in;
+}
+
+.off .handle {
+    transform: rotateX(-45deg);
+}
+
+.on .handle {
+    transform: rotateX(45deg);
+}
+
+.reachable :global(.plain) {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), inset 0 0 0 2px rgba(255, 255, 255, .2);
+}

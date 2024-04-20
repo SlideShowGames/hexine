@@ -1,0 +1,22 @@
+.quality-0.mode-1 :global(.plain) {
+    background: #c2bdba;
+}
+.quality-0.mode-2 :global(.plain) {
+    background: #fc595b;
+}
+.quality-0.mode-3 :global(.plain) {
+    background: #7e746a;
+}
+.quality-1 :global(.plain) {
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.quality-1.mode-1 :global(.plain) {
+    background-image: url(./wall01.jpg);
+}
+.quality-1.mode-2 :global(.plain) {
+    background-image: url(./wall02.jpg);
+}
+.quality-1.mode-3 :global(.plain) {
+    background-image: url(./wall03.jpg);
+}

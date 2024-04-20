@@ -1,0 +1,23 @@
+.root {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.give-up {
+    background-image: url(./assets/writings-give-up.png);
+}
+.forever {
+    background-image: url(./assets/writings-forever.png);
+}
+.easter {
+    background-image: url(./assets/writings-easter.png);
+}
+.red-wall {
+    background-image: url(./assets/writings-red-wall.png);
+}
+.game {
+    background-image: url(./assets/writings-game.png);
+}
+.escape {
+    background-image: url(./assets/writings-escape.png);
+}

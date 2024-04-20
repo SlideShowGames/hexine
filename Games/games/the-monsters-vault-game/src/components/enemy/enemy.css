@@ -1,0 +1,144 @@
+.direction {
+    transition: transform .1s ease-in-out;
+    animation: animationWalkingY 1.5s ease-in-out infinite,
+        animationWalkingX 3s ease-in-out infinite;
+}
+.noise {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: url(./texture.png);
+    animation: white-noise 300ms step-start infinite;
+}
+.noise:nth-child(1) {
+    transform: translate(-50%, -50%) rotateX(45deg);
+}
+.noise:nth-child(2) {
+    transform: translate(-50%, -50%) rotateX(-45deg);
+}
+.noise:nth-child(3) {
+    transform: translate(-50%, -50%) rotateX(90deg) rotateY(45deg);
+}
+.noise:nth-child(4) {
+    transform: translate(-50%, -50%) rotateX(90deg) rotateY(-45deg);
+}
+
+.eyes {
+    position: absolute;
+    width: 40px;
+    transform: translate3d(-50%, -10px, -40px) rotateY(180deg);
+    transform-style: preserve-3d;
+}
+.eye {
+    position: absolute;
+    width: 9px;
+    height: 4px;
+    background-color: #fffb53;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    text-align: center;
+    animation: blink 2.5s linear infinite;
+}
+.eye::before {
+    content: '';
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background-color: #000;
+    vertical-align: top;
+}
+.eye:nth-child(1) {
+    top: -10px;
+    left: 0;
+}
+.eye:nth-child(2) {
+    top: 8px;
+    right: 0;
+    animation-delay: 1s;
+}
+.eye:nth-child(3) {
+    top: 4px;
+    left: 15%;
+    width: 5px;
+    height: 2px;
+    animation-delay: 2s;
+    animation-duration: 2.1s;
+}
+.eye:nth-child(4) {
+    top: -1px;
+    right: 10%;
+    width: 7px;
+    height: 3px;
+    animation-delay: 1.5s;
+    animation-duration: 2.2s;
+}
+.eye:nth-child(5) {
+    top: 16px;
+    left: 40%;
+    width: 5px;
+    height: 3px;
+    animation-delay: .5s;
+    animation-duration: 1.7s;
+}
+
+.state-attack .direction {
+    transition: none;
+}
+.state-attack .eye,
+.state-rest .eye {
+    background-color: #b4020a;
+    height: 6px;
+    animation: none;
+}
+.state-attack .eye:nth-child(2n-1) {
+    transform: rotateY(-10deg) rotateZ(10deg);
+}
+.state-attack .eye:nth-child(2n) {
+    transform: rotateY(10deg) rotateZ(-10deg);
+}
+
+.quality-0 .noise {
+    animation: none;
+    background: transparent;
+    border: 5px solid #000;
+}
+
+@keyframes white-noise {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes animationWalkingY {
+    0%, 100% {
+        top: 0;
+    }
+    50% {
+        top: -5px;
+    }
+}
+
+@keyframes animationWalkingX {
+    0%, 100% {
+        left: -3px;
+    }
+    50% {
+        left: 3px;
+    }
+}
+
+@keyframes blink {
+    0%, 12%, 100% {
+        transform: scaleY(1);
+    }
+    5%, 7% {
+        transform: scaleY(0);
+    }
+}

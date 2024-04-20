@@ -1,0 +1,7 @@
+.quality-0 {
+    background: #b79d88;
+}
+.quality-1 {
+    background: url(./floor.jpg);
+    background-size: contain;
+}
