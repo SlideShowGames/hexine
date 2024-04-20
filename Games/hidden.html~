@@ -27,8 +27,10 @@
 	  	 <a href="/games/games/world/apps/sandcastle"><img src="Images/world.jpg" alt="app"></a>	
 	    <h1>Game Variants:</h1>
 	  	<a href="/games/games/reactle/"><img src="Images/react.png" alt="reactle"></a>
-		<h1>Super Secret Technical stuff the normies cant have and they don't know how to use correctly:</h1>
+		<h1>Super Secret Technical stuff:</h1>
 		<a href="/games/games/Zeal-8/"><img src="Images/8bit.png" alt="8bit-computer"></a>
+		<h1>Documentation:</h1>
+	  	 <a href="/games/games/world/build/documentation/"><img src="Images/world.jpg" alt="app-docs"></a>	
 	   <p></p>
 	</body>								
 	<footer><p>There are some easter eggs with icons and in the names</p>
