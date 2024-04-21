@@ -33,6 +33,7 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
 		<a href="/games/games/missile-game/"><img src="Images/missile.png" alt="gorescript"></a>
  		<a href="/games/games/the-monsters-vault-game/"><img src="Images/monster.jpg" alt="monster"></a>
 		<a href="/games/games/underrun/"><img src="Images/underrun.png" alt="underrun"></a>
@@ -47,7 +48,6 @@
 		<a href="/games/games/dominos/"><img src="Images/dominos.png" alt="dominos"></a>
 		<a href="/games/games/stickmanhook/"><img src="Images/stick.jpg" alt="stick"></a>
 		<a href="/games/games/atr3/"><img src="Images/atr3.png" alt="anti"></a>
-		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
 		<a href="/games/games/crossy/"><img src="Images/crossy.jpg" alt="crossy-road"></a>
 		<a href="/games/games/slope/"><img src="Images/slope.jpeg" alt="slope"></a>
 		<a href="/games/games/slope2/"><img src="Images/slope2.png" alt="slope2"></a>
@@ -75,7 +75,6 @@
 		<a href="/games/games/retro/"><img src="Images/retro.png" alt="retrobowl"></a>
 		<a href="/games/games/sm64/"><img src="Images/sm64.jpg" alt="sm64"></a>
 		<a href="/games/games/pacman/"><img src="Images/pacman.png" alt="pacman"></a>
-		<a href="/games/games/classic/"><img src="Images/classic.jpg" alt="mcclassic"></a>
 		<a href="/games/games/quake/"><img src="Images/quake.png" alt="quake"></a>
 		<a href="/games/games/doom/"><img src="Images/doom.png" alt="doom"></a>
 		<a href="/games/games/space/"><img src="Images/space.png" alt="space invadr"></a>
