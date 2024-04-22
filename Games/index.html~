@@ -31,6 +31,7 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/snake/"><img src="Images/snake.png" alt="snake"></a>
 		<a href="/games/games/among-us/"><img src="Images/among.jpg" alt="among"></a>
 		<a href="/games/games/clusterrush/"><img src="Images/cluster.jpg" alt="clusterrush"></a>
 		<a href="/games/games/cavewar/"><img src="Images/cavewar.gif" alt="cavewar"></a>
@@ -43,7 +44,7 @@
 		<a href="/games/games/sonicrevert/"><img src="Images/sonic.png" alt="sonic"></a>
 		<a href="/games/games/monkeymart/"><img src="Images/monkeymart.png" alt="monkey"></a>
 		<a href="/games/games/rooftopsnipers2/"><img src="Images/roof2.jpg" alt="roof2"></a>
-		<a href="/games/games/rooftopsnipers/"><img src="Images/roof.png" alt="roof"></a>
+		<a href="/games/games/rooftopsnipers/rooftop-snipers"><img src="Images/roof.png" alt="roof"></a>
 		<a href="/games/games/chess/"><img src="Images/chess.png" alt="chess"></a>
 		<a href="/games/games/hearts/"><img src="Images/cards.png" alt="hearts"></a>
 		<a title="watching grass grow" href="https://www.watching-grass-grow.com/"></a>
