@@ -29,6 +29,8 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/billards/"><img src="Images/pool.png" alt="thing"></a>
+		<a href="/games/games/chess/"><img src="Images/chess.png" alt="chess"></a>
 		<a href="/games/games/hearts/"><img src="Images/cards.png" alt="hearts"></a>
 		<a href="/games/games/texas/"><img src="Images/texas.jpg" alt="poker"></a>
 		<a title="watching grass grow" href="https://www.watching-grass-grow.com/"></a>
