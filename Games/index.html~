@@ -10,8 +10,8 @@
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
 	<body>
-		<p>Games<s>Stolen</s>by</p>
-		<p>Made by Bradley Stratton</p>
+		<p>Games <s>Stolen</s> by Bradley Stratton</p>
+		<p>Website made by Bradley Stratton</p>
 	    <div id="games">
 	    <h1>Emulators:</h1>
 		<a href="/games/games/win11/"><img src="Images/win11.png" alt="win11"></a>
@@ -35,7 +35,7 @@
 		<a href="/games/games/clusterrush/"><img src="Images/cluster.jpg" alt="clusterrush"></a>
 		<a href="/games/games/cavewar/"><img src="Images/cavewar.gif" alt="cavewar"></a>
 		<a href="/games/games/factoryballsforever/"><img src="Images/factory.png" alt="factory"></a>
-		<a href="/games/games/jellytruck/"><img src="Images/jelly-truck.jpg.jpg" alt="jelly"></a>
+		<a href="/games/games/jellytruck/"><img src="Images/jelly-truck.jpg" alt="jelly"></a>
 		<a href="/games/games/ovo144/"><img src="Images/ovo144.jpg" alt="ovo144"></a>
 		<a href="/games/games/ovo3/"><img src="Images/ovo3.jpg" alt="ovo3"></a>
 		<a href="/games/games/ovo2/"><img src="Images/ovo2.png" alt="ovo2"></a>
