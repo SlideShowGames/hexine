@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>WEBGL Billards</title>
+  <meta charset="utf-8">
+</head>
+<body style="margin: 0;">
+
+  <script src="js/three.min.js"></script>
+  <script src="js/OrbitControls.js"></script>
+  <script src="js/functions.js"></script>
+
+  <script>
+
+    // Set up the scene, camera, and renderer as global variables.
+    var scene, camera, renderer, ball, balls = [], cuestick;
+	var sunLight = new THREE.DirectionalLight( 'rgb(255,255,255)', 1 );
+	
+	var  pointLight, msgw;
+	var UP = new THREE.Vector3(0, 0, 1);
+	var lightPosition4D = new THREE.Vector4();
+	var balls ={ "mesh": [], "line" : [], "quat":[], "prevpos":[], "col" : [],
+		"xVel" : 0.0, "yVel":0.0, "zVel":0.0, 
+		"newXVel" : 0.0, "newYVel" : 0.0, "newZVel" : 0.0, "speed" : 0.0, "r" : 0.35, "m" : 0.3, "colTime":0.0 };
+	var clock = new THREE.Clock;
+	var allset = false;
+	var scale = 20;
+	var tablemesh;
+	
+    init();
+    animate();
+	
+	
+	
+    // Sets up the scene.
+    function init() {
+
+      // Create the scene and set the scene size.
+      scene = new THREE.Scene();
+      var WIDTH = window.innerWidth,
+          HEIGHT = window.innerHeight;
+
+      // Create a renderer and add it to the DOM.
+      renderer = new THREE.WebGLRenderer({antialias:true});
+      renderer.setSize(WIDTH, HEIGHT);
+	  renderer.shadowMapEnabled = true;
+	  //renderer.shadowMapSoft = true;
+
+	 
+		
+		document.body.appendChild(renderer.domElement);
+	  
+		sunLight.position.set(300, 600, 50);
+		sunLight.position.multiplyScalar(1.3);
+		sunLight.lookAt( scene.position );
+		sunLight.shadowCameraVisible = false;
+		sunLight.intensity = 0.2;
+		sunLight.castShadow = true;
+		sunLight.shadowDarkness = 0.5;
+		sunLight.shadowMapWidth = 512;
+		sunLight.shadowMapHeight = 512;
+		sunLight.shadowCameraRight     =  800;
+		sunLight.shadowCameraLeft     = -800;
+		sunLight.shadowCameraTop      =  800;
+		sunLight.shadowCameraBottom   = -800;
+		sunLight.shadowCameraFar  = 1700;
+		scene.add( sunLight );
+		
+		lightPosition4D.x = sunLight.position.x;
+				lightPosition4D.y = sunLight.position.y;
+				lightPosition4D.z = sunLight.position.z;
+				// amount of light-ray divergence. Ranging from:
+				// 0.001 = sunlight(min divergence) to 1.0 = pointlight(max divergence)
+				lightPosition4D.w = 0.001; // must be slightly greater than 0, due to 0 causing matrixInverse errors
+				
+		msgw = document.getElementById("message");
+
+      // Create a camera, zoom it out from the model a bit, and add it to the scene.
+      camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 1, 21000);
+      camera.position.set(0,526,130);
+	  //camera.up = new THREE.Vector3(0,0,1);
+	   camera.lookAt(new THREE.Vector3(0,0,0));
+      scene.add(camera);
+
+      // Create an event listener that resizes the renderer with the browser window.
+      window.addEventListener('resize', function() {
+        var WIDTH = window.innerWidth,
+            HEIGHT = window.innerHeight;
+        renderer.setSize(WIDTH, HEIGHT);
+        camera.aspect = WIDTH / HEIGHT;
+        camera.updateProjectionMatrix();
+      });
+
+      // Set the background color of the scene.
+      renderer.setClearColorHex(0x222222, 1);
+
+    // Create a light, set its position, and add it to the scene.
+    var light = new THREE.PointLight(0xffffaa);
+	light.position.set(10*scale,20*scale,10*scale);
+	light.intensity = 0.5;
+    scene.add(light);
+	  
+	var light2 = new THREE.PointLight(0xffaa00);
+    light2.position.set(-10*scale,20*scale,-10*scale);
+	light2.intensity = 0.5;
+    scene.add(light2);
+	 
+
+
+      // Load in the mesh and add it to the scene.
+      var loader = new THREE.JSONLoader();
+      loader.load( "models/table.json", function(geometry){
+        //var material = new THREE.MeshLambertMaterial({color: 0x5563B6});
+		var texture = new THREE.ImageUtils.loadTexture("models/table.png", THREE.UVMapping);
+		//var material = new THREE.MeshBasicMaterial({map:texture});
+		var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, map:texture});
+
+        tablemesh = new THREE.Mesh(geometry, material);
+		tablemesh.position.set(0,-27.356,50);
+		//light.add( mesh );
+		tablemesh.castShadow = false;
+		tablemesh.receiveShadow = true;
+		tablemesh.scale.set(1*scale,1*scale,1*scale);
+        scene.add(tablemesh);
+		
+      });
+	  
+	   loader.load( "models/cuestick.json", function(geometry){
+        var material = new THREE.MeshLambertMaterial({color: 0x5563B6});
+        cuestick = new THREE.Mesh(geometry, material);
+		cuestick.position.set(0,3.556,23);
+       cuestick.scale.set(1.14*scale,1.14*scale,1.14*scale);
+		//light.add(cuestick );
+		scene.add(cuestick);
+      });
+	  
+	   var loader = new THREE.JSONLoader();
+      loader.load( "models/ball.json", function(geometry){
+        var ballTexture,material,m2,g2; 
+		var k=0;
+		for( k = 0; k< 16; k++){
+			
+			
+			material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, map:ballTexture});
+			if(k > 0){
+				if(k < 7){
+					//ballTexture = new THREE.ImageUtils.loadTexture("models/ball.png", THREE.UVMapping);
+					//material = new THREE.MeshLambertMaterial({color: (Math.random()*0xFFFFFF<<0), map:ballTexture});
+					material = new THREE.MeshPhongMaterial({
+						// light
+						specular: '#a9fcff',
+						// intermediate
+						color: (Math.random()*0xFFFFFF<<0),
+						// dark
+						emissive: '#444444',
+						shininess: 100,
+						map: THREE.ImageUtils.loadTexture('models/ball.png')
+					  });
+				}else{
+					//ballTexture = new THREE.ImageUtils.loadTexture("models/ball2.png", THREE.UVMapping);
+					//material = new THREE.MeshLambertMaterial({color: (Math.random()*0xFFFFFF<<0), map:ballTexture});
+					material = new THREE.MeshPhongMaterial({
+						// light
+						specular: '#a9fcff',
+						// intermediate
+						color: (Math.random()*0xFFFFFF<<0),
+						// dark
+						emissive: '#444444',
+						shininess: 100,
+						map: THREE.ImageUtils.loadTexture('models/ball2.png')
+					  });
+				}
+			}else{
+				//ballTexture = new THREE.ImageUtils.loadTexture("models/cue.png", THREE.UVMapping);
+				//material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, map:ballTexture});
+				material = new THREE.MeshPhongMaterial({
+					// light
+					specular: '#a9fcff',
+					// intermediate
+					color: '#ffffff',
+					// dark
+					emissive: '#555555',
+					shininess: 100,
+					map: THREE.ImageUtils.loadTexture('models/cue.png')
+					});
+			}
+				
+			ball = new THREE.Mesh(geometry, material);
+			
+			
+			
+			//light.add( ball );
+			scene.add(ball);
+			ball.position.set(0,4.399,rand(4.2*scale,-4.2*scale));
+			ball.scale.set(1.14*scale,1.14*scale,1.14*scale);
+			//balls.line[k] = new THREE.Line(g2, m2, THREE.LinePieces);
+			//scene.add(balls.line[k]);
+			ball.castShadow = true;
+			ball.receiveShadow = true;
+			balls.mesh[k] = ball;
+			balls.mesh[k].yVel = 0;
+			balls.mesh[k].zVel =  rand(-132.5,132.5);
+			balls.mesh[k].xVel = -91.5;
+			balls.mesh[k].m = 15.1523  ;
+			balls.mesh[k].r = 0.43 * scale;
+			balls.prevpos[k] = new THREE.Vector3();
+			balls.mesh[k].rotWorldMatrix = new THREE.Matrix4();
+			balls.mesh[k].rotObjectMatrix = new THREE.Matrix4();
+			balls.col[k] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			
+		}
+      });
+
+		// Add OrbitControls so that we can pan around with the mouse.
+		controls = new THREE.OrbitControls(camera, renderer.domElement);
+		document.addEventListener("keydown", onDocumentKeyDown, false); 
+		
+		setupLines();
+		
+		t_x = 0;
+		t_y = -27.356;
+		t_z = 50;
+
+		allset = true;
+    }
+	
+	var space = false;
+	function onDocumentKeyDown(event){ 
+		var keyCode = event.which; 
+		
+		if(keyCode == 32){ 
+			space = true;
+		}
+	}
+	var t_x, t_y, t_z;
+    // Renders the scene and updates the render as needed.
+    function animate() {
+		if(!allset) return;
+		// Read more about requestAnimationFrame at http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+		requestAnimationFrame(animate);
+		//mesh.rotation.y += -Math.PI / 423;
+
+		move3(balls);
+		
+		cuestick.lookAt(balls.mesh[0].position);
+		
+
+
+		 // distance squared, radii sum
+		var dl2  = Math.sqrt((balls.mesh[1].position.x - balls.mesh[0].position.x)*(balls.mesh[1].position.x - balls.mesh[0].position.x) + (balls.mesh[1].position.z - balls.mesh[0].position.z)*(balls.mesh[1].position.z - balls.mesh[0].position.z));
+		
+		var dx = (balls.mesh[1].position.x - balls.mesh[0].position.x) / dl2;
+		var dz = (balls.mesh[1].position.z - balls.mesh[0].position.z) / dl2;
+		
+		if(balls.mesh[0].xVel * balls.mesh[0].xVel  +  balls.mesh[0].zVel * balls.mesh[0].zVel > 0.1e-2){
+			cuestick.position.x = 1000;
+			cuestick.position.z = 1000;
+		}else{
+			
+			var toPos = new THREE.Vector3( balls.mesh[0].position.x - (15 * scale * dx), 3 * scale,  balls.mesh[0].position.z - (15 *scale * dz));
+			cuestick.position.lerp(toPos, .2);
+		}		
+		
+		
+		
+		
+		if(space){
+			//balls.mesh[0].m = 5.2323;
+			
+			balls.mesh[0].xVel = dx * 50  * scale;
+			balls.mesh[0].zVel = dz * 50 * scale;
+			message.innerHTML = "V: [" + balls.mesh[0].xVel+ " " +balls.mesh[0].zVel + "]";
+			message.innerHTML += "<br/>V: [" + balls.mesh[0].position.x + ", " + balls.mesh[0].position.z + "]";
+			space = false;
+		}
+		
+		
+		tablemesh.position.set(t_x, t_y, t_z);
+		
+		// Render the scene.
+		renderer.render(scene, camera);
+		controls.update();
+
+    }
+	
+	var sideEdges, topEdges, bottomEdges,rightEdge,leftEdge, topCornerLeft, bottomCornerLeft, topCornerRight, bottomCornerRight;
+	function setupLines(){
+		
+		
+	
+		m2 = new THREE.LineBasicMaterial({color: 0x5563B6});
+		g2 = new THREE.Geometry();
+		g2.vertices.push(new THREE.Vector3(-14.35*scale, 0,  -6.72*scale));
+		g2.vertices.push(new THREE.Vector3(-0.35*scale, 0, -6.72*scale));
+		
+		g2.vertices.push(new THREE.Vector3(-0.35*scale, 0,  -6.72*scale));
+		g2.vertices.push(new THREE.Vector3(0.00736*scale, 0, -7.08087*scale));
+		
+		g2.vertices.push(new THREE.Vector3(0.00736*scale, 0, -7.08087*scale));
+		g2.vertices.push(new THREE.Vector3(0.0175*scale, 0, -7.45867*scale));
+		
+		g2.vertices.push(new THREE.Vector3(0.0175*scale, 0, -7.45867*scale));
+		g2.vertices.push(new THREE.Vector3(0.31098*scale, 0, -7.86283*scale));
+		
+		g2.vertices.push(new THREE.Vector3(0.31098*scale, 0, -7.86283*scale));
+		g2.vertices.push(new THREE.Vector3(0.70915*scale, 0, -8.00778*scale));
+		
+		g2.vertices.push(new THREE.Vector3(0.70915*scale, 0, -8.00778*scale));
+		g2.vertices.push(new THREE.Vector3(1.10732*scale, 0, -7.86283*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.10732*scale, 0, -7.86283*scale));
+		g2.vertices.push(new THREE.Vector3(1.4008*scale, 0, -7.45867*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.10732*scale, 0, -7.86283*scale));
+		g2.vertices.push(new THREE.Vector3(1.4008*scale, 0, -7.45867*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.4008*scale, 0*scale, -7.45867*scale));
+		g2.vertices.push(new THREE.Vector3(1.41075*scale,0*scale, -7.08087*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.4008*scale, 0*scale, -7.45867*scale));
+		g2.vertices.push(new THREE.Vector3(1.41075*scale,0*scale, -7.08087*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.41075*scale,0*scale, -7.08087*scale));
+		g2.vertices.push(new THREE.Vector3(1.75774*scale,0*scale, -6.72289*scale));
+		var line = new THREE.Line(g2, m2, THREE.LinePieces);
+		scene.add(line);
+		
+		//line
+		m2 = new THREE.LineBasicMaterial({color: 0xff0000});
+		g2 = new THREE.Geometry();
+		g2.vertices.push(new THREE.Vector3(1.75774*scale,0*scale, -6.72289*scale));
+		g2.vertices.push(new THREE.Vector3(15.47931*scale,0*scale, -6.72289*scale));
+		var line = new THREE.Line(g2, m2, THREE.LinePieces);
+		scene.add(line);
+		
+		
+		
+
+
+		//corner
+		m2 = new THREE.LineBasicMaterial({color: 0xffFF00});
+		g2 = new THREE.Geometry();
+		g2.vertices.push(new THREE.Vector3(15.47931*scale,0*scale, -6.72289*scale));
+		g2.vertices.push(new THREE.Vector3(16.65557*scale,0*scale, -7.08337*scale));
+
+		g2.vertices.push(new THREE.Vector3(16.65557*scale,0*scale, -7.08337*scale));
+		g2.vertices.push(new THREE.Vector3(17.21513*scale,0*scale, -7.47964*scale));
+
+
+		g2.vertices.push(new THREE.Vector3(17.21513*scale,0*scale, -7.47964*scale));
+		g2.vertices.push(new THREE.Vector3(18.09982*scale,0*scale, -7.20721*scale));
+		var line = new THREE.Line(g2, m2, THREE.LinePieces);
+		scene.add(line);
+
+
+		//line
+		m2 = new THREE.LineBasicMaterial({color: 0xffFFFF});
+		g2 = new THREE.Geometry();
+		g2.vertices.push(new THREE.Vector3(17.59222*scale,0*scale, -4.46687*scale));
+		g2.vertices.push(new THREE.Vector3(17.59222*scale,0*scale, 7.21116*scale));
+		
+		g2.vertices.push(new THREE.Vector3(-14.34944*scale,0*scale, 9.23751*scale));
+		g2.vertices.push(new THREE.Vector3(-0.34792*scale,0*scale,9.23751*scale));
+		
+		g2.vertices.push(new THREE.Vector3(1.75774*scale,0*scale, 9.23751*scale));
+		g2.vertices.push(new THREE.Vector3(15.47931*scale,0*scale,9.23751*scale));
+		
+		g2.vertices.push(new THREE.Vector3(-16.41941*scale,0*scale, 7.21116*scale));
+		g2.vertices.push(new THREE.Vector3(-16.41941*scale,0*scale, -4.46687*scale));
+		
+		
+		rightEdge = [[17.59222, -4.46687, 17.59222, 7.21116]];
+					
+		leftEdge = [[-16.41941, 7.21116, -16.41941, -4.46687]];
+		
+		bottomEdges = [ 
+					[1.75774, -6.72289, 15.47931, -6.72289], 
+					[-14.34944, -6.72289, -0.34792, -6.72289],
+					[-14.34944, 9.23751, -16.03539, 9.95646],
+					[-17.17402, 8.84311, -16.03656, 9.95646]
+					];
+					
+		topEdges = [
+					[-14.34944, 9.23751, -0.34792, 9.23751],
+					[1.75774, 9.23751, 15.47931, 9.23751],
+					
+					];
+					
+		topCornerLeft = [[-17.20, -6.37, -16.05, -7.49],
+						[-17.20,  -6.37, -16.05, -7.49],
+						[-16.05,  -7.49, -14.35, -6.72]
+						];
+		
+		bottomCornerLeft = [
+						[-14.34944, 9.23751, -16.03539, 9.95646],
+						[-17.17402, 8.84311, -16.41941, 7.21116],
+						];
+						
+		bottomCornerLeft_c  = [[-17.17402, 8.84311, -16.03656, 9.95646]];
+		
+		var line = new THREE.Line(g2, m2, THREE.LinePieces);
+		scene.add(line);
+		
+		m2 = new THREE.LineBasicMaterial({color: 0x00ff00});
+		g2 = new THREE.Geometry();
+		//corner
+		//g2.vertices.push(new THREE.Vector3(-14.34944*scale, 2*scale, 9.23751*scale));
+		//g2.vertices.push(new THREE.Vector3(-16.03539*scale, 2*scale, 9.95646*scale));
+		
+		g2.vertices.push(new THREE.Vector3(-17.17402*scale, 2*scale, 8.84311*scale));
+		g2.vertices.push(new THREE.Vector3(-16.03656*scale, 2*scale, 9.95646*scale));
+		
+		//g2.vertices.push(new THREE.Vector3(-17.17402*scale, 2*scale, 8.84311*scale));
+		//g2.vertices.push(new THREE.Vector3(-16.41941*scale, 2*scale, 7.21116*scale));
+		
+		
+		//g2.vertices.push(new THREE.Vector3(-16.42*scale, 2*scale, -4.46*scale));
+		//g2.vertices.push(new THREE.Vector3(-17.20*scale, 2*scale, -6.37*scale));
+		
+		//g2.vertices.push(new THREE.Vector3(-17.20*scale, 2*scale, -6.37*scale));
+		//g2.vertices.push(new THREE.Vector3(-16.05*scale, 2*scale, -7.49*scale));
+		
+		//g2.vertices.push(new THREE.Vector3(-16.05*scale, 2*scale, -7.49*scale));
+		//g2.vertices.push(new THREE.Vector3(-14.35*scale, 2*scale, -6.72*scale));
+		
+		
+		line = new THREE.Line(g2, m2, THREE.LinePieces);
+		scene.add(line);
+	}
+	
+	
+  </script>
+	<span id="message" style="position:absolute; color:#fff; top:20px; left:30px; height:500px; width:500px;overflow:auto; font-family:arial;font-size:9px"></span>
+	<input type="text" id="tx" value=0>
+	<input type="text" id="ty" value=-27.356>
+	<input type="text" id="tz" value=0>
+	
+	<button id="set" onclick="myf()">Set</button>
+	<br/><br/>
+	<input type="text" id="tx1" value=0>
+	<input type="text" id="ty1" value=-27.356><br/>
+	<input type="text" id="tx2" value=0>
+	<input type="text" id="ty2" value=-27.356>
+	<button id="set" onclick="norm()">Set</button>
+	<script>
+	function myf(){
+		t_x = document.getElementById('tx').value;
+		t_y = document.getElementById('ty').value;
+		t_z = document.getElementById('tz').value;
+
+	}
+	
+	
+	function norm(){
+		t_x1 = document.getElementById('tx1').value;
+		t_y1 = document.getElementById('ty1').value;
+		
+		t_x2 = document.getElementById('tx2').value;
+		t_y2 = document.getElementById('ty2').value;
+		
+		var p1 = new THREE.Vector2(t_x1, t_y1);
+		var p2 = new THREE.Vector2(t_x2, t_y2);
+		
+		p1.sub(p2);
+		//p1.normalize();
+		alert(p1.x + " " +p1.y + "\n" + p1.length());
+	}
+	
+	</script>
+</body>
+</html>

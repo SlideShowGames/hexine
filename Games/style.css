@@ -13,7 +13,7 @@
   pointer-events: all;
 }
 
-img { 
+img {    
     height: 15.6vw;
     width: 15.6vw;
     border-radius: 1vw;
@@ -24,12 +24,10 @@ img {
 }
 
 body {
-  --bg: #dedef0;
-  --bg-lighter: #ff6600;
-  --bg-darker: #ff6600;
-  --fg: #1a1a28;
-  --accent: #ff6600;
-
+	background-image: url(wallpaper.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
   --font-sans: "Roboto Flex", Roboto, RobotoDraft, "Droid Sans", Arial,
   "Helvetica Neue", Helvetica, -apple-system, system-ui, sans-serif;
   --font-mono: "Roboto Mono", "Droid Sans Mono", ui-monospace, monospace;

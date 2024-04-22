@@ -1,0 +1,326 @@
+    Non-physics Version
+    ===================
+
+    import sys, direct.directbase.DirectStart
+    from direct.showbase.DirectObject import DirectObject
+    from pandac.PandaModules import *
+    from direct.gui.DirectGui import OnscreenText
+    from direct.showbase.DirectObject import DirectObject
+    from pandac.PandaModules import CollisionHandlerFloor, CollisionNode, CollisionTraverser, BitMask32, CollisionRay
+    from direct.task.Task import Task
+
+    ACCEL = 70         # Acceleration in ft/sec/sec
+    MAX_SPEED = 5      # Max speed in ft/sec
+    MAX_SPEED_SQ = MAX_SPEED ** 2  # Squared to make it easier to use lengthSquared
+                                   # Instead of length
+    UP = Vec3(0,0,1)   # We need this vector a lot, so its better to just have one
+
+    class World(DirectObject):
+
+        def __init__(self):
+            self.LoadTerrain()
+            self.LoadLight()
+            self.LoadCamera()
+            self.LoadAvatar()
+            self.markAxis()
+            self.ballV = Vec3(0,0,0)         # Initial velocity is 0
+            self.accelV = Vec3(0,0,0)        # Initial acceleration is 0
+            base.cTrav = self.cTrav
+            self.mainLoop = taskMgr.add(self.rollTask, "rollTask")
+            self.mainLoop.last = 0
+
+        def LoadTerrain(self):
+            self.board = loader.loadModel('models/board.egg')
+            self.board.reparentTo(render)
+            self.floor = self.board.find('**/floorc')
+            self.floor.setCollideMask(BitMask32.allOff())
+            self.floor.node().setIntoCollideMask(BitMask32.bit(1))
+            self.walls = self.board.find('**/walls')
+            self.walls.setCollideMask(BitMask32.allOff())
+            self.walls.node().setIntoCollideMask(BitMask32.bit(0))
+            self.cTrav=CollisionTraverser()
+            base.setBackgroundColor(0.0,0.3,0.0)
+
+        def LoadLight(self):
+            plight = AmbientLight('my plight')
+            plight.setColor(VBase4(0.12, 0.12, 0.12, 1))
+            plnp = render.attachNewNode(plight)
+            render.setLight(plnp)
+
+            light2 = PointLight('pointlight')
+            plnp2 = render.attachNewNode(light2)
+            plnp2.setPos(2,2,2)
+            render.setLight(plnp2)
+
+        def LoadCamera(self):
+            base.camera.setPos(-5,-30,30)
+            base.camera.lookAt(self.board)
+            mat=Mat4(camera.getMat())
+            mat.invertInPlace()
+            base.mouseInterfaceNode.setMat(mat)
+
+        def LoadAvatar(self):
+            self.ballRoot = render.attachNewNode("ballRoot")
+            self.ball = loader.loadModel("models/ball")
+            self.ball.reparentTo(self.ballRoot)
+            self.ballSphere = self.ball.find("**/ball")
+            self.ballSphere.node().setFromCollideMask(BitMask32.bit(0))
+            self.ballSphere.node().setIntoCollideMask(BitMask32.allOff())
+            self.ballGroundRay = CollisionRay()     # Create the ray
+            self.ballGroundRay.setOrigin(0,0,10)    # Set its origin
+            self.ballGroundRay.setDirection(0,0,-1) # And its direction
+            self.ballGroundCol = CollisionNode('floorRay') # Create and name the node
+            self.ballGroundCol.addSolid(self.ballGroundRay) # Add the ray
+            self.ballGroundCol.setFromCollideMask(BitMask32.bit(1)) # Set its bitmasks
+            self.ballGroundCol.setIntoCollideMask(BitMask32.allOff())
+            self.ballGroundColNp = self.ballRoot.attachNewNode(self.ballGroundCol)
+            self.cHandler = CollisionHandlerQueue()
+            self.cTrav.addCollider(self.ballSphere, self.cHandler)
+            self.cTrav.addCollider(self.ballGroundColNp, self.cHandler)
+            self.ballRoot.setPos(0,0,1)
+
+        def LoadControls(self):
+            base.disableMouse()
+
+        def groundCollideHandler(self, colEntry):
+            # Set the ball to the appropriate Z value for it to be exactly on the ground
+            newZ = colEntry.getSurfacePoint(render).getZ()
+            self.ballRoot.setZ(newZ+.4)
+
+            # Find the acceleration direction. First the surface normal is crossed with
+            # the up vector to get a vector perpendicular to the slope
+            norm = colEntry.getSurfaceNormal(render)
+            accelSide = norm.cross(UP)
+            # Then that vector is crossed with the surface normal to get a vector that
+            # points down the slope. By getting the acceleration in 3D like this rather
+            # than in 2D, we reduce the amount of error per-frame, reducing jitter
+            self.accelV = norm.cross(accelSide)
+
+        def wallsCollideHandler(self, colEntry):
+            # First we calculate some numbers we need to do a reflection
+            norm = colEntry.getSurfaceNormal(render) * -1 # The normal of the wall
+            curSpeed = self.ballV.length()                # The current speed
+            inVec = self.ballV / curSpeed                 # The direction of travel
+            velAngle = norm.dot(inVec)                    # Angle of incidance
+            hitDir = colEntry.getSurfacePoint(render) - self.ballRoot.getPos()
+            hitDir.normalize()                           
+            hitAngle = norm.dot(hitDir)   # The angle between the ball and the normal
+
+            # Ignore the collision if the ball is either moving away from the wall
+            # already (so that we don't accidentally send it back into the wall)
+            # and ignore it if the collision isn't dead-on (to avoid getting caught on
+            # corners)
+            if velAngle > 0 and hitAngle > .995:
+                # Standard reflection equation
+                reflectVec = (norm * norm.dot(inVec * -1) * 2) + inVec
+                 
+                # This makes the velocity half of what it was if the hit was dead-on
+                # and nearly exactly what it was if this is a glancing blow
+                self.ballV = reflectVec * (curSpeed * (((1-velAngle)*.5)+.5))
+                # Since we have a collision, the ball is already a little bit buried in
+                # the wall. This calculates a vector needed to move it so that it is
+                # exactly touching the wall
+                disp = (colEntry.getSurfacePoint(render) -
+                    colEntry.getInteriorPoint(render))
+                newPos = self.ballRoot.getPos() + disp
+                self.ballRoot.setPos(newPos)
+
+        def rollTask(self, task):
+            dt = task.time - task.last
+            task.last = task.time
+            if dt > .2:
+                return Task.cont   
+
+            for i in range(self.cHandler.getNumEntries()):
+                entry = self.cHandler.getEntry(i)
+                name = entry.getIntoNode().getName()
+                if name == "floorc": self.groundCollideHandler(entry)
+                elif name == "walls": self.wallsCollideHandler(entry)
+
+            if base.mouseWatcherNode.hasMouse():
+                mpos = base.mouseWatcherNode.getMouse() # get the mouse position
+                self.board.setP(mpos.getY() * -10)
+                self.board.setR(mpos.getX() * 10)
+
+            # Finally, we move the ball Update the velocity based on
+            # acceleration
+            self.ballV += self.accelV * dt * ACCEL
+            # Clamp the velocity to the maximum speed
+            if self.ballV.lengthSquared() > MAX_SPEED_SQ:
+                self.ballV.normalize()
+                self.ballV *= MAX_SPEED
+            # Update the position based on the velocity
+            self.ballRoot.setPos(self.ballRoot.getPos() + (self.ballV * dt))
+
+            # This block of code rotates the ball. It uses something called a
+            # quaternion to rotate the ball around an arbitrary axis. That axis
+            # perpendicular to the balls rotation, and the amount has to do with
+            # the size of the ball This is multiplied on the previous rotation
+            # to incrimentally turn it.
+            prevRot = LRotationf(self.ball.getQuat())
+            axis = UP.cross(self.ballV)
+            newRot = LRotationf(axis, 45.5 * dt * self.ballV.length())
+            self.ball.setQuat(prevRot * newRot)
+
+            return Task.cont       # Continue the task indefinitely
+
+
+        def markAxis(self):
+            def printText(name, message, color):
+                text = TextNode(name)
+                text.setText(message)
+                x,y,z = color
+                text.setTextColor(x,y,z, 1)
+                text3d = NodePath(text)
+                text3d.reparentTo(render)
+                return text3d
+
+            for i in range(0,51):
+                printText("X", "|", (1,0,0)).setPos(i,0,0)
+
+            for i in range(0,51):
+                printText("Y", "|", (0,1,0)).setPos(0,i,0) 
+                   
+            for i in range(0,51):
+                printText("Z", "-", (0,0,1)).setPos(0,0,i)
+
+            printText("XL", "X", (0,0,0)).setPos(5.5,0,0)
+            printText("YL", "Y", (0,0,0)).setPos(0,5.5,0)
+            printText("YL", "Z", (0,0,0)).setPos(0,0,5.5)
+            printText("OL", "@", (0,0,0)).setPos(0,0,0)
+
+
+    DO=DirectObject()
+    DO.accept('q',sys.exit)
+    w = World()
+    run()
+
+    Physics Version
+    ===============
+
+    import sys, direct.directbase.DirectStart
+    from direct.showbase.DirectObject import DirectObject
+    from pandac.PandaModules import *
+    from direct.task.Task import Task
+
+    class MarbleOnTray(object):
+
+        def __init__(self):
+            base.cTrav=CollisionTraverser()
+            base.cTrav.setRespectPrevTransform(True)
+            base.enableParticles()
+            #base.cTrav.showCollisions (base.render)
+            gravity = ForceNode('globalGravityForce')
+            gravityNP = render.attachNewNode(gravity)
+            gravityForce = LinearVectorForce (0, 0, -9.8)  # 9.8 m/s gravity
+            gravityForce.setMassDependent(False)  # constant acceleration (set true if you think Galileo was wrong)
+            gravity.addForce(gravityForce)
+            base.physicsMgr.addLinearForce(gravityForce)
+            self.floorBit = 1
+            self.wallBit = 0
+
+            self.drawLines()
+            self.loadWorld()
+            self.loadAvatar()
+            self.loadLight()
+            self.loadCamera()
+
+
+        def loadLight(self):
+            plight = AmbientLight('my plight')
+            plight.setColor(VBase4(0.12, 0.12, 0.12, 1))
+            plnp = render.attachNewNode(plight)
+            render.setLight(plnp)
+            light2 = PointLight('pointlight')
+            plnp2 = render.attachNewNode(light2)
+            plnp2.setPos(2,2,2)
+            render.setLight(plnp2)
+
+        def loadCamera(self):
+            base.camera.setPos(-5,-30,30)
+            base.camera.lookAt(self.board)
+            mat=Mat4(camera.getMat())
+            mat.invertInPlace()
+            base.mouseInterfaceNode.setMat(mat)
+
+        def loadWorld(self):
+            base.disableMouse()
+            base.setBackgroundColor(0.0,0.3,0.0)
+            self.board = loader.loadModel('models/board.egg')
+            self.board.reparentTo(render)
+            self.floor = self.board.find('**/floorc')
+
+            self.floor.setCollideMask(BitMask32.allOff())
+            self.floor.node().setCollideMask(BitMask32.bit(self.floorBit))
+            self.walls = self.board.find('**/walls')
+            self.walls.setCollideMask(BitMask32.allOff())
+            self.walls.node().setCollideMask(BitMask32.bit(self.wallBit))
+
+            self.tiltTaski = taskMgr.add(self.tiltTask, "tiltTask")
+            self.tiltTaski.last = 0
+
+        def loadAvatar(self):
+            self.ballActor = render.attachNewNode(ActorNode("ballActor"))
+            self.ballActor.setPos(0,0,25)
+            self.ball = loader.loadModel('smiley')
+            self.ball.setScale(0.7)
+            self.ball.reparentTo(self.ballActor)
+            base.physicsMgr.attachPhysicalNode(self.ballActor.node())
+            self.ballActor.node().getPhysicsObject().setMass(10)
+            self.collisionh = PhysicsCollisionHandler()
+            self.collisionh.setStaticFrictionCoef(0.0)
+            self.collisionh.setDynamicFrictionCoef(0.0)
+
+            minp, maxp = self.ball.getTightBounds()
+            dims = Point3(maxp - minp)
+            diameter = max([dims.getX(), dims.getY(), dims.getZ()])
+            ballCNPath = self.ballActor.attachNewNode(CollisionNode('ballCN'))
+            ballCNPath.node().addSolid(CollisionSphere(0, 0, 0, diameter/2))
+            cmask = BitMask32()
+            cmask.setBit(self.floorBit)
+            cmask.setBit(self.wallBit)
+            ballCNPath.node().setFromCollideMask(cmask)
+            self.collisionh.addCollider(ballCNPath, self.ballActor)
+            base.cTrav.addCollider(ballCNPath, self.collisionh)
+
+        def tiltTask(self, task):
+            dt = task.time - task.last
+            task.last = task.time
+            if dt > .2:
+                return Task.cont   
+
+            if base.mouseWatcherNode.hasMouse():
+                mpos = base.mouseWatcherNode.getMouse() # get the mouse position
+                self.board.setP(mpos.getY() * -10)
+                self.board.setR(mpos.getX() * 10)
+
+            return Task.cont       # Continue the task indefinitely
+
+        def drawLines(self):
+            def printText(name, message, color):
+                text = TextNode(name)
+                text.setText(message)
+                x,y,z = color
+                text.setTextColor(x,y,z, 1)
+                text3d = NodePath(text)
+                text3d.reparentTo(render)
+                return text3d
+
+            for i in range(0,51):
+                printText("X", "|", (1,0,0)).setPos(i,0,0)
+
+            for i in range(0,51):
+                printText("Y", "|", (0,1,0)).setPos(0,i,0) 
+                   
+            for i in range(0,51):
+                printText("Z", "-", (0,0,1)).setPos(0,0,i)
+
+            printText("XL", "X", (0,0,0)).setPos(5.5,0,0)
+            printText("YL", "Y", (0,0,0)).setPos(0,5.5,0)
+            printText("YL", "Z", (0,0,0)).setPos(0,0,5.5)
+            printText("OL", "@", (0,0,0)).setPos(0,0,0)
+
+    DO=DirectObject()
+    DO.accept('q',sys.exit)
+    w = MarbleOnTray()
+    run()
