@@ -31,6 +31,11 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/shards/"><img src="Images/shards.jpg" alt="shards"></a>
+		<a href="/games/games/asmallworldcup/"><img src="Images/aworld.jpg" alt="asmallworldcup"></a>
+		<a href="/games/games/arcadewizard/"><img src="Images/arcadewiz.jpg" alt="arcadewizard"></a>
+		<a href="/games/games/2020game/"><img src="Images/unknown.png" alt="2020"></a>
+		<a href="/games/games/pong/"><img src="Images/pong.jpg" alt="pong"></a>
 		<a href="/games/games/oregon-gui/"><img src="Images/oregon-re.png" alt="oregon-trail-gui"></a>
 		<a href="/games/games/oregon-text/"><img src="Images/oregon.png" alt="oregon-trail-text"></a>
 		<a href="/games/games/roadblocks/"><img src="Images/road.png" alt="roadblocks"></a>
