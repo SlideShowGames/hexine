@@ -1,27 +1,67 @@
-# Oregon Trail (1978)
+# Oregon Trail
 
-A faithful recreation of the original Oregon Trail game.
+#### Oregon Trail JavaScript Game, Current Version: 03/09/2017
 
-![screenshot](https://raw.githubusercontent.com/attilabuti/Oregon-Trail-Browser/main/img/og.png)
+#### By Gloria Friesen, Megan Warnock, Ryan McAlpin, Chris Carr, Riley Watts
 
 ## Description
+A web-based re-imagining of the original Oregon Trail game. Users will travel the trail, encountering forts and rivers along the way. Hunt and rest to replenish supplies. Party members may perish on the journey, but as long as at least one survives to Oregon, the user will win.
 
-The Oregon Trail is a text-based strategy video game developed by Don Rawitsch, Bill Heinemann, and Paul Dillenberger in 1971 and produced by the Minnesota Educational Computing Consortium (MECC) beginning in 1975. It was developed as a computer game to teach school children about the realities of 19th-century pioneer life on the Oregon Trail. In the game, the player assumes the role of a wagon leader guiding a party of settlers from Independence, Missouri, to Oregon City, Oregon via a covered wagon in 1847. Along the way the player must purchase supplies, hunt for food, and make choices on how to proceed along the trail while encountering random events such as storms and wagon breakdowns. The original versions of the game contain no graphics, as they were developed for computers that used teleprinters instead of computer monitors. A later Apple II port added a graphical shooting minigame.
+To play the game click here: https://warnock.github.io/oregon-trail-game/
 
-## Source Code
+![TOT Screenshot](/img/screenshot.png)
 
-- [Oregon Trail (1978)](https://github.com/attilabuti/Oregon-Trail-1978) - Original, BASIC
-- [Oregon Trail](https://github.com/attilabuti/Oregon-Trail) - Go
+## Setup/Installation Instructions
+* Clone portfolio respository from: http://github.com/warnock/oregon-trail-game
+* Navigate to oregon-trail directory
+* Open index.html in a browser
+* Enter party member names and click Start Game
+* Enjoy!
 
-## References
+## Specifications
 
-* [The Oregon Trail](https://en.wikipedia.org/wiki/The_Oregon_Trail_(1971_video_game))
-* [Don Rawitsch Reddit AMA](https://www.reddit.com/r/IAmA/comments/43ooqf/i_am_don_rawitsch_a_coinventor_of_the_original)
-* [Don Rawitsch presentation](http://www.gdcvault.com/play/1024251/Classic-Game-Postmortem-Oregon-Trail)
-* [A Brief History of the Oregon Trail Game](https://www.died-of-dysentery.com/stories/brief-history.html)
-* [Oregon Trail’s Co-Creator Didn’t Make Much Money. He Should Have Chosen to Be a Banker.](http://www.slate.com/blogs/future_tense/2016/02/01/oregon_trail_co_creator_don_rawitsch_answers_questions_in_reddit_ama_about.html)
-* [The Forgotten History of 'The Oregon Trail,' As Told By Its Creators](https://motherboard.vice.com/en_us/article/qkx8vw/the-forgotten-history-of-the-oregon-trail-as-told-by-its-creators)
-* [The History Behind The Oregon Trail](https://www.wired.com/2007/06/the-history-beh)
-* [How You Wound Up Playing ‘The Oregon Trail’ in Computer Class](https://www.smithsonianmag.com/innovation/how-you-wound-playing-em-oregon-trailem-computer-class-180959851/)
-* [Oregon (lost original version of "The Oregon Trail" educational computer game; 1971)](https://lostmediawiki.com/Oregon_(lost_original_version_of_%22The_Oregon_Trail%22_educational_computer_game;_1971))
-* [Creative Computing (May-June 1978, vol 4, no 3)](https://archive.org/details/creativecomputing-1978-05/page/n139/mode/2up)
+|Behavior|Input|Output|
+|:---:|:---:|:---:|
+|Application returns player name|"Megan"|Name: Megan|
+|Application returns multiple player names|"Gloria, Ryan, Chris, Riley"|Name: [Gloria, Ryan, Chris, Riley]|
+|Application assigns medicine, food, and players to the caravan object|"Caravan"|Caravan = {Medicine: 3, Food: 100, Players: [Megan, Gloria, Ryan, Chris, Riley]}|
+|Application assigns personal health to each individual player|"Megan"|Health: 100|
+|Application counts days|"Day 3"|Caravan = {daysTraveled: 3}|
+|Food decreases with each day|"Day 2"|Food: 98|
+|Application recognizes if caravan is at a checkpoint or on the trail|"Trail"|Trail === true|
+|Application will run a random event roll (1-100) each day|"Day 2"|Random number: 32|
+|Application will modify players or supplies based on outcome of random event roll|"32"|Broke a leg|
+|Application will run another random event roll (1-number of players) to determine which player to assign the event to|"32"|Riley broke a leg|
+|Application will prompt the user with day options|"Day 2"|hunt, rest, or continue on trail|
+|Application will prompt the user with options based on checkpoint|"Day 5"|rest, trade, continue on trail|
+|Application will recognize when players are sick|"Chris"|Chris.isSick === true|
+|Application will give user option to use medicine to reverse illness|"Use Medicine"|Chris.isSick === false|
+|Application will decrease player health at a greater rate if player is sick|"Chris"|Chris.isSick === true, Health - 4 per day|
+|Application will increase health while resting|"Rest"|Health + 5 per day|
+|Application will not increase Days travelled when resting|"Rest"|Day 2 === Day 2|
+|Application will decrease food while resting|"Rest"|Food - 5 per day|
+|Application will increase food by random number while hunting|"Hunt"|Food + 23|
+|Application will decrease health while hunting|"Hunt"|Health - 3 per day|
+|Application will decrease food and health while continuing on trail|"Continue on trail"|Food - 5 per day, Health - 3 per day|
+|Application will check health of each player to see if player is still alive|"Ryan"|Ryan.health === 0, Ryan.isAlive === false|
+|Application ends game when all players have died|"Players"|All players health = 0 === Game Over|
+|Application recognizes last day as winning the game|"100"|You've won|
+
+## Known Bugs
+No known issues.
+
+## Support and contact details
+Questions? Concerns? Suggestions?
+
+Reach out to us via github: http://github.com/warnock
+
+## Technologies Used
+* _HTML_
+* _CSS_
+* _Bootstrap_
+* _JavaScript_
+* _JQuery_
+
+## License
+This software is licensed under the MIT license.
+Copyright (c) 2017 Gloria Friesen, Megan Warnock, Ryan McAlpin, Chris Carr, Riley Watts.
