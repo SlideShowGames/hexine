@@ -5,13 +5,19 @@
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="blockrain/blockrain.css">
 <title>Games - Hexine Net</title>
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
 	<body>
+       <div class="game" style="width:250px; height:500px;"></div>
 		<p>Games <s>Stolen</s> by Bradley Stratton</p>
 		<p>Website made by Bradley Stratton</p>
+		<p>Ignore glxgears its for benchmarks of the server</p>
+		<p>The full version is in debug mode tho</p>
+	 	<iframe src="/games/games/glxgears/test/iframe.html" width="480" height="480" style="border:1px solid black;">
+	</iframe>
 	    <div id="games">
 	    <h1>Emulators:</h1>
 		<a href="/games/games/win11/"><img src="Images/win11.png" alt="win11"></a>
@@ -20,7 +26,6 @@
 		<a href="/games/ruffle/"><img src="Images/ji.jpeg" alt="ruffle"></a>
 		<a href="/games/games/dos/"><img src="Images/dos.png" alt="dos"></a>
 		<a href="/games/apps/vmlinux/"><img src="Images/linux.png" alt="linux"></a>
-		<a href="/games/games/gba/"><img src="Images/gba.png" alt="gba"></a>
 		<a href="/games/games/v86/"><img src="Images/x86.jpg" alt="v86"></a>
 		<p></p>
 		<h1>Exploits</h1>
@@ -31,6 +36,8 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/hextris/"><img src="Images/hextris.jpeg" alt="hex"></a>
+		<a href="/games/games/gba/"><img src="Images/gba.png" alt="gba"></a>
 		<a href="/games/games/shards/"><img src="Images/shards.jpg" alt="shards"></a>
 		<a href="/games/games/asmallworldcup/"><img src="Images/aworld.jpg" alt="asmallworldcup"></a>
 		<a href="/games/games/arcadewizard/"><img src="Images/arcadewiz.jpg" alt="arcadewizard"></a>
@@ -145,7 +152,6 @@
 		<a href="/games/games/20flap/"><img src="Images/20flap.png" alt="20482"></a>
 		<a href="/games/games/flakboy/"><img src="Images/flak.webp" alt="flakboy"></a>
 		<a href="/games/games/sand2/"><img src="Images/sand.jpeg" alt="sand"></a>
-		<a href="/games/games/hextris/"><img src="Images/hextris.jpeg" alt="hex"></a>
 		<a href="/games/games/workshop/"><img src="Images/workshop.jpg" alt="work"></a>
 		<p>
 		</p>
