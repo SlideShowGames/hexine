@@ -1,261 +1,183 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta http-equiv="Referrer-Policy" content="no-referrer" />
-		<meta name="referrer" content="no-referrer" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="icon.svg" />
-		<link rel="stylesheet" type="text/css" href="/standard.css" />
-		<title>YouTube Unblocked</title>
-		<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
-		<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
-		<style type="text/css">
-body {
-	background: #ffffff;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-
-#top {
-	position: relative;
-	display: block;
-	width: 500px;
-	height: fit-content;
-	margin: 20px auto;
-}
-
-@media all and (max-width: 500px) {
-	#top {
-		width: 90%;
-	}
-}
-
-#search-bar {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: fit-content;
-	margin: 10px auto;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	column-gap: 10px;
-}
-
-#search {
-	position: relative;
-	display: block;
-	width: calc(80% - 34px);
-	height: 20px;
-	padding: 8px 10px;
-	line-height: 20px;
-	font-size: 16px;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-}
-
-#search:focus {
-	border-color: #323232;
-}
-
-#search-button {
-	position: relative;
-	display: block;
-	width: 20%;
-	height: 20px;
-	padding: 8px 0px;
-	cursor: pointer;
-	border: 1px solid #808080;
-	border-radius: 25px;
-	box-shadow: 2px 2px 2px #808080;
-	background-color: #800000;
-	background-image: url("search.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#search-button:active {
-	box-shadow: -2px -2px 2px #808080;
-}
-
-#option-bar {
-	position: relative;
-	display: flex;
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	column-gap: 10px;
-}
-
-#option-bar label {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: 22px;
-	line-height: 22px;
-}
-
-#max-results, #order {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: 20px;
-	padding: 0px 2px;
-	outline: none;
-	line-height: 20px;
-	border: 1px solid #808080;
-}
-
-#max-results:focus, #order:focus {
-	border-color: #323232;
-}
-
-#message {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px auto;
-	color: #ff0000;
-	font-weight: 600;
-}
-
-#results {
-	position: relative;
-	width: 780px;
-	height: fit-content;
-	margin: 10px auto;
-	padding: 10px;
-}
-
-@media all and (max-width: 800px) {
-	#results {
-		width: calc(100% - 20px);
-	}
-}
-
-.result {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-}
-
-.result-item {
-	position: relative;
-	display: flex;
-	width: calc(100% - 20px);
-	height: fit-content;
-	padding: 10px;
-	cursor: pointer;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	column-gap: 15px;
-}
-
-.result-preview {
-	position: relative;
-	display: block;
-	width: 160px;
-	height: 90px;
-	flex: 0 0 160px;
-}
-
-.result-details {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-}
-
-.result-title {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin-bottom: 10px;
-	line-height: 18px;
-	font-weight: 600;
-}
-
-.result-description {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin-bottom: 5px;
-	line-height: 16px;
-	color: #808080;
-}
-
-.result-publish-time {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	line-height: 14px;
-	font-size: 12px;
-	color: #c0c0c0;
-}
-
-.video-container {
-	position: relative;
-	display: none;
-	width: 400px;
-	height: 300px;
-	margin: 15px auto;
-	resize: both;
-	overflow: hidden;
-}
-
-embed, iframe {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-#loadmore {
-	position: relative;
-	display: none;
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
-	padding: 15px 0px 30px;
-	color: #808080;
-	cursor: pointer;
-	text-decoration: underline;
-}
-		</style>
-	</head>
-	<body>
-		<div id="top">
-			<div id="search-bar">
-				<input id="search" type="text" value="" placeholder="Search" />
-				<div id="search-button"></div>
-			</div>
-			<div id="option-bar">
-				<label for="max-results">Max results:</label>
-				<input id="max-results" type="number" min="1" max="50" value="10" placeholder="10" />
-				<label for="order">Sort by:</label>
-				<select id="order">
-					<option value="date">Date</option>
-					<option value="rating">Rating</option>
-					<option value="relevance" selected="true">Relevance</option>
-					<option value="title">Title</option>
-					<option value="viewCount">View Count</option>
-				</select>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube downloader</title><!-- Bootstrap -->
+	<link href=
+	"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+	rel="stylesheet">
+	<script src=
+	"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src=
+	"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js">
+	</script><!-- Font Awesome -->
+	<link href=
+	"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+	<script src=
+	"https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@2.0.0/dist/YouTubeToHtml5.js">
+	</script>
+	<script src=
+	"https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js">
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			Youtube downloader <span class="fa-stack fa-3x" style=
+			"font-family: FontAwesome; font-size: 150%;"><span class="fa-stack-1x"
+			style="color:red">&#xf16a;</span><span class="fa-stack-2x" style=
+			"font-size: 75%">&#xf019;</span></span>
+		</div>
+		<div class="input-group mb-3">
+			<input class="form-control" id="video_url" placeholder="Enter video url"
+			type="text">
+			<div class="input-group-append">
+				<button class="btn btn-success" id="download_btn" type="submit">Download
+				<span style="font-family: FontAwesome;">&#xf019;</span></button>
 			</div>
 		</div>
-		<div id="message"></div>
-		<div id="results"></div>
-		<div id="loadmore">Load More</div>
-		<script type="text/javascript" src="main.js"></script>
-	</body>
+		<div class="alert alert-warning alert-dismissible fade show">
+			<button class="close" data-dismiss="alert" type="button">&times;</button>
+			<strong>Warning:</strong> You CANT download Songs
+		</div>
+		<div class="alert alert-danger alert-dismissible fade show" id="error01"
+		style="display: none;">
+			<button class="close" onclick=
+			"$('#error01').css({'opacity':'0'});setTimeout(function(){$('#error01').css({'display':'none'});$('#error01').css({'opacity':'1'});}, 150)"
+			type="button">&times;</button> <strong>Error:</strong> Invaild Url.
+		</div>
+		<div class="alert alert-danger alert-dismissible fade show" id="error02"
+		style="display: none;">
+			<button class="close" onclick=
+			"$('#error02').css({'opacity':'0'});setTimeout(function(){$('#error02').css({'display':'none'});$('#error02').css({'opacity':'1'});}, 150)"
+			type="button">&times;</button> <strong>Error:</strong> Can't connect to
+			server or video does not exist.
+		</div>
+		<div class="card" id="video_details" style="display: none;">
+			<div class="card-header" id="video_title"></div>
+			<div class="card-body" id="vid_dt">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg"><img alt="" id="video_thumbnail" src="" style=
+			"width: 300px"></div>
+			<div class="col-sm">
+				<div id="video_channel"></div><br>
+				<div id="video_description" style=
+				"overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 600px">
+				</div>
+				<div id="video_tags"></div>
+			</div>
+		</div>
+		<div style="text-align: center;">
+			<button class="btn btn-success" id="play">Play <span style=
+			"font-family: FontAwesome;">&#xf04b;</span></button> <button class=
+			"btn btn-success" id="download">Download <span style=
+			"font-family: FontAwesome;">&#xf019;</span></button>
+		</div>
+	</div><video controls="" id="player" onload="alert()" style=
+	"display: none;"></video>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Download</h4><button class="close" data-dismiss=
+					"modal" type="button">&times;</button>
+				</div>
+				<div class="modal-body">
+					Your download link has been created.<br>
+					<br>
+					Click <a id="hyperlink">here</a> to download.<br>
+					<div class="card bg-warning">
+						<div class="card-header"></div>
+						<div class="card-body">
+							<ol></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	       function isOverflown(element) {
+	           return $(element)[0].scrollHeight > $(element)[0].clientHeight
+	       }
+	       $('#video_url').focus()
+	       $('#video_url').on('keyup', function(evnt){
+	           if(evnt.key == "Enter"){
+	               $("#download_btn").focus()
+	               $("#download_btn").click()
+	           }
+	       })
+	       $("#download_btn").on('click', function () {
+	           var vid_id = /v=([^&]+)/.exec($("#video_url").val())
+	           console.log(vid_id)
+	           if(vid_id == undefined||null) {
+	               $('#error01').css({
+	                   "display":"block"
+	               })
+	           } else {
+	               var req = fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + vid_id + '&key=AIzaSyC3yvmDMF8ItLKrNJzFWWmjLNuBq63yH8Y')
+	               req.then(function (e) {
+	                   return e.text()
+	               }).then(function (text) {
+	                   var json = JSON.parse(text)
+	                   var vid_title = json.items[0].snippet.title
+	                   $("#video_details").css({
+	                       "display": "block"
+	                   })
+	                   $('#loading').css({
+	                       "display":"block"
+	                   })
+	                   $("#video_title").html(vid_title)
+	                   var vid_thumb = json.items[0].snippet.thumbnails.medium.url
+	                   $('#video_thumbnail').attr('src', vid_thumb)
+	                   var vid_chan = json.items[0].snippet.channelTitle
+	                   $('#video_channel').html("<b>Channel:<\/b> " + vid_chan)
+	                   var vid_des = json.items[0].snippet.description
+	                   $('#video_description').html("<b>Description:<\/b> " + vid_des)
+	                   var vid_tags = json.items[0].snippet.tags
+	                   $('#video_tags').html('')
+	                   $('#video_tags').append('<b>Tags:<\/b> ')
+	                   for(var i=0; i<vid_tags.length; i++) $('#video_tags').append('<a target="_blank" href="https://www.youtube.com/results?search_query='+encodeURIComponent(vid_tags[i])+'"><span class="badge badge-info">'+vid_tags[i]+'<\/span><\/a> ')
+	                   $('#player').attr('data-yt2html5', $("#video_url").val())
+	                   $('#play').attr('disabled', false)
+	                   $('#download').attr('disabled', false)
+	                   new YouTubeToHtml5()
+	                   var vid = document.querySelector("#player"),
+	                       observer = new MutationObserver((changes) => {
+	                           changes.forEach(change => {
+
+	                               if (change.attributeName.includes('src')) {
+	                                   $('#loading').css({
+	                                       "display":"none"
+	                                   })
+	                                   $('#play').attr('disabled', false)
+	                                   $('#download').attr('disabled', false)
+	                                   $('#play').on('click', function () {
+	                                       window.open(vid.src)
+	                                   })
+	                                   $('#download').on('click', function () {
+	                                       $('#myModal').modal('show')
+	                                       $('#hyperlink').attr('href', vid.src)
+	                                       $('#hyperlink').attr('download', vid_title + ".mp4")
+	                                       $('#hyperlink').attr('title', vid_title + ".mp4")
+	                                       $('#hyperlink').attr('target', '_blank')
+	                                   })
+	                               }
+	                           });
+	                       });
+	                   observer.observe(vid, { attributes: true });
+	               }).catch(function(e) {
+	                   $('#error02').css({
+	                       "display":"block"
+	                   })
+	               })
+	           }
+	       })
+	       
+	</script>
+</body>
 </html>
