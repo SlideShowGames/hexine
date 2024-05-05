@@ -12,8 +12,9 @@
 </head>
 	<body>
        <div class="game" style="width:250px; height:500px;"></div>
-		<p>Games <s>Stolen</s> by Bradley Stratton</p>
-		<p>Website made by Bradley Stratton</p>
+		<h1>Games <s>Stolen</s> by Bradley Stratton</h1>
+		<h1>Website made by Bradley Stratton</h1>
+		<p></p>
 		<p>Ignore glxgears its for benchmarks of the server</p>
 		<p>The full version is in debug mode tho</p>
 	 	<iframe src="/games/games/glxgears/test/iframe.html" width="480" height="480" style="border:1px solid black;">
