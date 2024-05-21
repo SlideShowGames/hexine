@@ -5,7 +5,7 @@
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
 <link rel="stylesheet" href="style.css">
-<title>Join the Revolution! Reform the School Board!</title>
+<title>aguh</title>
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
@@ -38,6 +38,20 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/ages/"><img src="/games/games/ages/splash.jpg" alt="guh"></a>
+		<a href="/games/games/fnf/"><img src="Images/fnf.webp" alt="fnf"></a>
+		<a href="/games/games/btd6/"><img src="/games/games/btd6/uwu.png" alt="guh"></a>
+		<a href="/games/games/btd5/"><img src="/games/games/btd5/logo.jpg" alt="guh"></a>
+		<a href="/games/games/fluidsim/"><img src="/games/games/fluidsim/icon.png" alt="guh"></a>
+		<a href="/games/games/skibidi/"><img src="/games/games/skibidi/logo.png" alt="guh"></a>
+		<a href="/games/games/townscaper/"><img src="/games/games/townscaper/icon.png" alt="guh"></a>
+		<a href="/games/games/adventure-capitalist/"><img src="/games/games/adventure-capitalist/logo.webp" alt="guh"></a>
+		<a href="/games/games/fireboywatergirl/"><img src="/games/games/fireboywatergirl/icon.png" alt="guh"></a>
+		<a href="/games/games/fleeingthecomplex/"><img src="/games/games/fleeingthecomplex/flee.jpg" alt="guh"></a>
+		<a href="/games/games/shellshock/"><img src="/games/games/shellshock/icon.jpg" alt="guh"></a>
+		<a href="/games/games/jetpack/"><img src="/games/games/jetpack/icon.png" alt="tbh-I-have-no-fucking-clue"></a>
+		<a href="/games/games/ss-ny/"><img src="/games/games/ss-ny/NewYorkIcon.png" alt="bus-and-kid"></a>
+		<a href="/games/games/osumania/"><img src="/games/games/osumania/mania.jpg" alt="love-to-linux"></a>
 		<a href="/games/games/hextris/"><img src="Images/hextris.jpeg" alt="hex"></a>
 		<a href="/games/games/gba/"><img src="Images/gba.png" alt="gba"></a>
 		<a href="/games/games/shards/"><img src="Images/shards.jpg" alt="shards"></a>
@@ -98,7 +112,6 @@
 		<a href="/games/games/run2/"><img src="Images/run2.jpg" alt="run2"></a>
 		<a href="/games/games/stickgta/"><img src="Images/stickgta.jpg" alt="gta"></a>
 		<a href="/games/games/chroma-exp/"><img src="Images/chroma.png" alt="chroma"></a>
-		<a href="/games/games/fnf/"><img src="Images/fnf.webp" alt="fnf"></a>
 		<a href="/games/games/drive/"><img src="Images/drive.avif" alt="mad"></a>
 		<a href="/games/games/shimgame/celeste.html"><img src="Images/cel.avif" alt="shimmerref"></a>
 		<a href="/games/games/minesweeper/"><img src="Images/bosnia.png" alt="bosniaeasteregg"></a>
