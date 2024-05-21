@@ -6,8 +6,6 @@ import Bonnie from "./media/Textures/CustomNight/bonnie.png";
 import Chica from "./media/Textures/CustomNight/chica.png";
 import Foxy from "./media/Textures/CustomNight/foxy.png";
 
-import goldenFreddyJumpscare from "./media/Sounds/golden_freddy.ogg";
-
 const images = {
     Freddy,
     Bonnie,
@@ -37,7 +35,6 @@ const AnimatronicContainer = (props) => {
 };
 
 const CustomNight = ({state, setStart}) => {
-    const [goldenFreddy, setGoldenFreddy] = React.useState(false);
     const changeMode = (value) => {
 
         let animatronics = {};
@@ -75,22 +72,6 @@ const CustomNight = ({state, setStart}) => {
 
         return victories[mode] || " ";
     }
-    
-    const handleStart = () => {
-        if (
-            state.ranges.Freddy === 1 &&
-            state.ranges.Bonnie === 9 &&
-            state.ranges.Chica === 8 &&
-            state.ranges.Foxy === 7
-        ) {
-            const golden = new Audio(goldenFreddyJumpscare);
-            golden.play();
-            return setGoldenFreddy(true);
-        }
-        setStart(true);
-    }
-
-    if(goldenFreddy) return <GoldenFreddy setGoldenFreddy={setGoldenFreddy} />;
 
     return (
         <div className={styles.custom_night_container}>
@@ -110,12 +91,13 @@ const CustomNight = ({state, setStart}) => {
             
             
             <div className={styles.start_screen} style={{margin: "2% auto 1% auto"}}>
-                <button className={styles.ready_button} onClick={handleStart}>
+                <button className={styles.ready_button} onClick={() => setStart(true)}>
                     READY {"▶"}
                 </button>
             </div>
 
             <div className={styles.start_screen}>
+                {/* <span>Ou então escolha uma dificuldade: </span> */}
                 <button onClick={() => {
                     changeMode("EASY")
                 }} data-selected={state.ranges.mode === "EASY"}>
@@ -143,19 +125,32 @@ const CustomNight = ({state, setStart}) => {
                 {/* <p>Five Nights at Freddy's © Scott Cawthon</p> */}
             </footer>
         </div>
+        // <div>
+        //     {localStorage.getItem("★") ? (
+        //                 <div
+        //                     style={{
+        //                         position: "absolute",
+        //                         fontSize: "50pt",
+        //                         color: "white",
+        //                         marginLeft: "2vw",
+        //                     }}
+        //                 >
+        //                     ★
+        //                 </div>
+        //             ) : null}
+        //             <div className="start-screen">
+        //                 <div>
+        //                     <img
+        //                         alt="Five Nights At Freddy's"
+        //                         src={FreddyImage}
+        //                     />
+        //                     <button onClick={() => setStart(true)}>
+        //                         READY
+        //                     </button>
+        //                 </div>
+        //             </div>
+        // </div>
     )
 }; 
 
 export default CustomNight;
-
-function GoldenFreddy({setGoldenFreddy}) {
-    React.useEffect(() => {
-        setTimeout(() => {
-            window.open("about:blank", "_self");
-            window.close();
-            setGoldenFreddy(false);
-        }, 5000);
-    }, [])
-
-    return <div className={styles.golden_freddy} />
-}
