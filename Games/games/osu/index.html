@@ -1,321 +1,290 @@
-<!DOCTYPE html>
-<!-- Created with https://packager.turbowarp.org/ -->
+<!doctype html>
 <html>
-<head>
+    <head>
+        <meta charset="utf-8" />
+        <title>OSU! Web | GAMES.JM26.NET</title>
+        <link rel="stylesheet" href="style/picnic.min.css">
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+        <!-- <link href="//fonts.googleapis.com/css?family=Exo+2:400,600italic" rel="stylesheet" type="text/css"> -->
+        <link rel="stylesheet" type="text/css" href="style/font.css">
+        <link rel="icon" href="favicon.png">
+        <script src="scripts/launchgame.js"></script>
+        <script src="scripts/downloader.js"></script>
+        <script src="scripts/addbeatmaplist.js"></script>
+        <script src="scripts/settings.js"></script>
+        <script src="scripts/jsloader.js"></script>
+        <script src="scripts/lib/localforage.min.js"></script>
 
-  <script src="/js/all.js"></script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>osu!</title>
-  <style>
-    body {
-      color: #ffffff;
-      font-family: sans-serif;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
-    :root, body.is-fullscreen {
-      background-color: #000000;
-    }
-    [hidden] {
-      display: none !important;
-    }
-    h1 {
-      font-weight: normal;
-    }
-    a {
-      color: inherit;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    </head>
 
-    #app, #loading, #error, #launch {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .screen {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      cursor: default;
-      user-select: none;
-      -webkit-user-select: none;
-      background-color: #000000;
-    }
-    #launch {
-      background-color: rgba(0, 0, 0, 0.7);
-      cursor: pointer;
-    }
-    .green-flag {
-      width: 80px;
-      height: 80px;
-      padding: 16px;
-      border-radius: 100%;
-      background: rgba(255, 255, 255, 0.75);
-      border: 3px solid hsla(0, 100%, 100%, 1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-    }
-    #loading {
-      
-    }
-    .progress-bar-outer {
-      border: 1px solid currentColor;
-      height: 10px;
-      width: 200px;
-      max-width: 200px;
-    }
-    .progress-bar-inner {
-      height: 100%;
-      width: 0;
-      background-color: currentColor;
-    }
-    .loading-text, noscript {
-      font-weight: normal;
-      font-size: 36px;
-      margin: 0 0 16px;
-    }
-    .loading-image {
-      margin: 0 0 16px;
-    }
-    #error-message, #error-stack {
-      font-family: monospace;
-      max-width: 600px;
-      white-space: pre-wrap;
-      user-select: text;
-      -webkit-user-select: text;
-    }
-    #error-stack {
-      text-align: left;
-      max-height: 200px;
-      overflow: auto;
-    }
-    .control-button {
-      width: 2rem;
-      height: 2rem;
-      padding: 0.375rem;
-      border-radius: 0.25rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      user-select: none;
-      -webkit-user-select: none;
-      cursor: pointer;
-      border: 0;
-      border-radius: 4px;
-    }
-    .control-button:hover {
-      background: #ff4c4c26;
-    }
-    .control-button.active {
-      background: #ff4c4c59;
-    }
-    .fullscreen-button {
-      background: white !important;
-    }
-    .standalone-fullscreen-button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 0 0 0 4px;
-      padding: 4px;
-      cursor: pointer;
-    }
-    .sc-canvas {
-      cursor: auto;
-    }
-    .sc-monitor-root[opcode^="data_"] .sc-monitor-value-color {
-      background-color: #ff8c1a;
-    }
-    .sc-monitor-row-value-outer {
-      background-color: #fc662c;
-    }
-    .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
-      background-color: #e25b27;
-    }
-    
-  </style>
-  <meta name="theme-color" content="#000000">
-  
-</head>
-<body>
-  <div id="app"></div>
+    <body>
+        <div class="game-area" id="game-area" hidden>
+        </div>
 
-  <div id="launch" class="screen" hidden title="Click to start">
-    <div class="green-flag">
-      <svg viewBox="0 0 16.63 17.5" width="42" height="44">
-        <defs><style>.cls-1,.cls-2{fill:#4cbf56;stroke:#45993d;stroke-linecap:round;stroke-linejoin:round;}.cls-2{stroke-width:1.5px;}</style></defs>
-        <path class="cls-1" d="M.75,2A6.44,6.44,0,0,1,8.44,2h0a6.44,6.44,0,0,0,7.69,0V12.4a6.44,6.44,0,0,1-7.69,0h0a6.44,6.44,0,0,0-7.69,0"/>
-        <line class="cls-2" x1="0.75" y1="16.75" x2="0.75" y2="0.75"/>
-      </svg>
-    </div>
-  </div>
+        <div class="pause-menu" id="pause-menu" hidden>
+            <div class="paused-title">paused</div>
+            <div class="button-list">
+                <div class="pausebutton continue" id="pausebtn-continue">
+                    <div class="inner">Continue</div>
+                </div>
+                <div class="pausebutton retry" id="pausebtn-retry">
+                    <div class="inner">Retry</div>
+                </div>
+                <div class="pausebutton quit" id="pausebtn-quit">
+                    <div class="inner">Quit</div>
+                </div>
+            </div>
+        </div>
 
-  <div id="loading" class="screen">
-    <noscript>Enable JavaScript</noscript>
-    
-    
-    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
-  </div>
+        <nav id="main-nav">
+            <div class="nav-link">
+                <a href="index.html" class="brand">Osaka Salmon University!</a>
+                <a href="new.html" class="pseudo button">New</a>
+                <a href="hot.html" class="pseudo button">Popular</a>
+                <a href="genre.html" class="pseudo button">Genre</a>
+            </div>
+            <div class="nav-search">
+                <form action="search.html">
+                    <input type="text" name="q" placeholder="Keywords or SID"/>
+                    <input type="image" class="search-button" src="research.svg">
+                </form>
+            </div>
+            <div class="nav-tool">
+                <a href="local.html" class="pseudo button">Favorites</a>
+                <a href="faq.html" class="pseudo button">FAQ</a>
+                <a href="settings.html" class="pseudo button">Settings</a>
+                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">Full-Screen</a>
+            </div>
+        </nav>
 
-  <div id="error" class="screen" hidden>
-    <h1>Error</h1>
-    <details>
-      <summary id="error-message"></summary>
-      <p id="error-stack"></p>
-    </details>
-  </div>
+        <div class="main-page" id="main-page">
+            <div class="main-content">
+                <div class="announcement">
+                    Announcement: Please support <a target="_blank" href="https://osu.sayobot.cn/support"></a>Sayobot</a>! Sayobot is the source of the beat maps for this page, please support them so that we can continue to use the servers free of charge.
+                    <a href="https://paypal.me/Sayobot">Donate with Paypal ❤️</a>
+                </div>
+                <br>
+                <div class="index-area">
+                    <h2>News</h2>
+                    <hr/>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Player</td>
+                                <td>Song</td>
+                                <td>Combo</td>
+                                <td>Score</td>
+                                <td>Accuracy</td>
+                                <td>Mods</td>
+                                <td>Time</td>
+                            </tr>
+                        </thead>
+                        <tbody id="activity-list">
+                            <!-- will be filled in script -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="index-area">
+                    <h2>Random Beatmaps</h2>
+                    <a onclick="genRandomList()" class="more" style="cursor:pointer;">Randomize</a>
+                    <hr/>
+                    <div class="beatmap-list" id="beatmap-list-random">
+                        <!-- to be filled in script -->
+                    </div>
+                </div>
+                <div class="index-area">
+                    <h2>Recent Beatmaps</h2>
+                    <a href="history.html" class="more">View your Beatmap history</a>
+                    <hr/>
+                    <div class="beatmap-list" id="beatmap-list-history">
+                        <!-- to be filled in script -->
+                    </div>
+                </div>
+                <div class="index-area">
+                    <h2>Latest tracks</h2>
+                    <a href="new.html" class="more">View more new tracks</a>
+                    <hr/>
+                    <div class="beatmap-list" id="beatmap-list-new">
+                        <!-- to be filled in script -->
+                    </div>
+                </div>
+                <div class="index-area">
+                    <h2>Favorites</h2>
+                    <a href="local.html" class="more">View more of your favorite tracks</a>
+                    <hr/>
+                    <div class="beatmap-list" id="beatmap-list-liked">
+                        <!-- to be filled in script -->
+                    </div>
+                </div>
+                <div class="index-area">
+                    <h2>Popular Beatmaps</h2>
+                    <a href="hot.html" class="more">View more popular Beatmaps</a>
+                    <hr/>
+                    <div class="beatmap-list" id="beatmap-list-hot">
+                        <!-- to be filled in script -->
+                    </div>
+                </div>
+                <div class="text">
+                    <a href="https://osu.sayobot.cn/support">Support Sayobot</a>! Please give the server a renewal ❤️
+                    <a href="https://paypal.me/Sayobot">Donate to Sayobot with Paypal</a>
+                </div>
+                <div class="text">We recommend using the latest version of Firefox or Chrome.</div>
+                <div class="text">Beta v1.4.3. <a href="https://github.com/111116/osu">Github</a></div>
+                <div class="text">Beatmaps previded by <a href="https://osu.sayobot.cn/">Sayobot</a></div>
+                <div class="text">Translated by <a href="https://games.jm26.net">JMcrafter26</a> aka <a href="https://test.jm26.net">JM26</a></div>
+            </div>
+            
+            <div class="statuslines" id="statuslines">
+                <div class="progress" id="script-progress">
+                    Scripts
+                    <div class="lds-dual-ring"></div>
+                </div>
+                <div class="progress" id="skin-progress">
+                    Skin
+                    <div class="lds-dual-ring"></div>
+                </div>
+                <div class="progress" id="sound-progress">
+                    Hitsounds
+                    <div class="lds-dual-ring"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // what's happening
+            let tbody = document.getElementById("activity-list");
+            function formattime(date) {
+                let m;
+                return date.getHours() + ":" + ((m=date.getMinutes())<10?('0'+m):m);
+            }
+            function showActivity(records) {
+                records = records.reverse();
+                while (tbody.firstChild)
+                    tbody.removeChild(tbody.firstChild);
+                for (let i=0; i<records.length && i<10; ++i) {
+                    let tr = document.createElement("tr");
+                    tbody.appendChild(tr);
+                    function nexttd(content) {
+                        let td = document.createElement("td");
+                        tr.appendChild(td);
+                        if (!content) return;
+                        if (content.tagName)
+                            td.appendChild(content);
+                        else
+                            td.innerText = content;
+                    }
+                    let b = records[i].ip.split(".");
+                    b[0]="**";
+                    if (b.length>3) b[3]="**";
+                    nexttd(b.join("."));
+                    let title = document.createElement("a");
+                    title.innerText = records[i].title + " [" + records[i].version + "]";
+                    title.title = records[i].title + " [" + records[i].version + "]";
+                    if (records[i].sid == "undefined")
+                        records[i].sid = undefined;
+                    title.href = "search.html?q=" + (records[i].sid || records[i].title);
+                    nexttd(title);
+                    nexttd(records[i].combo + "x");
+                    nexttd(parseInt(records[i].score).toLocaleString());
+                    let acc = document.createElement("span");
+                    acc.innerText = records[i].acc;
+                    acc.className = records[i].grade;
+                    nexttd(acc);
+                    nexttd(records[i].mods);
+                    nexttd(formattime(new Date(parseInt(records[i].time))));
+                }
+            }
+            let b={ip:"",title:"",version:"loading",score:0,combo:0,acc:0};
+            showActivity([b,b,b,b,b,b,b,b,b,b])
+            function refreshLivescore(){
+                let xhr = new XMLHttpRequest();
+                xhr.responseType = 'text';
+                xhr.open("GET", "./scripts/get-ranking.php");
+                xhr.onload = function() {
+                    showActivity(JSON.parse(xhr.response));
+                }
+                xhr.onerror = function() {
+                    console.error("failed fetching activities");
+                }
+                xhr.send();
+            }
+            refreshLivescore();
+            window.setInterval(refreshLivescore, 5000);
+            // recently played
+            if (window.localforage) {
+                let listhistory = document.getElementById("beatmap-list-history");
+                localforage.getItem("playhistory1000", function(err, item) {
+                    if (err) {
+                        listhistory.innerText = "Play record failed to load";
+                        return;
+                    }
+                    if (item && item.length) {
+                        item = item.reverse();
+                        sid = [];
+                        for (let i=0; i<item.length; ++i) {
+                            if (item[i].sid)
+                                sid.push(item[i].sid);
+                        }
+                        sid = [...new Set(sid)]; // uniq
+                        for (let i=0; i<4 && i<sid.length; ++i)
+                            addBeatmapSid(sid[i], listhistory)
+                    }
+                    else {
+                        listhistory.innerText = "You haven't played a song yet! Click on the track, wait for it to load and select the difficulty to start playing.";
+                    }
+                })
+            }
+            // new
+            addBeatmapList("https://api.sayobot.cn/beatmaplist?0=20&1=0&2=2&5=1",
+                document.getElementById("beatmap-list-new"),
+                function(t){return (t.modes&1)!=0;}, 4);
+            // random
+            function genRandomList() {
+                // clear list
+                let list = document.getElementById("beatmap-list-random");
+                
+                // fill list
+                let randstart = Math.floor(Math.random()*20000);
+                addBeatmapList("https://api.sayobot.cn/beatmaplist?0=10&1="+randstart+"&2=1&5=1", list,
+                    function(t){while (list.firstChild) list.removeChild(list.firstChild); return (t.modes&1)!=0;}, 4);
+            }
+            genRandomList();
+            // hot
+            addBeatmapList("https://api.sayobot.cn/beatmaplist?0=4&1=0&2=1&5=1", document.getElementById("beatmap-list-hot"));
+            // liked
+            if (window.localforage) {
+                window.localforage.getItem("likedsidset", function(err, val){
+                    if (err) {
+                        document.getElementById("beatmap-list-liked").innerText = "Favorites failed to load.";
+                        return;
+                    }
+                    if (val && val.size) {
+                        let listlike = document.getElementById("beatmap-list-liked");
+                        list = Array.from(val);
+                        for (let i=0; i<list.length && i<4; ++i)
+                            addBeatmapSid(list[i], listlike);
+                    }
+                    else {
+                        document.getElementById("beatmap-list-liked").innerText = "You haven't bookmarked a song yet! Click on the heart in the bottom right corner of the track to favorite it.";
+                    }
+                });
+            }
+            else {
+                alert("localforage not supported")
+            }
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169262247-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <script src="script.js"></script>
-  <script>
-    const appElement = document.getElementById('app');
-    const launchScreen = document.getElementById('launch');
-    const loadingScreen = document.getElementById('loading');
-    const loadingInner = document.getElementById('loading-inner');
-    const errorScreen = document.getElementById('error');
-    const errorScreenMessage = document.getElementById('error-message');
-    const errorScreenStack = document.getElementById('error-stack');
-
-    const handleError = (error) => {
-      console.error(error);
-      if (!errorScreen.hidden) return;
-      errorScreen.hidden = false;
-      errorScreenMessage.textContent = '' + error;
-      let debug = error && error.stack || 'no stack';
-      debug += '\nUser agent: ' + navigator.userAgent;
-      errorScreenStack.textContent = debug;
-    };
-    const setProgress = (progress) => {
-      if (loadingInner) loadingInner.style.width = progress * 100 + '%';
-    };
-    const interpolate = (a, b, t) => a + t * (b - a);
-
-    try {
-      setProgress(0.1);
-
-      const scaffolding = new Scaffolding.Scaffolding();
-      scaffolding.width = 480;
-      scaffolding.height = 360;
-      scaffolding.resizeMode = "preserve-ratio";
-      scaffolding.editableLists = false;
-      scaffolding.usePackagedRuntime = true;
-      scaffolding.setup();
-      scaffolding.appendTo(appElement);
-
-      const vm = scaffolding.vm;
-      window.scaffolding = scaffolding;
-      window.vm = scaffolding.vm;
-      window.Scratch = {
-        vm,
-        renderer: vm.renderer,
-        audioEngine: vm.runtime.audioEngine,
-        bitmapAdapter: vm.runtime.v2BitmapAdapter,
-        videoProvider: vm.runtime.ioDevices.video.provider
-      };
-
-      scaffolding.setUsername("The Best Website Ever".replace(/#/g, () => Math.floor(Math.random() * 10)));
-      scaffolding.setAccentColor("#ff4c4c");
-
-      ;
-
-      vm.setTurboMode(false);
-      if (vm.setInterpolation) vm.setInterpolation(false);
-      if (vm.setFramerate) vm.setFramerate(240);
-      if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
-      if (vm.setRuntimeOptions) vm.setRuntimeOptions({
-        fencing: false,
-        miscLimits: false,
-        maxClones: 9999999999,
-      });
-      if (vm.setCompilerOptions) vm.setCompilerOptions({
-        enabled: true,
-        warpTimer: false
-      });
-
-      if (typeof ScaffoldingAddons !== 'undefined') {
-        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
-      }
-
-      scaffolding.setExtensionSecurityManager({
-        getSandboxMode: 'unsandboxed',
-        canLoadExtensionFromProject: (url) => {
-          handleError(new Error('Missing custom extension: ' + url));
-          return Promise.resolve(false);
-        }
-      });
-      for (const extension of []) {
-        vm.extensionManager.loadExtensionURL(extension);
-      }
-
-    } catch (e) {
-      handleError(e);
-    }
-  </script>
-  
-  
-    <script>
-      const getProjectData = (function() {
-        const storage = scaffolding.storage;
-        storage.onprogress = (total, loaded) => {
-          setProgress(interpolate(0.2, 0.98, loaded / total));
-        };
-        
-        storage.addWebStore(
-          [storage.AssetType.ImageVector, storage.AssetType.ImageBitmap, storage.AssetType.Sound],
-          (asset) => new URL('./assets/' + asset.assetId + '.' + asset.dataFormat, location).href
-        );
-        return () => new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => {
-          resolve(xhr.response);
-        };
-        xhr.onerror = () => {
-          if (location.protocol === 'file:') {
-            reject(new Error('Zip environment must be used from a website, not from a file URL.'));
-          } else {
-            reject(new Error('Request to load project data failed.'));
-          }
-        };
-        xhr.onprogress = (e) => {
-          if (e.lengthComputable) {
-            setProgress(interpolate(0.1, 0.2, e.loaded / e.total));
-          }
-        };
-        xhr.responseType = 'arraybuffer';
-        xhr.open('GET', "./assets/project.json");
-        xhr.send();
-      });
-      })();
-    </script>
-  <script>
-    const run = async () => {
-      const projectData = await getProjectData();
-      await scaffolding.loadProject(projectData);
-      setProgress(1);
-      loadingScreen.hidden = true;
-      if (true) {
-        scaffolding.start();
-      } else {
-        launchScreen.hidden = false;
-        launchScreen.addEventListener('click', () => {
-          launchScreen.hidden = true;
-          scaffolding.start();
-        });
-        launchScreen.focus();
-      }
-    };
-    run().catch(handleError);
-  </script>
-</body>
+  gtag('config', 'UA-169262247-1');
+</script> -->
+    </body>
 </html>
+
+<!-- attribution -->
+<!-- play icon made by https://www.flaticon.com/authors/those-icons -->
+<!-- search icon made by https://www.flaticon.com/authors/good-ware -->
