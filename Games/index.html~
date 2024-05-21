@@ -5,11 +5,13 @@
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
 <link rel="stylesheet" href="style.css">
-<title>Games - Hexine Net</title>
+<title>Join the Revolution! Reform the School Board!</title>
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
 	<body>
+	<h2>Scroll Down for the games, iFrame kinda fucked up the site.</h2></h2>
+	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfLZrMxsy8EUqoxLXyGRQSo3k2zBdlCIAzJLU-dM6wdPiweA/viewform?embedded=true" width="480" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
        <div class="game" style="width:250px; height:500px;"></div>
 		<h1>Games <s>Stolen</s> by Bradley Stratton</h1>
 		<h1>Website made by Bradley Stratton</h1>
@@ -100,7 +102,7 @@
 		<a href="/games/games/drive/"><img src="Images/drive.avif" alt="mad"></a>
 		<a href="/games/games/shimgame/celeste.html"><img src="Images/cel.avif" alt="shimmerref"></a>
 		<a href="/games/games/minesweeper/"><img src="Images/bosnia.png" alt="bosniaeasteregg"></a>
-		<a href="/games/conway/"><img src="Images/con.png" alt="conway"></a>
+		<a href="/games/conway/"><img src="Images/conway.png" alt="conway"></a>
 		<a href="/games/games/msfs/"><img src="Images/msfs.jpg" alt="flightsim"></a>
 		<a href="/games/games/retro/"><img src="Images/retro.png" alt="retrobowl"></a>
 		<a href="/games/games/sm64/"><img src="Images/sm64.jpg" alt="sm64"></a>
