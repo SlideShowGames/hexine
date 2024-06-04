@@ -8,18 +8,15 @@
 <title>aguh</title>
 <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
 <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+<input type=”color”>
 </head>
 	<body>
-	<h2>Scroll Down for the games, iFrame kinda fucked up the site.</h2></h2>
-	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfLZrMxsy8EUqoxLXyGRQSo3k2zBdlCIAzJLU-dM6wdPiweA/viewform?embedded=true" width="480" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-       <div class="game" style="width:250px; height:500px;"></div>
+
 		<h1>Games <s>Stolen</s> by Bradley Stratton</h1>
 		<h1>Website made by Bradley Stratton</h1>
 		<p></p>
-		<p>Ignore glxgears its for benchmarks of the server</p>
-		<p>The full version is in debug mode tho</p>
-	 	<iframe src="/games/games/glxgears/test/iframe.html" width="480" height="480" style="border:1px solid black;">
-	</iframe>
+		<p>This site shuts down June 30th 2024 and will be back August 27th 2024</p>
+		<p>More games in Debug Mode</p>
 	    <div id="games">
 	    <h1>Emulators:</h1>
 		<a href="/games/games/win11/"><img src="Images/win11.png" alt="win11"></a>
@@ -38,6 +35,21 @@
 		<p>
 		</p>
 		<h1>Games:</h1>
+		<a href="/games/games/worldshardestgame/"><img src="/games/games/worldshardestgame2/worldshardestgame2.jpg" alt="whg2"></a>
+		<a href="/games/games/worldshardestgame/"><img src="/games/games/worldshardestgame/images/splash.jpg" alt="whg"></a>
+		<a href="/games/games/tunnelrush/"><img src="/games/games/tunnelrush/icon.jpg" alt="tunnelrush"></a>
+		<a href="/games/games/fireandice/"><img src="/games/games/fireandice/splash.png" alt="fireandice"></a>
+		<a href="/games/games/10untildawn/"><img src="/games/games/10untildawn/splash.png" alt="10miutes"></a>
+		<a href="/games/games/wolf3d/"><img src="/games/games/wolf3d/art/title.png" alt="wolf3d"></a>
+		<a href="/games/games/roblox/"><img src="/games/games/roblox/roblox.webp" alt="roblox"></a>
+		<a href="/games/games/discord/"><img src="/games/games/discord/discord.jpg" alt="discord"></a>
+		<a href="/games/games/solitare/"><img src="/games/games/solitare/screen-shot.png" alt="solitare"></a>
+		<a href="/games/games/deal-or-no-deal/"><img src="/games/games/deal-or-no-deal/index.jpg" alt="deal-or-no-deal"></a>
+		<a href="/games/games/checkers/"><img src="/games/games/checkers/image.png" alt="hl1"></a>
+		<a href="/games/games/duke-nukem-2/"><img src="/games/games/duke-nukem-2/splash.jpg" alt="duke"></a>
+		<a href="/games/games/win-the-whitehouse/"><img src="/games/games/win-the-whitehouse/splash.png" alt="iforgot"></a>
+		<a href="/games/games/windows-2000/"><img src="/games/games/windows-2000/icon.jpg" alt="2000"></a>
+		<a href="/games/games/osu/"><img src="Images/osu.jpg" alt="osu"></a>
 		<a href="/games/games/ucn/"><img src="Images/ucn.jpeg" alt="ucn"></a>
 		<a href="/games/games/FNAF/"><img src="Images/fnaf1.png" alt="fnaf1"></a>
 		<a href="/games/games/FNAF2/"><img src="Images/fnaf2.png" alt="fnaf2"></a>
@@ -111,7 +123,6 @@
 		<a href="/games/games/dino-mod/"><img src="Images/dino.png" alt="dinoreal"></a>
 		<a href="/games/games/smm/"><img src="Images/smm.jpg" alt="smm"></a>
 		<a href="/games/games/supermeatboy/"><img src="Images/smb.png" alt="smb"></a>
-		<a href="/games/games/osu/"><img src="Images/osu.jpg" alt="osu"></a>
 		<a href="/games/games/mario/"><img src="Images/mario.png" alt="mario"></a>
 		<a href="/games/games/doge-miner/"><img src="Images/doge.jpg" alt="doge"></a>
 		<a href="/games/games/dominos/"><img src="Images/dominos.png" alt="dominos"></a>
