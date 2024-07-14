@@ -38,11 +38,11 @@
             name: "Mac OSX v1.5 (Aqua)",
           },
           {
-    			url: "https://skins.webamp.org/skin/812a54852c4ffebb7b458d3c37495c9e/XP_Look.wsz/",
+    			url: "blob:https://skins.webamp.org/151472f7-9138-4d3b-8b61-281ed547179b",
     			name: "Windows XP Skin",      
           },
           {
-          	url: "https://skins.webamp.org/skin/406308837b8a76fecd94d2e8ff7d1e59/HAMskin_Xperiment.wsz/",
+          	url: "blob:https://skins.webamp.org/d377b482-daf0-4631-9835-5b2c0cb19275",
           	name: "Xperiment HAMskin",
           },
         ],
@@ -112,7 +112,7 @@
 		<a href="/games/games/dos/"><img src="Images/dos.png" alt="dos"></a>
 		<a href="/games/apps/vmlinux/"><img src="Images/linux.png" alt="linux"></a>
 		<a href="/games/games/v86/"><img src="Images/x86.jpg" alt="v86"></a>
-		<a href="/games/games/worldshardestgame/"><img src="/games/games/worldshardestgame2/the-worlds-hardest-game-2.jpg" alt="whg2"></a>
+		<a href="/games/games/worldshardestgame2/"><img src="/games/games/worldshardestgame2/the-worlds-hardest-game-2.jpg" alt="whg2"></a>
 		<a href="/games/games/worldshardestgame/"><img src="/games/games/worldshardestgame/images/splash.jpg" alt="whg"></a>
 		<a href="/games/games/tunnelrush/"><img src="/games/games/tunnelrush/icon.jpg" alt="tunnelrush"></a>
 		<a href="/games/games/fireandice/"><img src="/games/games/fireandice/splash.png" alt="fireandice"></a>
