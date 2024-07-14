@@ -32,7 +32,7 @@
     display: inline-block;
     margin: 10px;
   }
-  .game img {
+	img {
     width: 200px;
     height: 200px;
     cursor: pointer;
