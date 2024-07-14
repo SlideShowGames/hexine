@@ -6,6 +6,7 @@
     <title>Home</title>
     <script src="config/main.js" type="module"></script>
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <link rel="stylesheet" href="/config/main.css">
     <style>
     body {
     background-image: url(wallpaper.jpg);
