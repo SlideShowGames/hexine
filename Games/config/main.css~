@@ -8,6 +8,22 @@
   --accent-color: #4b87f7 !important;
 }
 
+.img {
+  width: 100%; /* Occupy full width of container */
+  max-width: 100%; /* Ensure image does not exceed container width */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.section img {
+  width: 60%;
+  height: auto;
+  border-radius: 1.25em;
+}
 
 * {
   font-family: ubuntu;
@@ -24,6 +40,16 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.nav img {
+  height: 80%;
+  width: auto;
+  margin-right: 1%;
+  border-radius: 1vw;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 5px 5px 10px rgba(53, 53, 53, 0.459);
 }
 
 /* Search input styles */
@@ -127,4 +153,6 @@ border: 3px solid var(--accent-color);
 .link {
   color: var(--accent-color);
   text-decoration: none;
+  
+
 }

@@ -52,25 +52,7 @@ body {
   box-shadow: 5px 5px 10px rgba(53, 53, 53, 0.459);
 }
 
-/* Search input styles */
-#searchInput {
-  padding: 17px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  width: 100%; /* Occupy full width */
-  max-width: 400px; /* Limit maximum width */
-  margin: 20px auto; /* Center horizontally */
-  border-radius: 10px;
-  border: none;
-  font-size: 24px;
-  user-select: none;
-  outline: none;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-#searchInput:focus {
-border: 3px solid var(--accent-color);
-}
+
 
 /* Games container styles */
 #gamesContainer {
