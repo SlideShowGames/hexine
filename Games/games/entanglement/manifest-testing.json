@@ -1,0 +1,33 @@
+{
+  "name": "Entanglement",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "version": "3.9.2",
+  "manifest_version": 2,
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQChu2rE1JAUqv/CiunIIHt6jTO4iOm+q/kYIPAO8KdPWkzgjNnMhs9t131VKWN95PUNzqBE7exiv+4R1RtmeqKGV+1surrDQsk0fXnUTc4pE2dAPtJZXDa64pDZIaZBiS5RILRU5GuCKbCNyNnUq5M6LeYe7l94NDb1xMUGxJM8uQIDAQAB",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "oauth2": {
+    "client_id": "225754014403-vo4sdm4bm4cagam3jmauq0olfiamtn3d.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/games",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/appstate",
+      "https://www.googleapis.com/auth/chromewebstore.readonly"
+    ]
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "identity",
+    "unlimitedStorage",
+    "storage",
+    "webview",
+    "https://www.googleapis.com/"
+  ]
+}

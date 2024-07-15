@@ -1,0 +1,23 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "action": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+  "manifest_version": 2,
+  "name": "SWOOOP",
+  "version": "1.1",
+  "description": "Loop and swoop your bi-plane around the magical island. What's your highscore?",
+  "icons": {
+  	"16": "swooop16.png",
+  	"48": "swooop48.png",
+  	"128": "swooop128.png"
+  },
+  "permissions": [ "storage", "https://ssl.google-analytics.com/", "identity", "tabs"],
+  "offline_enabled": true
+}
