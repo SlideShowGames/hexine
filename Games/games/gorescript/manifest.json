@@ -1,34 +1,30 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-  "name": "Entanglement",
-  "description": "__MSG_appDesc__",
-  "default_locale": "en",
-  "version": "3.9.2",
+  "name": "gorescript classic",
+  "short_name": "gorescript",
+  "description": "Fast-paced '90s-style first-person shooter with an abstract 2.5D-meets-voxels aesthetic, made entirely in JavaScript / WebGL.",
+  "version": "1.2.2",
   "manifest_version": 2,
   "app": {
     "background": {
       "scripts": ["background.js"]
     }
   },
-  "oauth2": {
-    "client_id": "225754014403-8psfa3q25v1cjlehd1ra7gu8p4vv89qu.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/games",
-      "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/appstate",
-      "https://www.googleapis.com/auth/chromewebstore.readonly"
-    ]
+  "requirements": {
+    "3D": {
+      "features": ["webgl"]
+    }
   },
-  "icons": {
-    "128": "icon-128.png"
-  },
-  "offline_enabled": true,
   "permissions": [
-    "identity",
-    "unlimitedStorage",
+    "fileSystem",
     "storage",
-    "webview",
-    "https://www.googleapis.com/"
-  ]
+    "pointerLock",
+    "app.window.fullscreen",
+    "app.window.fullscreen.overrideEsc"
+  ],
+  "offline_enabled": true,
+  "icons": {
+    "128": "icon128.png"
+  }
 }
