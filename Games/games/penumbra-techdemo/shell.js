@@ -68,10 +68,10 @@
         function setConfiguration() {
             Config.dirPrefix = DEFAULT_HOME_DIRECTORY;//getFileDirectory();
             Config.isAutoRunSet = DEFAULT_AUTO_RUN;//getAutoRun();
-            Config.extraZipFiles = "";//getZipFileList("overlay"); //MANUAL:"dlls.zip;fonts.zip";
-            Config.appZipFile = "files.zip";//getAppZipFile("app"); //MANUAL:"chomp.zip";
-            Config.rootZipFile = DEFAULT_ROOT_ZIP_FILE;//getRootZipFile("root"); //MANUAL:"base.zip";
-            Config.Program = "explorer.exe";//getExecutable(); //MANUAL:"CHOMP.EXE";
+	    Config.extraZipFiles = "textures.zip";//getZipFileList("overlay"); //MANUAL:"dlls.zip;fonts.zip";
+            Config.appZipFile = "penumbragame.zip";//getAppZipFile("app"); //MANUAL:"chomp.zip";
+            Config.rootZipFile = DEFAULT_ROOT_ZIP_FILE;//getRootZipFile("root"); //MANUAL:"base.zip"
+            Config.Program = "Penumbra.exe";//getExecutable(); //MANUAL:"CHOMP.EXE";
             Config.WorkingDir = "";//getWorkingDirectory(); //MANUAL:"";
             Config.retrieveDlls = DEFAULT_RETRIEVE_REMOTE_DLL_FILES;//getRetrieveDlls();
             Config.isSoundEnabled = DEFAULT_SOUND_ENABLED;//getSound();
