@@ -1,0 +1,115 @@
+-------- THE HPL ENGINE LOG ------------
+
+ Initializing FMOD.
+ Number of hardware 2D channels: 32
+ Number of hardware 3D channels: 32
+ Number of total hardware channels: 64
+Creating Engine Modules
+--------------------------------------------------------
+ Creating graphics module
+ Creating system module
+ Creating resource module
+ Creating input module
+ Creating sound module
+ Creating physics module
+ Creating ai module
+ Creating scene module
+--------------------------------------------------------
+
+Initializing Resources Module
+--------------------------------------------------------
+ Creating resource managers
+ Misc Creation
+--------------------------------------------------------
+
+Initializing Graphics Module
+--------------------------------------------------------
+ Init low level graphics
+ Setting video mode: 800 x 600 - 32 bpp
+ Init Glee...OK
+ Setting up OpenGL
+  Max texture image units: 32
+  Max texture coord units: 8
+  Two sided stencil: 1
+  Vertex Buffer Object: 1
+  Anisotropic filtering: 1
+  Max Anisotropic degree: 16
+  Multisampling: 0
+  Vertex Program: 1
+  Fragment Program: 1
+  NV Register Combiners: 0
+  NV Register Combiners Stages: 11
+  ATI Fragment Shader: 1
+ Creating graphic systems
+  Renderer2D created
+ Creating screen buffers size 800.000000 : 600.000000
+ Creating programs
+  RendererPostEffects created
+  Renderer3D created
+ Adding engine materials
+--------------------------------------------------------
+
+Initializing Sound Module
+--------------------------------------------------------
+--------------------------------------------------------
+
+Initializing Game Module
+--------------------------------------------------------
+ Adding engine updates
+ Initializing script functions
+--------------------------------------------------------
+
+User Initialization
+--------------------------------------------------------
+--------------------------------------------------------
+
+Game Running
+--------------------------------------------------------
+ERROR: Entity file 'emerl1_lights_emergencylight.ent' was not found!
+WARNING: Parent 'group1' couldn't be found! Failed to attach 'emerl1_emlight11' to 'emerl1'.Attaching directly to mesh.
+ERROR: Entity file 'emerl2_lights_emergencylight.ent' was not found!
+WARNING: Parent 'group1' couldn't be found! Failed to attach 'emerl2_emlight11' to 'emerl2'.Attaching directly to mesh.
+ERROR: Entity file 'light1_light.ent' was not found!
+ERROR: Entity file 'light2_light.ent' was not found!
+ERROR: Entity file 'light3_light.ent' was not found!
+ERROR: Entity file 'bench1_furniture.ent' was not found!
+ERROR: Entity file 'locker1_furniture.ent' was not found!
+ERROR: Entity file 'locker2_furniture.ent' was not found!
+ERROR: Entity file 'locker3_furniture.ent' was not found!
+ERROR: Entity file 'locker4_furniture.ent' was not found!
+ERROR: Entity file 'locker5_furniture.ent' was not found!
+ERROR: Entity file 'locker6_furniture.ent' was not found!
+ERROR: Entity file 'lockedlocker_furniture.ent' was not found!
+ERROR: Entity file 'glowst1_item_glowstick.ent' was not found!
+ERROR: Entity file 'dynamite1_item.ent' was not found!
+ERROR: Entity file 'bottle1_kitchen.ent' was not found!
+ERROR: Entity file 'crate1_other.ent' was not found!
+ERROR: Entity file 'crate2_other.ent' was not found!
+ERROR: Entity file 'door1_door.ent' was not found!
+ERROR: Entity file 'cardbox1_other.ent' was not found!
+ERROR: Entity file 'idcard1_item_id.ent' was not found!
+ERROR: Entity file 'pain_item.ent' was not found!
+ERROR: Entity file 'NAME_other_small.ent' was not found!
+ERROR: Entity file 'flare01_item.ent' was not found!
+ERROR: Entity file 'flare02_item.ent' was not found!
+ERROR: Entity file 'blocklocker_misc_block.ent' was not found!
+ERROR: Entity file 'lock1_object.ent' was not found!
+ERROR: Entity file 'NoteEntrance01_item_note.ent' was not found!
+ERROR: Entity file 'lockopen1_object.ent' was not found!
+ERROR: Couldn't create material 'door_metal_12.mat'
+ERROR: Couldn't create material 'door_metal_12.jpg' for object '_collider_box_1'
+ERROR: Couldn't find particle system file 'acidparticle.ps'
+ERROR: Couldn't create particle system 'Steam01' of type 'acidparticle'
+ERROR: Couldn't find particle system file 'drops01.ps'
+ERROR: Couldn't create particle system 'WaterDrop01' of type 'drops01'
+ERROR: Couldn't find particle system file 'drops02.ps'
+ERROR: Couldn't create particle system 'WaterDrop01' of type 'drops02'
+--------------------------------------------------------
+
+Statistics
+--------------------------------------------------------
+ Medium framerate: 2996.820460
+--------------------------------------------------------
+
+User Exit
+--------------------------------------------------------

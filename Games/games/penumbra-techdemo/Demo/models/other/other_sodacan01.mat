@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Dyn_Metal_Can" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="other_sodacan01.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

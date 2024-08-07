@@ -1,4 +1,0 @@
-<SOUNDENTITY>
-  <MAIN MainSound="event_force_open_door_w_rod" StartSound="" StopSound="" />
-  <PROPERTIES Volume="0.7" MinDistance="1" MaxDistance="10" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="False" Blockable="False" BlockVolumeMul="0.1" Priority="0" />
-</SOUNDENTITY>

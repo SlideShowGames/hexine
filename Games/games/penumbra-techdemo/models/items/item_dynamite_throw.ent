@@ -1,0 +1,33 @@
+<ENTITY>
+	<MAIN 
+		Name="item_dynamite_throw" 
+		Type="Dynamite" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		CollideCharacter = "false"
+		Material="Dyn_Generic_Hard"
+		Mass="2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_dynamite_throw"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		InteractMode = "Static"
+		PickAtPoint = "false"
+		RotateWithPlayer = "false"
+	/>
+	
+</ENTITY>

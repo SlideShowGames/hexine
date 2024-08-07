@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="false" />
+  <TextureUnits>
+    <Diffuse File="wall_concrete_cave.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="wall_concrete_cave_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

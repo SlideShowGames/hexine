@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Dyn_Plastic_Electronics" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="other_carbattery.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

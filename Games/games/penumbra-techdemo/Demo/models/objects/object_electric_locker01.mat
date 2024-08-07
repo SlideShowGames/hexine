@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="object_electric_locker01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="object_electric_locker01_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

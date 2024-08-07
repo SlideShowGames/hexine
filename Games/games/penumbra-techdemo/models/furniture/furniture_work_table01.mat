@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Dyn_Wood_Table" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="furniture_work_table01.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="furniture_work_table01_bump.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

@@ -1,0 +1,76 @@
+<ENTITY>
+	<MAIN 
+		Name="object_stick02" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "stickShape"
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		HasGravity = "false"
+		Material="Metal"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		MaxLinearSpeed = "0.3"
+		MaxAngularSpeed = "0.3"
+		BlocksSound = "false"
+	/>
+	
+	<JOINT
+		Name = "joint1"
+	
+		MaxLimit_Sound = ""
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = ""
+		MinLimit_MinSpeed = "0.2"
+		MinLimit_MaxSpeed = "2"
+		
+		MoveSound = ""
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+		
+		MinValue = "25"
+		MaxValue = "28"
+		>
+	<Controller
+			Name = "Back"
+			Active = "true"
+			
+			Type = "Pid"
+			A= "10" B="-30" C="0"
+			IntegralSize = "13"
+			 
+			Input = "JointAngle"
+			InputAxis = "X"
+			DestValue = "0"
+			
+			Output = "Force"
+			OutputAxis = "Y"
+			MaxOutput = "7"
+			MulMassWithOutput = "true"
+			
+			EndType = "Null"
+			NextController = ""
+			
+			LogInfo = "false"
+		/>
+	</JOINT>
+	
+	<GRAPHICS
+		ModelFile = "object_stick01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+		PauseControllers = "true"
+	/>
+	
+</ENTITY>

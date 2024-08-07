@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Flat" PhysicsMaterial="Default" UseAlpha="True" />
+  <TextureUnits>
+    <Diffuse File="flourlight_flat.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

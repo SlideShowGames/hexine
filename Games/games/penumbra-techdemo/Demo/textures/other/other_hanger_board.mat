@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="other_hanger_board.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="other_hanger_board_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

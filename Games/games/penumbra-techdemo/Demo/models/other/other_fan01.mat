@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Default" />
-  <TextureUnits>
-    <Diffuse File="other_fan01.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,40 @@
+<ENTITY>
+	<MAIN 
+		Name="item_generatorhose" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_generatorhose"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_generatorhose.bmp"
+		NameCat="Items" NameEntry ="GeneratorHose"
+		DescCat="Items" DescEntry ="GeneratorHoseDesc"
+		
+		ItemType = "Normal"
+		CanBeDropped="false"
+		
+		PickUpSound = "pick_generic"
+	/>
+	
+</ENTITY>

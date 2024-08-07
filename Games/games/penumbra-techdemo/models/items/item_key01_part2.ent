@@ -1,0 +1,39 @@
+<ENTITY>
+	<MAIN 
+		Name="item_key01_part2" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_key01_part2"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_key01_part2.bmp"
+		NameCat="Items" NameEntry ="Key01Part2"
+		DescCat="Items" DescEntry ="Key01Part2Desc"
+		
+		ItemType = "Normal"
+		
+		CanBeDropped="false"
+		
+		PickUpSound = "pick_generic_small"
+	/>
+	
+</ENTITY>

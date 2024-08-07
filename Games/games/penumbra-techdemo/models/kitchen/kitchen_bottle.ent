@@ -1,0 +1,32 @@
+<ENTITY>
+	<MAIN 
+		Name="kitchen_bottle" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Glass_Bottle"
+		Mass="1.6"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "kitchen_bottle"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "false"
+	/>
+	
+</ENTITY>

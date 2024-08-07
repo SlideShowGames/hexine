@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Penumbra - Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Manual/style.css"/>
+<script language="javascript">
+
+	function setLanguage ( which )
+	{
+		if ( which != langSelection )
+			window.location = "./Manual.html?lang=" + which;
+	}
+	
+	var langSelection = parseInt(window.location.search.substr(1).split("&")[0].split("=")[1]);
+	if ( (!isFinite(langSelection)) ||  !( (langSelection >= 1) && (langSelection <= 6) ) ) 
+		setLanguage(1);
+	var langFileURL = "Manual/lang_";
+
+	switch (langSelection)
+	{
+		case 1:
+			langFileURL += "english.js";
+			break;			
+		case 2:
+			langFileURL += "swedish.js";
+			break;
+		case 3:
+			langFileURL += "spanish.js";
+			document.title = "Manual del juego Penumbra";
+			break;
+		case 4:
+			langFileURL += "german.js";
+			document.title = "Penumbra Anleitung";
+			break;
+		case 5:
+			langFileURL += "italian.js";
+			document.title = "Manuale di Penumbra";
+			break;
+		case 6:
+			langFileURL += "french.js";
+			break;
+		default:
+			setLanguage(1);
+			break;			
+	}
+	document.write('<script src="', langFileURL, '" type="text/javascript"><\/script>');
+	
+	onload = function()
+	{
+		document.getElementById("flag" + langSelection ).className="selectedflagcell";
+		document.getElementById("warning").style.display="none";
+		document.getElementById("content").style.display="block";
+	}
+   
+</script>
+</head>
+<body> 
+	<div id="pic">
+		<img src="Manual/img_title_header.jpg">
+	</div>
+	<div id="warning">
+		<table class="listtable">
+			<tr>
+				<td class="flagcell">WARNING : Your browser must have JavaScript activated/unblocked for this manual to display correctly.</td>
+			</tr>
+		</table>
+	</div>
+	<div id="content">
+		<table class="listtable">
+			<tr>
+				<td onClick='setLanguage(1)' class="flagcell" id="flag1" title="English"><img src="Manual/flag_uk.png" alt="English"></td>
+				<td onClick='setLanguage(2)' class="flagcell" id="flag2" title="Svenska"><img src="Manual/flag_sweden.png" alt="Svenska"></td>
+				<td onClick='setLanguage(3)' class="flagcell" id="flag3" title="Español"><img src="Manual/flag_spain.png" alt="Español"></td>
+				<td onClick='setLanguage(4)' class="flagcell" id="flag4" title="Deutsch"><img src="Manual/flag_germany.png" alt="Deutsch"></td>
+				<td onClick='setLanguage(5)' class="flagcell" id="flag5" title="Italiano"><img src="Manual/flag_italy.png" alt="Italiano"></td>
+				<td onClick='setLanguage(6)' class="flagcell" id="flag6" title="Français"><img src="Manual/flag_france.png" alt="Français"></td>
+			</tr>
+		</table>
+		<span class="maintitle"><script language="javascript">document.write(text[1]);</script></span>			
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[2]);</script></span>				
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[3]);</script>
+		</div>
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[4]);</script></span>
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[5]);</script>
+		</div>
+		<table class="listtable">
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[6]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[7]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[8]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[9]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[10]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[11]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[12]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[13]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[14]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[15]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[16]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[17]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[18]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[19]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[20]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[21]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[22]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[23]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[24]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[25]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[26]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[27]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[28]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[29]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[30]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[31]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[32]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[33]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[34]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[35]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><script language="javascript">document.write(text[36]);</script></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[37]);</script></td>
+			</tr>
+		</table>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[38]);</script></span>
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[39]);</script>
+		</div>
+		<div id="pic">
+			<img src="Manual/img_menu.jpg">
+		</div>
+		<div id="text">
+		<script language="javascript">document.write(text[40]);</script>
+		</div>
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[41]);</script></span>
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[42]);</script>
+		</div>
+		<table class="listtable">
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_nothing.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[43]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_look.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[44]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_interact.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[45]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_grab.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[46]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_invalid.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[47]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_pickup.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[48]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/icon_door.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[49]);</script></td>
+			</tr>
+		</table>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[50]);</script></span>
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[51]);</script>
+		</div>
+		<div id="pic">
+			<img src="Manual/img_inventory.jpg">
+		</div>
+		<table class="listtable">
+			<tr>
+				<td class="leftcell">1</td> 
+				<td class="rightcell"><script language="javascript">document.write(text[52]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell">2</td> 
+				<td class="rightcell"><script language="javascript">document.write(text[53]);</script></td>
+			</tr>
+		</table>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[54]);</script></span>
+		<table class="listtable">
+			<tr>
+				<td class="leftcell"><img src="Manual/item_notebook.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[55]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/item_flashlight.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[56]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/item_glowstick.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[57]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/item_flare.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[58]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/item_dynamite.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[59]);</script></td>
+			</tr>
+			<tr>
+				<td class="leftcell"><img src="Manual/item_painkillers.jpg"></td> 
+				<td class="rightcell"><script language="javascript">document.write(text[60]);</script></td>
+			</tr>
+		</table>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[61]);</script></span>
+		<br>
+		<div id="text">
+		<script language="javascript">document.write(text[62]);</script><br>
+		</div>
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[63]);</script></span><br>
+		<div id="text">
+		<script language="javascript">document.write(text[64]);</script>
+		</div>
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[65]);</script></span><br>
+		<div id="text">
+		<script language="javascript">document.write(text[66]);</script>
+		<br>
+		<a href="http://www.penumbragame.com">www.PenumbraGame.com</a>
+		<br>
+		<br>
+		<script language="javascript">document.write(text[67]);</script>
+		<br>
+		<a href="http://www.frictionalgames.com/forum/">www.FrictionalGames.com/Forum/</a>
+		</div>
+		<br>
+		<br>
+		<span class="title"><script language="javascript">document.write(text[68]);</script></span><br>
+		<div id="text">
+		<script language="javascript">document.write(text[69]);</script><br>
+		<b>Anton Adamse</b> - <script language="javascript">document.write(text[70]);</script><br>
+		<b>Jens Nilsson</b> - <script language="javascript">document.write(text[71]);</script><br>
+		<b>Martin Thorzén</b> - <script language="javascript">document.write(text[72]);</script><br>
+		<b>Thomas Grip</b> - <script language="javascript">document.write(text[73]);</script><br>
+		<br>
+		<script language="javascript">document.write(text[74]);</script><br>
+		<b>Troy Gusler</b> - <script language="javascript">document.write(text[75]);</script><br>
+		<b>Olof Strand</b> - <script language="javascript">document.write(text[76]);</script><br>
+		<b>Theodor Berg</b> - <script language="javascript">document.write(text[77]);</script><br>
+		<b>Nicklas Mattisson</b> - <script language="javascript">document.write(text[78]);</script><br>
+		<b>Erik Sundström</b> - <script language="javascript">document.write(text[79]);</script><br>
+		<b>Mikko Tarmia</b> - <script language="javascript">document.write(text[80]);</script><br>
+		<b>Mike Hillard</b> - <script language="javascript">document.write(text[81]);</script><br>
+		<br>
+		<script language="javascript">document.write(text[82]);</script><br>			
+		<b>Newton Game Dynamics</b> - <script language="javascript">document.write(text[83]);</script><br>
+		<br>
+		<script language="javascript">document.write(text[84]);</script><br>
+		Luis Rodero<br>
+		Benny Samuelsson<br>
+		Chris Bates<br>
+		Stefan Molin<br>
+		"Grey ZZZ"<br>
+		"Leviathan"<br>
+		Mikael Hedberg<br>
+		<br>
+		<script language="javascript">document.write(text[85]);</script><br>
+		<b>Luis Rodero</b>, <b>Emilio Raya</b>, <b>"Dubos"</b> - <script language="javascript">document.write(text[86]);</script><br>
+		<b>"g4mer"</b> - <script language="javascript">document.write(text[87]);</script><br>
+		<b>"Fu§eRz"</b> - <script language="javascript">document.write(text[88]);</script><br>
+		<b>"bightf","RedGuff", Cedric Guillemet </b> - <script language="javascript">document.write(text[89]);</script><br>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+</body>
+</html>

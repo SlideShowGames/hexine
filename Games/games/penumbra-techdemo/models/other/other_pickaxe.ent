@@ -1,0 +1,32 @@
+<ENTITY>
+	<MAIN 
+		Name="other_pickaxe" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="4"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		MaxAngularSpeed = "5"
+		MaxLinearSpeed = "5"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "other_pickaxe"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+	/>
+	
+</ENTITY>

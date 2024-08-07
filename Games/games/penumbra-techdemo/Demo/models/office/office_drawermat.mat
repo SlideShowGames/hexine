@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="office_drawermat.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="office_drawermat_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

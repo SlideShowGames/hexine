@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="machinery_generator_small.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="" AnimFrameTime="" />
-    <Illumination File="machinery_generator_smalllight.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" AnimMode="None" AnimFrameTime="1" />
-  </TextureUnits>
-</Material>

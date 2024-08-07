@@ -1,0 +1,85 @@
+<ENTITY>
+	<MAIN 
+		Name="door_wood_hinge01_reversed" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<SUBMESH
+		Name="doormetalShape"
+		MaterialFile="door_wood_hinge01"	
+	/>
+	
+	<PHYSICS
+		SubName = "doormetalShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Wood"
+		Mass="5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.8"
+		LinearDamping = "0.3"
+		MaxAngularSpeed = "1"
+		MaxLinearSpeed = "4"
+		BlocksSound = "true"
+		ContinuousCollision = "true"
+	/>
+
+
+	<PHYSICS
+		SubName = "doorframeShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0"
+		LinearDamping = "0"
+		MaxAngularSpeed = "0"
+		MaxLinearSpeed = "0"
+		BlocksSound = "true"
+		ContinuousCollision = "true"
+	/>
+		
+	<JOINT
+		Name = "joint1"
+	
+		MaxLimit_Sound = ""
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = ""
+		MinLimit_MinSpeed = "0.2"
+		MinLimit_MaxSpeed = "2"
+		
+		MoveSound = "door_metal_squeak"
+		MoveType = "Angular"
+		MinMoveSpeed = "0.1"
+		MinMoveFreq = "0.95"
+		MinMoveVolume = "0.01"
+		MinMoveFreqSpeed = "0.2"
+		MaxMoveSpeed = "2"
+		MaxMoveFreq = "1.1"
+		MaxMoveVolume = "0.8"
+		MaxMoveFreqSpeed = "0.7"
+		MiddleMoveSpeed = "0.5"
+		MiddleMoveVolume = "0.5"
+		
+		MinValue = "85"
+		MaxValue = "0"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "door_metal_hinge01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+		
+		Destroyable = "true"
+		DestroyStrength = 0
+		DestoySound = "event_door_destroy"
+	/>
+	
+</ENTITY>

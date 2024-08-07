@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="electronics_computer.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="" AnimFrameTime="" />
-    <Illumination File="electronics_computer_light.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" AnimMode="None" AnimFrameTime="1" />
-  </TextureUnits>
-</Material>

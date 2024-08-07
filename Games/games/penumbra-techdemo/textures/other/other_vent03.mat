@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="DiffuseSpecular" PhysicsMaterial="Default" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="other_vent03.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

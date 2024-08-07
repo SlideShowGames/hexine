@@ -1,0 +1,29 @@
+<ENTITY>
+	<MAIN 
+		Name="panels_door_clickable" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "panelShape"
+		Collides = "true"
+		HasPhysics = "false"
+		Material="Metal"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		BlocksSound = "false"
+	/>
+		
+	<GRAPHICS
+		ModelFile = "panels_door_clickable"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		MaxInteractDist = "1.5"
+		InteractMode = "Move"
+	/>
+</ENTITY>

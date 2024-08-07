@@ -1,4 +1,0 @@
-<SOUNDENTITY>
-  <MAIN MainSound="pick_venttool" StartSound="" StopSound="" />
-  <PROPERTIES Volume="1" MinDistance="1" MaxDistance="3" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="True" Use3D="False" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
-</SOUNDENTITY>

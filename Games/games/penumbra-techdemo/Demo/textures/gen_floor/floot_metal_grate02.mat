@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Metal_Loose" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="floot_metal_grate02" Compress="false" Type="2D" Mipmaps="False" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

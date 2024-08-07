@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="pipe_pipe_turn05.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="pipe_pipe_turn05_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

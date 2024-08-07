@@ -1,0 +1,58 @@
+<ENTITY>
+	<MAIN 
+		Name="lights_light_bulb01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "mountShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<PHYSICS
+		SubName = "cordShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="1.2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<PHYSICS
+		SubName = "lightbulbShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Glass"
+		Mass="1.2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.3"
+		LinearDamping = "0.3"
+		BlocksSound = "false"
+	/>
+		
+	<GRAPHICS
+		ModelFile = "lights_light_bulb01"	
+		CastShadows = "false"	
+	/>
+	
+	<ATTACH_BILLBOARDS>
+		<Pair Light="bulbpoint1" Billboard="bulbbb1" />
+	</ATTACH_BILLBOARDS>
+			
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "true"
+	/>
+	
+</ENTITY>

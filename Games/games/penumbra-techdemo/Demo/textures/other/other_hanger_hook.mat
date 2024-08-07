@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Default" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="other_hanger_hook.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,381 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+///////////////////////////////////////////////
+////////// BEGIN ENEMY ATTACK EVENT ///////////
+///////////////////////////////////////////////
+
+void InitAttackEvent(string asParent, string asChild)
+{
+	AddEntityCollideCallback("Enter","Player","enemyattack","PlayerInAttackArea");
+	
+	RemoveEntityCollideCallback("Enter","Player","startattackevent");
+	
+}
+
+void PlayerInAttackArea(string asParent, string asChild)
+{
+	SetPlayerActive(false);
+	SetWideScreenActive(true);
+	StartPlayerLookAt("lookat01",1.2f, 4);
+	
+	CreateSoundEntity("noises","event_01_04_enemy_noise","lookat01");
+	
+	CreateTimer("1", 2.8f, "DoorBash01",false);
+	
+	RemoveEntityCollideCallback("Enter","Player","enemyattack");
+	
+	StopMusic(0.2);
+	
+	SetLocalVar("AttackEvent",1);
+	//FOR SANITY QUESTION
+	SetGlobalVar("sanity", 0);
+	
+	SetGameEntityActive("enemyblock01",false);
+	SetGameEntityActive("lockeddoor02",false);
+	
+	SetGameEntityDescription("door4","");
+}
+
+void DoorBash01(string asTimer)
+{
+	StartPlayerLookAt("lookat02",1.2f, 4);	
+	CreateSoundEntity("bang01","event_01_04_door_bang","lookat02");
+	
+	CreateTimer("2", 1.1f, "DoorBash02",false);	
+	
+	AddBodyImpulse("door4_doormetalShape","World",20, 0,0);
+}
+
+void DoorBash02(string asTimer)
+{
+	CreateSoundEntity("bang02","event_01_04_door_bang","lookat02");
+	CreateTimer("3", 1.1f, "DoorBash03",false);
+	
+	SetGameEntityActive("roach01",true);
+	ShowEnemyPlayer("roach01");
+	
+	AddBodyImpulse("door4_doormetalShape","World",20, 0,0);
+}
+
+void DoorBash03(string asTimer)
+{
+	SetPlayerActive(true);
+	SetWideScreenActive(false);
+	StopPlayerLookAt();
+	
+	CreateSoundEntity("bang02","event_01_04_door_bang","lookat02");
+	
+	SetGameEntityActive("enemyblock02",false);
+	
+	BreakJoint("door4_joint1");
+	AddBodyImpulse("door4_doormetalShape","World",10, 0,0);
+	SetObjectInteractMode("door4","Grab");
+	
+	StartPlayerFearFilter(1);
+	CreateTimer("StopFear", 25.1f, "@StopFear",true);
+	
+	PlayMusic("music_attack01.mp3",0.7,1.0,true); 
+	
+	CreateTimer("4", 1.1f, "DoorBash04",false);
+}
+
+void DoorBash04(string asTimer)
+{
+	CreateParticleSystem("Dust", "ExplosionSmoke01", "doorsmoke",0.8f, 1.2f, 1.7f);
+}
+
+void EnemyIsDead(string asEnemy)
+{
+	SetGameEntityDescriptionTrans("roach01", "Characters", "RoachDead");
+	
+	StopMusic(0.1f);
+	SetLocalVar("AttackEvent",0);
+	StopPlayerFearFilter();	
+	
+	//FOR SANITY QUESTION
+	if (GetGlobalVar("sanity") == 0)
+		{
+		//CreateTimer("SanityT", 2.2f, "SanityEvent1",false);
+		SetGlobalVar("sanity", 1);
+		}
+}
+///////////////////////////////////////////////
+////////// END ENEMY ATTACK EVENT ///////////
+///////////////////////////////////////////////
+
+/////////////////////////
+//START SANITY QUESTION// AT THE MOMENT NOT IN USE
+/*void SanityEvent1(string asTimer)
+{
+	SetPlayerActive(false);
+	SetWideScreenActive(true);
+	
+	PlayGuiSound("player_heartbeat", 1);
+	
+	StartPlayerFearFilter(1);
+	
+	CreateTimer("SanityT2", 0.5f, "SanityEvent2",false);
+	CreateTimer("Beat1", 2, "BeatEvent1",false);
+}
+void SanityEvent2(string asTimer)
+{
+	AddMessageTrans("Sanity", "RoachSanity01");
+	SetMessagesOverCallback("SanityEnd");
+	
+	StopPlayerFearFilter();	
+}
+void SanityEnd()
+{
+	SetWideScreenActive(false);
+	SetPlayerActive(true);
+}
+void BeatEvent1(string asTimer)
+{
+	PlayGuiSound("player_heartbeat", 0.8);
+	CreateTimer("Beat2", 2, "BeatEvent2",false);
+}
+void BeatEvent2(string asTimer)
+{
+	PlayGuiSound("player_heartbeat", 0.6);
+	CreateTimer("Beat3", 2, "BeatEvent3",false);
+}
+void BeatEvent3(string asTimer)
+{
+	PlayGuiSound("player_heartbeat", 0.4);
+}*/
+//STOP SANITY QUESTION//
+////////////////////////
+
+//VENTILATION ENTRANCES
+void VentComb01(string asItem, string asEntity)
+{
+	//Go to ventilation in corridor straight
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink09", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb02(string asItem, string asEntity)
+{
+	//Go to ventilation from large computer room
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink08", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+
+//ELECTRIC SHOCK FOR ROACH
+void StickMin(string asJoint)
+{
+	SetLight3DVisible("killlight1",true);
+	SetLight3DFlickerActive("killlight1",true);
+	
+	PlaySoundEntity("sticksound",false);
+	
+	CreateSplashDamage("killarea",2,30,58,1,1,10);
+	
+	CreateTimer("KillOff", 1.4, "KillOffTimer",false);
+	CreateTimer("Damage1", 0.25, "DamageTick1",false);
+}
+void KillOffTimer(string asTimer)
+{
+	SetLight3DFlickerActive("killlight1",false);
+	SetLight3DVisible("killlight1",false);
+	
+	StopSoundEntity("sticksound",false);
+	
+	DestroyTimer("KillOff");
+}
+///////////////////////////////////
+//START QUICK AND UGLY DAMAGE FIX//
+void DamageTick1(string asTimer)
+{
+	CreateSplashDamage("killarea",2,30,80,1,1,10);
+	CreateTimer("Damage1", 0.25, "DamageTick2",false);
+}
+void DamageTick2(string asTimer)
+{
+	CreateSplashDamage("killarea",2,30,60,1,1,10);
+	CreateTimer("Damage1", 0.25, "DamageTick3",false);
+}
+void DamageTick3(string asTimer)
+{
+	CreateSplashDamage("killarea",2,30,60,1,1,10);
+	CreateTimer("Damage1", 0.25, "DamageTick4",false);
+}
+void DamageTick4(string asTimer)
+{
+	CreateSplashDamage("killarea",2,30,60,1,1,10);
+	CreateTimer("Damage1", 0.25, "DamageTick5",false);
+}
+void DamageTick5(string asTimer)
+{
+	CreateSplashDamage("killarea",2,30,60,1,1,10);
+}
+//STOP QUICK AND UGLY DAMAGE FIX//
+///////////////////////////////////
+
+//LIGHT BREAKS JOINT WITH PRETTY EFFECTS
+void LightTimerEvent(string asTimer)
+{
+	//Break joint and shake light3 and display some particles
+	BreakJoint("light3_joint2");
+	AddBodyImpulse("light3_lightShape1","local",1,0,0);
+	CreateParticleSystem("LightSpark", "ExplosionSpark01", "lightdam01",1, 1, 1);
+	CreateSoundEntity("LightSpark","amb_light_destroy","lightdam01");
+		
+	DestroyTimer("LightTimer");
+}
+
+//---SMALL TUTORIAL
+void TutEvent(string asTimer)
+{
+	SetPlayerActive(false);
+	SetWideScreenActive(true);
+	
+	AddMessageTrans("Tutorials", "LeanTutorial");
+	SetMessagesOverCallback("TutEnd");
+}
+void TutEnd()
+{
+	SetWideScreenActive(false);
+	SetPlayerActive(true);	
+}
+
+
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{
+//-----SET UP LINKS---------------
+	SetupLink(	"link01", //Link name
+			"level01_03_corridor01.dae", //New map
+			"link02", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+	SetupLink(	"link02", //Link name
+			"level01_05_corridor02.dae", //New map
+			"link01", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+
+//----INTERACT---------------------
+	//ventilation
+	for(int i=1;i<=2;i++)	
+		AddUseCallback("venttool", "vent"+i, "VentComb0"+i);
+	SetAreaCustomIcon("vent1","DoorLink");
+	SetAreaCustomIcon("vent2","DoorLink");
+	SetGameEntityMaxInteractDist("vent1",1.2);
+	SetGameEntityMaxInteractDist("vent2",1.2);
+
+//------TEXT INIT--------------------------------------
+	//ventilation
+	for(int i=1;i<=2;i++)
+		SetGameEntityDescriptionTrans("vent"+i, "Doors", "Ventilation02");
+	//locked door 1, this door can never be opened
+	SetGameEntityDescriptionTrans("door1","level_01_03_corridor01", "LockedDoor3");
+	//cable and electricity locker to kill roach
+	SetGameEntityDescriptionTrans("killmachinearea", "level01_04_storage", "KillMachine");
+	SetGameEntityDescriptionTrans("killcablearea", "level01_04_storage", "KillCable");
+	
+	//The door that the enemy comes from.
+	SetGameEntityDescriptionTrans("door4","level_01_03_corridor01", "LockedDoor3");
+
+//------SOUND INIT--------------------------------------
+	//sound for kill roach
+	StopSoundEntity("sticksound",false);
+	
+	StopSoundEntity("light5_light1s",false);
+		
+//-----LIGHT INIT---------------
+	//Kill roach with electricity
+	SetLight3DVisible("killlight1",false);
+	SetLight3DFlicker("killlight1",
+			0,0,0.05,0, //Color
+			1, //Radius
+			0.15, 0.05, "light_flicker", "ExplosionSpark01",
+			0.1, 0.15, "amb_electric_spark_loud","ExplosionSpark01",
+			false, 0.3,0.007);
+			
+	FadeLight3D("light5_light1", 0,0,0,0.0,0,0.01);
+	FadeLight3D("light4_light1", 0.9,0.92,1,0.5,4.5,0.01);
+	FadeLight3D("light1_light1", 0.9,0.92,1,0.5,5,0.01);			
+	
+//-----JOINT INIT---------------
+	//Kill roach electricty machine
+	SetJointCallback("stick_joint1","OnMin","StickMin");
+	
+//-----ENEMY INIT---------------
+	SetGameEntityActive("roach01",false);
+	SetEnemyDeathCallback("roach01", "EnemyIsDead");
+	//AddEnemyPatrolNode("roach01","Node094",5,""); 
+	//AddEnemyPatrolNode("roach01","Node060",0,"");
+	//AddEnemyPatrolNode("roach01","Node076",5,"");
+	
+	
+//----AREA INIT---------------------
+	AddEntityCollideCallback("Enter","Player","startattackevent", "InitAttackEvent");
+	
+	
+
+//----TIMER INIT-----------------
+	CreateTimer("LightTimer", 3.2f, "LightTimerEvent",false);
+	
+	CreateTimer("TutTimer", 1, "TutEvent",false);
+	
+//----VAR INTIT-----------------
+	CreateLocalVar("AttackEvent",0);
+}	
+
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{
+//----VENTILATION---------------
+	//Make sure player stands when exciting ventilation
+	if(GetGlobalVar("corridor01vent_crouch") == 0) SetPlayerPose("Stand");
+		SetGlobalVar("corridor01vent_crouch", 2);
+	
+	
+	//Play music depending on there is an enemy or not
+	if(GetLocalVar("AttackEvent")==1)
+	{
+		PlayMusic("music_attack01.mp3",0.7,0.55,true); 		
+	}
+	else
+	{
+		PlayMusic("music_monster01.mp3",0.73,0.25,true); 
+	}
+	
+///////////////////////
+////START AUTO SAVE////
+
+	if(GetGlobalVar("autoload") == 2)
+		{
+		SetGlobalVar("autoload", 3);
+		AutoSave();
+		}
+
+////STOP AUTO SAVE////	
+//////////////////////
+
+}
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is unloaded */
+void OnExit()
+{
+	StopMusic(0.2f);
+}
+
+
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+
+}

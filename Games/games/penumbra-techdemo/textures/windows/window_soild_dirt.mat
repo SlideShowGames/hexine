@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="DiffuseSpecular" PhysicsMaterial="Glass" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="window_soild_dirt" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

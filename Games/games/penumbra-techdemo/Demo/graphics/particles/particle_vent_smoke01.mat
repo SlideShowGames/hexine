@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Alpha" PhysicsMaterial="Default" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="particle_vent_smoke01.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

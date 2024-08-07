@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Metal" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="lights_emergencylight.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

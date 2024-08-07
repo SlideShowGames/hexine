@@ -1,8 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="other_taperecorder.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
-    <NMap File="other_taperecorder_normal.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="" AnimFrameTime="" />
-    <Illumination File="" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
-  </TextureUnits>
-</Material>

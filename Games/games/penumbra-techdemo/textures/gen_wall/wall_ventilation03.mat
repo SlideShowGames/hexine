@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Metal_Ventilation" UseAlpha="True" />
+  <TextureUnits>
+    <Diffuse File="wall_ventilation03" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="wall_ventilation03_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

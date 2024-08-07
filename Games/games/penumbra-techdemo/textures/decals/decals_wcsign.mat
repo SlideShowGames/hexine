@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="decals_wcsign.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" AnimMode="None" AnimFrameTime="1" />
+  </TextureUnits>
+</Material>

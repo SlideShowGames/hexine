@@ -1,0 +1,274 @@
+<LANGUAGE>
+  <CATEGORY Name="Misc">
+    <Entry Name="Greeting">Welcome to The Hatch, a mighty fine game!</Entry>
+    <Entry Name="CokeCan">Coke can</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tests">
+    <Entry Name="Ballon">Can you get a ballon into the fancy "particle-accelerator"? If you do, hold your breath while the ballon slowly twinkles upwards.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Items">
+    <Entry Name="Painkillers">Painkillers</Entry>
+    <Entry Name="PainkillersDesc">It's a plastic box containing white pills. Might come in handy if I get in pain.</Entry>
+    <Entry Name="Flashlight">Flashlight (F)</Entry>
+    <Entry Name="FlashlightDesc">Good thing I remembered to bring this with me. Too bad it drains so much power.</Entry>
+    <Entry Name="Note">It's a note.</Entry>
+    <Entry Name="Dynamite">Dynamite</Entry>
+    <Entry Name="DynamiteDesc">Seems a little old but should still work as an explosive.</Entry>
+    <Entry Name="GeneratorHose">Rubber hose</Entry>
+    <Entry Name="GeneratorHoseDesc">A hose made out of rubber and with metal holds.</Entry>
+    <Entry Name="Glowstick">Glowstick (G)</Entry>
+    <Entry Name="GlowstickDesc">A never ending source of light.</Entry>
+    <Entry Name="Key01Part1">A piece of a key</Entry>
+    <Entry Name="Key01Part2">A piece of a key</Entry>
+    <Entry Name="Key01Whole">A simple key.</Entry>
+    <Entry Name="Key01Part1Desc">One out of two parts of a broken key.</Entry>
+    <Entry Name="Key01Part2Desc">One out of two parts of a broken key.</Entry>
+    <Entry Name="Key01WholeDesc">The broken key that I mended. It looks like it will work fine.</Entry>
+    <Entry Name="SteelPin01Part1">Steel pin part 1</Entry>
+    <Entry Name="SteelPin01Part1Desc">Part 1 of the steel pin.</Entry>
+    <Entry Name="SteelPin01Part2">Steel pin part 2</Entry>
+    <Entry Name="SteelPin01Part2Desc">Part 2 of the steel pin.</Entry>
+    <Entry Name="SteelPin01Whole">A metal rod</Entry>
+    <Entry Name="SteelPin01WholeDesc">A sturdy metal rod.</Entry>
+    <Entry Name="VentTool">Vent tool</Entry>
+    <Entry Name="VentToolDesc">A tool for opening ventilation hatches.</Entry>
+    <Entry Name="Fueltank">Fuelcan</Entry>
+    <Entry Name="FueltankDesc">The can seem to contain some fuel.</Entry>
+    <Entry Name="IDCard01">ID Card</Entry>
+    <Entry Name="IDCard01Desc">It's an ID card for an engineer that might give me access to more doors in this facility.</Entry>
+    <Entry Name="Notebook">Notebook (N)</Entry>
+    <Entry Name="NotebookDesc">This notebook will come in handy for writing down important clues.</Entry>
+    <Entry Name="Note01">An old tale.</Entry>
+    <Entry Name="Note01Desc">It is some kinda fairytale on paper.</Entry>
+    <Entry Name="Battery">Battery</Entry>
+    <Entry Name="BatteryDesc">Fully charged batteries.</Entry>
+    <Entry Name="Flare">Flare</Entry>
+    <Entry Name="FlareDesc">It is an ordinary flare. Might come in handy when I need to light up a room.</Entry>
+    <Entry Name="NoteWorkShop01">Memo from administator</Entry>
+    <Entry Name="NoteWorkShop01Desc">A small piece of paper with some scribbles.</Entry>
+    <Entry Name="KeyComboFail">I can't mend the key by hand.</Entry>
+    <Entry Name="PickNote01">I've added the note to my notebook.</Entry>
+    <Entry Name="chemjar_salt">Liquid jar</Entry>
+    <Entry Name="chemjar_coal">Powder jar</Entry>
+    <Entry Name="chemjar_acid">Acid jar</Entry>
+    <Entry Name="chemjar_acidDesc">It's the acid that I got from combining the jars containing the liquid and powder.</Entry>
+    <Entry Name="chemjar_coalDesc">Seems to be some powder in the jar. The odor makes my nose sting.</Entry>
+    <Entry Name="chemjar_saltDesc">A jar containing what seems to be a liquid of some kind. Can't really detect any odor coming from the bottle.</Entry>
+    <Entry Name="chemjar_Combine">Mixing the two bottles together it seems like I created an acid. At least I think so considering the acidic fumes.</Entry>
+    <Entry Name="Chord">Electric cable</Entry>
+    <Entry Name="ChordDesc">An electric cable of some sort. It is torn and worn but seems to be useable.</Entry>
+    <Entry Name="NoteEntrance01">Letter from worker</Entry>
+    <Entry Name="NoteEntrance01Desc">A small piece of paper with some scribbles.</Entry>
+    <Entry Name="NoteEntrance01Tutorial">I've added the note to my notebook (N).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Inventory">
+    <Entry Name="Use">Use</Entry>
+    <Entry Name="Drop">Drop</Entry>
+    <Entry Name="Combine">Combine</Entry>
+    <Entry Name="with">with</Entry>
+    <Entry Name="CannotUseItem1">There is no way to use this item here.</Entry>
+    <Entry Name="CannotUseItem2">I can't use this item here.</Entry>
+    <Entry Name="CannotUseItem3">That does not work.</Entry>
+    <Entry Name="CannotUseItem4">That doesn't seem right.</Entry>
+    <Entry Name="CannotUseItem5">How could that be done?</Entry>
+    <Entry Name="CannotCombineItems1">There is no way to combine these two items.</Entry>
+    <Entry Name="CannotCombineItems2">I can't combine that.</Entry>
+    <Entry Name="CannotCombineItems3">That does not work.</Entry>
+    <Entry Name="CannotCombineItems4">That doesn't seem right.</Entry>
+    <Entry Name="CannotCombineItems5">How could that be done?</Entry>
+    <Entry Name="EqupSlot">Equip</Entry>
+    <Entry Name="Read">Read</Entry>
+    <Entry Name="Power">Power</Entry>
+    <Entry Name="Turn onoff">Turn on/off</Entry>
+    <Entry Name="Throw">Throw</Entry>
+    <Entry Name="Equip">Equip</Entry>
+    <Entry Name="Eat">Eat</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_03_corridor01">
+    <Entry Name="FixDoor2Panel">With the power back on I managed to get the magnet to attach the panel.</Entry>
+    <Entry Name="BrokenDoor2Panel">It is malfunctioning, seems the panel is using electric magnets to attach itself to the door.</Entry>
+    <Entry Name="LockedDoor3">It's locked.</Entry>
+    <Entry Name="LockedDoor1">The door won't open, seems like there is no power.</Entry>
+    <Entry Name="LockedDoor2">There is no power to the door so it won't open. However there is a little gap, perhaps I can bend it open.</Entry>
+    <Entry Name="LockedDoor4">The panel is locked with a numerical lock. I need to find the code before I can open it.</Entry>
+    <Entry Name="LockedDoor3Open">It's opened.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_06_workshop01">
+    <Entry Name="keymachine01">Some type of metal mending machine. The power cord is nowhere to be found, I need to find a replacement cord before I can examine this machine further.</Entry>
+    <Entry Name="platecutter01">It's a device for cutting metal, the blade is remarkably sharp.</Entry>
+    <Entry Name="lockeddoor">Code seem incorrect.</Entry>
+    <Entry Name="unlockeddoor">Code is correct!</Entry>
+    <Entry Name="InsertKey1">I inserted one of the key pieces into the machine.</Entry>
+    <Entry Name="InsertKey2">I inserted one of the key pieces into the machine.</Entry>
+    <Entry Name="KeyDone01">Seems like the machine fixed the key just fine.</Entry>
+    <Entry Name="KeyDone02">I picked up the key and put it along with the rest of my stuff.</Entry>
+    <Entry Name="FindingChord">There seem to be some kind of electrical cord on top of the shelf. I might be able to use it to power up the machine in the other room.</Entry>
+    <Entry Name="NeedChord">Typical, the power cord is missing... Seems I'm getting nowhere with this machine until I find a replacement cord.</Entry>
+    <Entry Name="InsertChord">There, connected and ready to go.</Entry>
+    <Entry Name="keymachine02">I have a feeling this machine might be of some use to me! It clearly is a machine for metal work and reperation.</Entry>
+    <Entry Name="keymachine03">I wonder if it can repair other things besides keys?</Entry>
+    <Entry Name="PickingChord">I got the power cord, with a bit of luck it should be in a working state.</Entry>
+    <Entry Name="NeedChord02">The machine won't work unless it has power.</Entry>
+    <Entry Name="ChordInPlace">With the cable connected the machine should have power.</Entry>
+    <Entry Name="ClosedMachine">Why is this equipment behind a fence? It doesn't look to be of much importance, rusty and old.</Entry>
+    <Entry Name="WoodPile">Murky pieces of wood.</Entry>
+    <Entry Name="JunkPile">A stinking pile of garbage and some old notes. Perhaps the notes have some useful information.</Entry>
+    <Entry Name="ElevatorArea">There must be an elevator going the the surface. I have no idea how to get the door open though. It seems stuck.</Entry>
+    <Entry Name="LiftArea">Considering the lack of space they must have a double use for these. Repair and parking spots, but if the vehicles are not here, where are they?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Doors">
+    <Entry Name="Ventilation02">A tool is required to open this hatch.</Entry>
+    <Entry Name="Ventilation01">The lock on the hatch for the ventilation drum seems to have failed and the hatch has swung open. Perhaps it's possible to climb into the drum.</Entry>
+    <Entry Name="DoorClickable01IntEntrance">I need to enter the correct code to open it.</Entry>
+    <Entry Name="DoorClickable01">It is a sturdy metal door that seems to have some kind of numerical lock.</Entry>
+    <Entry Name="DoorClickable02">There is no way to open this door until the panel is fixed.</Entry>
+    <Entry Name="DoorClickable02IntCorridor01">The door should be fully operational now.</Entry>
+    <Entry Name="DoorClickable03">It's locked.</Entry>
+    <Entry Name="Ventilation03">The hatch is stuck. I need a tool to be able to open it.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_floor02_whole_level">
+    <Entry Name="BrokenHose">Damn, the gasoline poured out on the floor. There seem to be a hose missing. I need to find one before I can pour the gasoline into the backup generator.</Entry>
+    <Entry Name="ReplacingHose">There, that should do it.</Entry>
+    <Entry Name="FuelSuccess">I filled the generator with all the remaining fuel. Hopefully it should be working when I press the start button.</Entry>
+    <Entry Name="BUSuccess">The power seems to be back on.</Entry>
+    <Entry Name="BUDesc">It's an old looking backup generator. Might still work.</Entry>
+    <Entry Name="GeneratorDesc">It is an old and rusty generator. Seems to be broken and there is no way I can mend it.</Entry>
+    <Entry Name="BUbroken">The generator won't start, I need to find some fuel for it.</Entry>
+    <Entry Name="FinalDoor">Through this door I can reach the deeper levels of the station. In addition to knowing the code it seems I also need a passage card.</Entry>
+    <Entry Name="TheEnd">The End.</Entry>
+    <Entry Name="EntranceLocked">I broke the rod and the door slammed shut behind me. No way back until the power has been restored.</Entry>
+    <Entry Name="NeedCard">The door looks like the others but there is a slot for a passage card. It wont accept any code input unless I have a passage card.</Entry>
+    <Entry Name="GeneratorBroke">Seems I'm out of luck, this generator has clearly not been in use for several years. There is no way I am getting it started.</Entry>
+    <Entry Name="FuelNotAgain">I'm not trying that again.</Entry>
+    <Entry Name="FuelShow">There is a gas can lying on top of the shelf. It is out of reach for me though, I must get it down somehow.</Entry>
+    <Entry Name="NoMore">Why would I want to do that again?</Entry>
+    <Entry Name="AlmostThere">I attached the hose but the generator still needs some fuel.</Entry>
+    <Entry Name="AlmostThere2">Still no fuel, it poured out on the floor if my memory serves me right.</Entry>
+    <Entry Name="BUDesc02">The backup generator works very well after I repaired and refueld it.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notebook">
+    <Entry Name="TaskList">Personal Notes</Entry>
+    <Entry Name="PickedNotes">Notes Found</Entry>
+    <Entry Name="Unread">unread</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notes">
+    <Entry Name="Test01">From a private hospital for the insane near Providence, Rhode Island, there recently disappeared an exceedingly singular person. He bore the name of Charles Dexter Ward, and was placed under restraint most reluctantly by the grieving father who had watched his aberration grow from a mere eccentricity to a dark mania involving both a possibility of murderous tendencies and a profound and peculiar change in the apparent contents of his mind. Doctors confess themselves quite baffled by his case, since it presented oddities of a general physiological as well as psychological character.
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤In the first place, the patient seemed oddly older than his twenty-six years would warrant. Mental disturbance, it is true, will age one rapidly; but the face of this young man had taken on a subtle cast which only the very aged normally acquire. In the second place, his organic processes shewed a certain queerness of proportion which nothing in medical experience can parallel. Respiration and heart action had a baffling lack of symmetry; the voice was lost, so that no sounds above a whisper were possible; digestion was incredibly prolonged and minimised, and neural reactions to standard stimuli bore no relation at all to anything heretofore recorded, either normal or pathological. The skin had a morbid chill and dryness, and the cellular structure of the tissue seemed exaggeratedly coarse and loosely knit. Even a large olive birthmark on the right hip had disappeared, whilst there had formed on the chest a very peculiar mole or blackish spot of which no trace existed before. In general, all physicians agree that in Ward the processes of metabolism had become retarded to a degree beyond precedent. </Entry>
+    <Entry Name="NoteWorkShop01">There seem to have been outsiders snooping around here again. To make sure that no unauthorized personnel get in here anymore I am changing the password for the workshop door.
+¤
+¤The new password is 3654. This must be kept confidential so that our integrity is not compromised.
+¤
+¤Be on alert for any suspicious activity. If these intrusions are repeated we might have to take harder measures.</Entry>
+    <Entry Name="ComputerMailDesc">Mail from computer</Entry>
+    <Entry Name="ComputerMail">Dear co-workers,
+¤Due to the hardware failure earlier today access codes will be changed effective immediate. New codes are as follows.
+¤
+¤Level 1 Office:
+¤6667
+¤
+¤Level 1 Workshop:
+¤9834
+¤
+¤Level 1 Entrance:
+¤1243
+¤
+¤Level 1 access to Level 2:
+¤1124</Entry>
+    <Entry Name="NoteEntrance01">I do not know why I am writing this down. Perhaps I want to leave it as final message in case I do not return or maybe it is a way for me to deal with the terrible things I have experienced during the last hour.
+¤One hour ago all hell broke lose, the lights went out and all these strange things started happening. We have never really seen anything that has been going here, but there must have been some horrible activities. The things I heard when running were not of this world. Something took my brother and my father is still in that dark place. I just can not leave him behind and when I am done writing this I will go back for him. I do not know how we will get out of here though, the handle on the door to the outside has jammed, perhaps father knows another way.
+¤
+¤To be safe from the things in the darkness I changed the code for the door to 1993. 
+¤
+¤Now I am going back to search for my father. I hope he is till alive.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_05_corridor02">
+    <Entry Name="SteamArea01">Hot steam is pouring out from the pipes. I cannot pass here unless it turned off somehow.</Entry>
+    <Entry Name="SteamAreaWarning">It would not be a good idea to go any further. That steam is pretty hot.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_08_officesave01">
+    <Entry Name="UsingComputer">Hmm, this particular mail seems quite interesting. I added the text to my note book.</Entry>
+    <Entry Name="UsedComputer">I've already added the mail to my notebook.</Entry>
+    <Entry Name="Computer">Not exactly the latest model, but it seems quite functional.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_vent01_02_03_05_08">
+    <Entry Name="Ventilation09">Damn, the lock seems to have rusted shut.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_02_entrance">
+    <Entry Name="startdoorDesc">The door that led me to this room. The handle seem to have rusted shut on this side.</Entry>
+    <Entry Name="startdoorInteract">I cannot turn the handle, it has rusted shut.</Entry>
+    <Entry Name="Lockers">The lockers are all rusty and worn. Probably damaged by moist and years of use.</Entry>
+    <Entry Name="LockedLocker">There is a padlock on this one. It is quite rusty though, perhaps I can be break it open somehow.</Entry>
+    <Entry Name="Pipes1">It's a bundle of decaying pipes.</Entry>
+    <Entry Name="LockedLocker02">The door is unlocked now.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Lights">
+    <Entry Name="EmergencyLights">These emergency lights doesn't seem that helpful. Even so, if the other lights are turned off I'll probably be glad to have them.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tasks">
+    <Entry Name="KeyMachine01">What can I repair with the metal mending machine in the workshop?</Entry>
+    <Entry Name="PlateCutter01">There is a plate cutter in the workshop.</Entry>
+    <Entry Name="Door3Corridor01">There is a locked door in the first corridor, can it be opened somehow?</Entry>
+    <Entry Name="Door2Corridor01">A broken panel on the second door in the first corridor. Can it be mended?</Entry>
+    <Entry Name="Door4Corridor01">A code is required for the forth door in the first corridor, or perhaps I can find another way in.</Entry>
+    <Entry Name="Door5Corridor01">I might be able to force the last door in the first corridor open.</Entry>
+    <Entry Name="LockedLocker">A locked locker in the entrance, I should be able to force it open with the right tool.</Entry>
+    <Entry Name="EntranceDoor">I need to find the code for the entrance door if I'm to get into the base.</Entry>
+    <Entry Name="OfficeComputer">The computer in the office seems quite operational, perhaps it contains valuable information.</Entry>
+    <Entry Name="Vent2Corridor02">A tool is required to open the ventilation hatches.</Entry>
+    <Entry Name="SteamCorridor02">Either I get rid of the steam in the second corridor or I find another way around it.</Entry>
+    <Entry Name="KillMachine">Is the power switch of any use even though the cable is split in two?</Entry>
+    <Entry Name="KeyMachineChord">The metal mending machine in the workshop needs a new power cord.</Entry>
+    <Entry Name="PowerBack">For reasons unknown to me the power has been shut down, I need to find a way to restore it.</Entry>
+    <Entry Name="TaskFuel">The backup generator needs fuel.</Entry>
+    <Entry Name="TaskHose">Backup generator is missing a hose required to get fuel into the tank.</Entry>
+    <Entry Name="BUGenerator">I should try to get the backup generator functioning again.</Entry>
+    <Entry Name="LastDoorIDTask">Some doors need a passage card in addition to the code for the panel.</Entry>
+    <Entry Name="CodeCorridor02">A locked door in the second corridor, I need to know the code to be able to open it.</Entry>
+    <Entry Name="Vent1Corridor02">A ventilation hatch is open in the second corridor. Possible to get up there?</Entry>
+    <Entry Name="Ventilation">Can I use the ventilation system to gain access to locked rooms?</Entry>
+    <Entry Name="FirstBottle">I found a bottle, might be of use later on.</Entry>
+    <Entry Name="SecondBottle">I now have two bottles, both are about half-full. </Entry>
+    <Entry Name="CombinedBottle">The acid I got by mixing the two bottles together have started to corrode the bottle cap! </Entry>
+    <Entry Name="AllDoorCodes">Now that I have a list of all the codes for the doors I should make sure to try them all.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_04_storage">
+    <Entry Name="KillMachine">It is an old and rusty power switch.</Entry>
+    <Entry Name="KillCable">A thick electric cable that seems to have been torn apart. Would be quite hazardous if the power was on.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tutorials">
+    <Entry Name="Interaction01">Pressing the 'R' key will make it easier for me to interact with objects in the world.</Entry>
+    <Entry Name="PersonalNotes">I've added a note about this locked locker to my personal notes (P) in my notebook (N).</Entry>
+    <Entry Name="LeanTutorial">What a stench, what is that? I feel caution is required, sneaking and leaning (Q, E) seems like a good idea.</Entry>
+    <Entry Name="GlowStickTutorial">I've added the glowstick (G) to my inventory (TAB).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Characters">
+    <Entry Name="RoachDead">What is this thing?! The odor coming from it is truly aweful.</Entry>
+    <Entry Name="RoachDeadSecond">Where did it come from? What has been going on down here?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Sanity">
+    <Entry Name="RoachSanity01">What is this thing!? Am I going insane?</Entry>
+    <Entry Name="RoachSanity02">What was that thing!? Am I going insane?</Entry>
+    <Entry Name="RoachSanity03">What was that? I'm sure I heard a noise.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Intro">
+    <Entry Name="01_01">It all began a week after my mother's passing and I thought that I couldn't be in any worse emotional state.</Entry>
+    <Entry Name="01_02">That was before the letter dropped in my mailbox. It was supposedly written by my father, who left my mother before I was even born.</Entry>
+    <Entry Name="01_03">The mail contained a note telling me he was dead and asked forgiveness for not being there. There was also a key leading to a safe-deposit box.</Entry>
+    <Entry Name="01_04">I thought about just throwing it away, but I had always wondered who my father was and just couldn't let it go.</Entry>
+    <Entry Name="02_01">After an internal struggle my curiosity won and I headed to the bank where the box was deposited.</Entry>
+    <Entry Name="02_02">In the box was an old book, written in some strange language unknown to me. There were also some notes that I figured must be in my father's handwriting. </Entry>
+    <Entry Name="02_03">The text in the notes was hard to read but after some effort I found out that a lot of them were about a place somewhere on Greenland.</Entry>
+    <Entry Name="02_04">I wondered if this place might give me some clues about my late father.</Entry>
+    <Entry Name="02_05">Days went by and I couldn't get this place on Greenland off my mind. I knew I had to go there.</Entry>
+    <Entry Name="03_01">Finally I took a flight to Greenland and after landing I had to hitch a ride with a fishing boat.</Entry>
+    <Entry Name="03_02">The boat was going to a remote station seemingly within walking distance of the place I was looking for.</Entry>
+    <Entry Name="03_03">As we arrived at shore ominous clouds were gathering in the sky. It seemed like a storm was on the way.</Entry>
+    <Entry Name="04_01">Despite warnings from the fishermen I started walking towards my destination. Now that I was close I couldn't just stop and rest.</Entry>
+    <Entry Name="04_02">As I was walking a strange sensation went through my body. I wondered what was waiting for me out there.</Entry>
+    <Entry Name="05_01">Half an hour later I was caught in a fierce storm. Perhaps I should have listened to the fishermen.</Entry>
+    <Entry Name="05_02">I struggled on blindly and thought I was about to die from exposure when I found some sheltering rocks.</Entry>
+    <Entry Name="06_01">As I crawled under the rocks I hit something hard and metallic - a hatch. Somehow I knew this was what I was looking for.</Entry>
+    <Entry Name="06_02">A gripped the handle and pulled it open using all my remaining strength. Slowly, I stepped into the unknown.</Entry>
+  </CATEGORY>
+</LANGUAGE>

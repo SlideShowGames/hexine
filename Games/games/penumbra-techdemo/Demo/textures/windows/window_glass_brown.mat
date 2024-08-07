@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="True" />
-  <TextureUnits>
-    <Diffuse File="window_glass_brown" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="window_glass_brown_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

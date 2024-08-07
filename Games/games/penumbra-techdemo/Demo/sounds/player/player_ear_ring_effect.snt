@@ -1,4 +1,0 @@
-<SOUNDENTITY>
-  <MAIN MainSound="player_ear_ring" StartSound="" StopSound="" />
-  <PROPERTIES Volume="0.4" MinDistance="0" MaxDistance="2" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="True" Use3D="False" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
-</SOUNDENTITY>

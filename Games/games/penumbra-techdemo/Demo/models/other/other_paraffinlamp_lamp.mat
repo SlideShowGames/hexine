@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Modulative" PhysicsMaterial="Glass" UseAlpha="False" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="other_paraffinlamp_lamp.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
-  </TextureUnits>
-</Material>

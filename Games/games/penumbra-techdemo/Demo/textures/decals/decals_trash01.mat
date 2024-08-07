@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="decals_trash01.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-    <NMap File="decals_trash01_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/COLLADASchema" version="1.3.1">
+  <asset>
+    <authoring_tool>Maya 6.5 | ColladaMaya v1.3.3 (0.74)</authoring_tool>
+    <source_data>file://C:/Projekt/Hatch/Prologue/scenes/051116_Eluttag/051116_eluttag01.ma</source_data>
+    <up_axis>Y_UP</up_axis>
+    <unit name="meter" meter="1."/>
+    <author>mthorzen</author>
+    <modified>2005-12-15T14:54:53Z</modified>
+  </asset>
+  <library type="IMAGE">
+    <image id="file1" name="file1" source="file://C:/Projekt/Hatch/Prologue/scenes/051116_Eluttag/eluttag_01.jpg"/>
+  </library>
+  <library type="TEXTURE">
+    <texture id="file1-DIFFUSE">
+      <param name="DIFFUSE" type="float3" flow="OUT"/>
+      <technique profile="COMMON">
+        <input semantic="IMAGE" source="#file1"/>
+      </technique>
+      <technique profile="MAYA">
+        <param name="wrapU" type="bool" flow="IN" sid="param0">TRUE</param>
+        <param name="wrapV" type="bool" flow="IN" sid="param1">TRUE</param>
+        <param name="mirrorU" type="bool" flow="IN" sid="param2">FALSE</param>
+        <param name="mirrorV" type="bool" flow="IN" sid="param3">FALSE</param>
+        <param name="coverageU" type="float" flow="IN" sid="param4">1.</param>
+        <param name="coverageV" type="float" flow="IN" sid="param5">1.</param>
+        <param name="translateFrameU" type="float" flow="IN" sid="param6">0</param>
+        <param name="translateFrameV" type="float" flow="IN" sid="param7">0</param>
+        <param name="rotateFrame" type="float" flow="IN" sid="param8">0</param>
+        <param name="stagger" type="bool" flow="IN" sid="param9">FALSE</param>
+        <param name="fast" type="bool" flow="IN" sid="param10">FALSE</param>
+        <param name="repeatU" type="float" flow="IN" sid="param11">1.</param>
+        <param name="repeatV" type="float" flow="IN" sid="param12">1.</param>
+        <param name="offsetU" type="float" flow="IN" sid="param13">0</param>
+        <param name="offsetV" type="float" flow="IN" sid="param14">0</param>
+        <param name="rotateUV" type="float" flow="IN" sid="param15">0</param>
+        <param name="noiseU" type="float" flow="IN" sid="param16">0</param>
+        <param name="noiseV" type="float" flow="IN" sid="param17">0</param>
+        <param name="BLEND_MODE" type="blend" flow="IN">NONE</param>
+      </technique>
+    </texture>
+  </library>
+  <library type="MATERIAL">
+    <material id="lambert1" name="lambert1">
+      <shader>
+        <technique profile="COMMON">
+          <pass>
+            <input semantic="TEXTURE" source="#file1-DIFFUSE"/>
+            <program url="LAMBERT">
+              <param name="DIFFUSE" type="float3" flow="IN" sid="diffuse">1. 1. 1.</param>
+              <param name="AMBIENT" type="float3" flow="IN" sid="ambient">0 0 0</param>
+              <param name="TRANSPARENT" type="float3" flow="IN" sid="transparent">0 0 0</param>
+              <param name="TRANSPARENCY" type="float" flow="IN">1.</param>
+            </program>
+          </pass>
+        </technique>
+      </shader>
+    </material>
+  </library>
+  <library type="GEOMETRY">
+    <geometry id="_collider_box_eluttagetShape-lib" name="_collider_box_eluttagetShape">
+      <mesh>
+        <source id="_collider_box_eluttagetShape-lib-Position">
+          <float_array id="_collider_box_eluttagetShape-lib-Position-array" count="24">
+-4.e-003 -5.e-002 3.e-002
+4.e-003 -5.e-002 3.e-002
+-4.e-003 5.e-002 3.e-002
+4.e-003 5.e-002 3.e-002
+-4.e-003 5.e-002 -3.e-002
+4.e-003 5.e-002 -3.e-002
+-4.e-003 -5.e-002 -3.e-002
+4.e-003 -5.e-002 -3.e-002
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#_collider_box_eluttagetShape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <source id="_collider_box_eluttagetShape-lib-Normal">
+          <float_array id="_collider_box_eluttagetShape-lib-Normal-array" count="72">
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 1. 1.24176e-008
+0 1. 1.24176e-008
+0 1. 1.24176e-008
+0 1. 1.24176e-008
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 -1. -1.24176e-008
+0 -1. -1.24176e-008
+0 -1. -1.24176e-008
+0 -1. -1.24176e-008
+1. 9.93411e-010 0
+1. 9.93411e-010 0
+1. 9.93411e-010 0
+1. 9.93411e-010 0
+-1. 9.93411e-010 0
+-1. 9.93411e-010 0
+-1. 9.93411e-010 0
+-1. 9.93411e-010 0
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#_collider_box_eluttagetShape-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+          <technique profile="MAYA">
+            <param name="DOUBLE_SIDED" type="bool" flow="OUT">TRUE</param>
+          </technique>
+        </source>
+        <source id="_collider_box_eluttagetShape-lib-map1" name="map1">
+          <float_array id="_collider_box_eluttagetShape-lib-map1-array" count="28">
+0 0
+1. 0
+0 1.
+1. 1.
+0 2.
+1. 2.
+0 3.
+1. 3.
+0 4.
+1. 4.
+2. 0
+2. 1.
+-1. 0
+-1. 1.
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#_collider_box_eluttagetShape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float" flow="OUT"/>
+              <param name="T" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <vertices id="_collider_box_eluttagetShape-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_eluttagetShape-lib-Position"/>
+        </vertices>
+        <triangles material="#lambert1" count="12">
+          <input semantic="VERTEX" idx="0" source="#_collider_box_eluttagetShape-lib-Vertex"/>
+          <input semantic="NORMAL" idx="1" source="#_collider_box_eluttagetShape-lib-Normal"/>
+          <input semantic="TEXCOORD" idx="2" source="#_collider_box_eluttagetShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2</p>
+          <p>1 1 1 3 2 3 2 3 2</p>
+          <p>2 4 2 3 5 3 4 7 4</p>
+          <p>3 5 3 5 6 5 4 7 4</p>
+          <p>4 8 4 5 9 5 6 11 6</p>
+          <p>5 9 5 7 10 7 6 11 6</p>
+          <p>6 12 6 7 13 7 0 15 8</p>
+          <p>7 13 7 1 14 9 0 15 8</p>
+          <p>1 16 1 7 17 10 3 19 3</p>
+          <p>7 17 10 5 18 11 3 19 3</p>
+          <p>6 20 12 0 21 0 4 23 13</p>
+          <p>0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="eluttagShape-lib" name="eluttagShape">
+      <mesh>
+        <source id="eluttagShape-lib-Position">
+          <float_array id="eluttagShape-lib-Position-array" count="159">
+-2.e-003 -4.86887e-002 3.e-002
+2.e-003 -4.86887e-002 3.e-002
+-2.e-003 4.86887e-002 3.e-002
+2.e-003 4.86887e-002 3.e-002
+-2.e-003 4.86887e-002 -3.e-002
+2.e-003 4.86887e-002 -3.e-002
+-2.e-003 -4.86887e-002 -3.e-002
+2.e-003 -4.86887e-002 -3.e-002
+-2.e-003 0 3.e-002
+-2.e-003 0 -3.e-002
+2.e-003 0 -3.e-002
+2.e-003 0 3.e-002
+2.e-003 2.25e-002 3.e-002
+2.e-003 2.25e-002 -3.e-002
+2.e-003 -2.25e-002 -3.e-002
+2.e-003 -2.25e-002 3.e-002
+-2.e-003 4.86887e-002 0
+-2.e-003 -4.86887e-002 0
+2.e-003 -4.86887e-002 0
+2.e-003 0 0
+2.e-003 4.86887e-002 0
+5.83781e-003 2.25e-002 1.98192e-002
+5.83781e-003 -2.25e-002 -1.98192e-002
+5.83781e-003 -2.25e-002 1.98192e-002
+5.83781e-003 -4.05e-002 0
+5.83781e-003 -4.5e-003 0
+5.83781e-003 2.25e-002 -1.98192e-002
+5.83781e-003 4.5e-003 0
+5.83781e-003 4.05e-002 0
+5.83781e-003 3.56791e-002 -1.4511e-002
+5.83781e-003 3.56791e-002 1.4511e-002
+5.83781e-003 9.32092e-003 1.4511e-002
+5.83781e-003 9.32092e-003 -1.4511e-002
+5.83781e-003 -9.75087e-003 -1.40376e-002
+5.83781e-003 -3.52491e-002 -1.40376e-002
+5.83781e-003 -3.52491e-002 1.40376e-002
+5.83781e-003 -9.75087e-003 1.40376e-002
+-3.94617e-004 4.5e-003 0
+-3.94617e-004 9.32092e-003 -1.4511e-002
+-3.94617e-004 2.25e-002 -1.98192e-002
+-3.94617e-004 3.56791e-002 -1.4511e-002
+-3.94617e-004 4.05e-002 0
+-3.94617e-004 3.56791e-002 1.4511e-002
+-3.94617e-004 2.25e-002 1.98192e-002
+-3.94617e-004 9.32092e-003 1.4511e-002
+-3.94616e-004 -4.05e-002 0
+-3.94616e-004 -3.52491e-002 -1.40376e-002
+-3.94617e-004 -2.25e-002 -1.98192e-002
+-3.94617e-004 -9.75087e-003 -1.40376e-002
+-3.94617e-004 -4.5e-003 0
+-3.94617e-004 -9.75087e-003 1.40376e-002
+-3.94617e-004 -2.25e-002 1.98192e-002
+-3.94616e-004 -3.52491e-002 1.40376e-002
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#eluttagShape-lib-Position-array" count="53" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <source id="eluttagShape-lib-Normal">
+          <float_array id="eluttagShape-lib-Normal-array" count="564">
+0 0 1.
+0 0 1.
+0 0 1.
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+0 0 -1.
+0 0 -1.
+0 0 -1.
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+1. -2.38752e-010 0
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+0 -1. 3.54207e-008
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+1. 1.97634e-008 0
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0 1. -3.54207e-008
+0.964016 -3.9045e-002 -0.262962
+0.964016 -3.9045e-002 -0.262962
+0.964016 -3.9045e-002 -0.262962
+0.964016 -3.9045e-002 -0.262962
+0.902045 0.428605 -5.11052e-002
+0.902045 0.428605 -5.11052e-002
+0.902045 0.428605 -5.11052e-002
+0.902045 0.428605 -5.11052e-002
+0.962871 4.36949e-002 0.266401
+0.962871 4.36949e-002 0.266401
+0.962871 4.36949e-002 0.266401
+0.962871 4.36949e-002 0.266401
+0.950054 -0.309892 3.69503e-002
+0.950054 -0.309892 3.69503e-002
+0.950054 -0.309892 3.69503e-002
+0.950054 -0.309892 3.69503e-002
+0.961245 -4.057e-002 -0.272694
+0.961245 -4.057e-002 -0.272694
+0.961245 -4.057e-002 -0.272694
+0.961245 -4.057e-002 -0.272694
+0.962357 3.63179e-002 -0.269351
+0.962357 3.63179e-002 -0.269351
+0.962357 3.63179e-002 -0.269351
+0.962357 3.63179e-002 -0.269351
+0.962357 3.63179e-002 0.269351
+0.962357 3.63179e-002 0.269351
+0.962357 3.63179e-002 0.269351
+0.962357 3.63179e-002 0.269351
+0.89509 -0.443292 4.80123e-002
+0.89509 -0.443292 4.80123e-002
+0.89509 -0.443292 4.80123e-002
+0.89509 -0.443292 4.80123e-002
+0.947494 0.317915 -3.44329e-002
+0.947494 0.317915 -3.44329e-002
+0.947494 0.317915 -3.44329e-002
+0.947494 0.317915 -3.44329e-002
+0.947494 0.317915 3.44329e-002
+0.947494 0.317915 3.44329e-002
+0.947494 0.317915 3.44329e-002
+0.947494 0.317915 3.44329e-002
+0.961245 -4.057e-002 0.272694
+0.961245 -4.057e-002 0.272694
+0.961245 -4.057e-002 0.272694
+0.961245 -4.057e-002 0.272694
+0.89509 -0.443292 -4.80123e-002
+0.89509 -0.443292 -4.80123e-002
+0.89509 -0.443292 -4.80123e-002
+0.89509 -0.443292 -4.80123e-002
+0.962871 4.36949e-002 -0.266401
+0.962871 4.36949e-002 -0.266401
+0.962871 4.36949e-002 -0.266401
+0.962871 4.36949e-002 -0.266401
+0.950054 -0.309892 -3.69503e-002
+0.950054 -0.309892 -3.69503e-002
+0.950054 -0.309892 -3.69503e-002
+0.950054 -0.309892 -3.69503e-002
+0.964016 -3.9045e-002 0.262962
+0.964016 -3.9045e-002 0.262962
+0.964016 -3.9045e-002 0.262962
+0.964016 -3.9045e-002 0.262962
+0.902045 0.428605 5.11052e-002
+0.902045 0.428605 5.11052e-002
+0.902045 0.428605 5.11052e-002
+0.902045 0.428605 5.11052e-002
+-1.19483e-008 0.948998 0.315281
+-1.19483e-008 0.948998 0.315281
+-1.19483e-008 0.948998 0.315281
+-1.19483e-008 0.948998 0.315281
+-1.9007e-008 0.373605 0.927588
+-1.9007e-008 0.373605 0.927588
+-1.9007e-008 0.373605 0.927588
+-1.9007e-008 0.373605 0.927588
+-1.9007e-008 -0.373605 0.927588
+-1.9007e-008 -0.373605 0.927588
+-1.9007e-008 -0.373605 0.927588
+-1.9007e-008 -0.373605 0.927588
+-8.88997e-009 -0.948998 0.315281
+-8.88997e-009 -0.948998 0.315281
+-8.88997e-009 -0.948998 0.315281
+-8.88997e-009 -0.948998 0.315281
+-8.88997e-009 -0.948998 -0.315281
+-8.88997e-009 -0.948998 -0.315281
+-8.88997e-009 -0.948998 -0.315281
+-8.88997e-009 -0.948998 -0.315281
+-1.9007e-008 -0.373605 -0.927588
+-1.9007e-008 -0.373605 -0.927588
+-1.9007e-008 -0.373605 -0.927588
+-1.9007e-008 -0.373605 -0.927588
+-1.9007e-008 0.373605 -0.927588
+-1.9007e-008 0.373605 -0.927588
+-1.9007e-008 0.373605 -0.927588
+-1.9007e-008 0.373605 -0.927588
+-1.19483e-008 0.948998 -0.315281
+-1.19483e-008 0.948998 -0.315281
+-1.19483e-008 0.948998 -0.315281
+-1.19483e-008 0.948998 -0.315281
+1.42716e-008 0.936619 0.350349
+1.42716e-008 0.936619 0.350349
+1.42716e-008 0.936619 0.350349
+1.42716e-008 0.936619 0.350349
+-1.4857e-008 0.413003 0.91073
+-1.4857e-008 0.413003 0.91073
+-1.4857e-008 0.413003 0.91073
+-1.4857e-008 0.413003 0.91073
+1.1105e-007 -0.413003 0.91073
+1.1105e-007 -0.413003 0.91073
+1.1105e-007 -0.413003 0.91073
+1.1105e-007 -0.413003 0.91073
+-1.02926e-008 -0.936619 0.350349
+-1.02926e-008 -0.936619 0.350349
+-1.02926e-008 -0.936619 0.350349
+-1.02926e-008 -0.936619 0.350349
+-1.02926e-008 -0.936619 -0.350349
+-1.02926e-008 -0.936619 -0.350349
+-1.02926e-008 -0.936619 -0.350349
+-1.02926e-008 -0.936619 -0.350349
+1.1105e-007 -0.413003 -0.91073
+1.1105e-007 -0.413003 -0.91073
+1.1105e-007 -0.413003 -0.91073
+1.1105e-007 -0.413003 -0.91073
+-1.4857e-008 0.413003 -0.91073
+-1.4857e-008 0.413003 -0.91073
+-1.4857e-008 0.413003 -0.91073
+-1.4857e-008 0.413003 -0.91073
+1.42716e-008 0.936619 -0.350349
+1.42716e-008 0.936619 -0.350349
+1.42716e-008 0.936619 -0.350349
+1.42716e-008 0.936619 -0.350349
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#eluttagShape-lib-Normal-array" count="188" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+          <technique profile="MAYA">
+            <param name="DOUBLE_SIDED" type="bool" flow="OUT">TRUE</param>
+          </technique>
+        </source>
+        <source id="eluttagShape-lib-map1" name="map1">
+          <float_array id="eluttagShape-lib-map1-array" count="106">
+0.190722 -1.4659e-008
+0.213101 2.40298e-002
+0.226861 0.27126
+0.190722 1.
+0.213142 0.975899
+0.5 0.965129
+0.5 1.
+0.809278 -1.4659e-008
+0.773139 0.27126
+0.786899 2.40298e-002
+0.5 -1.4659e-008
+0.5 3.49403e-002
+0.809278 1.
+0.786858 0.975898
+0.773239 0.728701
+0.499994 0.600373
+0.596426 0.633225
+0.631287 0.723099
+0.598263 0.810641
+0.500003 0.841476
+0.401744 0.810649
+0.368688 0.723077
+0.403595 0.633246
+0.22676 0.728699
+0.190722 0.5
+0.229585 0.500097
+0.770416 0.500095
+0.809278 0.5
+0.5 0.158701
+0.594378 0.192276
+0.630346 0.276403
+0.592767 0.362864
+0.499999 0.398267
+0.407233 0.362864
+0.369654 0.276403
+0.405621 0.192276
+0.673705 0.275055
+0.626826 0.158583
+0.499999 0.499286
+0.499999 0.443661
+0.623246 0.396995
+0.326294 0.275055
+0.376754 0.396995
+0.5 0.115322
+0.373174 0.158583
+0.674809 0.724487
+0.626944 0.599083
+0.630895 0.844379
+0.325181 0.724478
+0.369107 0.844382
+0.499999 0.554707
+0.373062 0.599091
+0.500001 0.884929
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#eluttagShape-lib-map1-array" count="53" stride="2">
+              <param name="S" type="float" flow="OUT"/>
+              <param name="T" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <vertices id="eluttagShape-lib-Vertex">
+          <input semantic="POSITION" source="#eluttagShape-lib-Position"/>
+        </vertices>
+        <triangles material="#lambert1" count="96">
+          <input semantic="VERTEX" idx="0" source="#eluttagShape-lib-Vertex"/>
+          <input semantic="NORMAL" idx="1" source="#eluttagShape-lib-Normal"/>
+          <input semantic="TEXCOORD" idx="2" source="#eluttagShape-lib-map1"/>
+          <p>0 0 0 1 1 1 15 2 2</p>
+          <p>2 3 3 3 4 4 16 6 6</p>
+          <p>3 4 4 20 5 5 16 6 6</p>
+          <p>6 7 7 14 8 8 7 9 9</p>
+          <p>17 10 10 18 11 11 0 13 0</p>
+          <p>18 11 11 1 12 1 0 13 0</p>
+          <p>4 14 12 5 15 13 13 16 14</p>
+          <p>38 18 16 39 19 17 37 17 15</p>
+          <p>39 19 17 40 20 18 37 17 15</p>
+          <p>40 20 18 41 21 19 37 17 15</p>
+          <p>37 17 15 41 21 19 44 24 22</p>
+          <p>41 21 19 42 22 20 44 24 22</p>
+          <p>42 22 20 43 23 21 44 24 22</p>
+          <p>2 25 3 12 26 23 3 27 4</p>
+          <p>2 31 3 8 28 24 12 30 23</p>
+          <p>8 28 24 11 29 25 12 30 23</p>
+          <p>4 32 12 13 33 14 9 35 27</p>
+          <p>13 33 14 10 34 26 9 35 27</p>
+          <p>6 39 7 9 36 27 14 38 8</p>
+          <p>9 36 27 10 37 26 14 38 8</p>
+          <p>0 40 0 15 41 2 8 43 24</p>
+          <p>15 41 2 11 42 25 8 43 24</p>
+          <p>6 44 7 7 45 9 17 47 10</p>
+          <p>7 45 9 18 46 11 17 47 10</p>
+          <p>47 50 30 48 51 31 46 49 29</p>
+          <p>46 49 29 48 51 31 45 48 28</p>
+          <p>48 51 31 49 52 32 45 48 28</p>
+          <p>45 48 28 49 52 32 52 55 35</p>
+          <p>49 52 32 50 53 33 52 55 35</p>
+          <p>50 53 33 51 54 34 52 55 35</p>
+          <p>16 56 6 20 57 5 4 59 12</p>
+          <p>20 57 5 5 58 13 4 59 12</p>
+          <p>14 63 8 22 60 36 7 62 9</p>
+          <p>22 60 36 34 61 37 7 62 9</p>
+          <p>19 64 38 25 65 39 10 67 26</p>
+          <p>25 65 39 33 66 40 10 67 26</p>
+          <p>11 71 25 15 68 2 36 70 42</p>
+          <p>15 68 2 23 69 41 36 70 42</p>
+          <p>18 73 11 24 74 43 1 72 1</p>
+          <p>1 72 1 24 74 43 35 75 44</p>
+          <p>10 78 26 13 79 14 32 77 46</p>
+          <p>26 76 45 32 77 46 13 79 14</p>
+          <p>5 80 13 29 81 47 13 83 14</p>
+          <p>29 81 47 26 82 45 13 83 14</p>
+          <p>3 87 4 12 84 23 30 86 49</p>
+          <p>12 84 23 21 85 48 30 86 49</p>
+          <p>19 89 38 27 90 50 11 88 25</p>
+          <p>11 88 25 27 90 50 31 91 51</p>
+          <p>20 92 5 28 93 52 5 95 13</p>
+          <p>28 93 52 29 94 47 5 95 13</p>
+          <p>20 99 5 3 96 4 28 98 52</p>
+          <p>3 96 4 30 97 49 28 98 52</p>
+          <p>11 100 25 31 101 51 12 103 23</p>
+          <p>31 101 51 21 102 48 12 103 23</p>
+          <p>19 106 38 10 107 26 27 105 50</p>
+          <p>32 104 46 27 105 50 10 107 26</p>
+          <p>10 108 26 33 109 40 14 111 8</p>
+          <p>33 109 40 22 110 36 14 111 8</p>
+          <p>18 114 11 7 115 9 24 113 43</p>
+          <p>34 112 37 24 113 43 7 115 9</p>
+          <p>15 119 2 1 116 1 23 118 41</p>
+          <p>1 116 1 35 117 44 23 118 41</p>
+          <p>19 123 38 11 120 25 25 122 39</p>
+          <p>11 120 25 36 121 42 25 122 39</p>
+          <p>27 124 50 32 125 46 37 127 15</p>
+          <p>32 125 46 38 126 16 37 127 15</p>
+          <p>32 128 46 26 129 45 38 131 16</p>
+          <p>26 129 45 39 130 17 38 131 16</p>
+          <p>26 132 45 29 133 47 39 135 17</p>
+          <p>29 133 47 40 134 18 39 135 17</p>
+          <p>29 136 47 28 137 52 40 139 18</p>
+          <p>28 137 52 41 138 19 40 139 18</p>
+          <p>28 140 52 30 141 49 41 143 19</p>
+          <p>30 141 49 42 142 20 41 143 19</p>
+          <p>30 144 49 21 145 48 42 147 20</p>
+          <p>21 145 48 43 146 21 42 147 20</p>
+          <p>21 148 48 31 149 51 43 151 21</p>
+          <p>31 149 51 44 150 22 43 151 21</p>
+          <p>31 152 51 27 153 50 44 155 22</p>
+          <p>27 153 50 37 154 15 44 155 22</p>
+          <p>24 156 43 34 157 37 45 159 28</p>
+          <p>34 157 37 46 158 29 45 159 28</p>
+          <p>34 160 37 22 161 36 46 163 29</p>
+          <p>22 161 36 47 162 30 46 163 29</p>
+          <p>22 164 36 33 165 40 47 167 30</p>
+          <p>33 165 40 48 166 31 47 167 30</p>
+          <p>33 168 40 25 169 39 48 171 31</p>
+          <p>25 169 39 49 170 32 48 171 31</p>
+          <p>25 172 39 36 173 42 49 175 32</p>
+          <p>36 173 42 50 174 33 49 175 32</p>
+          <p>36 176 42 23 177 41 50 179 33</p>
+          <p>23 177 41 51 178 34 50 179 33</p>
+          <p>23 180 41 35 181 44 51 183 34</p>
+          <p>35 181 44 52 182 35 51 183 34</p>
+          <p>35 184 44 24 185 43 52 187 35</p>
+          <p>24 185 43 45 186 28 52 187 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library>
+  <scene name="051116_eluttag01">
+    <extra>
+      <technique profile="MAYA">
+        <param name="START_TIME" type="float" flow="IN">0</param>
+        <param name="END_TIME" type="float" flow="IN">0.5</param>
+      </technique>
+    </extra>
+    <boundingbox>
+      <min>-2.e-003 -5.e-002 -3.e-002</min>
+      <max>6.10497e-003 5.e-002 3.e-002</max>
+    </boundingbox>
+    <node id="group1" name="group1">
+      <boundingbox>
+        <min>-2.e-003 -5.e-002 -3.e-002</min>
+        <max>6.10497e-003 5.e-002 3.e-002</max>
+      </boundingbox>
+      <node id="_collider_box_eluttaget" name="_collider_box_eluttaget">
+        <boundingbox>
+          <min>-1.89503e-003 -5.e-002 -3.e-002</min>
+          <max>6.10497e-003 5.e-002 3.e-002</max>
+        </boundingbox>
+        <translate sid="translate">2.10497e-003 0 0</translate>
+        <instance url="#_collider_box_eluttagetShape-lib"/>
+      </node>
+      <node id="eluttag" name="eluttag">
+        <boundingbox>
+          <min>-2.e-003 -4.86887e-002 -3.e-002</min>
+          <max>5.83781e-003 4.86887e-002 3.e-002</max>
+        </boundingbox>
+        <instance url="#eluttagShape-lib"/>
+      </node>
+    </node>
+  </scene>
+</COLLADA>

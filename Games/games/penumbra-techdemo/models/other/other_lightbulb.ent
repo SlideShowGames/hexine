@@ -1,0 +1,27 @@
+<ENTITY>
+	<MAIN 
+		Name="other_lightbulb" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.4"
+		LinearDamping = "0.4"
+		BlocksSound = "false"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "other_lightbulb"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+	/>
+	
+</ENTITY>

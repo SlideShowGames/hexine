@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="electronics_electricsocket_threephase.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Modulative" PhysicsMaterial="Default" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="decals_moister01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

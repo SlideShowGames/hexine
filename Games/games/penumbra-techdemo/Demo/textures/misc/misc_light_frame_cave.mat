@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="misc_light_frame_cave.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="misc_light_frame_cave_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

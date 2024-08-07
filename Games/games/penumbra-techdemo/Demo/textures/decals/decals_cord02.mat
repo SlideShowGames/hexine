@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="decals_cord02.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-    <NMap File="decals_cord02_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Dyn_Wood_Chair" />
+  <TextureUnits>
+    <Diffuse File="furniture_pinchair.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

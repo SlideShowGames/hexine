@@ -1,0 +1,592 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+//DESTROY LIGHT
+void DestLight01(string asParent, string asChild)
+{
+	SetLight3DVisible("light4_light1",false);
+	PlaySoundEntity("destlight",false);
+	PlaySoundEntity("throat1",false);
+	
+	StopSoundEntity("light4_light1s",false);
+	RemoveEntityCollideCallback("Enter","Player","destlight01");
+}
+
+//VENTILATION 1
+void VentComb01(string asItem, string asEntity)
+{
+	//these vars only for controlling player standing/crouch and an area in corridor02
+	SetGlobalVar("corridor02_vent01", 1);
+	SetGlobalVar("corridor02_crouch", 1);
+	
+	ChangeMap(	"level01_05_corridor02.dae", //New map
+			"link05", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+
+//ADDING KEY PARTS TO KEY KEYMACHINE
+void KeyComb01(string asItem, string asEntity)
+{
+	//insert key part1
+	PlaySoundEntity("insertkey",false);
+	SetLocalVar("KeyComb1", 1);
+	RemoveItem("keypart1");
+	
+	AddMessageTrans("level_01_06_workshop01", "InsertKey1");
+		
+	if(GetLocalVar("ChordShow") == 0)
+		{
+		SetLocalVar("ChordShow", 1);
+		}
+	//RemoveCombineCallback("KeyComb01");
+}
+void KeyComb02(string asItem, string asEntity)
+{
+	//insert key part2
+	PlaySoundEntity("insertkey",false);
+	SetLocalVar("KeyComb2", 1);
+	RemoveItem("keypart2");	
+	
+	AddMessageTrans("level_01_06_workshop01", "InsertKey2");
+	
+	if(GetLocalVar("ChordShow") == 0)
+		{
+		SetLocalVar("ChordShow", 1);
+		}
+	//RemoveCombineCallback("KeyComb02");
+}
+////////////////////////////////////
+//START ADDING CHORD TO KEYMACHINE//
+void ChordComb01(string asItem, string asEntity)
+{
+	//insert chord to power machine
+	SetPlayerActive(false);
+	SetWideScreenActive(true);	
+	StartPlayerLookAt("fixarea1",2, 4);
+	
+	CreateTimer("ChordFix", 1, "CordFixEvent",false);
+	
+	RemoveItem("chord");
+	SetLocalVar("ChordTrue", 1);
+	SetLocalVar("GotChord", 2);	
+}
+void CordFixEvent(string asTimer)
+{
+	StartPlayerLookAt("fixarea2",2, 4);
+	
+	CreateTimer("ChordFix2", 0.8, "CordFix2Event",false);	
+}
+void CordFix2Event(string asTimer)
+{
+	StartPlayerLookAt("fixarea3",4, 4);
+	PlaySoundEntity("insertchord",false);
+	
+	CreateTimer("ChordFixEnd", 1, "CordFixEndEvent",false);
+}
+void CordFixEndEvent(string asTimer)
+{
+	SetGameEntityActive("chord2", true);
+	
+	AddMessageTrans("level_01_06_workshop01", "InsertChord");
+	SetMessagesOverCallback("CordFixEnd");
+	
+	SetGameEntityDescriptionTrans("keymachinearea","level_01_06_workshop01", "keymachine02");
+	RemoveNotebookTask("TaskChord");
+}
+void CordFixEnd()
+{
+	SetWideScreenActive(false);	
+	StopPlayerLookAt();
+	SetPlayerActive(true);	
+}
+//////////////////////////////////
+//END ADDING CHORD TO KEYMACHINE//
+
+//SHOWING PLAYER CHORD LOCATION
+void EnterRepairArea(string asParent, string asChild)
+{	
+	//Point player to location of power chord
+	if(GetLocalVar("ChordShow") == 1)
+		{	
+		SetPlayerActive(false);
+		SetWideScreenActive(true);
+		StartPlayerLookAt("chordarea",1.0f, 4);
+	
+		CreateTimer("ChordTimer", 1.5, "CordTimerEvent",false);
+		
+		SetLocalVar("ChordShow", 2);
+		RemoveEntityCollideCallback("Enter","Player","repairarea");
+		}
+}
+void CordTimerEvent(string asTimer)
+{
+	AddMessageTrans("level_01_06_workshop01", "FindingChord");
+	
+	SetMessagesOverCallback("CordShowEnd");
+}
+void CordShowEnd()
+{
+	SetWideScreenActive(false);	
+	StopPlayerLookAt();
+	SetPlayerActive(true);	
+}
+//PLAYER PICKS UP CHORD
+void PickUpChord(string asEntity)
+{
+	AddMessageTrans("level_01_06_workshop01", "PickingChord");
+	SetGameEntityDescriptionTrans("keymachinearea","level_01_06_workshop01", "keymachine02");
+	
+	//AUTO SAVE//
+	SetGlobalVar("autoload", 5);
+	
+	SetGlobalVar("startnoise", 1);
+	
+	SetLocalVar("ChordShow", 2);
+	SetLocalVar("GotChord", 1);
+}
+
+//CAR LIFT CONTROLLERS
+	
+	//////////////////////////////////
+	//CLOSE LIFT CONTROLLER
+	void LiftStick_Up_Enter(string asParent, string asChild)
+	{
+		SetJointControllerActive(asParent+"object_joint1","up",true);
+		SetJointControllerActive(asParent+"object_joint1","still",false);
+		
+		//SetBodyProperty(asParent+"object"+"_mainShape","Mass",200);
+		AddBodyImpulse(asParent+"object"+"_mainShape","World",0,2,0);		
+		
+		PlaySoundEntity(asParent+"sound",true);
+		
+		//PlaySoundEntity("stickclose",false);
+		
+		//Print("Enter close_stick up!\n");
+	}
+	void LiftStick_Up_Leave(string asParent, string asChild)
+	{
+		//SetBodyProperty(asParent+"object"+"_mainShape","Mass",0);
+		SetJointControllerActive(asParent+"object_joint1","up",false);
+		SetJointControllerActive(asParent+"object_joint1","still",true);
+						
+		StopSoundEntity(asParent+"sound",true);
+		//PlaySoundEntity("stickclose",false);
+		
+		//Print("Leave close_stick up!\n");
+	}
+
+	void LiftStick_Down_Enter(string asParent, string asChild)
+	{
+		SetJointControllerActive(asParent+"object_joint1","down",true);
+		SetJointControllerActive(asParent+"object_joint1","still",false);
+		
+		//SetBodyProperty(asParent+"object"+"_mainShape","Mass",200);
+		AddBodyImpulse(asParent+"object"+"_mainShape","World",0,-2,0);
+		
+		PlaySoundEntity(asParent+"sound",true);
+		//PlaySoundEntity("stickclose",false);
+		
+		//Print("Enter close_stick down!\n");
+	}
+	void LiftStick_Down_Leave(string asParent, string asChild)
+	{
+		//SetBodyProperty(asParent+"object"+"_mainShape","Mass",0);
+		SetJointControllerActive(asParent+"object_joint1","down",false);
+		SetJointControllerActive(asParent+"object_joint1","still",true);
+		
+		StopSoundEntity(asParent+"sound",true);
+		//PlaySoundEntity("stickclose",false);
+		
+		//Print("Leave close_stick down!\n");
+	}
+	
+	//When it at minimum
+	void LiftCloseMin(string asJoint)
+	{
+		SetJointControllerActive("liftcloseobject_joint1","down",false);
+		//Print("OnMin!\n");
+	}
+	void LiftCloseMax(string asJoint)
+	{
+		SetJointControllerActive("liftcloseobject_joint1","up",false);
+		//Print("OnMax!\n");
+	}
+	void LiftFarMin(string asJoint)
+	{
+		SetJointControllerActive("liftfarobject_joint1","down",false);
+		//Print("OnMin!\n");
+	}
+	void LiftFarMax(string asJoint)
+	{
+		SetJointControllerActive("liftfarobject_joint1","up",false);
+		//Print("OnMax!\n");
+	}
+	
+	
+////////////////////////////////////////////////////
+//////////// START CREATE KEY //////////////////////
+void KeyMachineInteract01(string asJoint)
+{	
+	//give player mended key if both parts have been inserted prior and the chord is in place
+	if(GetLocalVar("ChordTrue") == 1)
+	{
+		if (GetLocalVar("KeyComb1") == 1 && GetLocalVar("KeyComb2") == 1)
+		{
+			AddBodyImpulse("keymachine_buttonShape", "local" ,0,-25,0);
+			PlaySoundEntity("keymachine_run",false);
+			PlayGuiSound("pick_generic_small",0.5);
+		
+			RemoveNotebookTask("TaskKeymachine");
+			RemoveEntityCallback("PlayerInteract","keymachine");
+		
+			SetPlayerActive(false);
+			SetWideScreenActive(true);
+			StartPlayerLookAt("keymachine",1.0f, 4);
+			
+			SetGameEntityDescriptionTrans("keymachinearea","level_01_06_workshop01", "keymachine03");
+			
+			CreateTimer("1", 2.6, "KeyDone",false);
+			CreateTimer("SparkTimer", 0.6, "SparkStart",false);
+			
+			SetLocalVar("GotChord", 3);
+		}
+	}
+	//display message about chord
+	if(GetLocalVar("ChordTrue") == 0 && GetLocalVar("GotChord") == 0)
+		{
+		AddMessageTrans("level_01_06_workshop01", "NeedChord");
+		
+		if(GetLocalVar("ChordTask") == 0)
+			{
+			AddNotebookTask("TaskChord", "Tasks","KeyMachineChord");
+			
+			SetLocalVar("ChordTask", 1);
+			SetLocalVar("ChordShow", 1);
+			}
+		}
+	if(GetLocalVar("ChordTrue") == 0 && GetLocalVar("GotChord") == 1)
+		{
+		AddMessageTrans("level_01_06_workshop01", "NeedChord02");
+		}
+	if(GetLocalVar("ChordTrue") == 1 && GetLocalVar("GotChord") == 2)
+		{
+		AddMessageTrans("level_01_06_workshop01", "ChordInPlace");
+		}	
+}
+
+void SparkStart(string asTimer)
+{
+	SetParticleSystemActive("sparks01",true);
+	
+}
+
+void KeyDone(string asTimer)
+{
+	KillParticleSystem("sparks01");	
+	AddMessageTrans("level_01_06_workshop01", "KeyDone01");
+	SetMessagesOverCallback("GrabKey");		
+}
+
+void GrabKey()
+{
+	AddMessageTrans("level_01_06_workshop01", "KeyDone02");
+	SetMessagesOverCallback("EndKeyCreation");		
+	
+	PlayGuiSound("receive_key",1);
+	GiveItem("keywhole","item_key01_whole.ent", -1);
+}
+
+void EndKeyCreation()
+{
+	SetPlayerActive(true);
+	SetWideScreenActive(false);
+	StopPlayerLookAt();
+	
+	RemoveEntityCallback("PlayerInteract","keymachinearea");		
+}
+
+////////////////////////////////////////////////////
+//////////// END CREATE KEY //////////////////////
+
+//ADD NOTES TO TASK LIST ABOUT KEYMACHINE
+void KeyMachineExamine01(string asEntity)
+{	
+	AddNotebookTask("TaskKeymachine", "Tasks","KeyMachine01");
+	RemoveEntityCallback("PlayerExamine","keymachinearea");
+	
+	if(GetLocalVar("ChordShow") == 0)
+		{
+		SetLocalVar("ChordShow", 1);
+		
+		if(GetLocalVar("ChordTask") == 0)
+			{
+			AddNotebookTask("TaskChord", "Tasks","KeyMachineChord");
+			SetLocalVar("ChordTask", 1);
+			}
+		}
+}
+
+//USING PLATECUTTER
+void SteelPinComb01(string asItem, string asEntity)
+{
+	//insert rod
+	PlaySoundEntity("insertsteelpin",false);
+	RemoveItem("steelpinwhole");
+	SetLocalVar("SteelPinComb1", 1);
+	
+	RemoveCombineCallback("SteelPinComb01");
+}
+void PlateCutterInteract01(string asJoint)
+{	
+	//create rod split in two pieces
+	if (GetLocalVar("SteelPinComb1") == 1)
+	{
+		PlaySoundEntity("platecutter_run",false);
+		//SetGameEntityActive("steelpinpart1", true);
+		//SetGameEntityActive("steelpinpart2", true);
+		
+		RemoveNotebookTask("TaskPlatecutter");
+		RemoveEntityCallback("PlayerInteract","platecutterarea");
+	}
+	
+}
+void PlateCutterExamine01(string asEntity)
+{	
+	AddNotebookTask("TaskPlatecutter", "Tasks","PlateCutter01");
+	RemoveEntityCallback("PlayerExamine","platecutterarea");
+}
+
+//LOCKED MACHINE AREA
+void ClosedMachineInteract01(string asEntity)
+{	
+	PlaySoundEntity("fencerattles",false);
+}
+
+//FINDING NOTE FOR DOOR & UNLOCK DOOR
+void PickUpNoteWorkShop01(string asEntity)
+{
+	AddMessageTrans("Items", "PickNote01");
+}
+void Link01Interact01(string asEntity)
+{
+	if(GetGlobalVar("workshopunlocked") == 0)
+		{
+		StartNumericalPanel("test",3,6,5,4,10.0f,"PanelCode");
+		}
+	else if(GetGlobalVar("workshopunlocked") == 1)
+		{
+		ChangeMap(	"level01_05_corridor02.dae", //New map
+				"link02", //Positon on new map
+				"door_clickable_start","door_clickable_stop", //Stop and end sound.
+				0.5f , 0.5f);//Fade out and in time (seconds).	
+		}
+}
+void PanelCode(string asName, bool abCodeWasCorrect)
+{
+	if(abCodeWasCorrect)
+	{
+		SetGlobalVar("workshopunlocked", 1);
+		PlayGuiSound("door_code_correct", 0.8);
+		RemoveNotebookTask("TaskCodeCorridor02");
+	}
+	else
+	{
+		PlayGuiSound("door_code_incorrect", 0.8);
+	}	
+}
+
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{	
+//-----SET UP LINKS---------------
+
+	
+//-----ENTITY INIT--------------
+	//SetGameEntityActive("steelpinpart1", false);
+	//SetGameEntityActive("steelpinpart2", false);
+	SetGameEntityActive("chord2", false);
+
+//-----SOUND INIT---------------
+	//destroy light		
+	StopSoundEntity("destlight",false);
+	//stop lights that are off
+	StopSoundEntity("light3_light1s",false);
+	StopSoundEntity("light6_light1s",false);
+	StopSoundEntity("light7_light1s",false);
+	StopSoundEntity("light8_light1s",false);
+	
+	//keymachine
+	StopSoundEntity("receivekey",false);
+	StopSoundEntity("insertkey",false);
+	StopSoundEntity("keymachine_run",false);
+	StopSoundEntity("insertchord",false);
+	
+	//platecutter
+	StopSoundEntity("insertsteelpin",false);
+	StopSoundEntity("platecutter_run",false);
+	
+	//amb sounds
+	StopSoundEntity("fencerattles",false);
+	StopSoundEntity("throat1",false);
+	
+	//lift and controllers
+	StopSoundEntity("liftclosesound",false);
+	StopSoundEntity("stickclose",false);
+	StopSoundEntity("liftfarsound",false);
+	StopSoundEntity("stickfar",false);
+	
+//----LIGHT INIT---------------
+	SetLight3DVisible("light3_light1",false);
+	SetLight3DVisible("light6_light1",false);
+	SetLight3DVisible("light7_light1",false);
+	SetLight3DVisible("light8_light1",false);
+	
+	FadeLight3D("light1_bulbpoint1",0.97,1,0.82,0.5,3, 0.01);
+	FadeLight3D("light10_light1",0.85,0.9,0.95,0.2,4.5, 0.01);
+	FadeLight3D("light5_light1",0.85,0.9,0.95,0.2,4.5, 0.01);
+	
+	SetLight3DFlicker("light1",
+			0,0,0.05,0, //Color
+			0.1, //Radius
+			1, 2, "machine_pump_steam", "",
+			1, 2, "","",
+			true, 0.4,1);
+	SetLight3DFlickerActive("light1",true);
+	SetLight3DFlicker("light2",
+			0,0,0.05,0, //Color
+			0.1, //Radius
+			1, 2, "machine_pump_steam", "",
+			1, 2, "","",
+			true, 0.5,0.9);
+	SetLight3DFlickerActive("light2",true);
+	
+//----PARTICLE INIT----------------------------------
+	CreateParticleSystem("lockedps","FlareSmoke01","lockedpsarea",0.8,0.3,1);
+	CreateParticleSystem("pipesteamps","Steam01","pipesteamarea",0.3,0.8,3);
+
+//----TEXT INIT-------------------------------
+	//VENTILATION DOORS
+	SetGameEntityDescriptionTrans("vent1","Doors", "Ventilation02");
+	//MACHINES
+	SetGameEntityDescriptionTrans("keymachinearea","level_01_06_workshop01", "keymachine01");
+	SetGameEntityDescriptionTrans("platecutterarea","level_01_06_workshop01", "platecutter01");
+	//AREAS
+	SetGameEntityDescriptionTrans("closedmachine","level_01_06_workshop01", "ClosedMachine");
+	SetGameEntityDescriptionTrans("woodpile","level_01_06_workshop01", "WoodPile");
+	SetGameEntityDescriptionTrans("junkpile","level_01_06_workshop01", "JunkPile");
+	SetGameEntityDescriptionTrans("liftarea","level_01_06_workshop01", "LiftArea");
+	SetGameEntityDescriptionTrans("elevatorarea","level_01_06_workshop01", "ElevatorArea");
+	
+//----AREAS---------------------
+	//destroy light
+	AddEntityCollideCallback("Enter","Player","destlight01","DestLight01");
+	//locked door area gets right icon and vent
+	SetAreaCustomIcon("link01", "DoorLink");
+	SetAreaCustomIcon("vent1", "DoorLink");
+	//POINT PLAYER TO CHORD
+	AddEntityCollideCallback("Enter","Player","repairarea","EnterRepairArea");
+
+//----INTERACT---------------------
+	//keymachine	
+	AddEntityCallback("PlayerInteract","keymachinearea","KeyMachineInteract01");
+	AddEntityCallback("PlayerExamine","keymachinearea","KeyMachineExamine01");
+	AddUseCallback("keypart1", "keymachinearea", "KeyComb01");
+	AddUseCallback("keypart2", "keymachinearea", "KeyComb02");
+	
+	AddUseCallback("chord", "keymachinearea", "ChordComb01");
+	AddPickupCallback("chord", "PickUpChord");
+	SetGameEntityMaxInteractDist("chord",1.8);
+	
+	//platecutter	
+	AddEntityCallback("PlayerInteract","platecutterarea","PlateCutterInteract01");
+	AddEntityCallback("PlayerExamine","platecutterarea","PlateCutterExamine01");
+	AddUseCallback("steelpinwhole","platecutter","SteelPinComb01");
+	
+	//locked machine
+	AddEntityCallback("PlayerInteract","closedmachine","ClosedMachineInteract01");
+	
+	/////////////////////////////////////////
+	//Car lift and controllers
+	
+	/////////////////////////////
+	//Close stick and lift
+	AddEntityCollideCallback("Enter","liftclose","stickcloseup","LiftStick_Up_Enter");
+	AddEntityCollideCallback("Leave","liftclose","stickcloseup","LiftStick_Up_Leave");
+	AddEntityCollideCallback("Enter","liftclose","stickclosedown","LiftStick_Down_Enter");	
+	AddEntityCollideCallback("Leave","liftclose","stickclosedown","LiftStick_Down_Leave");	
+	
+	AddEntityCollideCallback("Enter","liftfar","stickfarup","LiftStick_Up_Enter");
+	AddEntityCollideCallback("Leave","liftfar","stickfarup","LiftStick_Up_Leave");
+	AddEntityCollideCallback("Enter","liftfar","stickfardown","LiftStick_Down_Enter");	
+	AddEntityCollideCallback("Leave","liftfar","stickfardown","LiftStick_Down_Leave");	
+	
+	SetJointCallback("liftcloseobject_joint1","OnMin","LiftCloseMin");
+	SetJointCallback("liftcloseobject_joint1","OnMax","LiftCloseMax");
+	
+	SetJointCallback("liftfarobject_joint1","OnMin","LiftFarMin");
+	SetJointCallback("liftfarobject_joint1","OnMax","LiftFarMax");
+		
+		
+	//ventilation	
+	AddUseCallback("venttool", "vent1", "VentComb01");
+	
+	//locked door
+	AddPickupCallback("NoteWorkShop01", "PickUpNoteWorkShop01");
+	AddEntityCallback("PlayerInteract","link01","Link01Interact01");
+	
+	SetParticleSystemActive("sparks01",false);
+	
+//----VARIABLES-------------------
+	//keymachine
+	CreateLocalVar("KeyComb1", 0);
+	CreateLocalVar("KeyComb2", 0);
+	
+	//platecutter
+	CreateLocalVar("SteelPinComb1", 0);
+	
+	//Chord
+	CreateLocalVar("ChordShow", 0);
+	CreateLocalVar("ChordTrue", 0);
+	CreateLocalVar("ChordTask", 0);
+	CreateLocalVar("GotChord", 0);
+}
+
+	
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{
+	//make sure player stands if he comes from the ventilation
+	if(GetGlobalVar("corridor02_crouch") == 0) SetPlayerPose("Stand");
+		SetGlobalVar("corridor02_crouch", 2);
+		
+	PlayMusic("music_mystery01.mp3",0.55,0.1,true);
+	
+///////////////////////
+////START AUTO SAVE////
+
+	if(GetGlobalVar("autoload") == 4)
+	{
+		AutoSave();
+	}
+
+////STOP AUTO SAVE////	
+//////////////////////
+
+}
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is unloaded */
+void OnExit()
+{
+	StopMusic(0.1);
+}
+
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+
+}

@@ -88,6 +88,7 @@
       <p id="subtitle"></p>
     </div>
     <div class="center">
+		<h2>Season: 2 Classic</h2>
       <input type="text" id="searchInput" placeholder="Search games" />
       <p></p>
     </div>
@@ -105,13 +106,19 @@
     cursor: pointer;
   }
 </style>
-      <a href="/games/games/win11/"><img src="Images/win11.png" alt="win11"></a>
-		<a href="/games/games/xp/"><img src="Images/xp.png" alt="rebornXP"></a>
+		<a href="/games/games/mc/"><img src="Images/mc.png" alt="eaglerforge"></a>
+		<a href="/games/games/gorescript/index.html"><img src="/games/games/gorescript/OTF.jpg" alt="gorescript"></a>
+		<a href="/games/games/entanglement/en-US-index.html"><img src="/games/games/entanglement/OTF.jpg" alt="entangle"></a>
+		<a href="/games/games/resenet/"><img src="/games/games/resenet/nacl_icon_128.png" alt="resenet"></a>
+		<a href="/games/games/happy-friday/"><img src="/games/games/happy-friday/OIP.jpg" alt="hppy-friday"></a>
+		<a href="/games/games/swOOOp/"><img src="/games/games/swOOOp/OIP.jpg" alt="swOOOp"></a>
+		<a href="/games/games/universal-paperclips/"><img src="/games/games/universal-paperclips/universal-paperclips.png" alt="universal-paperclips"></a>
+		<a href="/games/games/physibox/"><img src="/games/games/physibox/phys.jpg" alt="phsibox"></a>
+		<a href="/games/games/coloron/"><img src="/games/games/coloron/colo.jpg" alt="coloron"></a>
+		<a href="/games/games/feedvid-live/"><img src="/games/games/feedvid-live/maxresdefault.jpg" alt="feevid"></a>
 		<a href="/games//emulator/"><img src="Images/unnamed.png" alt="retroarch"></a>
 		<a href="/games/ruffle/"><img src="Images/ji.jpeg" alt="ruffle"></a>
-		<a href="/games/games/dos/"><img src="Images/dos.png" alt="dos"></a>
 		<a href="/games/apps/vmlinux/"><img src="Images/linux.png" alt="linux"></a>
-		<a href="/games/games/v86/"><img src="Images/x86.jpg" alt="v86"></a>
 		<a href="/games/games/worldshardestgame2/"><img src="/games/games/worldshardestgame2/the-worlds-hardest-game-2.jpg" alt="whg2"></a>
 		<a href="/games/games/worldshardestgame/"><img src="/games/games/worldshardestgame/images/splash.jpg" alt="whg"></a>
 		<a href="/games/games/tunnelrush/"><img src="/games/games/tunnelrush/icon.jpg" alt="tunnelrush"></a>
@@ -192,7 +199,6 @@
 		<a href="/games/games/hearts/"><img src="Images/cards.png" alt="hearts"></a>
 		<a title="watching grass grow" href="https://www.watching-grass-grow.com/"></a>
 		<a href="https://www.watching-grass-grow.com/"><img style="border:2px solid green;" src="https://www.watching-grass-grow.com/watching-grass-grow.gif" alt="watching grass grow" title="watching grass grow"></a>
-		<a href="/games/games/mc/"><img src="Images/mc.png" alt="mc"></a>
 		<a href="/games/games/missile-game/"><img src="Images/missile.png" alt="gorescript"></a>
  		<a href="/games/games/the-monsters-vault-game/"><img src="Images/monster.jpg" alt="monster"></a>
 		<a href="/games/games/underrun/"><img src="Images/underrun.png" alt="underrun"></a>
@@ -273,8 +279,6 @@
 		<a href="/games/games/20flap/"><img src="Images/20flap.png" alt="20482"></a>
 		<a href="/games/games/flakboy/"><img src="Images/flak.webp" alt="flakboy"></a>
 		<a href="/games/games/sand2/"><img src="Images/sand.jpeg" alt="sand"></a>
-		<a href="/games/games/workshop/"><img src="Images/workshop.jpg" alt="work"></a>
-	   <a href="/games/apps/yt"><img src="Images/yt.svg" alt="yt"></a>
 		<a href="/games/games/turbo/"><img src="Images/turbo.png" alt="tw"></a>	
 	   <a href="/games/games/calculator"><img src="Images/des.png" alt="desmos"></a>
 	  	<a href="/games/games/world/apps/cesiumviewer/"><img src="Images/world.jpg" alt="app"></a>	

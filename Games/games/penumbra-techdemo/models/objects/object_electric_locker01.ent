@@ -1,0 +1,29 @@
+<ENTITY>
+	<MAIN 
+		Name="object_electric_locker01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "electriclockerShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Metal_Case"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "object_electric_locker01"	
+		CastShadows = "true"	
+	/>	
+	
+	<GAME
+		InteractMode = "Static"
+	/>
+	
+</ENTITY>

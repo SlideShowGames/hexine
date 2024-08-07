@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Dyn_Metal_Case" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="other_paraffinlamp.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
+  </TextureUnits>
+</Material>

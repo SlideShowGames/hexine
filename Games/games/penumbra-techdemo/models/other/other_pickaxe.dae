@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author>mthorzen</author>
+      <authoring_tool>Maya 7.0 | ColladaMaya v0.87</authoring_tool>
+      <comments>Collada Maya Export Options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;exportCameraAsLookat=0;relativePaths=1;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;exportVertexColors=1;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=1;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file://C|/Projekt/Hatch/penumbra/_work_models/other/pickaxe/other_pickaxe.mb</source_data>
+    </contributor>
+    <created>2006-05-01T16:26:58Z</created>
+    <modified>2006-05-01T16:26:58Z</modified>
+    <unit name="meter" meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file1-image" name="file1">
+      <init_from>./other_pickaxe.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-image" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">true</wrapU>
+                    <wrapV sid="wrapV0">true</wrapV>
+                    <mirrorU sid="mirrorU0">false</mirrorU>
+                    <mirrorV sid="mirrorV0">false</mirrorV>
+                    <coverageU sid="coverageU0">1.000000</coverageU>
+                    <coverageV sid="coverageV0">1.000000</coverageV>
+                    <translateFrameU sid="translateFrameU0">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV0">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame0">0</rotateFrame>
+                    <stagger sid="stagger0">false</stagger>
+                    <fast sid="fast0">false</fast>
+                    <repeatU sid="repeatU0">1.000000</repeatU>
+                    <repeatV sid="repeatV0">1.000000</repeatV>
+                    <offsetU sid="offsetU0">0</offsetU>
+                    <offsetV sid="offsetV0">0</offsetV>
+                    <rotateUV sid="rotateUV0">0</rotateUV>
+                    <noiseU sid="noiseU0">0</noiseU>
+                    <noiseV sid="noiseV0">0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="_collider_box_Shape1-lib" name="_collider_box_Shape1">
+      <mesh>
+        <source id="_collider_box_Shape1-lib-Position">
+          <float_array count="24" id="_collider_box_Shape1-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape1-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape1-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape1-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape1-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape1-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape1-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape1-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape1-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape1-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape1-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape1-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape1-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape7-lib" name="_collider_box_Shape7">
+      <mesh>
+        <source id="_collider_box_Shape7-lib-Position">
+          <float_array count="24" id="_collider_box_Shape7-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape7-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape7-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape7-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape7-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape7-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape7-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape7-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape7-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape7-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape7-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape7-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape7-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape8-lib" name="_collider_box_Shape8">
+      <mesh>
+        <source id="_collider_box_Shape8-lib-Position">
+          <float_array count="24" id="_collider_box_Shape8-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape8-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape8-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape8-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape8-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape8-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape8-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape8-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape8-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape8-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape8-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape8-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape8-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape9-lib" name="_collider_box_Shape9">
+      <mesh>
+        <source id="_collider_box_Shape9-lib-Position">
+          <float_array count="24" id="_collider_box_Shape9-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape9-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape9-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape9-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape9-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape9-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape9-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape9-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape9-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape9-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape9-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape9-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape9-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape10-lib" name="_collider_box_Shape10">
+      <mesh>
+        <source id="_collider_box_Shape10-lib-Position">
+          <float_array count="24" id="_collider_box_Shape10-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape10-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape10-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape10-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape10-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape10-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape10-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape10-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape10-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape10-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape10-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape10-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape10-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape11-lib" name="_collider_box_Shape11">
+      <mesh>
+        <source id="_collider_box_Shape11-lib-Position">
+          <float_array count="24" id="_collider_box_Shape11-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape11-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_Shape11-lib-Normal">
+          <float_array count="72" id="_collider_box_Shape11-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape11-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape11-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_Shape11-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_Shape11-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_Shape11-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape11-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_Shape11-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_Shape11-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_Shape11-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pickaxeShape-lib" name="pickaxeShape">
+      <mesh>
+        <source id="pickaxeShape-lib-Position">
+          <float_array count="186" id="pickaxeShape-lib-Position-array">
+-0.006578 0.322204 0.677719
+0.006578 0.322204 0.677719
+-0.006578 0.335360 0.677719
+0.006578 0.335360 0.677719
+-0.006578 0.335360 -0.677719
+0.006578 0.335360 -0.677719
+-0.006578 0.322204 -0.677719
+0.006578 0.322204 -0.677719
+-0.058378 0.488197 0.110802
+0.058378 0.488197 0.110802
+0.058378 0.371440 0.110802
+-0.058378 0.371440 0.110802
+-0.058378 0.371440 -0.110802
+0.058378 0.371440 -0.110802
+0.058378 0.488197 -0.110802
+-0.058378 0.488197 -0.110802
+-0.031371 0.426148 -0.151255
+0.031371 0.426148 -0.151255
+0.031371 0.484188 -0.151255
+-0.031371 0.484188 -0.151255
+-0.031371 0.484188 0.151255
+0.031371 0.484188 0.151255
+0.031371 0.426148 0.151255
+-0.031371 0.426148 0.151255
+-0.018974 0.437566 0.414487
+0.018974 0.437566 0.414487
+0.018974 0.401968 0.414487
+-0.018974 0.401968 0.414487
+-0.018974 0.401968 -0.414487
+0.018974 0.401968 -0.414487
+0.018974 0.437566 -0.414487
+-0.018974 0.437566 -0.414487
+-0.039692 -0.804695 0.046000
+0.039692 -0.804695 0.046000
+-0.058256 0.500000 0.067513
+0.058256 0.500000 0.067513
+-0.058256 0.500000 -0.067513
+0.058256 0.500000 -0.067513
+-0.039692 -0.804695 -0.046000
+0.039692 -0.804695 -0.046000
+0 -0.804695 0.070306
+0 -0.804695 -0.070306
+0 0.500000 -0.103187
+0 0.500000 0.103187
+-0.049596 0.355355 0.057476
+0 0.355355 0.087847
+0.049596 0.355355 0.057476
+0.049596 0.355355 -0.057476
+0 0.355355 -0.087847
+-0.049596 0.355355 -0.057476
+-0.034424 0.311328 0.039894
+0 0.311328 0.060975
+0.034424 0.311328 0.039894
+0.034424 0.311328 -0.039894
+0 0.311328 -0.060975
+-0.034424 0.311328 -0.039894
+-0.034424 -0.754290 0.039894
+0 -0.754290 0.060975
+0.034424 -0.754290 0.039894
+0.034424 -0.754290 -0.039894
+0 -0.754290 -0.060975
+-0.034424 -0.754290 -0.039894
+</float_array>
+          <technique_common>
+            <accessor source="#pickaxeShape-lib-Position-array" count="62" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pickaxeShape-lib-Normal">
+          <float_array count="456" id="pickaxeShape-lib-Normal-array">
+-0.000001 0 1.000000
+-0.000001 0 1.000000
+-0.000001 0 1.000000
+-0.000001 0 1.000000
+0 0.998781 -0.049367
+0 0.998781 -0.049367
+0 0.998781 0.049367
+0 0.998781 0.049367
+-0.000001 0 -1.000000
+-0.000001 0 -1.000000
+-0.000001 0 -1.000000
+-0.000001 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0.956996 0 0.290101
+0.956996 0 -0.290101
+0.956996 0 -0.290101
+0.956996 0 0.290101
+-0.956996 0 -0.290101
+-0.956996 0 -0.290101
+-0.956996 0 0.290101
+-0.956996 0 0.290101
+0 0.990625 0.136608
+0 0.990625 0.136608
+0.949906 0 0.312536
+0.949906 0 0.312536
+0 -0.594555 0.804055
+0 -0.594555 0.804055
+0 -0.594555 0.804055
+0 -0.594555 0.804055
+-0.949906 0 0.312536
+-0.949906 0 0.312536
+0 -0.594555 -0.804055
+0 -0.594555 -0.804055
+0 -0.594555 -0.804055
+0 -0.594555 -0.804055
+0.949906 0 -0.312536
+0.949906 0 -0.312536
+0 0.990625 -0.136608
+0 0.990625 -0.136608
+-0.949906 0 -0.312536
+-0.949906 0 -0.312536
+0 -0.981450 0.191717
+0 -0.981450 0.191717
+0 -0.995808 0.091473
+0 -0.995808 0.091473
+0.998893 0 -0.047042
+0.998893 0 -0.047042
+-0.000000 0.963013 -0.269456
+-0.000000 0.963013 -0.269456
+-0.998893 0 -0.047042
+-0.998893 0 -0.047042
+-0.000000 0.963013 0.269456
+-0.000000 0.963013 0.269456
+0.998893 0 0.047042
+0.998893 0 0.047042
+0 -0.995808 -0.091473
+0 -0.995808 -0.091473
+0 -0.981450 -0.191717
+0 -0.981450 -0.191717
+-0.998893 0 0.047042
+-0.998893 0 0.047042
+-0.000000 0.932198 0.361949
+-0.000000 0.932198 0.361949
+0.998893 0 0.047042
+0.998893 0 0.047042
+0 -0.957028 -0.289996
+0 -0.957028 -0.289996
+-0.998893 0 0.047042
+-0.998893 0 0.047042
+0 -0.957028 0.289996
+0 -0.957028 0.289996
+0.998893 0 -0.047042
+0.998893 0 -0.047042
+-0.000000 0.932198 -0.361949
+-0.000000 0.932198 -0.361949
+-0.998893 0 -0.047042
+-0.998893 0 -0.047042
+0.520111 -0.090073 0.849336
+0.501158 -0.281220 0.818386
+0.501158 -0.281220 0.818386
+0.520111 -0.090073 0.849336
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0.520111 -0.090073 -0.849336
+0.520111 -0.090073 -0.849336
+0.501158 -0.281220 -0.818386
+0.501158 -0.281220 -0.818386
+0 -1.000000 0.000000
+0 -1.000000 0.000000
+0 -1.000000 0.000000
+0 -1.000000 0.000000
+0.980887 -0.194578 0
+0.980887 -0.194578 0
+0.998212 -0.059766 0
+0.998212 -0.059766 0
+-0.980887 -0.194578 0
+-0.980887 -0.194578 0
+-0.998212 -0.059766 0
+-0.998212 -0.059766 0
+0 -1.000000 0.000000
+0 -1.000000 0.000000
+-0.520111 -0.090073 -0.849336
+-0.520111 -0.090073 -0.849336
+-0.501158 -0.281220 -0.818386
+-0.501158 -0.281220 -0.818386
+0 1.000000 0
+0 1.000000 0
+-0.501158 -0.281221 0.818386
+-0.501158 -0.281221 0.818386
+-0.520111 -0.090073 0.849336
+-0.520111 -0.090073 0.849336
+-0.507269 -0.237672 0.828366
+-0.507269 -0.237672 0.828366
+0.507269 -0.237672 0.828366
+0.507269 -0.237672 0.828366
+0.986266 -0.165167 0
+0.986266 -0.165167 0
+0.507269 -0.237672 -0.828366
+0.507269 -0.237672 -0.828366
+-0.507269 -0.237672 -0.828366
+-0.507269 -0.237672 -0.828366
+-0.986266 -0.165167 0
+-0.986266 -0.165167 0
+-0.520633 0.078215 0.850190
+-0.520633 0.078215 0.850190
+0.520633 0.078215 0.850190
+0.520633 0.078215 0.850190
+0.998645 0.052047 0
+0.998645 0.052047 0
+0.520634 0.078215 -0.850190
+0.520634 0.078215 -0.850190
+-0.520633 0.078215 -0.850190
+-0.520633 0.078215 -0.850190
+-0.998645 0.052047 0
+-0.998645 0.052047 0
+-0.515843 0.155951 0.842369
+-0.515843 0.155951 0.842369
+0.515844 0.155951 0.842368
+0.515844 0.155951 0.842368
+0.994582 0.103954 0
+0.994582 0.103954 0
+0.515844 0.155951 -0.842368
+0.515844 0.155951 -0.842368
+-0.515844 0.155951 -0.842368
+-0.515844 0.155951 -0.842368
+-0.994582 0.103954 0
+-0.994582 0.103954 0
+</float_array>
+          <technique_common>
+            <accessor source="#pickaxeShape-lib-Normal-array" count="152" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="pickaxeShape-lib-map1" name="map1">
+          <float_array count="238" id="pickaxeShape-lib-map1-array">
+0.953717 0.012839
+0.943717 0.012839
+0.943717 0.002839
+0.953717 0.002839
+0.991203 0.424135
+0.906535 0.424135
+0.906536 0.584500
+0.991204 0.584500
+0.906536 0.584500
+0.906535 0.424135
+0.953717 0.002839
+0.943717 0.002839
+0.943717 0.012839
+0.953717 0.012839
+0.991203 0.424135
+0.991204 0.584500
+0.810089 0.583762
+0.810088 0.424487
+0.926121 0.613774
+0.971619 0.613775
+0.893831 0.424487
+0.893832 0.583762
+0.971619 0.613775
+0.926121 0.613774
+0.926120 0.394861
+0.971619 0.394861
+0.893831 0.424487
+0.810088 0.424487
+0.810089 0.583762
+0.893832 0.583762
+0.849326 0.612837
+0.890956 0.612836
+0.849326 0.612837
+0.890955 0.612837
+0.971619 0.394861
+0.926120 0.394861
+0.935108 0.204371
+0.962627 0.204372
+0.962627 0.204372
+0.935108 0.204371
+0.849327 0.395411
+0.890956 0.395411
+0.890956 0.395411
+0.849327 0.395411
+0.831982 0.206217
+0.857515 0.206217
+0.935108 0.804264
+0.962627 0.804264
+0.962627 0.804264
+0.935108 0.804264
+0.944103 0.994753
+0.953643 0.994753
+0.953643 0.994753
+0.944103 0.994753
+0.944102 0.013882
+0.953642 0.013882
+0.953642 0.013882
+0.944102 0.013882
+0.784207 0.017023
+0.774772 0.017023
+0.784207 0.017023
+0.857515 0.206217
+0.831982 0.206217
+0.774772 0.017023
+0.831982 0.802031
+0.784207 0.991225
+0.774771 0.991225
+0.857515 0.802031
+0.784207 0.991225
+0.774771 0.991225
+0.831982 0.802031
+0.857515 0.802031
+0.141336 0.991708
+0.141336 0.882682
+0.171090 0.882682
+0.171090 0.991708
+0.373469 0.981835
+0.428017 0.948571
+0.428017 0.822667
+0.373469 0.789403
+0.272636 0.991708
+0.242882 0.991708
+0.242882 0.882682
+0.272636 0.882682
+0.373469 0.820063
+0.410635 0.842727
+0.410635 0.928511
+0.373469 0.951175
+0.039790 0.882682
+0.111581 0.882682
+0.111581 0.991708
+0.039790 0.991708
+0.336303 0.842727
+0.336303 0.928511
+0.010035 0.991708
+0.010035 0.882682
+0.318921 0.948571
+0.318921 0.822667
+0.111581 0.849497
+0.141336 0.849497
+0.171090 0.849497
+0.242882 0.849497
+0.272636 0.849497
+0.010035 0.849497
+0.039790 0.849497
+0.111581 0.046284
+0.141336 0.046284
+0.171090 0.046284
+0.242882 0.046284
+0.272636 0.046284
+0.010035 0.046284
+0.039790 0.046284
+0.111581 0.008292
+0.141336 0.008292
+0.171090 0.008292
+0.242882 0.008292
+0.272636 0.008292
+0.010035 0.008292
+0.039790 0.008292
+</float_array>
+          <technique_common>
+            <accessor source="#pickaxeShape-lib-map1-array" count="119" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pickaxeShape-lib-Vertex">
+          <input semantic="POSITION" source="#pickaxeShape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="116">
+          <input semantic="VERTEX" offset="0" source="#pickaxeShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#pickaxeShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#pickaxeShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 3 1 1 1 3 2 2 2 3 3 14 4 4 15 5 5 9 7 7 15 5 5 8 6 6 9 7 7 4 8 10 5 9 11 6 11 13 5 9 11 7 10 12 6 11 13 11 12 8 12 13 9 10 15 15 12 13 9 13 14 14 10 15 15 10 16 16 13 17 17 9 19 21 13 17 17 14 18 20 9 19 21 15 20 26 12 21 27 8 23 29 12 21 27 11 22 28 8 23 29 9 7 7 8 6 6 21 25 19 20 24 18 21 25 19 8 6 6 10 16 16 9 19 21 22 26 30 22 26 30 9 19 21 21 27 31 11 28 8 10 29 15 23 31 23 10 29 15 22 30 22 23 31 23 11 22 28 23 32 32 8 23 29 8 23 29 23 32 32 20 33 33 13 36 14 12 37 9 17 35 25 16 34 24 17 35 25 12 37 9 13 17 17 17 38 40 14 18 20 14 18 20 17 38 40 18 39 41 15 5 5 14 4 4 19 41 35 14 4 4 18 40 34 19 41 35 12 21 27 15 20 26 16 43 43 19 42 42 16 43 43 15 20 26 17 46 25 16 47 24 29 45 37 28 44 36 29 45 37 16 47 24 18 39 41 17 38 40 30 49 45 17 38 40 29 48 44 30 49 45 19 41 35 18 40 34 31 51 39 18 40 34 30 50 38 31 51 39 19 42 42 31 52 61 16 43 43 31 52 61 28 53 62 16 43 43 21 25 19 20 24 18 25 55 47 24 54 46 25 55 47 20 24 18 21 27 31 25 57 67 22 26 30 26 56 64 22 26 30 25 57 67 23 58 23 22 59 22 27 61 49 22 59 22 26 60 48 27 61 49 20 33 33 23 32 32 24 63 71 23 32 32 27 62 70 24 63 71 25 55 47 24 54 46 3 65 51 2 64 50 3 65 51 24 54 46 25 57 67 3 67 68 26 56 64 1 66 69 26 56 64 3 67 68 27 61 49 26 60 48 0 69 53 26 60 48 1 68 52 0 69 53 24 63 71 27 62 70 2 71 65 27 62 70 0 70 66 2 71 65 29 45 37 28 44 36 7 73 55 6 72 54 7 73 55 28 44 36 30 49 45 29 48 44 5 75 60 29 48 44 7 74 63 5 75 60 31 51 39 30 50 38 4 77 57 30 50 38 5 76 56 4 77 57 31 52 61 4 79 58 28 53 62 6 78 59 28 53 62 4 79 58 43 80 72 45 81 73 35 83 75 45 81 73 46 82 74 35 83 75 43 84 76 35 85 77 42 87 79 35 85 77 37 86 78 42 87 79 42 88 80 37 89 81 48 91 83 37 89 81 47 90 82 48 91 83 41 92 84 39 93 85 40 95 87 39 93 85 33 94 86 40 95 87 37 98 81 35 99 75 47 97 82 46 96 74 47 97 82 35 99 75 34 102 90 36 103 91 44 101 89 49 100 88 44 101 89 36 103 91 41 92 84 40 95 87 38 104 92 38 104 92 40 95 87 32 105 93 42 107 94 48 108 95 36 106 91 36 106 91 48 108 95 49 109 88 43 84 76 42 87 79 34 110 96 34 110 96 42 87 79 36 111 97 43 114 72 34 115 90 45 113 73 44 112 89 45 113 73 34 115 90 45 113 73 44 112 89 51 117 99 50 116 98 51 117 99 44 112 89 45 81 73 51 118 99 46 82 74 46 82 74 51 118 99 52 119 100 47 97 82 46 96 74 53 121 101 52 120 100 53 121 101 46 96 74 48 91 83 47 90 82 54 123 102 47 90 82 53 122 101 54 123 102 48 108 95 54 124 103 49 109 88 49 109 88 54 124 103 55 125 104 44 101 89 49 100 88 50 127 98 55 126 104 50 127 98 49 100 88 56 128 105 57 129 106 50 116 98 57 129 106 51 117 99 50 116 98 52 119 100 51 118 99 58 131 107 51 118 99 57 130 106 58 131 107 58 132 107 59 133 108 52 120 100 59 133 108 53 121 101 52 120 100 54 123 102 53 122 101 60 135 109 53 122 101 59 134 108 60 135 109 55 125 104 54 124 103 61 137 111 54 124 103 60 136 110 61 137 111 61 138 111 56 139 105 55 126 104 56 139 105 50 127 98 55 126 104 40 141 113 57 129 106 32 140 112 32 140 112 57 129 106 56 128 105 40 142 113 33 143 114 57 130 106 58 131 107 57 130 106 33 143 114 33 144 114 39 145 115 58 132 107 39 145 115 59 133 108 58 132 107 41 147 116 60 135 109 39 146 115 60 135 109 59 134 108 39 146 115 41 148 117 38 149 118 60 136 110 61 137 111 60 136 110 38 149 118 38 150 118 32 151 112 61 138 111 32 151 112 56 139 105 61 138 111</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene" name="other_pickaxe">
+      <node id="_pickaxe" name="pickaxe" sid="_pickaxe">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <node id="_collider_box_1" name="_collider_box_1" sid="_collider_box_1">
+          <translate sid="translate">0 -0.150793 0</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.094164 0.848517 0.094164</scale>
+          <instance_geometry url="#_collider_box_Shape1-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape1-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_7" name="_collider_box_7" sid="_collider_box_7">
+          <translate sid="translate">0 0.306598 0</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 -90.000076</rotate>
+          <scale sid="scale">0.104370 0.193630 0.104370</scale>
+          <instance_geometry url="#_collider_box_Shape7-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape7-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_8" name="_collider_box_8" sid="_collider_box_8">
+          <translate sid="translate">0 0.310402 0.193519</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 -84.398872</rotate>
+          <scale sid="scale">0.056548 0.246632 0.056548</scale>
+          <instance_geometry url="#_collider_box_Shape8-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape8-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_9" name="_collider_box_9" sid="_collider_box_9">
+          <translate sid="translate">0 0.268850 0.377052</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 -70.504616</rotate>
+          <scale sid="scale">0.028726 0.229524 0.028726</scale>
+          <instance_geometry url="#_collider_box_Shape9-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape9-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_10" name="_collider_box_10" sid="_collider_box_10">
+          <translate sid="translate">0 0.268850 -0.377148</translate>
+          <rotate sid="rotateZ">0 0 1 -180.000153</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 109.495537</rotate>
+          <scale sid="scale">0.028726 0.229524 0.028726</scale>
+          <instance_geometry url="#_collider_box_Shape10-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape10-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_collider_box_11" name="_collider_box_11" sid="_collider_box_11">
+          <translate sid="translate">0 0.310402 -0.172480</translate>
+          <rotate sid="rotateZ">0 0 1 -180.000153</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 95.601288</rotate>
+          <scale sid="scale">0.056548 0.246632 0.056548</scale>
+          <instance_geometry url="#_collider_box_Shape11-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_Shape11-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_pickaxe_pickaxe" name="pickaxe" sid="_pickaxe_pickaxe">
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.711234 0.711234 0.711234</scale>
+          <instance_geometry url="#pickaxeShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#pickaxeShape-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="MAYA">
+          <start_time>0.041667</start_time>
+          <end_time>2.000000</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

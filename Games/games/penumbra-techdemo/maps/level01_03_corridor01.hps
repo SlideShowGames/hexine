@@ -1,0 +1,488 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+//----VENTILATION------------------
+void VentComb01(string asItem, string asEntity)
+{
+	//Go to ventilation in corridor straight
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink02", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb02(string asItem, string asEntity)
+{
+	//Go to ventilation from large computer room
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink04", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb03(string asItem, string asEntity)
+{
+	//Go to ventilation from corridor using wall entrance
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink05", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+
+//--- GO DARK -----------------
+
+void GoDark(string asParent, string asChild)
+{
+	//Power surge sound
+	PlayGuiSound("event_power_surge",0.6);
+	
+	//Start some music
+	PlayMusic("music_creepy01.mp3",0.7, 0.15, true);
+	
+	//turn off lights
+	FadeLight3D("light2_light1", 0,0,0,0.0, 5,2);
+	FadeLight3D("light3_light1", 0,0,0,0.0, 5,2);
+	FadeLight3D("light6_light1", 0,0,0,0.0, 4,2);
+	FadeLight3D("lightramp2_light1", 0,0,0,0.0, 3,2);
+	FadeLight3D("lightsmall_light1", 0,0,0,0.0, 5,2);
+	FadeLight3D("pointLight1", 0,0,0,0.0, 5,2);
+	
+	//turn off sounds
+	StopSoundEntity("elock1sound",false);
+	StopSoundEntity("light2_light1s", false);
+	StopSoundEntity("light3_light1s", false);
+	StopSoundEntity("light6_light1s", false);
+	StopSoundEntity("lightramp2_light1s", false);
+	
+	//Lock doors
+	SetGameEntityActive("link01",false);
+	SetGameEntityActive("lockeddoor01",true);
+	
+	SetGameEntityActive("link03area",false);
+	SetGameEntityActive("lockeddoor03",true);
+	
+	SetGameEntityActive("link04",false);
+	SetGameEntityActive("lockeddoor02",true);
+	
+	//Set the keypad sparks inactive
+	SetLight3DFlickerActive("paneldoor2_panelLight1",false);
+	SetLight3DVisible("paneldoor2_panelLight1",false);
+	
+	//Add task to re-activate the power
+	AddNotebookTask("TaskPower", "Tasks","PowerBack");	
+		
+	RemoveEntityCollideCallback("Enter","Player","darkness");
+	
+	//Set variable showing state
+	SetLocalVar("darkness",1);	
+}
+
+void NoPowerDoor01(string asEntity)
+{
+	AddMessageTrans("level_01_03_corridor01", "LockedDoor1");
+}
+
+void NoPowerDoor02(string asEntity)
+{
+	AddMessageTrans("level_01_03_corridor01", "LockedDoor2");
+	if(GetLocalVar("TaskDoor5Check") == 0)
+		{
+		AddNotebookTask("TaskDoor5", "Tasks","Door5Corridor01");
+		SetLocalVar("TaskDoor5Check", 1);
+		}
+}
+
+void NoPowerDoor03(string asEntity)
+{
+	AddMessageTrans("level_01_03_corridor01", "LockedDoor1");
+}
+
+//--- ATTACK 01 -----------------
+void ShowEnemy(string asParent, string asChild)
+{
+	SetGameEntityActive("roach01",true);
+	
+	PlaySoundEntity("roachnoise",false);
+	
+	RemoveEntityCollideCallback("Enter","Player","attack01");
+	
+	//FOR PLAYER LOOK AT ROACH
+	CreateTimer("LookRoach", 0.3, "LookRoachEvent",false);	
+	
+	SetPlayerActive(false);
+	SetWideScreenActive(true);	
+}
+void EnemyIsDead(string asEnemy)
+{
+	SetGameEntityDescriptionTrans("roach01", "Characters", "RoachDeadSecond");
+	StopMusic(0.2);
+}
+//---PLAYERS LOOKS AT LOCATION OF ROACH ACTIVATION
+void LookRoachEvent(string asTimer)
+{
+	StartPlayerLookAt("roachlook",2,8);
+	
+	PlayMusic("music_monster01.mp3",0.73,0.19,true);
+		
+	CreateTimer("MessageRoach", 0.5f, "MessageRoachEvent",false);	
+}
+void MessageRoachEvent(string asTimer)
+{	
+	AddMessageTrans("Sanity", "RoachSanity03");
+	SetMessagesOverCallback("SanityEnd");
+}
+void SanityEnd()
+{
+	SetWideScreenActive(false);
+	StopPlayerLookAt();	
+	SetPlayerActive(true);	
+}
+
+//--- OPEN WITH ROD PUZZLE -----------------
+
+void OpenWithRod(string asItem, string asEntity)
+{
+	RemoveItem("rod");
+	RemoveNotebookTask("TaskDoor5");
+	ChangeMap("level01_floor02_whole_level.dae", //New map
+		"link01", //Positon on new map
+		"event_force_open_door_w_rod1","", //Stop and end sound.
+		1.5f , 1.5f);//Fade out and in time (seconds).
+}
+
+
+
+//--- FIX DOOR 2 PANEL PUZZLE -----------------
+void FixDoor2Panel(string asJoint)
+{	
+	if(GetLocalVar("darkness")==0)
+	{
+	AddMessageTrans("level_01_03_corridor01", "FixDoor2Panel");
+	SetGameEntityActive("panel2", true);
+	SetGameEntityActive("paneldoor2", false);
+	SetGameEntityActive("door02area", true);
+	
+	PlaySoundEntity("panelrepair1",false);
+	
+	SetLight3DFlickerActive("paneldoor2_panelLight1", false);
+	SetLight3DVisible("paneldoor2_panelLight1", false);
+	
+	SetLocalVar("panel_fixed",1);
+	
+	RemoveNotebookTask("TaskDoor2");
+	}
+	if(GetLocalVar("darkness")==1)
+	{
+	AddMessageTrans("level_01_03_corridor01", "BrokenDoor2Panel");
+	}
+}
+void Door02Interact01(string asEntity)
+{
+	ChangeMap(	"level01_04_storage.dae", //New map
+			"link01", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).		
+}
+void Door2Examine01(string asEntity)
+{	
+	AddNotebookTask("TaskDoor2", "Tasks","Door2Corridor01");
+	
+	RemoveEntityCallback("PlayerExamine","door02area");
+	RemoveEntityCallback("PlayerExamine","areadoor2");
+}
+void Door2Examine02(string asEntity)
+{	
+	AddNotebookTask("TaskDoor2", "Tasks","Door2Corridor01");
+	
+	RemoveEntityCallback("PlayerExamine","areadoor2");
+	RemoveEntityCallback("PlayerExamine","door02area");
+}
+
+//--- LOCKED DOOR 3 PUZZLE --------------------
+void UnlockDoor(string asItem, string asEntity)
+{
+	SetGameEntityActive("door3block", false);
+	PlaySoundEntity("unlock1", false);
+	RemoveItem("keywhole");
+	
+	RemoveNotebookTask("TaskDoor3");
+	RemoveUseCallback("UnlockDoor");
+	SetGameEntityDescriptionTrans("door3","level_01_03_corridor01", "LockedDoor3Open");
+}
+void Door3Examine01(string asEntity)
+{	
+	AddNotebookTask("TaskDoor3", "Tasks","Door3Corridor01");
+	RemoveEntityCallback("PlayerExamine","door3");
+}
+
+//----LOCKED DOOR 4 PANEL
+void Link03Interact01(string asEntity)
+{
+	if(GetGlobalVar("officeunlocked") == 0)
+		{
+		StartNumericalPanel("test",6,6,6,7,10.0f,"PanelCode");
+		if(GetLocalVar("Door4task") == 0)
+			{
+			AddNotebookTask("TaskDoor4", "Tasks","Door4Corridor01");
+			SetLocalVar("Door4task", 1);
+			}
+		}
+	else if(GetGlobalVar("officeunlocked") == 1)
+		{
+		ChangeMap(	"level01_08_officesave01.dae", //New map
+				"link01", //Positon on new map
+				"door_clickable_start","door_clickable_stop", //Stop and end sound.
+				0.5f , 0.5f);//Fade out and in time (seconds).	
+		}
+}
+void PanelCode(string asName, bool abCodeWasCorrect)
+{
+	if(abCodeWasCorrect)
+	{
+		SetGlobalVar("officeunlocked", 1);
+		PlayGuiSound("door_code_correct", 0.8);
+		RemoveNotebookTask("TaskDoor4");
+	}
+	else
+	{
+		PlayGuiSound("door_code_incorrect", 0.8);
+	}		
+}
+void Door4Examine01(string asEntity)
+{	
+	if(GetLocalVar("Door4task") == 0)
+		{
+		AddNotebookTask("TaskDoor4", "Tasks","Door4Corridor01");
+		SetLocalVar("Door4task", 1);
+		}
+	AddMessageTrans("level_01_03_corridor01", "LockedDoor4");
+	
+	RemoveEntityCallback("PlayerExamine","lockeddoor03");
+	RemoveEntityCallback("PlayerExamine","link03area");
+}
+void Door4Examine02(string asEntity)
+{	
+	if(GetLocalVar("Door4task") == 0)
+		{
+		AddNotebookTask("TaskDoor4", "Tasks","Door4Corridor01");
+		SetLocalVar("Door4task", 1);
+		}
+	AddMessageTrans("level_01_03_corridor01", "LockedDoor4");
+	
+	RemoveEntityCallback("PlayerExamine","link03area");
+	RemoveEntityCallback("PlayerExamine","lockeddoor03");
+}
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{	
+//------INITIAL DOOR BEHAVIOR----------------------------
+	
+//------SOUND INIT----------------------------
+	StopSoundEntity("unlock1",false);
+	StopSoundEntity("panelrepair1", false);
+	StopSoundEntity("light7_light1s", false);
+	StopSoundEntity("roachnoise",false);	
+	
+//------TEXT INIT--------------------------------------
+	//SetGameEntityDescriptionTrans("paneldoor2","level_01_03_corridor01", "BrokenDoor2Panel");
+	SetGameEntityDescriptionTrans("areadoor2","Doors", "DoorClickable02");
+	SetGameEntityDescriptionTrans("door02area","Doors", "DoorClickable02IntCorridor01");
+	SetGameEntityDescriptionTrans("door3","level_01_03_corridor01", "LockedDoor3");
+	//ventilation
+	for(int i=1;i<=3;i++)
+		SetGameEntityDescriptionTrans("vent"+i, "Doors", "Ventilation02");
+	//emergency light descriptions
+	for(int i=1;i<=10;i++)
+		SetGameEntityDescriptionTrans("emerlarea"+i, "Lights", "EmergencyLights");
+
+//------AREA INIT---------------------------------------	
+	AddEntityCollideCallback("Enter","Player","darkness","GoDark");
+	
+	//locked door01
+	SetGameEntityActive("lockeddoor01",false);
+	SetAreaCustomIcon("lockeddoor01","DoorLink");
+	AddEntityCallback("PlayerInteract","lockeddoor01","NoPowerDoor01");
+	
+	//locked door02
+	SetGameEntityActive("lockeddoor02",false);
+	SetAreaCustomIcon("lockeddoor02","DoorLink");
+	AddEntityCallback("PlayerInteract","lockeddoor02","NoPowerDoor02");
+	
+	//locked office door
+	SetGameEntityActive("lockeddoor03",false);
+	SetAreaCustomIcon("lockeddoor03", "DoorLink");
+	AddEntityCallback("PlayerInteract","lockeddoor03","NoPowerDoor03");
+	AddEntityCallback("PlayerExamine","lockeddoor03","Door4Examine01");
+	SetAreaCustomIcon("link03area", "DoorLink");
+	AddEntityCallback("PlayerInteract","link03area","Link03Interact01");
+	AddEntityCallback("PlayerExamine","link03area","Door4Examine02");
+	
+	//Attack01
+	AddEntityCollideCallback("Enter","Player","attack01","ShowEnemy");
+	
+	
+//------LIGHT INIT---------------------------------------
+	SetLight3DVisible("light7_light1",false);
+	
+	FadeLight3D("lightramp2_light1", 0.66,0.68,0.62,0.5, 3.5,0.1);
+	FadeLight3D("light2_light1", 0.981,1,0.902,0.5, 3.5,0.1);
+	FadeLight3D("light3_light1", 0.981,1,0.902,0.5, 3.5,0.1);
+	FadeLight3D("light6_light1", 0.981,1,0.902,0.5, 4,0.1);
+	FadeLight3D("lightsmall_light1", 0.66,0.68,0.62,0.5, 3.5,0.01);
+	
+//------JOINT INIT---------------------------------------
+	//filecabinet1
+	AddBodyImpulse("cabinet1_drawer1Shape", "local" ,0,0,0.3);
+	AddBodyImpulse("cabinet1_drawer2Shape", "local" ,0,0,0.5);
+	//filecabinet2 
+	AddBodyImpulse("cabinet2_drawer1Shape", "local" ,0,0,1);
+
+	
+//------SET UP LINKS--------------------------------------
+	SetupLink(	"link01", //Link name
+			"level01_02_entrance.dae", //New map
+			"link02", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+	SetupLink(	"link04", //Link name
+			"level01_floor02_whole_level.dae", //New map
+			"link01", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+			
+//----INTERACT---------------------
+	//ventilation
+	for(int i=1;i<=3;i++)	
+		AddUseCallback("venttool", "vent"+i, "VentComb0"+i);
+	for(int i=1;i<=2;i++)	
+		SetGameEntityMaxInteractDist("vent"+i,1);
+	//custom icons
+	for(int i=1;i<=3;i++)
+		SetAreaCustomIcon("vent"+i,"DoorLink");
+		
+//------PUZZLES-------------------
+	//OPEN DOOR WITH ROD
+	AddUseCallback("rod","lockeddoor02","OpenWithRod");
+
+	//FIX DOOR 2 PANEL
+	SetGameEntityActive("panel2", false);
+	SetJointCallback("paneldoor2_joint1","OnMin","FixDoor2Panel");
+	//start panel flicker
+	SetLight3DFlicker("paneldoor2_panelLight1",
+			0,0,0,0, //Color
+			0.3, //Radius
+			0.2, 0.2, "amb_electric_spark", "ExplosionSpark01",
+			0.3, 1.3, "","",
+			true, 0.025,0.2);
+	SetLight3DFlickerActive("paneldoor2_panelLight1",true);	
+	//door 2 area off and interact for it when on after panel repair
+	SetGameEntityActive("door02area", false);
+	AddEntityCallback("PlayerInteract","door02area","Door02Interact01");
+	SetAreaCustomIcon("door02area", "DoorLink");
+	AddEntityCallback("PlayerExamine","door02area","Door2Examine01");
+	AddEntityCallback("PlayerExamine","areadoor2","Door2Examine02");
+		
+	//LOCKED DOOR 3
+	AddUseCallback("keywhole", "door3", "UnlockDoor");
+	AddEntityCallback("PlayerExamine","door3","Door3Examine01");
+	
+//------ENEMY INIT---------------------------------------
+	SetGameEntityActive("roach01",false);
+	SetEnemyDeathCallback("roach01", "EnemyIsDead");
+	AddEnemyPatrolNode("roach01","Node034",0,""); 
+	AddEnemyPatrolNode("roach01","Node06",5,"");
+	AddEnemyPatrolNode("roach01","Node010",0,"");
+	AddEnemyPatrolNode("roach01","Node014",4,"");	
+	AddEnemyPatrolNode("roach01","Node03",25,"");
+
+//------VARIABLES-------------------
+	CreateLocalVar("panel_fixed",0);
+	
+	CreateLocalVar("darkness",0);
+	
+	CreateLocalVar("TaskDoor5Check", 0);
+	
+	CreateLocalVar("Door4task", 0);
+}		
+
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{
+//----VENTILATION---------------
+	//Make sure player stands when exciting ventilation
+	if(GetGlobalVar("corridor01vent_crouch") == 0) SetPlayerPose("Stand");
+		SetGlobalVar("corridor01vent_crouch", 2);		
+		
+//---DARKNESS------------------
+	//Turn all electric stuff on
+	if(GetGlobalVar("BUcheck")==1 && GetLocalVar("darkness")==1)
+	{
+		//turn on lights
+		FadeLight3D("lightramp2_light1", 0.66,0.68,0.62,0.5, 3.5,0.01);
+		FadeLight3D("light2_light1", 0.981,1,0.902,0.5, 3.5,0.01);
+		FadeLight3D("light3_light1", 0.981,1,0.902,0.5, 3.5,0.01);
+		FadeLight3D("light6_light1", 0.981,1,0.902,0.5, 4,0.01);
+		FadeLight3D("lightsmall_light1", 0.66,0.68,0.62,0.5, 3.5,0.01);
+		FadeLight3D("pointLight1", 0.145,0.150,0.120,0.5, 6,0.01);
+	
+		//turn in sounds
+		PlaySoundEntity("elock1sound",false);
+		PlaySoundEntity("light2_light1s", false);
+		PlaySoundEntity("light3_light1s", false);
+		PlaySoundEntity("light6_light1s", false);
+		PlaySoundEntity("lightramp2_light1s", false);
+	
+		//Unlock doors
+		SetGameEntityActive("link01",true);
+		SetGameEntityActive("lockeddoor01",false);
+	
+		SetGameEntityActive("link03area",true);
+		SetGameEntityActive("lockeddoor03",false);
+		
+		SetGameEntityActive("link04",true);
+		SetGameEntityActive("lockeddoor02",false);
+	
+		//Set the keypad sparks inactive, only if the panel is not fixed yet.
+		if(GetLocalVar("panel_fixed")==0)
+		{
+			SetLight3DFlickerActive("paneldoor2_panelLight1",true);		
+			SetLight3DVisible("paneldoor2_panelLight1",true);	
+		}
+		
+		//Set back varaible
+		SetLocalVar("darkness",0);
+	}
+///////////////////////
+////START AUTO SAVE////
+
+	if(GetGlobalVar("autoload") == 1)
+		{
+		SetGlobalVar("autoload", 2);
+		AutoSave();
+		}
+	if(GetGlobalVar("autoload") == 6)
+		{
+		SetGlobalVar("autoload", 7);
+		AutoSave();
+		}
+
+////STOP AUTO SAVE////	
+//////////////////////
+}
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is unloaded */
+void OnExit()
+{
+	StopMusic(0.2f);
+}
+
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+
+}

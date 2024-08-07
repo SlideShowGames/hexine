@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="false" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="wall_concrete_clean06" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="wall_concrete06_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

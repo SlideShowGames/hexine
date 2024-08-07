@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="false" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="wall_wallpaper05.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="wall_wallpaper05_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

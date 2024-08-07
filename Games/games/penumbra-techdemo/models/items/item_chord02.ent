@@ -1,0 +1,31 @@
+<ENTITY>
+	<MAIN 
+		Name="item_chord02" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.2"
+		LinearDamping = "0.2"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_chord"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		InteractMode = "Static"
+	/>
+	
+</ENTITY>

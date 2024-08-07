@@ -1,0 +1,4 @@
+<SOUNDENTITY>
+  <MAIN MainSound="_player_homer" StartSound="" StopSound="" />
+  <PROPERTIES Volume="1" MinDistance="5" MaxDistance="30" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="False" Blockable="False" BlockVolumeMul="0.7" Priority="0" />
+</SOUNDENTITY>

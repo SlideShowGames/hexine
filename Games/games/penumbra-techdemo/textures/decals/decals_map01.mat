@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="decals_map01.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="decals_map01_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

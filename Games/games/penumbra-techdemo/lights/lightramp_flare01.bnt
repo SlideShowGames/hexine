@@ -1,0 +1,7 @@
+<BILLBOARD>
+	<MAIN
+		Material = "lightramp_flare01.mat"
+		Type = "axis"
+		UseOffset = "True"		
+	/>
+</BILLBOARD>

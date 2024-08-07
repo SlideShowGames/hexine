@@ -1,0 +1,55 @@
+<ENTITY>
+	<MAIN 
+		Name="light_flourlight01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+		
+		<PHYSICS
+		SubName = "lightShape1"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="10"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.4"
+		LinearDamping = "0.4"
+		BlocksSound = "false"
+	/>
+	<PHYSICS
+		SubName = "light2Shape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Glass"
+		Mass="2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.4"
+		LinearDamping = "0.4"
+		BlocksSound = "false"
+	/>
+	<PHYSICS
+		SubName = "mountsShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.4"
+		LinearDamping = "0.4"
+		BlocksSound = "false"
+	/>
+		
+	<GRAPHICS
+		ModelFile = "light_flourlight01"	
+		CastShadows = "false"	
+	/>	
+	<ATTACH_BILLBOARDS>
+		<Pair Light="light1" Billboard="bb1" />
+	</ATTACH_BILLBOARDS>
+			
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "true"
+	/>
+	
+</ENTITY>

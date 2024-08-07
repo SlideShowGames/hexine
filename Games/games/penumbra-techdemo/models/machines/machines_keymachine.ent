@@ -1,0 +1,76 @@
+<ENTITY>
+	<MAIN 
+		Name="machines_keymachine" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "keymachineShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<PHYSICS
+		SubName = "buttonShape"
+		Collides = "false"
+		HasPhysics = "false"
+		Material="Metal"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		MaxLinearSpeed = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<JOINT
+		Name = "joint1"
+	
+		MaxLimit_Sound = ""
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = ""
+		MinLimit_MinSpeed = "0.2"
+		MinLimit_MaxSpeed = "2"
+		
+		MoveSound = ""
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	>	
+	<Controller
+			Name = "up"
+			Active = "true"
+			
+			Type = "Pid"
+			A= "4" B="8" C="1"
+			IntegralSize = "4"
+			 
+			Input = "AngularSpeed"
+			InputAxis = "Y"
+			DestValue = "4"
+			
+			Output = "Force"
+			OutputAxis = "Y"
+			MaxOutput = "10"
+			MulMassWithOutput = "true"
+		/>
+	</JOINT>
+	
+	<GRAPHICS
+		ModelFile = "machines_keymachine"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Static"
+	/>
+	
+</ENTITY>

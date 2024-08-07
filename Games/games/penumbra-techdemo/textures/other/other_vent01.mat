@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="other_vent01.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="other_vent01_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

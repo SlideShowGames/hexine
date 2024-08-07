@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="decals_map02.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,274 @@
+<LANGUAGE>
+  <CATEGORY Name="Misc">
+    <Entry Name="Greeting">Bienvenue à ''La Trappe'', un jeu puissant ! </Entry>
+    <Entry Name="CokeCan">Canette de Cola</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tests">
+    <Entry Name="Ballon">Pouvez-vous rentrer un ballon dans le fantaisiste "accélérateur de particules" ? Si vous le pouvez, retenez votre respiration pendant que le ballon monte lentement en  scintillant.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Objets">
+    <Entry Name="Painkillers">Calmants</Entry>
+    <Entry Name="PainkillersDesc">C'est une boîte en plastique contenant des pillules blanches. Ca pourrait être utile si j'ai des douleurs.</Entry>
+    <Entry Name="Flashlight">Lampe-torche (F)</Entry>
+    <Entry Name="FlashlightDesc">C'est une bonne chose que je me sois rappelé de l'apporter avec moi. Dommage qu'elle consomme autant.</Entry>
+    <Entry Name="Note">C'est une note.</Entry>
+    <Entry Name="Dynamite">Dynamite</Entry>
+    <Entry Name="DynamiteDesc">Ca semble un peu vieux, mais ça devrait encore marcher comme explosif.</Entry>
+    <Entry Name="GeneratorHose">Tuyau en caoutchouc</Entry>
+    <Entry Name="GeneratorHoseDesc">Un tuyau fait en caoutchouc avec des raccords en métal.</Entry>
+    <Entry Name="Glowstick">Bâton lumineux (G)</Entry>
+    <Entry Name="GlowstickDesc">Une source de lumière inépuisable.</Entry>
+    <Entry Name="Key01Part1">Un morceau d'une clef</Entry>
+    <Entry Name="Key01Part2">Un morceau d'une clef</Entry>
+    <Entry Name="Key01Whole">Une simple clef.</Entry>
+    <Entry Name="Key01Part1Desc">Un bout sur deux d'une clef cassée.</Entry>
+    <Entry Name="Key01Part2Desc">Un bout sur deux d'une clef cassée.</Entry>
+    <Entry Name="Key01WholeDesc">La clef cassée que j'ai réparée. Il semble qu'elle fonctionnera très bien.</Entry>
+    <Entry Name="SteelPin01Part1">Goupille en acier partie 1</Entry>
+    <Entry Name="SteelPin01Part1Desc">Première partie de la goupille en acier.</Entry>
+    <Entry Name="SteelPin01Part2">Goupille en acier partie 2</Entry>
+    <Entry Name="SteelPin01Part2Desc">Deuxième partie de la goupille en acier.</Entry>
+    <Entry Name="SteelPin01Whole">Une tige en métal</Entry>
+    <Entry Name="SteelPin01WholeDesc">Une solide tige en métal.</Entry>
+    <Entry Name="VentTool">Outil de passage</Entry>
+    <Entry Name="VentToolDesc">Un outil pour ouvrir les trappes d'aération.</Entry>
+    <Entry Name="Fueltank">Bidon d'essence</Entry>
+    <Entry Name="FueltankDesc">Le bidon semble contenir de l'essence.</Entry>
+    <Entry Name="IDCard01">Carte d'identification</Entry>
+    <Entry Name="IDCard01Desc">C'est une carte d'identification d'un ingénieur qui pourrait me donner l'accès à plus de portes dans ce complexe.</Entry>
+    <Entry Name="Notebook">Cahier de notes (N)</Entry>
+    <Entry Name="NotebookDesc">Ce cahier me sera utile pour noter des indices importants.</Entry>
+    <Entry Name="Note01">Un vieux conte.</Entry>
+1.<Entry Name="Note01Desc">Il y a écrit une sorte de conte de fées.</Entry>
+    <Entry Name="Battery">Batterie</Entry>
+    <Entry Name="BatteryDesc">Batteries entièrement chargées.</Entry>
+    <Entry Name="Flare">Fusée éclairante</Entry>
+    <Entry Name="FlareDesc">C'est une fusée ordinaire. Ca pourrait être utile si je dois éclairer une salle.</Entry>
+    <Entry Name="NoteWorkShop01">Note de l'administrateur</Entry>
+    <Entry Name="NoteWorkShop01Desc">Un petit bout de papier avec quelques griffonnages.</Entry>
+    <Entry Name="KeyComboFail">Je ne peux pas réparer la clef à la main.</Entry>
+    <Entry Name="PickNote01">J'ai ajouté la note à mon cahier.</Entry>
+    <Entry Name="chemjar_salt">Flacon de liquide</Entry>
+    <Entry Name="chemjar_coal">Flacon de poudre</Entry>
+    <Entry Name="chemjar_acid">Flacon d'acide</Entry>
+    <Entry Name="chemjar_acidDesc">C'est l'acide que j'ai obtenu en combinant les flacons de liquide et de poudre.</Entry>
+    <Entry Name="chemjar_coalDesc">Il semble y avoir une certaine poudre dans le flacon. L'odeur me pique le nez.</Entry>
+    <Entry Name="chemjar_saltDesc">Un flacon contenant ce qui semble être un liquide d'un certain genre. Je ne peut vraiment détecter aucune odeur venant de la bouteille.</Entry>
+    <Entry Name="chemjar_Combine">En mélangeant les deux flacons ensemble il semble que j'ai créé un acide. C'est du moins ce que je suppose, vu les vapeurs acides.</Entry>
+    <Entry Name="Chord">Câble électrique</Entry>
+    <Entry Name="ChordDesc">Un câble électrique. Il est déchiré et usé, mais semble être utilisable.</Entry>
+    <Entry Name="NoteEntrance01">Note d'un ouvrier</Entry>
+    <Entry Name="NoteEntrance01Desc">Un petit bout de papier avec quelques griffonnages.</Entry>
+    <Entry Name="NoteEntrance01Tutorial">J'ai ajouté la note à mon cahier (N).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Inventaire">
+    <Entry Name="Use">Utiliser</Entry>
+    <Entry Name="Drop">Lâcher</Entry>
+    <Entry Name="Combine">Combiner</Entry>
+    <Entry Name="with">avec</Entry>
+    <Entry Name="CannotUseItem1">Il n'y a aucun moyen d'utiliser cet objet ici.</Entry>
+    <Entry Name="CannotUseItem2">Je ne peux pas utiliser cet objet ici.</Entry>
+    <Entry Name="CannotUseItem3">Ca ne fonctionne pas.</Entry>
+    <Entry Name="CannotUseItem4">Ca ne semble pas être bon.</Entry>
+    <Entry Name="CannotUseItem5">Comment ça pourrait être fait?</Entry>
+    <Entry Name="CannotCombineItems1">Il n'y a aucun moyen de combiner ces deux objets.</Entry>
+    <Entry Name="CannotCombineItems2">Je ne peux pas combiner ça.</Entry>
+    <Entry Name="CannotCombineItems3">Ca ne marche pas.</Entry>
+    <Entry Name="CannotCombineItems4">Ca ne semble pas être bon.</Entry>
+    <Entry Name="CannotCombineItems5">Comment ça pourrait être fait?</Entry>
+    <Entry Name="EqupSlot">Equiper</Entry>
+    <Entry Name="Read">Lire</Entry>
+    <Entry Name="Power">Puissance</Entry>
+    <Entry Name="Turn onoff">Marche Arrêt</Entry>
+    <Entry Name="Throw">Jeter</Entry>
+    <Entry Name="Equip">Equiper</Entry>
+    <Entry Name="Eat">Manger</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_03_corridor01">
+    <Entry Name="FixDoor2Panel">Avec le retour du courant, je suis parvenu à alimenter l'électro-aimant pour attacher le panneau.</Entry>
+    <Entry Name="BrokenDoor2Panel">Ca fonctionne mal, il semble que le panneau utilise des électro-aimants pour s'attacher à la porte.</Entry>
+    <Entry Name="LockedDoor3">C'est fermé.</Entry>
+    <Entry Name="LockedDoor1">La porte ne veut pas s'ouvrir, il semble qu'il n'y a pas de courant.</Entry>
+    <Entry Name="LockedDoor2">Il n'y a pas de courant pour que la porte s'ouvre. Toutefois il y a un petit espace, peut-être puis-je m'en servir pour ouvrir.</Entry>
+    <Entry Name="LockedDoor4">Le panneau est fermé avec une serrure à combinaison numérique. Je dois trouver le code afin de pouvoir l'ouvrir.</Entry>
+    <Entry Name="LockedDoor3Open">C'est ouvert.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_06_workshop01">
+    <Entry Name="keymachine01">Un certain genre de machine à réparer le métal. Le cordon secteur est introuvable, je dois trouver un cordon de remplacement afin de pouvoir examiner cette machine plus en détail.</Entry>
+    <Entry Name="platecutter01">C'est un dispositif pour couper le métal, la lame est remarquablement aiguisée.</Entry>
+    <Entry Name="lockeddoor">Le code semble incorrect.</Entry>
+    <Entry Name="unlockeddoor">Le code est correct !</Entry>
+    <Entry Name="InsertKey1">J'ai inséré un des morceaux de la clef dans la machine.</Entry>
+    <Entry Name="InsertKey2">J'ai inséré un des morceaux de la clef dans la machine.</Entry>
+    <Entry Name="KeyDone01">Il semble que la machine a réparé la clef juste comme il faut.</Entry>
+    <Entry Name="KeyDone02">J'ai pris la clef et je l'ai mise avec le reste de mon équipement.</Entry>
+    <Entry Name="FindingChord">Il semble y avoir un certain genre de cordon électrique sur l'étagère. Je devrais pouvoir l'utiliser pour mettre en route la machine dans l'autre salle.</Entry>
+    <Entry Name="NeedChord">Typique, le cordon secteur est absent... Il semble que je n'obtiendrai rien de cette machine jusqu'à ce que je trouve un cordon de remplacement.</Entry>
+    <Entry Name="InsertChord">Voilà, connecté et prêt à y aller.</Entry>
+    <Entry Name="keymachine02">J'ai le sentiment que cette machine pourrait m'être d'une grande utilité ! C'est sûrement une machine pour travailler et réparer le métal.</Entry>
+    <Entry Name="keymachine03">Je me demande si elle peut réparer autre chose que des clefs ?</Entry>
+    <Entry Name="PickingChord">J'ai un cordon secteur, avec un peu de chance il devrait être en état de marche.</Entry>
+    <Entry Name="NeedChord02">La machine ne fonctionnera pas tant qu'elle ne sera pas alimentée.</Entry>
+    <Entry Name="ChordInPlace">Avec le câble branché la machine devrait être alimentée.</Entry>
+    <Entry Name="ClosedMachine">Pourquoi cet équipement est-il derrière une barrière ? Ca ne semble pas être d'une grande importance, c'est rouillé et vieux.</Entry>
+    <Entry Name="WoodPile">Morceaux ternes de bois.</Entry>
+    <Entry Name="JunkPile">Un tas puant d'ordures et de quelques vieilles notes. Peut-être que les notes contiennent des informations utiles.</Entry>
+    <Entry Name="ElevatorArea">Il doit y avoir un ascenseur menant à la surface. Je n'ai aucune de la manière d'ouvrir la porte cependant. Elle semble coincée.</Entry>
+    <Entry Name="LiftArea">Vu le manque d'espace il doit y avoir une double utilisation pour ceux-là. Il y a des traces de réparation et de stationnement, mais les véhicules ne sont pas ici, où sont-ils?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Doors">
+    <Entry Name="Ventilation02">Il faut un outil pour ouvrir cette trappe.</Entry>
+    <Entry Name="Ventilation01">La serrure de la trappe du le tambour de ventilation semble avoir laché et la trappe se balance, ouverte. Peut-être il est possible de monter dans le tambour .</Entry>
+    <Entry Name="DoorClickable01IntEntrance">Je dois entrer le bon code pour l'ouvrir.</Entry>
+    <Entry Name="DoorClickable01">C'est une solide porte en métal qui semble avoir un genre de serrure numérique.</Entry>
+    <Entry Name="DoorClickable02">Il n'y a aucun moyen d'ouvrir cette porte tant que le panneau n'est pas réparé.</Entry>
+    <Entry Name="DoorClickable02IntCorridor01">La porte devrait être complètement opérationnelle maintenant.</Entry>
+    <Entry Name="DoorClickable03">C'est fermé.</Entry>
+    <Entry Name="Ventilation03">La trappe est coincée. J'ai besoin d'un outil pour pouvoir l'ouvrir.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_floor02_whole_level">
+    <Entry Name="BrokenHose">Mince, l'essence s'est renversée sur le sol. Il semble y avoir un tuyau manquant. Je dois en trouver un avant de pouvoir verser l'essence dans le générateur de secours.</Entry>
+    <Entry Name="ReplacingHose">Là, ça devrait le faire.</Entry>
+    <Entry Name="FuelSuccess">J'ai rempli le générateur avec tout le carburant restant. Si tout va bien il devrait fonctionner quand j'appuierai sur le bouton marche.</Entry>
+    <Entry Name="BUSuccess">Le courant semble être de retour.</Entry>
+    <Entry Name="BUDesc">C'est ce qui semble être un vieux générateur de secours. Il devrait encore fonctionner.</Entry>
+    <Entry Name="GeneratorDesc">C'est un vieux générateur rouillé. Il semble être cassé et il n'y a aucun moyen pour que je puisse le réparer.</Entry>
+    <Entry Name="BUbroken">Le générateur ne démarrera pas, je dois lui trouver du carburant.</Entry>
+    <Entry Name="FinalDoor">Par cette porte je peux accéder à des niveaux plus profonds de la station. En plus de connaître le code, il me semble que j'ai besoin également d'une carte de passage .</Entry>
+    <Entry Name="TheEnd">Fin.</Entry>
+    <Entry Name="EntranceLocked">J'ai cassé la tige, et la porte s'est refermée d'un claquement derrière moi. Aucun retour possible tant que le courant n'est pas rétabli.</Entry>
+    <Entry Name="NeedCard">Cette porte ressemble aux autres mais il y a une fente pour une carte de passage. Elle n'acceptera aucun code d'entrée à moins que j'ai une carte de passage.</Entry>
+    <Entry Name="GeneratorBroke">La chance semble m'avoir abandonné, ce générateur n'a pas clairement pas fonctionné depuis plusieurs années. Il n'y a aucune manière que je le fasse démarrer.</Entry>
+    <Entry Name="FuelNotAgain">Je ne dois pas recommencer cela.</Entry>
+    <Entry Name="FuelShow">Il y a un bidon de carburant sur l'étagère. Il est cependant hors de portée de  moi, je dois le descendre d'une façon ou d'une autre. </Entry>
+    <Entry Name="NoMore">Pourquoi recommencerais-je ça encore ?</Entry>
+    <Entry Name="AlmostThere">J'ai attaché le tuyau mais le générateur a toujours besoin de carburant.</Entry>
+    <Entry Name="AlmostThere2">Toujours aucun carburant, il est renversé sur le plancher si ma mémoire est juste.</Entry>
+    <Entry Name="BUDesc02">Le générateur de secours fonctionne très bien après que je l'ai réparé et rempli de carburant.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notebook">
+    <Entry Name="TaskList">Notes personelles</Entry>
+    <Entry Name="PickedNotes">Notes trouvées</Entry>
+    <Entry Name="Unread">non lues</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notes">
+    <Entry Name="Test01">D'un hôpital psychiatrique proche de Providence, Île de Rhode, a récemment a disparu une personne excessivement singulière. Il porte le nom de Charles Dexter Lassalle, et a été placé d'office à contre-coeur par son père affligé d' observer son aberration se développer d'une excentricité à une démence glauque, impliquant une possibilité de tendances meurtrières, ainsi que d'un changement profond et particulier de son esprit. Les médecins s'admettent tout à fait déroutés par son cas, puisqu'il a présenté des singularités d'ordre physiologique général aussi bien que de caractère psychologique.  
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤Au premier abord, le patient a semblé curieusement plus vieux que ses vingt-six années. La perturbation mentale, c'est vrai, accélère le vieillissement ; mais le visage de ce jeune homme avait pris une dureté subtile que seulement les personnes très âgés acquièrent, normalement. Deuxièmement, ses processus organiques montraient une certaine étrangeté de la proportion médicalement inédite. La respiration et l'action de coeur ont un manque embarrassant de symétrie ; la voix a été perdue, de sorte qu'aucun bruit au-dessus d'un chuchotement n'est possible ; la digestion a été incroyablement prolongée et réduite au minimum, et les réactions neuronales au stimulus standard n'alèsent aucune relation du tout à n'importe quoi jusqu'ici enregistré, normal ou pathologique. La peau est d'un froid et d'une sécheresse morbides, et la structure cellulaire du tissu a semblé exagérément brute et lâchement tricotée. Même une grande tâche de naissance olive sur la hanche droite avait disparu, tandis que là se forme sur le thorax une pustule très particulière ou une tache noirâtre dont aucune trace n'a existé avant. Généralement tous les médecins conviennent que dans Lassalle les processus du métabolisme sont devenus retardés à un degré jamais vu. </Entry>
+    <Entry Name="NoteWorkShop01">Là semblent avoir encore des étrangers du contre espionnage ici. Pour m'assurer qu'aucun personnel non autorisé ne m'entre ici, je change encore le mot de passe pour la porte d'atelier .
+¤
+¤Le nouveau mot de passe est 3654. Ceci doit être maintenu confidentiel de sorte que notre intégrité ne soit pas compromise. 
+¤
+¤Soyez en l'alerte pour n'importe quelle activité suspecte. Si ces intrusions sont répétées nous pourrions devoir prendre des mesures plus dures .</Entry>
+    <Entry Name="ComputerMailDesc">Mail de l'ordinateur</Entry>
+    <Entry Name="ComputerMail">Chers collègues, 
+¤En raison de la panne matérielle précédente de ce jour, les codes d'accès changent immédiatement.  Les nouveaux codes sont les suivants :
+¤
+¤Bureau du Niveau 1:
+¤6667
+¤
+¤Magasin du Niveau 1 :
+¤9834
+¤
+¤Entrée du Niveau 1 :
+¤1243
+¤
+¤Accès Niveau 1 vers le Niveau 2:
+¤1124</Entry>
+    <Entry Name="NoteEntrance01">Je ne sais pas pourquoi j'écris ceci. Peut-être que je veux le laisser en tant que message final au cas où je ne reviendrai pas, ou peut-être que c'est une manière pour que j'assimile les choses terribles que j'ai éprouvées durant la dernière heure.  
+¤Il y a une heure les Portes de l'Enfer se sont rompues ici ! Les lumières se sont éteintes et toutes ces choses étranges ont commencé à se produire. Nous n'avons jamais vraiment vu tout ce qui était allé ici, mais il doit y avoir eu quelques activités horribles. Les choses que j'ai entendues en courant ne sont pas de ce monde. Quelque chose a pris mon frère, et mon père est toujours dans cet endroit obscur. Je ne peux pas simplement l'abandonner derrière moi, et quand j'aurai fini d'écrire ceci je retournerai le chercher. Je ne sais pas si nous sortirons d'ici cependant, la poignée de la porte à l'extérieur étant bloquée ; peut-être que mon père connaît un autre passage. 
+¤
+¤Pour être protégés des choses de l'obscurité, j'ai changé le code de la porte en 1993.
+¤
+¤Maintenant je vais de nouveau à la recherche de mon père. J'espère qu'il est encore vivant .</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_05_corridor02">
+    <Entry Name="SteamArea01">La vapeur chaude se déverse en dehors des tuyaux. Je ne peux pas passer ici à moins qu'elle ne soit éteinte de façon ou d'une autre.</Entry>
+    <Entry Name="SteamAreaWarning">Ce ne serait pas une bonne idée d'aller plus loin. Cette vapeur est très chaude.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_08_officesave01">
+    <Entry Name="UsingComputer">Hmm, ce courrier particulier semble tout à fait intéressant. J'ai ajouté le texte à mon cahier . </Entry>
+    <Entry Name="UsedComputer">J'ai déjà ajouté le courrier à mon cahier.</Entry>
+    <Entry Name="Computer">Pas exactement le dernier modèle, mais ça semble tout à fait fonctionnel.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_vent01_02_03_05_08">
+    <Entry Name="Ventilation09">Mince, la serrure semble s'être bloquée par la rouille.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_02_entrance">
+    <Entry Name="startdoorDesc">La porte qui m'a mené à cette pièce. La poignée semblent s'être bloquée par la rouille de ce côté.</Entry>
+    <Entry Name="startdoorInteract">Je ne peux pas tourner la poignée, elle s'est bloquée par la rouille.</Entry>
+    <Entry Name="Lockers">Les verrous sont tous rouillés et usés. Endommagé probablement par l'humidité et des années d'utilisation.</Entry>
+    <Entry Name="LockedLocker">Il y a un cadenas sur celui-ci. Il est cependant tout à fait rouillé, peut-être puis-je le le casser.</Entry>
+    <Entry Name="Pipes1">C'est un ensemble de tuyaux délabrés.</Entry>
+    <Entry Name="LockedLocker02">La porte est ouverte maintenant.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Lights">
+    <Entry Name="EmergencyLights">Ces lumières de secours ne semble pas si utiles. Néanmoins, si les autres lumières sont éteintes, je serai probablement heureux de les avoir.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tasks">
+    <Entry Name="KeyMachine01">Qu'est-ce que je peux réparer avec la machine de réparation pour métaux dans l'atelier ?</Entry>
+    <Entry Name="PlateCutter01">Il y a un cutter plat dans l'atelier.</Entry>
+    <Entry Name="Door3Corridor01">Il y a une porte verrouillée dans le premier couloir. Peut-on l'ouvrir d'une façon ou d'une autre ?</Entry>
+    <Entry Name="Door2Corridor01">Un panneau cassé sur la deuxième porte dans le premier couloir. Peut-il être réparé ? </Entry>
+    <Entry Name="Door4Corridor01">Un code est exigé pour la porte dans le premier couloir, ou peut-être je peux trouver une autre manière d'entrer.</Entry>
+    <Entry Name="Door5Corridor01">Je pourrais pouvoir forcer la dernière porte dans le premier couloir ouvert.</Entry>
+    <Entry Name="LockedLocker">Un casier verrouillé dans l'entrée, je devrais pouvoir en forcer l'ouvrerture avec l'outil adéquat. </Entry>
+    <Entry Name="EntranceDoor">Je dois trouver le code pour la porte d'entrée si je dois entrer dans la base.</Entry>
+    <Entry Name="OfficeComputer">L'ordinateur dans le bureau semble tout à fait opérationnel, peut-être contient-il de l'information valable.</Entry>
+    <Entry Name="Vent2Corridor02">Un outil est nécessaire pour ouvrir les trappes de ventilation .</Entry>
+    <Entry Name="SteamCorridor02">Ou bien je me débarrasse de la vapeur dans le deuxième couloir, ou je trouve un chemin de contournement. </Entry>
+    <Entry Name="KillMachine">L'interrupteur est-il utile, puisque le câble est dédoublé ?</Entry>
+    <Entry Name="KeyMachineChord">La machine à réparer le métal dans l'atelier a besoin d'un nouveau cordon d'alimentation.</Entry>
+    <Entry Name="PowerBack">Pour des raisons que j'ignore, le courant a été arrêté, je doit trouver une manière de le remettre.</Entry>
+    <Entry Name="TaskFuel">Le générateur de secours a besoin de carburant.</Entry>
+    <Entry Name="TaskHose">Le générateur de secours manque d'un tuyau pour faire couler le carburant dans le réservoir.</Entry>
+    <Entry Name="BUGenerator">Je devrais essayer de refaire marcher le générateur de secours.</Entry>
+    <Entry Name="LastDoorIDTask">Quelques portes ont besoin d'une carte de passage en plus du code pour le panneau.</Entry>
+    <Entry Name="CodeCorridor02">Une porte est verrouillée dans le deuxième couloir, je dois connaître le code pour pouvoir l'ouvrir .</Entry>
+    <Entry Name="Vent1Corridor02">Une trappe de ventilation est ouverte dans le deuxième couloir. Est-il possible de s'y monter ?</Entry>
+    <Entry Name="Ventilation">Est-ce que je peux employer le système de ventilation pour accéder aux salles verrouillées ? </Entry>
+    <Entry Name="FirstBottle">J'ai trouvé une bouteille qui pourrait m'être utile plus tard.</Entry>
+    <Entry Name="SecondBottle">J'ai maintenant deux bouteilles, toutes les deux environ à moitié-pleines.</Entry>
+    <Entry Name="CombinedBottle">L'acide que j'ai obtenu en mélangeant les deux bouteilles a commencé à corroder la capsule !</Entry>
+    <Entry Name="AllDoorCodes">Maintenant que j'ai une liste de tous codes pour les portes je devrais veiller à les essayer toutes. </Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_04_storage">
+    <Entry Name="KillMachine">C'est un vieux interrupteur rouillé.</Entry>
+    <Entry Name="KillCable">Un câble électrique épais qui semble avoir été déchiré. C'est tout à fait dangereux si le courant passait. </Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tutorials">
+    <Entry Name="Interaction01">Appuyer sur la touche 'R' me facilitera l'action l'un sur l'autre avec des objets dans le monde .</Entry>
+    <Entry Name="PersonalNotes">J'ai ajouté une note au sujet de ce casier verrouillé à mes notes Personnelles (P) dans mon cahier de prise de Notes (N). </Entry>
+    <Entry Name="LeanTutorial">Quelle puanteur ! Qu'est ce que c'est ? Je ressens que la précaution est requise, donc me pencher et rester furtif avec (Q, E) semble être une bonne idée.</Entry>
+    <Entry Name="GlowStickTutorial">J'ai ajouté le bâton luisant (G) à mon inventaire (TAB).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Characters">
+    <Entry Name="RoachDead">Qu'est-ce-que-c'est ? ! L'odeur venant de cette chose est vraiment horrible !.</Entry>
+    <Entry Name="RoachDeadSecond">D'où ça vient ? Qu'est-ce qui ce passe ici bas ?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Sanity">
+    <Entry Name="RoachSanity01">Qu'est-ce que c'est ? Est-ce que je deviens fou ?</Entry>
+    <Entry Name="RoachSanity02">Qu'est-ce que c'était ? Est-ce que je deviens fou ?</Entry>
+    <Entry Name="RoachSanity03">Qu'est-ce que c'était ? Je suis certain d'avoir entendu quelque chose !</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Intro">
+    <Entry Name="01_01">Tout a commencé une semaine après le décès de ma mère, et j'ai pensé que je ne pourrais jamais être dans un plus mauvais état d'esprit.</Entry>
+    <Entry Name="01_02">C'était avant que la lettre ait atterri dans ma boîte aux lettres. Elle était supposée être écrite par mon père, qui quitta ma mère avant même que je sois né.</Entry>
+    <Entry Name="01_03">Le courrier contenait une note me disant qu'il était mort et me demandant pardon de ne pas être là. Il y avait également une clef menant à un compartiment de coffre-fort. </Entry>
+    <Entry Name="01_04">J'ai pensé à tout jeter, simplement, mais je m'étais toujours demandé qui était mon père, et je ne pouvais donc pas le laisser disparaître une deuxième fois. </Entry>
+    <Entry Name="02_01">Après un conflit interne, ma curiosité l'emporta, et je me suis dirigé à la banque où la boîte a été déposée. </Entry>
+    <Entry Name="02_02">Dans la boîte se trouvait un vieux livre, écrit dans une langue étrange, qui m'était inconnue. Il y avait également quelques notes que j'ai supposées être de l'écriture de mon père. </Entry>
+    <Entry Name="02_03">Il était difficile de lire le texte des notes, mais après un certain effort j'ai découvert que beaucoup de elles parlent d'un endroit quelque part au Groenland. </Entry>
+    <Entry Name="02_04">Je me suis demandé si cet endroit pourrait me donner quelques indices au sujet de mon défunt père.</Entry>
+    <Entry Name="02_05">Des jours se sont écoulés, et je ne pouvais pas quitter cet endroit du Groenland de mon esprit. J'ai su que j'étais destiné à y aller.</Entry>
+    <Entry Name="03_01">Enfin, j'ai pris un vol vers le Groenland et après l'atterrissage, j'ai dû prendre un bateau de pêche.</Entry>
+    <Entry Name="03_02">Le bateau allait à une station qui semblait suffisamment proche de mon but pour accéder à pied à l'endroit que je recherchais .</Entry>
+    <Entry Name="03_03">Comme nous sommes arrivés au rivage, des nuages sinistres se sont amoncelés dans le ciel. Il m'a semblé qu'une tempête arrivait.</Entry>
+    <Entry Name="04_01">En dépit des avertissements des pêcheurs, j'ai commencé à marcher vers ma destination. Maintenant que j'étais si proche du but, je ne pouvais plus renoncer. </Entry>
+    <Entry Name="04_02">Pendant que je marchais, un frisson étrange est passé sur tout mon corps. Je me suis demandé ce qui m'attendait dehors. </Entry>
+    <Entry Name="05_01">Une demi-heure plus tard que j'ai été coincé dans une terrible tempête. J'aurai peut-être du écouter les pêcheurs...</Entry>
+    <Entry Name="05_02">J'ai lutté jusqu'à ne plus y voir, et j'ai pensé j'étais sur le point de mourir dans la tempête, quand j'ai trouvé quelques roches pour m'abriter.</Entry>
+    <Entry Name="06_01">Pendant que je rampais sous les roches, j'ai frappé quelque chose de dur et de métallique - une trappe ! J'ai su que c'était ce ce que je recherchais...</Entry>
+    <Entry Name="06_02">J'ai saisi la poignée et j'ai tiré pour l'ouvrir en utilisant toute la force qui me restait. Lentement, j'ai fait un pas dans l'inconnu... </Entry>
+  </CATEGORY>
+</LANGUAGE>

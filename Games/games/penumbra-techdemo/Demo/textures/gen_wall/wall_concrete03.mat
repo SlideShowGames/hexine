@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="false" />
-  <TextureUnits>
-    <Diffuse File="wall_concrete03" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="wall_concrete03_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

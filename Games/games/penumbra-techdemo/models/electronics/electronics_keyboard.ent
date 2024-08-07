@@ -1,0 +1,30 @@
+<ENTITY>
+	<MAIN 
+		Name="electronics_keyboard" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "keyboard"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.01"
+		LinearDamping = "0.01"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "electronics_keyboard"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "grab"
+	/>
+	
+</ENTITY>

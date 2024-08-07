@@ -1,0 +1,119 @@
+<ENTITY>
+	<MAIN 
+		Name="furniture_cupboard01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "glasscupboardShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.8"
+		LinearDamping = "0.8"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "leftdoorframeShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.6"
+		LinearDamping = "0.6"
+		MaxAngularSpeed = "4"
+		MaxLinearSpeed = "4"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "rightdoorframeShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="2"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.6"
+		LinearDamping = "0.6"
+		MaxAngularSpeed = "4"
+		MaxLinearSpeed = "4"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "leftdoorglassShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Glass"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		MaxAngularSpeed = "8"
+		MaxLinearSpeed = "8"
+		BlocksSound = "false"
+	/>
+	
+	<PHYSICS
+		SubName = "rightdoorglassShape"
+		Collides = "false"
+		HasPhysics = "true"
+		Material="Glass"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		MaxAngularSpeed = "8"
+		MaxLinearSpeed = "8"
+		BlocksSound = "false"
+	/>
+	<JOINT
+		Name = "jointleft"
+	
+		MaxLimit_Sound = "wood_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = "wood_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "3"
+		
+		MoveSound = "wood_drawer_move"
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	/>
+	
+	<JOINT
+		Name = "jointright"
+	
+		MaxLimit_Sound = "wood_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = "wood_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "3"
+		
+		MoveSound = "wood_drawer_move"
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "furniture_cupboard_metal01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+	/>
+	
+</ENTITY>

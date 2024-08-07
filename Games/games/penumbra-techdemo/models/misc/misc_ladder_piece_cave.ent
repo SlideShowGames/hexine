@@ -1,0 +1,33 @@
+<ENTITY>
+	<MAIN 
+		Name="misc_ladder_piece_cave" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="3"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.2"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "misc_ladder_piece_cave"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "false"
+		RotateWithPlayer = "true"
+		ForceMul = "0.8"
+		UseNormalMass = "false"
+	/>
+	
+</ENTITY>

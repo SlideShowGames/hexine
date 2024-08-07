@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Generic_Soft" UseAlpha="True" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="decals_jacket01.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="decals_jacket01_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
+  </TextureUnits>
+</Material>

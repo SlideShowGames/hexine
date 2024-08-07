@@ -1,0 +1,4 @@
+<SOUNDENTITY>
+  <MAIN MainSound="door_metal2_start" StartSound="" StopSound="" />
+  <PROPERTIES Volume="0.8" MinDistance="4" MaxDistance="14" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="True" Blockable="True" BlockVolumeMul="0.4" Priority="0" />
+</SOUNDENTITY>

@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Default" />
+  <TextureUnits>
+    <Diffuse File="wall_plastered01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="wall_plastered01_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

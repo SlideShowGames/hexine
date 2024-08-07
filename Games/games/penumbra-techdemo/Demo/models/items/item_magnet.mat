@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Metal" />
-  <TextureUnits>
-    <Diffuse File="item_magnet" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

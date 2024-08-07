@@ -1,0 +1,49 @@
+<ENTITY>
+	<MAIN 
+		Name="office_desk_cover" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "deskcoverShape"
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "false"
+		Material="Generic_Hard"
+		Mass="1.5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		MaxAngularSpeed = "0.07"
+		MaxLinearSpeed = "0.07"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<JOINT
+		Name = "joint1"
+	
+		MaxLimit_Sound = ""
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = ""
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "3"
+		
+		MoveSound = ""
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "office_desk_cover"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+	/>
+	
+</ENTITY>

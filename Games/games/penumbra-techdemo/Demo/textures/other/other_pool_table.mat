@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Wood" />
-  <TextureUnits>
-    <Diffuse File="other_pool_table" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

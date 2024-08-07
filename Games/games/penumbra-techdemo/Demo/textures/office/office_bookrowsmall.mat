@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Default" />
-  <TextureUnits>
-    <Diffuse File="office_bookrowsmall.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

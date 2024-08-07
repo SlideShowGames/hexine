@@ -1,0 +1,28 @@
+<ENTITY>
+	<MAIN 
+		Name="misc_block_small" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Generic_Hard"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "misc_block_small"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		InteractMode = "Static"
+	/>	
+</ENTITY>

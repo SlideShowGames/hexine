@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Generic_Hard" UseAlpha="True" />
-  <TextureUnits>
-    <Diffuse File="floor_concrete.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="floor_concrete_bump.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

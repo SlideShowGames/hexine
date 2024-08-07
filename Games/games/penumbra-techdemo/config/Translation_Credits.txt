@@ -1,0 +1,25 @@
+A big Thank You to the people in the community for their contributions as translators! If anyone is missing from the list, we honestly didn't intend to leave you out!
+
+
+//German
+g4mer
+
+
+//French
+bightf
+RedGuff
+
+
+//Italian
+pachinko
+penumbrator
+
+
+//Spanish
+Dubos
+H-K
+NokYA
+
+
+//Special Thanks - Figuring out extended char support
+Misha

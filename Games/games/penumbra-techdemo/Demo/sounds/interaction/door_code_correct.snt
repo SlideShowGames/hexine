@@ -1,4 +1,0 @@
-<SOUNDENTITY>
-  <MAIN MainSound="door_code_correct" StartSound="" StopSound="" />
-  <PROPERTIES Volume="0.8" MinDistance="1" MaxDistance="1" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="False" Blockable="False" BlockVolumeMul="0.6" Priority="0" />
-</SOUNDENTITY>

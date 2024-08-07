@@ -1,0 +1,11 @@
+<BILLBOARD>
+	<MAIN
+		Material = "ceilinglight_halo01.mat"
+		Type = "axis"
+		UseOffset = "False"
+		
+		IsHalo = "True"
+		HaloSourceIsParent = "True"
+		HaloSourceSize = "0.05 0.05 0.05"		
+	/>
+</BILLBOARD>

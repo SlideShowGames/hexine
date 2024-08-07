@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="furniture_locker.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="furniture_locker_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-  </TextureUnits>
-</Material>

@@ -1,0 +1,10 @@
+<LIGHTENTITY>
+	<MAIN
+		ProjectionImage ="normal_spot.tga"
+		Aspect = 	 "1"
+		FalloffImage = 	 "normal_spot_falloff.png"
+		CastsShadows =   "true"
+		NearClipPlane =  "0.1"
+		Specular=	 "1"
+	/>
+</LIGHTENTITY>
