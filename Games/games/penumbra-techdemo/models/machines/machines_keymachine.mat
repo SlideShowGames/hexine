@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="machines_keymachine.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
-    <Illumination File="" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
-  </TextureUnits>
-</Material>

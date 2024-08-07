@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Diffuse" PhysicsMaterial="Glass" />
-  <TextureUnits>
-    <Diffuse File="item_chemjar_salt" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

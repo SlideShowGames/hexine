@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Default" UseAlpha="True" DepthTest="True" />
-  <TextureUnits>
-    <Diffuse File="decal_vent01.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-    <NMap File="decal_vent01_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
-  </TextureUnits>
-</Material>

@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Metal" UseAlpha="True" />
-  <TextureUnits>
-    <Diffuse File="door_clickable" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="door_clickable_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

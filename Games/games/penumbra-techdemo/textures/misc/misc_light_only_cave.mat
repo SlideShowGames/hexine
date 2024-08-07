@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Additive" PhysicsMaterial="" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="misc_light_only_cave.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

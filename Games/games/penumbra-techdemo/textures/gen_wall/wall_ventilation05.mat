@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="DiffuseSpecular" PhysicsMaterial="Metal_Ventilation" UseAlpha="True" />
-  <TextureUnits>
-    <Diffuse File="wall_ventilation05" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

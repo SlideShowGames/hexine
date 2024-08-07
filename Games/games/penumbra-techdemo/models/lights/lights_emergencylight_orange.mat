@@ -1,6 +1,0 @@
-<Material>
-  <Main Type="Flat" PhysicsMaterial="Metal" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="lights_emergencylight_orange.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

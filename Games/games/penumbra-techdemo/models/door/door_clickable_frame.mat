@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="BumpSpecular" PhysicsMaterial="Metal" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="door_clickable_frame" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="door_clickable_frame_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>

@@ -1,4 +1,0 @@
-<SOUNDENTITY>
-  <MAIN MainSound="item_flashlight_off" StartSound="" StopSound="" />
-  <PROPERTIES Volume="0.5" MinDistance="1" MaxDistance="2" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="False" Blockable="False" BlockVolumeMul="0.5" Priority="0" />
-</SOUNDENTITY>

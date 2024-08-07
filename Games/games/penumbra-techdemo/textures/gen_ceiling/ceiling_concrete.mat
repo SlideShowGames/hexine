@@ -1,7 +1,0 @@
-<Material>
-  <Main Type="Bump" PhysicsMaterial="Generic_Hard" UseAlpha="False" />
-  <TextureUnits>
-    <Diffuse File="ceiling_concrete.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-    <NMap File="ceiling_concrete_bump.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
-  </TextureUnits>
-</Material>
