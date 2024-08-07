@@ -1,2 +1,2 @@
-# BoxedWine In browser
-Windows Explorer Running On Wine In Browser
+# boxedwine-flash
+flash 11 on boxedwine in browser
