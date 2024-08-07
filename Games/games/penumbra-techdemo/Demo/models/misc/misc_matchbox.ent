@@ -1,0 +1,29 @@
+<ENTITY>
+	<MAIN 
+		Name="misc_matchbox" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Generic_Soft"
+		Mass="0.5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "1"
+		LinearDamping = "1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "misc_matchbox"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+	/>	
+</ENTITY>

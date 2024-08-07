@@ -1,0 +1,645 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+//----MAIN GENERATOR-----------------
+void GeneratorInteract(string asEntity)
+{
+	SetPlayerActive(false);
+	SetWideScreenActive(true);	
+	StartPlayerLookAt("generator1",0.5, 2);
+	
+	CreateTimer("GeneratorTimer1", 2, "GeneratorTimerEvent1",false);
+}
+void GeneratorTimerEvent1(string asTimer)
+{
+	StartPlayerLookAt("generator2",0.5, 3);
+	
+	CreateTimer("GeneratorTimer2", 1, "GeneratorTimerEvent2",false);
+}
+void GeneratorTimerEvent2(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "GeneratorBroke");
+	SetMessagesOverCallback("GeneratorEnd");
+}
+void GeneratorEnd()
+{
+	StopPlayerLookAt();
+	SetWideScreenActive(false);
+	SetPlayerActive(true);
+}
+
+//----BACKUP GENERATOR-----------------
+//Fixing the hose
+void BUgeneratorHose(string asItem, string asEntity)
+{
+	PlaySoundEntity("replacehose",false);
+	
+	SetPlayerActive(false);
+	SetWideScreenActive(true);
+	StartPlayerLookAt("bugenerator1",1.5, 3);
+	
+	CreateTimer("BUTimer3", 0.8, "BUEvent3",false);
+	
+	RemoveItem("generatorhose");
+	RemoveNotebookTask("TaskHose");
+	
+	SetLocalVar("hose", 1);
+	
+	//RemoveUseCallback("BUgeneratorHose");
+}
+void BUEvent3(string asTimer)
+{
+	SetGameEntityActive("generatorhose2",true);
+	CreateTimer("BUTimer4", 0.4, "BUEvent4",false);
+}
+void BUEvent4(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "ReplacingHose");
+	
+	SetMessagesOverCallback("BU3End");
+}
+void BU3End()
+{
+	StopPlayerLookAt();
+	SetWideScreenActive(false);
+	SetPlayerActive(true);
+}
+void PickUpGeneratorHose(string asEntity)
+{
+	RemoveNotebookTask("TaskHose");
+}
+
+//Fixing the fueltank
+void BUgeneratorFueltank(string asItem, string asEntity)
+{	
+	//Hose has been replaced
+	if(GetLocalVar("hose") == 1)
+		{
+		PlaySoundEntity("fuelin",false);
+		
+		SetPlayerActive(false);
+		SetWideScreenActive(true);
+		
+		CreateTimer("BUTimer5", 1, "BUEvent5",false);
+		
+		RemoveItem("fueltank");
+		RemoveNotebookTask("TaskFuel");
+		
+		SetLocalVar("fuel", 1);
+		
+		//RemoveUseCallback("BUgeneratorFueltank");
+		}
+	if(GetLocalVar("fuel") == 2)
+		{
+		AddMessageTrans("level01_floor02_whole_level", "FuelNotAgain");
+		}
+	//Hose is yet to be replaced		
+	else if(GetLocalVar("hose") == 0)
+		{
+		AddNotebookTask("TaskHose", "Tasks","TaskHose");
+		
+		PlaySoundEntity("fuelout",false);
+		
+		SetPlayerActive(false);
+		SetWideScreenActive(true);
+		StartPlayerLookAt("bugenerator2",1.5, 3);
+		
+		CreateTimer("BUTimer6", 1, "BUEvent6",false);
+		CreateTimer("BUTimerFuel1", 0.8, "BUFuelEvent1",false);
+		
+		SetLocalVar("fuel", 2);
+		}
+	
+}
+//fuel into machine successfull
+void BUEvent5(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "FuelSuccess");
+	SetMessagesOverCallback("BU5End");
+}
+void BU5End()
+{
+	SetWideScreenActive(false);
+	SetPlayerActive(true);	
+}
+//fuel outside of machine
+void BUEvent6(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "BrokenHose");
+	SetMessagesOverCallback("BU6End");
+}
+void BU6End()
+{
+	SetWideScreenActive(false);
+	StopPlayerLookAt();
+	SetPlayerActive(true);	
+}
+///////////////////////////////////
+/////UGLY ANIMATION FUEL START/////
+void BUFuelEvent1(string asTimer)
+{
+	SetGameEntityActive("gasoline1",true);
+	CreateTimer("BUTimerFuel2", 0.075, "BUFuelEvent2",false);
+}
+void BUFuelEvent2(string asTimer)
+{
+	SetGameEntityActive("gasoline11",true);
+	SetGameEntityActive("gasoline1",false);
+	CreateTimer("BUTimerFuel3", 0.075, "BUFuelEvent3",false);
+}
+void BUFuelEvent3(string asTimer)
+{
+	SetGameEntityActive("gasoline2",true);
+	SetGameEntityActive("gasoline11",false);
+	CreateTimer("BUTimerFuel4", 0.075, "BUFuelEvent4",false);
+}
+void BUFuelEvent4(string asTimer)
+{
+	SetGameEntityActive("gasoline22",true);
+	SetGameEntityActive("gasoline2",false);
+	CreateTimer("BUTimerFuel5", 0.075, "BUFuelEvent5",false);
+}
+void BUFuelEvent5(string asTimer)
+{
+	SetGameEntityActive("gasoline33",true);
+	SetGameEntityActive("gasoline22",false);
+	CreateTimer("BUTimerFuel5", 0.075, "BUFuelEvent6",false);
+}
+void BUFuelEvent6(string asTimer)
+{
+	SetGameEntityActive("gasoline3",true);
+	SetGameEntityActive("gasoline33",false);
+}
+/////UGLY ANIMATION FUEL STOP/////
+//////////////////////////////////
+
+//Interacting with generator
+void BUgeneratorInteract(string asEntity)
+{
+	//Machine broken and no fuel
+	if(GetGlobalVar("BUcheck") == 0 && GetLocalVar("hose") == 0 && GetLocalVar("fuel") == 0)
+		{
+		if(GetLocalVar("nomore") == 1)
+			{
+			AddMessageTrans("level01_floor02_whole_level", "NoMore");
+			}
+		if(GetLocalVar("nomore") == 0)
+			{
+			AddNotebookTask("TaskFuel", "Tasks","TaskFuel");
+			AddNotebookTask("TaskBUGenerator", "Tasks","BUGenerator");
+			
+			PlaySoundEntity("nofuel",true);
+		
+			SetPlayerActive(false);
+			SetWideScreenActive(true);
+		
+			CreateTimer("BUTimer1", 1.8, "BUEvent1",false);
+		
+			SetLocalVar("fuelhelp", 1);
+			SetLocalVar("nomore", 1);
+			}
+		}
+		//Message that it still needs fuel
+		if(GetGlobalVar("BUcheck") == 0 && GetLocalVar("hose") == 1 && GetLocalVar("fuel") == 0)
+			{
+			AddMessageTrans("level01_floor02_whole_level", "AlmostThere");
+			}
+		if(GetGlobalVar("BUcheck") == 0 && GetLocalVar("hose") == 1 && GetLocalVar("fuel") == 2)
+			{
+			AddMessageTrans("level01_floor02_whole_level", "AlmostThere");
+			}
+		//Message that still need to get the hose
+		if(GetGlobalVar("BUcheck") == 0 && GetLocalVar("hose") == 0 && GetLocalVar("fuel") == 2)
+			{
+			AddMessageTrans("level01_floor02_whole_level", "AlmostThere2");
+			}
+		//Machine fixed and player starts
+		if(GetGlobalVar("BUcheck") == 0 && GetLocalVar("hose") == 1 && GetLocalVar("fuel") == 1)
+			{
+			PlaySoundEntity("burun",true);
+			StopMusic(0.1);
+			
+			SetPlayerActive(false);
+			SetWideScreenActive(true);
+			
+			CreateTimer("BUTimer2", 2.5, "BUEvent2",false);
+			CreateTimer("BUlightTimer", 2, "BUlightEvent",false);
+			
+			PlaySoundEntity("light1_light1s",false);
+			PlaySoundEntity("light2_light1s",false);
+			PlaySoundEntity("light4_light1s",false);
+			PlaySoundEntity("light5_light1s",false);
+			PlaySoundEntity("light8_light1s",false);
+			PlaySoundEntity("light9_light1s",false);
+			PlaySoundEntity("light10_light1s",false);
+			
+			SetGameEntityActive("link01", true);
+			SetGameEntityActive("link01message", false);
+			
+			SetGameEntityDescriptionTrans("backupgenerator","level01_floor02_whole_level", "BUDesc02");
+			
+			SetGlobalVar("BUcheck", 1);
+			
+			RemoveNotebookTask("TaskPower");
+			RemoveNotebookTask("TaskBUGenerator");
+			RemoveNotebookTask("TaskFuel");
+			RemoveNotebookTask("TaskHose");
+			
+			RemoveEntityCallback("PlayerInteract", "backupgenerator");
+			RemoveEntityCallback("PlayerInteract","generator");	
+			}
+}
+void BUEvent1(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "BUbroken");
+	
+	SetMessagesOverCallback("BU1End");
+}
+void BU1End()
+{
+	SetPlayerActive(true);
+	SetWideScreenActive(false);
+}
+void BUEvent2(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "BUSuccess");
+	
+	SetMessagesOverCallback("BU2End");
+}
+void BUlightEvent(string asTimer)
+{
+	FadeLight3D("light1_light1",0.80,0.85,0.9,0.5,4.5, 0.6);
+	FadeLight3D("light2_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("light4_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("light5_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("light8_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("light9_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("light10_light1",0.9,0.8,0.7,0.5,2, 0.1);
+	FadeLight3D("biglight",0.15,0.12,0.08,0,15, 0.6);
+}
+void BU2End()
+{
+	SetPlayerActive(true);
+	SetWideScreenActive(false);
+}
+
+//----SHOW PLAYER FUEL
+void EnterFuelLook(string asParent, string asChild)
+{
+	if(GetLocalVar("fuelhelp") == 1)
+		{
+		SetPlayerActive(false);
+		SetWideScreenActive(true);
+		StartPlayerLookAt("fuellocation",1.5, 3);
+		
+		FadeLight3D("fuellight",0.8,0.95,1,0,0.4, 1);
+		
+		CreateTimer("ShowFuelTimer1", 1, "ShowFuelEvent1",false);
+		RemoveEntityCollideCallback("Enter","Player","fuellook");
+		}
+}
+void ShowFuelEvent1(string asTimer)
+{
+	AddMessageTrans("level01_floor02_whole_level", "FuelShow");
+	
+	FadeLight3D("fuellight",0,0,0,0,0,0.5);
+	
+	SetMessagesOverCallback("ShowFuelEnd");
+}
+void ShowFuelEnd()
+{
+	SetWideScreenActive(false);
+	StopPlayerLookAt();
+	SetPlayerActive(true);
+}
+void PickUpFuelTank(string asEntity)
+{
+	RemoveNotebookTask("TaskFuel");
+	
+	SetGameEntityActive("fuellook",false);
+}
+
+//---- ENTRANCE DOOR CLLOSED
+void Link01MessageInteract01(string asEntity)
+{
+	AddMessageTrans("level01_floor02_whole_level", "EntranceLocked");
+}
+//---- FINAL LOCKED DOOR
+void FinalDoorAreaInteract01(string asEntity)
+{
+	if(HasItem("idcard1") == true)
+		{
+		if(GetLocalVar("FinalDoor") == 0)
+			{
+			StartNumericalPanel("test",1,1,2,4,10.0f,"PanelCode");
+			}
+		else if(GetLocalVar("FinalDoor") == 1)
+			{
+			ChangeMap(	"level01_floor02_whole_level.dae", //New map
+				"link02", //Positon on new map
+				"door_clickable_start","door_clickable_stop", //Stop and end sound.
+				0.5f , 0.5f);//Fade out and in time (seconds).	
+			}
+		}
+	if(HasItem("idcard1") == false)
+	{
+	AddMessageTrans("level01_floor02_whole_level", "NeedCard");
+	PlayGuiSound("door_code_incorrect", 0.5);
+	
+	if(GetLocalVar("lasttask") == 0)
+		{
+		AddNotebookTask("LastDoorID", "Tasks","LastDoorIDTask");
+		SetLocalVar("lasttask", 1);
+		}
+	}
+}
+void PanelCode(string asName, bool abCodeWasCorrect)
+{
+	if(abCodeWasCorrect)
+	{
+		SetLocalVar("FinalDoor", 1);
+		PlayGuiSound("door_code_correct", 0.8);
+		
+		RemoveNotebookTask("LastDoorID");
+	}
+	else
+	{
+		PlayGuiSound("door_code_incorrect", 0.8);
+	}		
+}
+void IDcardFinalDoor(string asItem, string asEntity)
+{
+	StartNumericalPanel("test",1,1,2,4,10.0f,"PanelCode");
+}
+/////////////////////
+////START THE END////
+void EnterTheEnd(string asParent, string asChild)
+{
+	FadeLight3D("light1_light1",0,0,0,0,3, 0.01);
+	FadeLight3D("light2_light1",0,0,0,0,1, 0.01);
+	FadeLight3D("light4_light1",0,0,0,0,1, 0.01);
+	FadeLight3D("light5_light1",0,0,0,0,1, 0.01);
+	FadeLight3D("light8_light1",0,0,0,0,1, 0.01);
+	FadeLight3D("light9_light1",0,0,0,0,1, 0.01);
+	FadeLight3D("light10_light1",0,0,0,0,1, 0.01);
+	
+	SetLight3DVisible("lastlight1_light1",true);
+	FadeLight3D("lastlight1_light1",1,1,1,1,7, 0.01);
+	SetLight3DVisible("lastlight2",true);
+	FadeLight3D("lastlight2",0.3,0,0,1,14, 5);
+
+	CreateTimer("EndTimer1", 0.5, "EndTimerEvent1",false);
+
+	SetPlayerActive(false);
+	SetWideScreenActive(true);
+	StartPlayerLookAt("lookend1",0.1, 1);
+	
+	FadeInSoundEntity("endlaugh", 0.25);
+	FadeInSoundEntity("beep", 0.1);
+	FadeInSoundEntity("endroach", 0.2);
+	
+	PlayGuiSound("horror_bang_mirror", 0.8);
+	PlayGuiSound("event_metal_impact_echo", 1);
+	PlayGuiSound("horror_breath", 0.1);
+	
+	RemoveNotebookTask("TaskAllDoors");
+	RemoveEntityCollideCallback("Enter","Player","TheEnd");
+}
+void EndTimerEvent1(string asTimer)
+{
+	FadeLight3D("lastlight1_light1",0,0,0,1,0, 4.5);
+	
+	CreateTimer("LookTimer1", 1, "LookTimerEvent1",false);
+}
+	void LookTimerEvent1(string asTimer)
+	{
+	StartPlayerLookAt("lookend2",0.5, 1);
+	StartPlayerFearFilter(1);
+	
+	CreateTimer("LookTimer2", 1, "LookTimerEvent2",false);
+	}
+	void LookTimerEvent2(string asTimer)
+	{
+	StartPlayerLookAt("lookend3",0.5, 2);
+	CreateTimer("LookTimer3", 1, "LookTimerEvent3",false);
+	}
+	void LookTimerEvent3(string asTimer)
+	{
+	StartPlayerLookAt("lookend1",0.5, 3);
+	CreateTimer("LookTimer4", 1, "LookTimerEvent4",false);
+	}
+	void LookTimerEvent4(string asTimer)
+	{
+	StartPlayerLookAt("lookend4",0.7, 3);
+	CreateTimer("LookTimer6", 0.8, "LookTimerEvent6",false);
+	}
+	void LookTimerEvent6(string asTimer)
+	{
+	StartPlayerLookAt("lookend2",1, 2);
+	CreateTimer("LookTimer7", 0.8, "LookTimerEvent7",false);
+	}
+	void LookTimerEvent7(string asTimer)
+	{
+	StartPlayerLookAt("lookend3",1, 4);
+	StartFlash(2.3,4,4);
+	PlayGuiSound("player_heartbeat", 0.5);
+	
+	CreateTimer("LookTimer8", 0.8, "LookTimerEvent8",false);
+	}
+	void LookTimerEvent8(string asTimer)
+	{
+	StartPlayerLookAt("lookend1",0.5, 5);
+	CreateTimer("LookTimer9", 0.8, "LookTimerEvent9",false);
+	
+	PlayGuiSound("player_heartbeat", 0.6);
+	}
+	void LookTimerEvent9(string asTimer)
+	{
+	StartPlayerLookAt("lookend4",1, 3);
+	CreateTimer("LookTimer10", 0.6, "LookTimerEvent10",false);
+	
+	PlayGuiSound("player_heartbeat", 0.7);
+	}
+	void LookTimerEvent10(string asTimer)
+	{
+	StartPlayerLookAt("lookend2",0.8, 2);
+	CreateTimer("LookTimer11", 0.6, "LookTimerEvent11",false);
+	
+	PlayGuiSound("player_heartbeat", 0.8);
+	}
+	void LookTimerEvent11(string asTimer)
+	{
+	StartPlayerLookAt("lookend1",1, 4);
+	CreateTimer("LookTimer12", 0.5, "LookTimerEvent12",false);
+	
+	PlayGuiSound("player_heartbeat", 0.9);
+	}
+	void LookTimerEvent12(string asTimer)
+	{
+	StartPlayerLookAt("lookend3",1, 3);
+	CreateTimer("LookTimer13", 0.5, "LookTimerEvent13",false);
+	
+	PlayGuiSound("player_heartbeat", 0.9);
+	}
+	void LookTimerEvent13(string asTimer)
+	{
+	StartPlayerLookAt("lookend4",1, 5);
+	CreateTimer("EndTimer2", 3.1, "EndTimerEvent2",false);
+	
+	PlayGuiSound("player_heartbeat", 1);
+	PlayGuiSound("event_smack_head", 1);
+	
+	FadeOut(2);
+	
+	FadeOutSoundEntity("beep", 3);
+	FadeOutSoundEntity("endlaugh", 1.5);
+	FadeOutSoundEntity("endroach", 1.5);
+	FadeOutSoundEntity("ambient1", 1.5);
+	FadeOutSoundEntity("ambient2", 1.5);
+	FadeOutSoundEntity("vent1", 1.5);
+	FadeOutSoundEntity("vent2", 1.5);
+	
+	}
+void EndTimerEvent2(string asTimer)
+{
+	ResetGame();
+}
+////STOP THE END////
+////////////////////
+
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{		
+//----SET UP LINKS------------------
+	SetupLink(	"link01", //Link name
+			"level01_03_corridor01.dae", //New map
+			"link04", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+			
+//----LIGHT INIT----------------------
+	FadeLight3D("fuellight",0,0,0,0,0,0.1);
+	
+	SetLight3DVisible("light3_light1",false);
+	SetLight3DVisible("light6_light1",false);
+	SetLight3DVisible("light7_light1",false);
+	
+	FadeLight3D("lastlight1_light1",0,0,0,0,0, 0.01);
+	SetLight3DVisible("lastlight1_light1",false);
+	FadeLight3D("lastlight2",0,0,0,0,0, 0.01);
+	SetLight3DVisible("lastlight2",false);
+
+//----SOUND INIT-----------------------
+	StopSoundEntity("light3_light1s",false);
+	StopSoundEntity("light6_light1s",false);
+	StopSoundEntity("light7_light1s",false);
+	
+	StopSoundEntity("replacehose",false);
+	StopSoundEntity("fuelin",false);
+	StopSoundEntity("fuelout",false);
+	StopSoundEntity("nofuel",true);
+	
+	StopSoundEntity("endlaugh",false);
+	StopSoundEntity("beep",false);
+	StopSoundEntity("endroach",false);
+	
+//----ENTITY INIT----------------------
+	SetGameEntityActive("generatorhose2",false);
+	
+	SetGameEntityActive("gasoline1",false);
+	SetGameEntityActive("gasoline2",false);
+	SetGameEntityActive("gasoline3",false);
+	SetGameEntityActive("gasoline11",false);
+	SetGameEntityActive("gasoline22",false);
+	SetGameEntityActive("gasoline33",false);
+	
+//----INTERACTION----------------------	
+	AddEntityCallback("PlayerInteract","finaldoorarea","FinalDoorAreaInteract01");
+	AddEntityCallback("PlayerInteract","link01message","Link01MessageInteract01");
+	SetGameEntityMaxInteractDist("fueltank",1);	
+	AddPickupCallback("fueltank", "PickUpFuelTank");
+	AddPickupCallback("generatorhose", "PickUpGeneratorHose");
+	//Using ID card on last door
+	AddUseCallback("idcard1", "finaldoorarea", "IDcardFinalDoor");
+	
+//----AREA INIT----------------------	
+	//the end area
+	AddEntityCollideCallback("Enter","Player","theend","EnterTheEnd");
+	//entrance area off when power down
+	SetGameEntityActive("link01", false);
+	//fuel help area showing player
+	AddEntityCollideCallback("Enter","Player","fuellook","EnterFuelLook");
+	//right icon for last door
+	SetAreaCustomIcon("finaldoorarea", "DoorLink");
+	
+				
+//----TEXT INIT----------------------
+	//last door
+	SetGameEntityDescriptionTrans("finaldoorarea","level01_floor02_whole_level", "FinalDoor");
+	
+	//generators
+	SetGameEntityDescriptionTrans("generator","level01_floor02_whole_level", "GeneratorDesc");
+	SetGameEntityDescriptionTrans("backupgenerator","level01_floor02_whole_level", "BUDesc");
+	
+//----PUZZLES----------------------
+	//generators
+	AddUseCallback("generatorhose", "backupgenerator", "BUgeneratorHose");
+	AddUseCallback("fueltank", "backupgenerator", "BUgeneratorFueltank");
+	AddEntityCallback("PlayerInteract", "backupgenerator", "BUgeneratorInteract");
+	AddEntityCallback("PlayerInteract","generator","GeneratorInteract");	
+	
+//----VARIABLES---------------------
+	//generators
+	CreateLocalVar("hose", 0);
+	CreateLocalVar("fuel", 0);
+	CreateLocalVar("nomore", 0);
+	
+	//final door
+	CreateLocalVar("FinalDoor", 0);
+	CreateLocalVar("finaltask", 0);
+	
+	//fuel help by showing player
+	CreateLocalVar("fuelhelp", 0);
+}	
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{	
+//----GENERATOR INIT-------------------
+	if(GetGlobalVar("BUcheck") == 0)
+		{
+		FadeLight3D("light1_light1",0,0,0,0,3, 0.01);
+		FadeLight3D("light2_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("light4_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("light5_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("light8_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("light9_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("light10_light1",0,0,0,0,1, 0.01);
+		FadeLight3D("biglight",0,0,0,0,5, 0.01);
+		
+		StopSoundEntity("light1_light1s",false);
+		StopSoundEntity("light2_light1s",false);
+		StopSoundEntity("light4_light1s",false);
+		StopSoundEntity("light5_light1s",false);
+		StopSoundEntity("light8_light1s",false);
+		StopSoundEntity("light9_light1s",false);
+		StopSoundEntity("light10_light1s",false);
+		StopSoundEntity("burun",false);
+		}
+		
+///////////////////////
+////START AUTO SAVE////
+
+
+////STOP AUTO SAVE////	
+//////////////////////
+
+}
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+
+}

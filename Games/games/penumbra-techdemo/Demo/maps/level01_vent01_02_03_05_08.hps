@@ -1,0 +1,141 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+//---VENTILATION 2
+void VentComb01(string asItem, string asEntity)
+{
+	//To level01_entrance from corridor01vent
+	ChangeMap(	"level01_02_entrance.dae", //New map
+			"ventlink01", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb02(string asItem, string asEntity)
+{
+	//To level01_corridor01 from corridor01vent
+	ChangeMap(	"level01_03_corridor01.dae", //New map
+			"ventlink01", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb03(string asItem, string asEntity)
+{
+	//To level01_office01 from corridor01vent
+	ChangeMap(	"level01_08_officesave01.dae", //New map
+			"ventlink01", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb04(string asItem, string asEntity)
+{
+	//To level01_corridor01 from corridor01vent
+	ChangeMap(	"level01_03_corridor01.dae", //New map
+			"ventlink02", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb05(string asItem, string asEntity)
+{
+	//To level01_corridor01 from corridor01vent
+	ChangeMap(	"level01_03_corridor01.dae", //New map
+			"ventlink03", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb06(string asItem, string asEntity)
+{
+	//To level01_corridor02 from corridor01vent
+	SetGlobalVar("corridor02_stand", 1);
+	ChangeMap(	"level01_05_corridor02.dae", //New map
+			"ventlink01", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb07(string asItem, string asEntity)
+{
+	//To level01_corridor02 from corridor01vent
+	SetGlobalVar("corridor02_stand", 1);
+	ChangeMap(	"level01_04_storage.dae", //New map
+			"ventlink03", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+void VentComb08(string asItem, string asEntity)
+{
+	//To level01_corridor02 from corridor01vent
+	SetGlobalVar("corridor02_stand", 1);
+	ChangeMap(	"level01_04_storage.dae", //New map
+			"ventlink02", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+	//ventilation 9, locked always
+void VentComb09(string asItem, string asEntity)
+{
+	//To level01_corridor02 from corridor01vent
+	PlayGuiSound("door_ventilation_stop",0.3);
+	AddMessageTrans("level01_vent01_02_03_05_08", "Ventilation09");
+}
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{	
+
+//----TEXT INIT----------------------
+	for(int i=1;i<=9;i++)
+		SetGameEntityDescriptionTrans("vent"+i, "Doors", "Ventilation02");
+	
+	//task about ventilation
+	AddNotebookTask("TaskVentilation", "Tasks","Ventilation");
+	
+//----INTERACT---------------------
+	//ventilation
+	for(int i=1;i<=9;i++)	
+		AddUseCallback("venttool", "vent"+i, "VentComb0"+i);
+	for(int i=1;i<=9;i++)	
+		SetAreaCustomIcon("vent"+i, "DoorLink");
+		
+//----LIGHT & BILLBOARD INIT------------
+	AttachBillboardToLight3D("bb1","light2",true);
+	AttachBillboardToLight3D("bb2","light3",true);
+	AttachBillboardToLight3D("bb3","light6",true);
+	
+//----PARTICLE INIT-------------------
+	CreateParticleSystem("FanSmoke","Steam01","ps1",0.8,0.05,1);
+	CreateParticleSystem("FanSmoke2","Steam01","ps2",0.8,0.05,1);
+	
+//----VARIABLES---------------------
+}
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{	
+//----VENTILATION---------------
+	//Make sure player crouches in ventilation
+	if(GetGlobalVar("corridor01vent_crouch") == 1) SetPlayerPose("Crouch");
+		SetGlobalVar("corridor01vent_crouch", 0);
+		
+	PlayMusic("music_creepy02.mp3",0.8,0.1,true);
+}
+/////////////////////////
+////START AUTO SAVE////
+	
+	//AutoSave();
+
+////STOP AUTO SAVE////	
+/////////////////////////
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is unloaded */
+void OnExit()
+{
+	StopMusic(0.1);
+}
+
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+
+}

@@ -1,0 +1,52 @@
+<ENTITY>
+	<MAIN 
+		Name="door_clickable" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "doorclickable"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "door_clickable_karm"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "code_lock"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.7"
+		LinearDamping = "0.7"
+		BlocksSound = "false"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "door_clickable"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+	/>
+	
+</ENTITY>

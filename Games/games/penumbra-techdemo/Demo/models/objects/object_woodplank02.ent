@@ -1,0 +1,32 @@
+<ENTITY>
+	<MAIN 
+		Name="object_woodplank02" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "object_woodplank02"
+		Collides = "true"
+		ContinuousCollision = "true"
+		HasPhysics = "true"
+		Material="Wood"
+		Mass="4"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "object_woodplank02"	
+		CastShadows = "true"	
+	/>	
+	
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "True"
+		MaxInteractDist = "2"
+	/>
+	
+</ENTITY>

@@ -1,0 +1,4 @@
+<SOUNDENTITY>
+  <MAIN MainSound="door_unlock" StartSound="" StopSound="" />
+  <PROPERTIES Volume="0.7" MinDistance="0" MaxDistance="5" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="False" Loop="False" Use3D="True" Blockable="False" BlockVolumeMul="0.4" Priority="0" />
+</SOUNDENTITY>

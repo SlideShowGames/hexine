@@ -1,0 +1,55 @@
+BoxedWine [options] Program
+
+If no zip file is specified, it will look for a standard zip file with the pattern *Wine*.zip.  If it finds one and you didn't specifiy -nozip, then it will automatically use that zip.  It will look for this zip in the current working directory and if not found, then try the same directory where the Boxedwine executable is.  If more than 1 file is found in the directory, it will pick one at random.
+
+If no root directory is specified, then it will default to root in your platforms data folder
+* on Windows, this could be "C:\Users\Username\AppData\Roaming\Boxedwine\root\"
+
+example:
+
+BoxedWine -root c:\root /bin/wine notepad
+
+This will look for a file system in root and run "/bin/wine" in the file system with an argument of notepad
+
+BoxedWine -root c:\root -zip wine.zip /bin/wine notepad
+
+This will load the file system from wine.zip and write the changes to c:\root
+
+* options
+
+-bpp X : Value must be 16 or 32.  Most games are fine with 32-bit.
+
+-fullscreen : if no resolution is passed in via the resolution command line argument then the resolution will be the same as the monitor
+
+-gensrc : This is used for ahead of time (AOT) compiling and requires the source to be build with GENERATE_SOURCE.  With this enabled the user can run the program, then compile the output back into the program for a performance boost.  Currently I don't recommend using this, it should be considered experimental and the out put will not be compatible with future versions of BoxedWine.
+
+-glext: If used, when Wine requests the list of OpenGL extension, it will be limited to this list.  This is only useful if the an old OpenGL game, like Unreal, can't handle the large list of extension a modern video card returns.  For Unreal I use:
+
+    -glext "GL_EXT_multi_draw_arrays GL_ARB_vertex_program GL_ARB_fragment_program GL_ARB_multitexture GL_EXT_secondary_color GL_EXT_texture_lod_bias GL_NV_texture_env_combine4 GL_ATI_texture_env_combine3 GL_EXT_texture_filter_anisotropic GL_ARB_texture_env_combine GL_EXT_texture_env_combine GL_EXT_texture_compression_s3tc GL_ARB_texture_compression GL_EXT_paletted_texture"
+
+-dpiAware: will prevent Windows from scaling the screen if you are using display scaling.
+
+-mount : Will mount a host directory or zip file, in the emulated file systems.  Example: -mount "c:\my games" "/home/username/my games" or -mount "c:\my games\mygame.zip" "/home/username/my games"
+
+-mount_drive : Will mount a host directory in the emulate file system and set up the Wine links so that it shows up as a drive in Wine. Example: -mount_drive "c:\my games" d
+
+-nosound : Will mute sounds, but the emulated program will still think they are being played
+
+-nozip: if -zip command line is not supplied, Boxedwine might try to find a suitable zip file system.  If you don't want a default zip file system, you can specific the -nozip command line option.
+-p2 : sets the emulated cpu to be a Pentium 2 with MMX
+
+-p3 : sets the emulated cpu to be a Pentium 3 with MMX/SSE (default)
+
+-pollRate XX: XX is a number starting at 0.  This determines how fast mouse and keyboard events will be given to Wine.  The default is 40.  Setting it to 0 will make cause Boxedwine to give the events as fast as possible to Wine.
+
+-resolution WxH : Initial emulated screen size.  Default is 800x600.  This is usual for apps/games that aren't full screen and won't change the screen size themselves.
+
+-root path : Path to the file system the emulated linux environment will used
+
+-title name : Will add name to the Boxedwine window
+
+-uid X : Only useful if you want the emulated enviroment to report that it is root.  Useful if an app requires root privledges.  In that case set the uid to 0.
+
+-w path : Initial working directory, default is /home/username.  This path needs to reference a path in the emulated file system.
+
+-zip path : This will load the file system from the zip file.  Use -root option for the location where new files can be created.  You can specify more than one -zip command line, like -zip 1.zip -zip 2.zip.  These will both be mounted in the root folder, "/".  If you want to mount a zip file somewhere else, use the -mount command.

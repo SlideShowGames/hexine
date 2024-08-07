@@ -1,0 +1,268 @@
+<LANGUAGE>
+  <CATEGORY Name="Misc">
+    <Entry Name="Greeting">Unused</Entry>
+    <Entry Name="CokeCan">Unused</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Items">
+    <Entry Name="Painkillers">Analgésicos</Entry>
+    <Entry Name="PainkillersDesc">Es una caja de plástico con pastillas blancas. Me vendrán bien para calmar el dolor.</Entry>
+    <Entry Name="Flashlight">Linterna (F)</Entry>
+    <Entry Name="FlashlightDesc">Menos mal que me acordé de traerla conmigo. Lo malo es que consume mucho.</Entry>
+    <Entry Name="Note">Es una nota.</Entry>
+    <Entry Name="Dynamite">Dinamita</Entry>
+    <Entry Name="DynamiteDesc">Parece un poco vieja pero puede que aún sirva como explosivo.</Entry>
+    <Entry Name="GeneratorHose">Manguera de goma</Entry>
+    <Entry Name="GeneratorHoseDesc">Una manguera hecha de goma con extremos de metal.</Entry>
+    <Entry Name="Glowstick">Barrita Fluorescente (G)</Entry>
+    <Entry Name="GlowstickDesc">Una fuente de luz inagotable.</Entry>
+    <Entry Name="Key01Part1">Un trozo de una llave.</Entry>
+    <Entry Name="Key01Part2">Un trozo de una llave.</Entry>
+    <Entry Name="Key01Whole">Una llave.</Entry>
+    <Entry Name="Key01Part1Desc">Una de las dos partes de una llave rota.</Entry>
+    <Entry Name="Key01Part2Desc">Una de las dos partes de una llave rota.</Entry>
+    <Entry Name="Key01WholeDesc">La llave rota que he arreglado. Parece que servirá.</Entry>
+    <Entry Name="SteelPin01Part1">Unused</Entry>
+    <Entry Name="SteelPin01Part1Desc">Unused</Entry>
+    <Entry Name="SteelPin01Part2">Unused</Entry>
+    <Entry Name="SteelPin01Part2Desc">Unused</Entry>
+    <Entry Name="SteelPin01Whole">Una barra de metal.</Entry>
+    <Entry Name="SteelPin01WholeDesc">Una robusta barra de metal.</Entry>
+    <Entry Name="VentTool">Llave para trampillas</Entry>
+    <Entry Name="VentToolDesc">Una herramienta para abrir trampillas de ventilación.</Entry>
+    <Entry Name="Fueltank">Lata de combustible</Entry>
+    <Entry Name="FueltankDesc">Parece que tiene algo de combustible.</Entry>
+    <Entry Name="IDCard01">Tarjeta de identificación</Entry>
+    <Entry Name="IDCard01Desc">Es la tarjeta de identificación de un ingeniero que quizás me de acceso a más estancias de este complejo.</Entry>
+    <Entry Name="Notebook">Cuaderno de notas (N)</Entry>
+    <Entry Name="NotebookDesc">Este cuaderno me servirá para escribir pistas importantes.</Entry>
+    <Entry Name="Note01">Un cuento antiguo.</Entry>
+    <Entry Name="Note01Desc">Es algún tipo de cuento de hadas.</Entry>
+    <Entry Name="Battery">Pila</Entry>
+    <Entry Name="BatteryDesc">Pilas cargadas.</Entry>
+    <Entry Name="Flare">Bengala</Entry>
+    <Entry Name="FlareDesc">Es una bengala normal y corriente. Puede serme útil cuando necesite iluminar una habitación.</Entry>
+    <Entry Name="NoteWorkShop01">Nota del administrador</Entry>
+    <Entry Name="NoteWorkShop01Desc">Un pequeño trozo de papel escrito a mano.</Entry>
+    <Entry Name="KeyComboFail">No puedo arreglar la llave a mano.</Entry>
+    <Entry Name="PickNote01">He apuntado la nota en mi cuaderno.</Entry>
+    <Entry Name="chemjar_salt">Frasco con líquido</Entry>
+    <Entry Name="chemjar_coal">Frasco con algún tipo de polvo</Entry>
+    <Entry Name="chemjar_acid">Frasco con ácido</Entry>
+    <Entry Name="chemjar_acidDesc">Es el ácido que he obtenido mezclando el líquido y el polvo de los frascos.</Entry>
+    <Entry Name="chemjar_coalDesc">Parece que el frasco contiene algún tipo de polvo. El olor me provoca fuertes picores en la nariz.</Entry>
+    <Entry Name="chemjar_saltDesc">Un frasco con lo que parece un líquido de alguna clase. No parece desprender ningún olor).</Entry>
+    <Entry Name="chemjar_Combine">Mezclando el contenido de los dos frascos parece que he creado un ácido. Al menos eso creo considerando los vapores ácidos que desprende.</Entry>
+    <Entry Name="Chord">Cable eléctrico</Entry>
+    <Entry Name="ChordDesc">Un cable eléctrico. Está bastante estropeado pero parece que aún puede servir.</Entry>
+    <Entry Name="NoteEntrance01">Carta de un trabajador</Entry>
+    <Entry Name="NoteEntrance01Desc">Un pequeño trozo de papel escrito a mano.</Entry>
+    <Entry Name="NoteEntrance01Tutorial">He apuntado la nota en mi cuaderno (N).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Inventory">
+    <Entry Name="Use">Usar</Entry>
+    <Entry Name="Drop">Tirar</Entry>
+    <Entry Name="Combine">Combinar</Entry>
+    <Entry Name="with">con</Entry>
+    <Entry Name="CannotUseItem1">No hay manera de usar esto aquí.</Entry>
+    <Entry Name="CannotUseItem2">No puedo usar esto aquí.</Entry>
+    <Entry Name="CannotUseItem3">Eso no funcionará.</Entry>
+    <Entry Name="CannotUseItem4">Eso no tiene sentido.</Entry>
+    <Entry Name="CannotUseItem5">¿Como podría hacer eso?</Entry>
+    <Entry Name="CannotCombineItems1">No hay manera de combinar estos objetos.</Entry>
+    <Entry Name="CannotCombineItems2">No puedo combinar eso.</Entry>
+    <Entry Name="CannotCombineItems3">Eso no funcionará.</Entry>
+    <Entry Name="CannotCombineItems4">Eso no tiene sentido.</Entry>
+    <Entry Name="CannotCombineItems5">¿Como podría hacer eso?</Entry>
+    <Entry Name="EqupSlot">Equipar</Entry>
+    <Entry Name="Read">Leer</Entry>
+    <Entry Name="Power">Batería</Entry>
+    <Entry Name="Turn onoff">Encender/Apagar</Entry>
+    <Entry Name="Throw">Lanzar</Entry>
+    <Entry Name="Equip">Equipar</Entry>
+    <Entry Name="Eat">Comer</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_03_corridor01">
+    <Entry Name="FixDoor2Panel">Con la corriente reestablecida, he conseguido colocar el panel de nuevo en su sitio.</Entry>
+    <Entry Name="BrokenDoor2Panel">No funciona, parece que el panel usa electroimanes para mantenerse unido a la puerta.</Entry>
+    <Entry Name="LockedDoor3">Está cerrada.</Entry>
+    <Entry Name="LockedDoor1">La puerta no se abre, parece que no hay corriente.</Entry>
+    <Entry Name="LockedDoor2">No llega corriente a la puerta así que no se abrirá. Sin embargo tiene un pequeño agujero, quizás pueda hacer palanca con algo.</Entry>
+    <Entry Name="LockedDoor4">El panel está bloqueado con un cierre numérico. Necesito encontrar el código para abrirla.</Entry>
+    <Entry Name="LockedDoor3Open">Está abierta.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_06_workshop01">
+    <Entry Name="keymachine01">Algún tipo de máquina para arreglar metales. No veo el cable de alimentación, tendré que encontrar uno de repuesto si quiero usarla.</Entry>
+    <Entry Name="platecutter01">Es un dispositivo para cortar metal, la hoja está bastante afilada.</Entry>
+    <Entry Name="lockeddoor">El código parece incorrecto.</Entry>
+    <Entry Name="unlockeddoor">¡El código es correcto!</Entry>
+    <Entry Name="InsertKey1">He metido uno de los trozos de la llave en la máquina.</Entry>
+    <Entry Name="InsertKey2">He metido uno de los trozos de la llave en la máquina.</Entry>
+    <Entry Name="KeyDone01">Parece que la máquina ha arreglado la llave.</Entry>
+    <Entry Name="KeyDone02">He recogido la llave y la he puesto con el resto de mis cosas.</Entry>
+    <Entry Name="FindingChord">Parece que hay un cable eléctrico encima de esa estantería. Puedo usarlo para conectar la máquina de la otra habitación.</Entry>
+    <Entry Name="NeedChord">Típico, no hay cable de alimentación... Parece que no voy a llegar a ningún sitio con esta máquina hasta que no encuentre un cable de repuesto.</Entry>
+    <Entry Name="InsertChord">Bien, enchufado y listo para funcionar.</Entry>
+    <Entry Name="keymachine02">¡Tengo la sensación de que esta máquina puede serme útil! Claramente es una máquina para el trabajo y reparación de metales.</Entry>
+    <Entry Name="keymachine03">Me pregunto si podrá arreglar otra cosa que no sean llaves.</Entry>
+    <Entry Name="PickingChord">Ya tengo el cable, con un poco de suerte aún funcionará.</Entry>
+    <Entry Name="NeedChord02">La máquina no funcionará hasta que le llegue corriente.</Entry>
+    <Entry Name="ChordInPlace">Con el cable conectado la máquina debería tener corriente.</Entry>
+    <Entry Name="ClosedMachine">¿Por que estarán estos equipos tras una reja? No parece que sean muy importantes, tan viejos y oxidados como están.</Entry>
+    <Entry Name="WoodPile">Trozos de madera ennegrecidos.</Entry>
+    <Entry Name="JunkPile">Un apestoso montón de basura y unas viejas notas. A lo mejor hay información útil escrita en ellas.</Entry>
+    <Entry Name="ElevatorArea">Debe haber un ascensor hacia la superficie. No tengo ni idea de cómo abrir la puerta. Parece atascada.</Entry>
+    <Entry Name="LiftArea">Considerando la escasez de espacio que hay aquí, tendrían que usar esto tanto para reparación como para aparcamiento. Pero si los vehículos no están aquí, ¿dónde están entonces?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Doors">
+    <Entry Name="Ventilation02">Hace falta una herramienta especial para abrir esta trampilla.</Entry>
+    <Entry Name="Ventilation01">El cierre de esta trampilla de ventilación debe haberse roto y se ha quedado abierta. A lo mejor puedo trepar hasta entrar en el conducto.</Entry>
+    <Entry Name="DoorClickable01IntEntrance">Necesito introducir el código correcto para abrirla.</Entry>
+    <Entry Name="DoorClickable01">Es una robusta puerta de metal que parece tener algún tipo de cierre electrónico.</Entry>
+    <Entry Name="DoorClickable02">No hay manera de abrir esta puerta hasta que el panel esté arreglado.</Entry>
+    <Entry Name="DoorClickable02IntCorridor01">Ahora la puerta debería funcionar correctamente.</Entry>
+    <Entry Name="DoorClickable03">Está cerrada.</Entry>
+    <Entry Name="Ventilation03">La trampilla está atascada. Necesito una herramienta para abrirla.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_floor02_whole_level">
+    <Entry Name="BrokenHose">Mierda, la gasolina se ha derramado por el suelo. Parece que falta una manguera. Tengo que encontrar una para poder echar la gasolina en el generador de emergencia.</Entry>
+    <Entry Name="ReplacingHose">Listo, eso debería funcionar.</Entry>
+    <Entry Name="FuelSuccess">He llenado el generador con el combustible que quedaba. Espero que arranque cuando apriete el botón.</Entry>
+    <Entry Name="BUSuccess">Parece que ha vuelto la corriente.</Entry>
+    <Entry Name="BUDesc">Es un generador de emergencia con pinta de ser viejo. A lo mejor aún funciona.</Entry>
+    <Entry Name="GeneratorDesc">Es un generador viejo y oxidado. Parece estar roto y no tengo manera de arreglarlo.</Entry>
+    <Entry Name="BUbroken">El generador no arranca, tengo que echarle algo de combustible.</Entry>
+    <Entry Name="FinalDoor">Esta puerta conduce a los niveles inferiores de la estación. Parece que para abrirla, además de saber el código necesito una tarjeta de acceso.</Entry>
+    <Entry Name="TheEnd">Fin.</Entry>
+    <Entry Name="EntranceLocked">La barra se ha roto y la puerta se ha cerrado de golpe tras de mí. No puedo volver atrás hasta que vuelva la corriente.</Entry>
+    <Entry Name="NeedCard">La puerta parece igual a las demás salvo porque tiene una ranura para tarjetas. No aceptará ningún código a menos que tenga una tarjeta de acceso.</Entry>
+    <Entry Name="GeneratorBroke">Parece que no hay suerte, este generador ha estado claramente en desuso varios años. No hay manera de arrancarlo.</Entry>
+    <Entry Name="FuelNotAgain">No voy a intentarlo otra vez.</Entry>
+    <Entry Name="FuelShow">Hay una lata de gasolina encima de la estantería. No puedo alcanzarla, tengo que conseguir bajarla de alguna manera.</Entry>
+    <Entry Name="NoMore">¿Por que querría hacer eso otra vez?</Entry>
+    <Entry Name="AlmostThere">He colocado la manguera pero el generador aún necesita combustible.</Entry>
+    <Entry Name="AlmostThere2">Aún no tiene combustible, se derramó en el suelo si la memoria no me falla.</Entry>
+    <Entry Name="BUDesc02">El generador de emergencia funciona de maravilla despues de haberlo arreglado y rellenado de combustible.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notebook">
+    <Entry Name="TaskList">Notas Personales</Entry>
+    <Entry Name="PickedNotes">Notas encontradas</Entry>
+    <Entry Name="Unread">no leído</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Notes">
+    <Entry Name="NoteWorkShop01">Parece que hemos tenido intrusos fisgando por aquí otra vez. Para asegurarme de que no vuelve a colarse nadie no autorizado voy a cambiar el código de la puerta del taller.
+Â¤
+Â¤El nuevo código es 3654. Esto debe mantenerse en secreto para que nuestra integridad no se vea comprometida.
+Â¤
+Â¤Estad alerta por cualquier actividad sospechosa. Si se repiten estas intrusiones tendremos que tomar medidas más drásticas.</Entry>
+    <Entry Name="ComputerMailDesc">Correo del ordenador</Entry>
+    <Entry Name="ComputerMail">Estimados colaboradores,
+Â¤Con motivo del fallo en el hardware producido hace un momento los códigos de acceso serán cambiados inmediatamente. Los nuevos códigos son los siguientes.
+Â¤
+Â¤Nivel 1 Oficina:
+Â¤6667
+Â¤
+Â¤Nivel 1 Taller:
+Â¤9834
+Â¤
+Â¤Nivel 1 Entrada:
+Â¤1243
+Â¤
+Â¤Nivel 1 Acceso al Nivel 2:
+Â¤1124</Entry>
+    <Entry Name="NoteEntrance01">No sé por qué estoy escribiendo esto. Quizás quiera dejarlo como último mensaje en caso de que no vuelva o quizás sea mi manera de hacer frente a las terribles cosas que he estado experimentando durante la última hora.
+Â¤Hace una hora el infierno se desató, las luces se apagaron y todas esas cosas extrañas comenzaron a ocurrir. La verdad es que nunca habíamos visto nada de lo que ha estado pasando aquí, pero deben haberse llevado a cabo actividades horribles. Las cosas que oí mientras corría no eran de este mundo. Algo se llevó a mi hermano y mi padre aún sigue en ese oscuro lugar. No puedo sencillamente dejarle atrás, así que cuando acabe de escribir esto volveré a por él. No sé cómo saldremos de aquí, la manilla de la puerta al exterior está atascada, quizás mi padre conozca otra salida.
+Â¤
+Â¤Para resguardarme de las cosas de la oscuridad he cambiado el código de la puerta a 1993. 
+Â¤
+Â¤Ahora voy a volver a buscar a mi padre. Espero que siga vivo.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level_01_05_corridor02">
+    <Entry Name="SteamArea01">De esas tuberías está saliendo vapor caliente. No puedo pasar a no ser que las cierre.</Entry>
+    <Entry Name="SteamAreaWarning">No sería buena idea seguir adelante. Ese vapor está bastante caliente.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_08_officesave01">
+    <Entry Name="UsingComputer">Mmm, este correo en concreto parece bastante interesante. He apuntado el texto en mi cuaderno.</Entry>
+    <Entry Name="UsedComputer">Ya he copiado el correo en el cuaderno.</Entry>
+    <Entry Name="Computer">No es exactamente el último grito, pero parece funcional.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_vent01_02_03_05_08">
+    <Entry Name="Ventilation09">Mierda, el cerrojo está oxidado y no se abre.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_02_entrance">
+    <Entry Name="startdoorDesc">Es la puerta por la que he entrado a esta habitación. La manilla a este lado parece atascada por el óxido.</Entry>
+    <Entry Name="startdoorInteract">No puedo girar la manilla, está atascada por el óxido.</Entry>
+    <Entry Name="Lockers">Las taquillas están todas oxidadas y desgastadas. Probablemente estropeadas por la humedad y años de uso.</Entry>
+    <Entry Name="LockedLocker">Hay un candado en esta taquilla. Está bastante oxidado, quizá pueda abrirlo de alguna manera.</Entry>
+    <Entry Name="Pipes1">Una línea de tuberías en mal estado.</Entry>
+    <Entry Name="LockedLocker02">Ahora la puerta está abierta.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Lights">
+    <Entry Name="EmergencyLights">Estas luces de emergencia no parecen ser de mucha ayuda. Aun así, si las otras luces se apagan, me alegraré de que estén ahí.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tasks">
+    <Entry Name="KeyMachine01">¿Qué puedo reparar con la máquina de arreglar metales del taller?</Entry>
+    <Entry Name="PlateCutter01">Hay un cortador de chapa en el taller.</Entry>
+    <Entry Name="Door3Corridor01">Hay una puerta cerrada en el primer pasillo, ¿habrá alguna manera de abrirla?</Entry>
+    <Entry Name="Door2Corridor01">Hay un panel roto en la segunda puerta del primer pasillo. ¿Se podrá arreglar?</Entry>
+    <Entry Name="Door4Corridor01">Se necesita un código para la cuarta puerta del primer pasillo, o quizás pueda encontrar otra manera de entrar.</Entry>
+    <Entry Name="Door5Corridor01">Podría ser capaz de abrir la última puerta del pasillo por la fuerza.</Entry>
+    <Entry Name="LockedLocker">En la entrada hay una taquilla cerrada, debería poder abrirla con la herramienta adecuada.</Entry>
+    <Entry Name="EntranceDoor">Tengo que encontrar el código de la puerta de entrada si quiero entrar en la base.</Entry>
+    <Entry Name="OfficeComputer">El ordenador de la oficina tiene pinta de funcionar correctamente, es posible que contenga información de valor.</Entry>
+    <Entry Name="Vent2Corridor02">Se necesita una herramienta para abrir las trampillas de ventilación.</Entry>
+    <Entry Name="SteamCorridor02">O me libro del vapor del segundo pasillo o encuentro alguna manera de sortearlo.</Entry>
+    <Entry Name="KillMachine">¿Tiene alguna utilidad el interruptor de corriente incluso con el cable partido en dos?</Entry>
+    <Entry Name="KeyMachineChord">La máquina de arreglar metales del taller necesita un cable de alimentación.</Entry>
+    <Entry Name="PowerBack">Por razones que desconozco, se ha ido la luz. Tengo que encontrar una manera de hacer que vuelva a funcionar.</Entry>
+    <Entry Name="TaskFuel">El generador de emergencia necesita combustible.</Entry>
+    <Entry Name="TaskHose">El generador de emergencia necesita una manguera para poder llenar el depósito de combustible.</Entry>
+    <Entry Name="BUGenerator">Debería intentar poner en funcionamiento el generador de emergencia.</Entry>
+    <Entry Name="LastDoorIDTask">Algunas puertas necesitan una tarjeta de acceso además del código del panel para abrirse.</Entry>
+    <Entry Name="CodeCorridor02">Hay una puerta cerrada en el segundo pasillo, necesito saber el código para poder abrirla.</Entry>
+    <Entry Name="Vent1Corridor02">Hay una trampilla de ventilación abierta en el segundo pasillo. ¿Sería posible subir por ahí?</Entry>
+    <Entry Name="Ventilation">¿Podría usar el sistema de ventilación para acceder a las habitaciones cerradas?</Entry>
+    <Entry Name="FirstBottle">Encontré un frasco, podria serme útil más tarde.</Entry>
+    <Entry Name="SecondBottle">Ahora tengo dos frascos, los dos medio llenos. </Entry>
+    <Entry Name="CombinedBottle">¡El ácido que obtuve mezclando los dos frascos ha empezado a corroer la tapadera del frasco!</Entry>
+    <Entry Name="AllDoorCodes">Ahora que tengo una lista con todos los códigos de las puertas debería asegurarme de probarlos todos.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="level01_04_storage">
+    <Entry Name="KillMachine">Es un interruptor de corriente viejo y oxidado.</Entry>
+    <Entry Name="KillCable">Un grueso cable eléctrico partido en dos. Sería bastante peligroso si pasara corriente por él.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Tutorials">
+    <Entry Name="Interaction01">Pulsar la tecla 'R' me hara más fácil interactuar con los objetos que me rodean.</Entry>
+    <Entry Name="PersonalNotes">He tomado nota sobre esta taquilla cerrada en las notas personales (P) de mi cuaderno (N).</Entry>
+    <Entry Name="LeanTutorial">¿Qué es ese hedor? Creo que debería tener cuidado, será buena idea avanzar con sigilo y asomarme (Q,E) antes de doblar las esquinas.</Entry>
+    <Entry Name="GlowStickTutorial">He añadido la barrita fluorescente (G) a mi inventario (TAB).</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Characters">
+    <Entry Name="RoachDead">¡¿Qué es esta cosa?! El olor que desprende es realmente horrible.</Entry>
+    <Entry Name="RoachDeadSecond">¿De dónde ha salido? ¿Qué ha pasado aquí abajo?</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Sanity">
+    <Entry Name="RoachSanity01">¡¿Qué es esta cosa?! ¿Me estaré volviendo loco?</Entry>
+    <Entry Name="RoachSanity02">¡¿Qué era esa cosa?! ¿Me estaré volviendo loco?</Entry>
+    <Entry Name="RoachSanity03">¿Qué ha sido eso? Estoy seguro de que he oído un ruido.</Entry>
+  </CATEGORY>
+  <CATEGORY Name="Intro">
+    <Entry Name="01_01">Todo empezó una semana después de morir mi madre, y pensaba que no podría encontrarme en peor estado emocional.</Entry>
+    <Entry Name="01_02">Eso fue antes de la carta que encontré en mi buzón. Estaba escrita supuestamente por mi padre, quien abandonó a mi madre incluso antes de que yo naciera.</Entry>
+    <Entry Name="01_03">El sobre contenía una nota diciéndome que él había muerto y pidiéndome perdón por no haber estado con nosostros. También había una llave de una caja de seguridad.</Entry>
+    <Entry Name="01_04">Pensé sencillamente en tirarla, pero siempre me había preguntado quién era mi padre y no podía dejar pasar esto.</Entry>
+    <Entry Name="02_01">Tras una lucha interna, ganó mi curiosidad y me dirigí al banco donde se encontraba la caja.</Entry>
+    <Entry Name="02_02">En la caja había un viejo libro, escrito en un extraño idioma desconocido para mí. También había unas notas que imaginé debían ser de mi padre.</Entry>
+    <Entry Name="02_03">El texto de las notas era difícil de leer pero tras un poco de esfuerzo descubrí que muchas de ellas hablaban sobre un lugar en alguna parte de Groenlandia.</Entry>
+    <Entry Name="02_04">Me pregunté si este lugar me daría alguna pista sobre mi padre.</Entry>
+    <Entry Name="02_05">Pasaron los días y no podía quitarme de la cabeza ese lugar de Groenlandia. Sabía que tenía que ir allí.</Entry>
+    <Entry Name="03_01">Finalmente tomé un vuelo a Groenlandia y despues de aterrizar tuve que seguir mi viaje en un pesquero.</Entry>
+    <Entry Name="03_02">El pesquero iba a una lejana estación al parecer a poco camino a pie del lugar que estaba buscando.</Entry>
+    <Entry Name="03_03">Al llegar a tierra firme nubes amenazantes se formaban en el cielo. Parecía que iba a haber tormenta.</Entry>
+    <Entry Name="04_01">A pesar de los avisos de los pescadores empecé a andar hacia mi destino. Ahora que estaba tan cerca no podía sencillamente parar y descansar.</Entry>
+    <Entry Name="04_02">Mientras andaba, una sensación extraña recorrió mi cuerpo. Me preguntaba qué me estaba esperando ahí fuera.</Entry>
+    <Entry Name="05_01">Media hora despues me vi en medio de una feroz tormenta. Quizás debería haber escuchado a los pescadores.</Entry>
+    <Entry Name="05_02">Continué mi camino luchando a ciegas, y pensé que estaba a punto de morir de frío cuando encontré refugio en unas rocas.</Entry>
+    <Entry Name="06_01">Mientras me arrastraba, bajo las rocas topé con algo duro y metálico - una escotilla. De algún modo supe que eso era lo que estaba buscando.</Entry>
+    <Entry Name="06_02">Agarré la manilla y la abrí usando todas las fuerzas que me quedaban. Lentamente, avancé hacia lo desconocido.</Entry>
+  </CATEGORY>
+</LANGUAGE>

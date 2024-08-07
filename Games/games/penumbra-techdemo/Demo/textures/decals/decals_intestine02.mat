@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Modulative" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="decals_intestine02.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="ClampToEdge" />
+  </TextureUnits>
+</Material>

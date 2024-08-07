@@ -1,0 +1,35 @@
+<ENTITY>
+	<MAIN 
+		Name="furniture_madrass_01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "madrassShape"
+		Collides = "true"
+		HasPhysics = "true"
+		CollideCharacter = "false"
+		Material="Fabric"
+		Mass="4"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.3"
+		LinearDamping = "0.3"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "furniture_madrass_01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+		PickAtPoint = "false"
+		GrabMassMul = "6"
+		MaxInteractDist = "2"
+	/>
+	
+</ENTITY>

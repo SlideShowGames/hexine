@@ -1,0 +1,33 @@
+<ENTITY>
+	<MAIN 
+		Name="item_flare_throw" 
+		Type="Flare" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		CollideCharacter = "false"
+		Material="Dyn_Generic_Hard"
+		Mass="3"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_flare_throw"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		InteractMode = "Static"
+		PickAtPoint = "false"
+		RotateWithPlayer = "false"
+	/>
+	
+</ENTITY>

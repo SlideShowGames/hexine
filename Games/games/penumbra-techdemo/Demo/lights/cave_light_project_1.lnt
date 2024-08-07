@@ -1,0 +1,10 @@
+<LIGHTENTITY>
+	<MAIN
+		ProjectionImage ="cave_light_project_1.tga"
+		Aspect = 	 "1"
+		FalloffImage = 	 "cave_light_project_1_falloff.png"
+		CastsShadows =   "true"
+		NearClipPlane =  "0.1"
+		Specular=	 "1"
+	/>
+</LIGHTENTITY>

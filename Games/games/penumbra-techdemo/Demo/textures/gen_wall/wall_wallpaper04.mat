@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="wall_wallpaper04.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="wall_wallpaper04_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

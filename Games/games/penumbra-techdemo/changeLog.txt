@@ -1,0 +1,19 @@
+BoxedWine 20.1.2
+
+* 64-bit Windows installer will now default to the correct Programe Files to install to.
+* Added about 30 more supported extensions to OpenGL.
+* Fixed fstat system call, it will now will report the correct size of the file
+* Added SSE2 support for both the x64 and normal cores
+* Fixed crash in custom winex11.drv and updated file systems to use it
+* Launching Boxedwine without any command line arguments will now launch a new UI.  As long as the platform support OpenGL it should work with the UI.
+* Windows UI is DPI aware
+* Fixed an issue where fast keyboard or mouse input can cause major lag in some games like Sacrafice, Powerslide and Quake 3.
+
+Known game fixes
+
+* GOG's Diablo + Hellfire - https://www.gog.com/game/diablo
+  The installer works, the launcher works and Diablo works.  Hellfire does not work (same as Wine).
+* Half-Life Uplink Demo installer and game work with Wine 4 now.  Wine 1.7 has color issue with intro and game is a blank screen.
+* Final Reality Benchmark.  Works with Wine 1.7 and OpenGL (need to delete HKEY_CURRENT_USER\Software\Wine\Direct3D\DirectDrawRenderer key from registry)
+* MechWarrior 3 with Wine 4.0
+* Tomb Raider 3 from GOG.com, need to add -setup to the command line and hit enter at the first black screen

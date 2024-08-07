@@ -1,0 +1,37 @@
+<ENTITY>
+	<MAIN 
+		Name="item_steelpin01_whole" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_steelpin01_whole"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_steelpin01_whole.bmp"
+		NameCat="Items" NameEntry ="SteelPin01Whole"
+		DescCat="Items" DescEntry ="SteelPin01WholeDesc"
+		
+		ItemType = "Normal"
+		
+		PickUpSound = "pick_metalrod"
+	/>
+	
+</ENTITY>

@@ -1,0 +1,14 @@
+///////////////////////////////////////////////////////
+/// SIMPLE DIFFUSE COLOR VERTEX PROGRAM ////////////
+///////////////////////////////////////////////////////
+
+void main(half4 pos : POSITION, //in projection space
+		  half4 lightColor : COLOR0,
+		  half3 uv	: TEXCOORD0,
+		              
+		 out half4 oColor : COLOR,
+         )
+{
+	oColor.xyz = tex2D(diffuseMap, uv).xyz;
+	oColor.w =1;
+}

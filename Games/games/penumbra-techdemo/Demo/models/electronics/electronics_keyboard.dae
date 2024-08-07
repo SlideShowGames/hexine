@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author>jens</author>
+      <authoring_tool>Maya 7.0 | ColladaMaya v0.86</authoring_tool>
+      <source_data>file://C|/Documents and Settings/jens/Desktop/penumbra/_work_models/electronics/keyboard/keyboard.ma</source_data>
+    </contributor>
+    <created>2006-03-07T13:59:16Z</created>
+    <modified>2006-03-07T13:59:16Z</modified>
+    <unit name="meter" meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file3-image" name="file3">
+      <init_from>file://C|/Documents and Settings/jens/Desktop/penumbra/redist/textures/electronics/electronics_keyboard.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+    <material id="keyboard1" name="keyboard1">
+      <instance_effect url="#keyboard1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.500000 0.500000 0.500000 1.000000</color>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="keyboard1-fx" name="keyboard1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-image" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">true</wrapU>
+                    <wrapV sid="wrapV0">true</wrapV>
+                    <mirrorU sid="mirrorU0">false</mirrorU>
+                    <mirrorV sid="mirrorV0">false</mirrorV>
+                    <coverageU sid="coverageU0">1.000000</coverageU>
+                    <coverageV sid="coverageV0">1.000000</coverageV>
+                    <translateFrameU sid="translateFrameU0">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV0">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame0">0</rotateFrame>
+                    <stagger sid="stagger0">false</stagger>
+                    <fast sid="fast0">false</fast>
+                    <repeatU sid="repeatU0">1.000000</repeatU>
+                    <repeatV sid="repeatV0">1.000000</repeatV>
+                    <offsetU sid="offsetU0">0</offsetU>
+                    <offsetV sid="offsetV0">0</offsetV>
+                    <rotateUV sid="rotateUV0">0</rotateUV>
+                    <noiseU sid="noiseU0">0</noiseU>
+                    <noiseV sid="noiseV0">0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="_collider_box_pCubeShape1-lib" name="_collider_box_pCubeShape1">
+      <mesh>
+        <source id="_collider_box_pCubeShape1-lib-Position">
+          <float_array count="24" id="_collider_box_pCubeShape1-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.114145 0.500000
+0.500000 0.114145 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_pCubeShape1-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_pCubeShape1-lib-Normal">
+          <float_array count="72" id="_collider_box_pCubeShape1-lib-Normal-array">
+0.000000 0 1.000000
+0.000000 0 1.000000
+0.000000 0 1.000000
+0.000000 0 1.000000
+0 0.932958 0.359986
+0 0.932958 0.359986
+0 0.932958 0.359986
+0 0.932958 0.359986
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_pCubeShape1-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_pCubeShape1-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_pCubeShape1-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_pCubeShape1-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_pCubeShape1-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_pCubeShape1-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_pCubeShape1-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_pCubeShape1-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_pCubeShape1-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 5 18 11 3 19 3 7 17 10 1 16 1 7 17 10 3 19 3 4 23 13 6 20 12 2 22 2 6 20 12 0 21 0 2 22 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="keyboardShape-lib" name="keyboardShape">
+      <mesh>
+        <source id="keyboardShape-lib-Position">
+          <float_array count="24" id="keyboardShape-lib-Position-array">
+-2.462083 0.086240 0.596800
+2.265007 0.086239 0.596799
+-2.462083 0.309122 0.596800
+2.265007 0.309121 0.596799
+-2.462083 0.468682 -1.074060
+2.265007 0.468681 -1.074061
+-2.462083 0.090256 -1.074060
+2.265007 0.090255 -1.074061
+</float_array>
+          <technique_common>
+            <accessor source="#keyboardShape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="keyboardShape-lib-Normal">
+          <float_array count="72" id="keyboardShape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 -0.000001 0
+1.000000 -0.000001 0
+1.000000 -0.000001 0
+1.000000 -0.000001 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+0 0.996869 0.079072
+0 0.996869 0.079072
+0 0.996869 0.079072
+0 0.996869 0.079072
+</float_array>
+          <technique_common>
+            <accessor source="#keyboardShape-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>false</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="keyboardShape-lib-map1" name="map1">
+          <float_array count="28" id="keyboardShape-lib-map1-array">
+0.001418 0.938016
+0.001418 0.061983
+0.037991 0.061983
+0.037991 0.938016
+0.344460 0.938016
+0.344459 0.061983
+0.404629 0.061983
+0.404630 0.938016
+0.710188 0.061983
+0.710189 0.938016
+0.035175 0.025518
+0.339827 0.001992
+0.339827 0.998008
+0.035175 0.974481
+</float_array>
+          <technique_common>
+            <accessor source="#keyboardShape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="keyboardShape-lib-Vertex">
+          <input semantic="POSITION" source="#keyboardShape-lib-Position"/>
+        </vertices>
+        <triangles material="keyboard1" count="12">
+          <input semantic="VERTEX" offset="0" source="#keyboardShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#keyboardShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#keyboardShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 3 1 1 1 3 2 2 2 3 3 4 4 4 5 5 5 6 7 7 5 5 5 7 6 6 6 7 7 6 8 7 7 9 6 0 11 9 7 9 6 1 10 8 0 11 9 5 14 5 3 15 2 7 13 11 1 12 10 7 13 11 3 15 2 4 19 4 6 16 12 2 18 3 6 16 12 0 17 13 2 18 3 4 20 4 2 21 3 5 23 5 2 21 3 3 22 2 5 23 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene" name="keyboard">
+      <node id="_keyboard" name="keyboard" sid="_keyboard">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <node id="_collider_box_pCube1" name="_collider_box_pCube1" sid="_collider_box_pCube1">
+          <translate sid="translate">0 0.028947 -0.011138</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 -0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">0.657219 0.059801 0.232989</scale>
+          <instance_geometry url="#_collider_box_pCubeShape1-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="_keyboard_keyboard" name="keyboard" sid="_keyboard_keyboard">
+          <translate sid="translate">0.013617 -0.009167 0.021740</translate>
+          <translate sid="rotatePivot">-0.013617 0.038341 -0.032975</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 -0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <translate sid="rotatePivotInverse">0.013617 -0.038341 0.032975</translate>
+          <translate sid="scalePivotTranslation">0.084922 -0.239120 0.205655</translate>
+          <translate sid="scalePivot">-0.098538 0.277461 -0.238630</translate>
+          <scale sid="scale">0.138186 0.138186 0.138186</scale>
+          <translate sid="scalePivotInverse">0.098538 -0.277461 0.238630</translate>
+          <instance_geometry url="#keyboardShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="keyboard1" target="#keyboard1">
+                  <bind semantic="UVSET0" target="#keyboardShape-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="MAYA">
+          <start_time>0.041667</start_time>
+          <end_time>8.333333</end_time>
+          <layer name="Lowlayer1">keyboardShape-lib _keyboard_keyboard</layer>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

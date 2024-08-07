@@ -1,0 +1,561 @@
+//////////////////////
+/*CALLBACK FUNCTIONS*/
+
+//---VENTILATION 1
+void EnterVentArea01(string asParent, string asChild)
+{
+	//Set ventlink Area on
+	SetGameEntityActive("ventlink1", true);
+}
+void InteractVentLink01(string asEntity)
+{	
+	//Move player up into the ventilation when interact on ventlink
+	SetGlobalVar("corridor02_crouch", 1);
+	SetGameEntityActive("ventlink1", false);
+	
+	RemoveNotebookTask("TaskVent1");
+	RemoveEntityCallback("PlayerExamine","vent1");
+		
+	ChangeMap(	"level01_05_corridor02.dae", //New map
+			"link04", //Positon on new map
+			"","", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+//---VENTILATION 2
+void VentComb02(string asItem, string asEntity)
+{
+	//Load next level on Vent Tool interact with Ventilation nr 2
+	ChangeMap(	"level01_06_workshop01.dae", //New map
+			"link02", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+	//remove task note from notebook first time venttool is used
+	if(GetLocalVar("VentToolCheck") == 0);
+		{
+		RemoveNotebookTask("TaskVent2");
+		
+		SetLocalVar("VentToolCheck", 1);
+		}
+}
+void Vent1Examine01(string asEntity)
+{
+	AddNotebookTask("TaskVent1", "Tasks","Vent1Corridor02");
+	
+	RemoveEntityCallback("PlayerExamine","vent1");
+}
+void Vent2Examine01(string asEntity)
+{
+	AddNotebookTask("TaskVent2", "Tasks","Vent2Corridor02");
+	
+	RemoveEntityCallback("PlayerExamine","vent2");
+}
+//---VENTILATION 3
+void VentComb03(string asItem, string asEntity)
+{
+	//To corridor01 ventilation system
+	SetGlobalVar("corridor01vent_crouch", 1);
+	ChangeMap(	"level01_vent01_02_03_05_08.dae", //New map
+			"ventlink06", //Positon on new map
+			"door_ventilation_start","door_ventilation_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+}
+
+//---STEAM PUZZLE
+void DuringSteamArea01(string asParent, string asChild)
+{
+	//Give player damage if steam active
+	if(GetLocalVar("SteamDamage") == 0)
+		{
+		GivePlayerDamage(5);
+		}
+		else if(GetLocalVar("SteamDamage") == 1)
+			{
+			GivePlayerDamage(3);
+			}
+		else if(GetLocalVar("SteamDamage") == 2)
+			{
+			GivePlayerDamage(1.5);
+			}
+		else if(GetLocalVar("SteamDamage") == 3)
+			{
+			SetGameEntityActive("steamarea", false);
+			}
+}
+void EnterSteamArea02(string asParent, string asChild)
+{
+	//Player tells himself he will die..
+	if(GetLocalVar("SteamDamage") == 1 && GetLocalVar("SteamDamage") <= 3)
+		{
+		RemoveEntityCollideCallback("Enter","Player","steamarea2");
+		}
+	if(GetLocalVar("SteamDamage") == 0)
+		{
+		AddMessageTrans("level_01_05_corridor02", "SteamAreaWarning");
+		
+		AddNotebookTask("TaskSteam", "Tasks","SteamCorridor02");
+		SetLocalVar("steamwarn", 1);
+	
+		RemoveEntityCollideCallback("Enter","Player","steamarea2");
+		}
+}	
+void EnterRemoveSteam(string asParent, string asChild)
+{
+	RemoveNotebookTask("TaskSteam");
+	RemoveEntityCollideCallback("Enter","Player","EnterRemoveSteam");
+}
+
+void ExamineSteamArea01(string asEntity)
+{
+	//Give player note about steam if not already collided with warning
+	if(GetLocalVar("steamwarn") == 0)
+		AddNotebookTask("TaskSteam", "Tasks","SteamCorridor02");
+		SetLocalVar("steamwarn", 2);
+	
+	RemoveEntityCallback("PlayerExamine","steamarea");
+}
+
+/////////////////////////////////////
+//START USING BARRELS TO STOP STEAM//
+void EnterStopSteam1Barrel1(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", 1);
+	KillParticleSystem("steam1");
+	CreateParticleSystem("ministeam1","Steam01","stopsteam1",0.3,1,4);
+}
+void LeaveStopSteam1Barrel1(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", -1);
+	CreateParticleSystem("steam1","Steam01","steam1a",1.3,1.4,1);
+	KillParticleSystem("ministeam1");
+}
+void EnterStopSteam1Barrel2(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", 1);
+	KillParticleSystem("steam1");
+	CreateParticleSystem("ministeam1","Steam01","stopsteam1",0.3,1,4);
+}
+void LeaveStopSteam1Barrel2(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", -1);
+	CreateParticleSystem("steam1","Steam01","steam1a",1.3,1.4,1);
+	KillParticleSystem("ministeam1");
+}
+void EnterStopSteam2Barrel1(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", 1);
+	KillParticleSystem("steam3");
+	CreateParticleSystem("ministeam2","Steam01","stopsteam2",0.3,1,4);
+}
+void LeaveStopSteam2Barrel1(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", -1);
+	CreateParticleSystem("steam3","Steam01","steam3a",1.3,1.4,1);
+	KillParticleSystem("ministeam2");
+}
+void EnterStopSteam2Barrel2(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", 1);
+	KillParticleSystem("steam3");
+	CreateParticleSystem("ministeam2","Steam01","stopsteam2",0.3,1,4);
+}
+void LeaveStopSteam2Barrel2(string asParent, string asChild)
+{
+	AddLocalVar("SteamDamage", -1);
+	CreateParticleSystem("steam3","Steam01","steam3a",1.3,1.4,1);
+	KillParticleSystem("ministeam2");
+}
+//STOP USING BARRELS TO STOP STEAM//
+////////////////////////////////////
+
+//----LOCKED DOOR
+void Link02Interact01(string asEntity)
+{
+	if(GetGlobalVar("workshopunlocked") == 0)
+		{
+		StartNumericalPanel("test",3,6,5,4,10.0f,"PanelCode");
+		if(GetLocalVar("lockeddoortask") == 0)
+			{
+			AddNotebookTask("TaskCodeCorridor02", "Tasks","CodeCorridor02");
+			SetLocalVar("lockeddoortask", 1);
+			}
+		}
+	else if(GetGlobalVar("workshopunlocked") == 1)
+		{
+		ChangeMap(	"level01_06_workshop01.dae", //New map
+				"link01", //Positon on new map
+				"door_clickable_start","door_clickable_stop", //Stop and end sound.
+				0.5f , 0.5f);//Fade out and in time (seconds).	
+		}
+}
+void PanelCode(string asName, bool abCodeWasCorrect)
+{
+	if(abCodeWasCorrect)
+	{
+		SetGlobalVar("workshopunlocked", 1);
+		PlayGuiSound("door_code_correct", 0.8);
+		RemoveNotebookTask("TaskCodeCorridor02");
+	}
+	else
+	{
+		PlayGuiSound("door_code_incorrect", 0.8);
+	}	
+}
+//////////////////////////
+////START NOISE HORROR////
+void EnterNoiseStart(string asParent, string asChild)
+{
+	FadeInSoundEntity("horror2", 0.2);
+	PlaySoundEntity("impact1s",false);
+	
+	CreateTimer("StopNoise", 8.3, "StopNoiseEvent",false);
+	CreateTimer("StartNoise2", 4.4, "StartNoiseEvent2",false);
+	
+	SetGameEntityActive("noisestart", false);
+	
+	SetGameEntityActive("vent2", false);
+	SetGameEntityActive("link02area", false);
+	SetGameEntityActive("vent3", false);
+	SetGameEntityActive("link01", false);
+}
+void StartNoiseEvent2(string asTimer)
+{	
+	FadeInSoundEntity("horror4", 0.4);
+	PlayGuiSound("horror_bang_mirror", 1);
+}
+void StopNoiseEvent(string asTimer)
+{
+	FadeOutSoundEntity("horror1", 4);
+	FadeOutSoundEntity("horror2", 4);
+	FadeOutSoundEntity("horror4", 4);
+	
+	StartFlash(0.3,0.4,1);
+	
+	FadeLight3D("light9_bulbpoint1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light2_light1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light5_light1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light7_light1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light8_light1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light3", 0.4,0,0,0.5, 3,0.01);
+	FadeLight3D("light4", 0.4,0,0,0.5, 3.3,0.01);
+	SetLight3DFlickerActive("light1_light1",false);
+	SetLight3DFlickerActive("light4_light1",false);
+	FadeLight3D("light1_light1", 0.4,0,0,0.5, 4,0.01);
+	FadeLight3D("light4_light1", 0.4,0,0,0.5, 4,0.01);
+	
+	StartPlayerFearFilter(1);
+	FadeInSoundEntity("horror3", 1);
+	PlayGuiSound("horror_breath", 1);
+	CreateTimer("StartNoise3", 2, "StartNoiseEvent3",false);
+	CreateTimer("StartNoise4", 4, "StartNoiseEvent4",false);
+	
+	CreateTimer("StopNoise2", 10, "StopNoiseEvent2",false);
+	CreateTimer("LastFlash", 8, "LastFlashEvent",false);
+}
+void StartNoiseEvent3(string asTimer)
+{
+	PlayGuiSound("horror_breath", 0.7);
+}
+void StartNoiseEvent4(string asTimer)
+{
+	PlayGuiSound("horror_breath", 0.5);
+	PlayGuiSound("horror_bang_mirror", 1);
+}
+void LastFlashEvent(string asTimer)
+{
+	StartFlash(2,0.1,1);
+}
+void StopNoiseEvent2(string asTimer)
+{
+	StopPlayerFearFilter();
+	FadeOutSoundEntity("horror3", 6);
+
+	PlaySoundEntity("ambient1",false);
+	PlaySoundEntity("ambient2",false);
+	
+	FadeLight3D("light2_light1", 0.980,1,0.837,0.5, 5,0.5);
+	FadeLight3D("light5_light1", 0.980,1,0.837,0.5, 4,0.5);
+	FadeLight3D("light7_light1", 0.980,1,0.837,0.5, 4,0.5);
+	FadeLight3D("light8_light1", 0.980,1,0.837,0.5, 4,0.5);
+	FadeLight3D("light3", 0.981,1,0.902,0, 3.8,0.01);
+	FadeLight3D("light4", 0.972,0.808,0.729,0, 3.3,0.01);
+	FadeLight3D("light9_bulbpoint1", 0.980,1,0.837,0.6, 2.5,0.5);
+	SetLight3DFlickerActive("light1_light1",true);
+	SetLight3DFlickerActive("light4_light1",true);
+	
+	SetGameEntityActive("vent2", true);
+	SetGameEntityActive("link02area", true);
+	SetGameEntityActive("vent3", true);
+	SetGameEntityActive("link01", true);
+}
+////STOP NOISE HORROR////
+/////////////////////////
+
+//----VENTILATION OPENS WITH BLOOD AND MEAT!
+void EnterOpenVent(string asParent, string asChild)
+{
+	SetGameEntityActive("block1", false);
+	SetGameEntityActive("openventstart", false);
+	
+	PlaySoundEntity("blood1s",false);
+	
+	AddBodyImpulse("vent1_ventdoor0Shape1", "world" ,0,-0.01,0);
+	
+	//CreateParticleSystem("blood1","Steam01","blood1area",1,1,1);
+	
+	CreateTimer("StopBlod", 2, "StopBloodEvent",false);
+	CreateTimer("BloodWalk", 0.7, "BloodWalkEvent1",false);
+}
+void StopBloodEvent(string asTimer)
+{
+	KillParticleSystem("blood1");
+	DestroyTimer("StopBlod");
+}
+	void BloodWalkEvent1(string asTimer)
+	{
+		PlaySoundEntity("bloodwalk1",false);
+		PlaySoundEntity("bloodmonster",false);
+		
+		CreateTimer("BloodWalk2", 1, "BloodWalkEvent2",false);
+	}
+	void BloodWalkEvent2(string asTimer)
+	{
+		PlaySoundEntity("bloodwalk2",false);
+		
+		CreateTimer("BloodWalk2", 1, "BloodWalkEvent3",false);
+	}
+	void BloodWalkEvent3(string asTimer)
+	{
+		PlaySoundEntity("bloodwalk3",false);
+	}
+
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{	
+//-----SET UP LINKS---------------
+	SetupLink(	"link01", //Link name
+			"level01_04_storage.dae", //New map
+			"link02", //Positon on new map
+			"door_clickable_start","door_clickable_stop", //Stop and end sound.
+			0.5f , 0.5f);//Fade out and in time (seconds).
+
+//-----LIGHT INIT---------------
+
+	FadeLight3D("light9_bulbpoint1", 0.980,1,0.837,0.6, 2.5,0.01);
+	
+	FadeLight3D("light5_light1", 0.980,1,0.837,0.5, 4,0.01);
+	FadeLight3D("light7_light1", 0.980,1,0.837,0.5, 4,0.01);
+	FadeLight3D("light8_light1", 0.980,1,0.837,0.5, 4,0.01);
+	
+	SetLight3DVisible("light3_light1",false);
+	SetLight3DVisible("light6_light1",false);
+	
+	SetLight3DFlicker("light1_light1",
+			0,0,0.05,0, //Color
+			4, //Radius
+			1, 3.6, "light_flicker", "",
+			0.15, 0.19, "","",
+			false, 0.3,0.007);
+	SetLight3DFlickerActive("light1_light1",true);
+	
+	SetLight3DFlicker("light4_light1",
+			0,0,0,0, //Color
+			4, //Radius
+			0.6, 2.4, "light_flicker", "",
+			0.1, 0.2, "","",
+			false, 1,0.01);
+	SetLight3DFlickerActive("light4_light1",true);
+	
+//-----SOUND INIT---------------
+	StopSoundEntity("steamstopS1",false);
+	StopSoundEntity("steamstopS2",false);
+	StopSoundEntity("steamstopS3",false);
+	
+	StopSoundEntity("light3_light1s",false);
+	StopSoundEntity("light5_light1s",false);
+	StopSoundEntity("light6_light1s",false);
+	
+	StopSoundEntity("horror1",false);
+	StopSoundEntity("horror2",false);
+	StopSoundEntity("horror3",false);
+	StopSoundEntity("horror4",false);
+	
+	StopSoundEntity("blood1s",false);
+	StopSoundEntity("impact1s",false);
+	StopSoundEntity("bloodwalk1",false);
+	StopSoundEntity("bloodwalk2",false);
+	StopSoundEntity("bloodwalk3",false);
+	StopSoundEntity("bloodmonster",false);
+	
+//-----TEXT INIT-------------------------------
+	//ventilation
+	SetGameEntityDescriptionTrans("vent1", "Doors", "Ventilation01");
+	SetGameEntityDescriptionTrans("vent2", "Doors", "Ventilation03");
+	SetGameEntityDescriptionTrans("vent3", "Doors", "Ventilation02");
+	SetGameEntityDescriptionTrans("steamarea","level_01_05_corridor02", "SteamArea01");
+	for(int i=1;i<=3;i++)
+		SetGameEntityDescriptionTrans("emerlarea"+i, "Lights", "EmergencyLights");
+	
+//----AREA INIT-----------------------
+	//Sets area used for climbing the ventilation to active.
+	AddEntityCollideCallback("Enter","Player","ventarea1","EnterVentArea01");
+	
+	//Close to be able to reach vent.
+	SetGameEntityMaxInteractDist("ventlink1",1);
+	
+	//areas for steam puzzle
+	AddEntityCollideCallback("During","Player","steamarea","DuringSteamArea01");
+	AddEntityCollideCallback("Enter","Player","steamarea2","EnterSteamArea02");
+	AddEntityCollideCallback("Enter","Player","removesteamarea","EnterRemoveSteam");
+	
+	//Areas used to detect if a barrels is moved infront of steam
+	AddEntityCollideCallback("Enter","barrel1","stopsteam1","EnterStopSteam1Barrel1");
+	AddEntityCollideCallback("Leave","barrel1","stopsteam1","LeaveStopSteam1Barrel1");
+	AddEntityCollideCallback("Enter","barrel2","stopsteam1","EnterStopSteam1Barrel2");
+	AddEntityCollideCallback("Leave","barrel2","stopsteam1","LeaveStopSteam1Barrel2");
+	AddEntityCollideCallback("Enter","barrel1","stopsteam2","EnterStopSteam2Barrel1");
+	AddEntityCollideCallback("Leave","barrel1","stopsteam2","LeaveStopSteam2Barrel1");
+	AddEntityCollideCallback("Enter","barrel2","stopsteam2","EnterStopSteam2Barrel2");
+	AddEntityCollideCallback("Leave","barrel2","stopsteam2","LeaveStopSteam2Barrel2");
+	
+	//area for noise
+	SetGameEntityActive("noisestart", false);
+	AddEntityCollideCallback("Enter","Player","noisestart","EnterNoiseStart");
+	
+	//area for ventilation opening
+	AddEntityCollideCallback("Enter","Player","openventstart","EnterOpenVent");
+	
+	//locked door area gets right icon
+	SetAreaCustomIcon("link02area", "DoorLink");
+	
+//----INTERACT---------------------
+	//ventilation	
+	AddUseCallback("venttool", "vent2", "VentComb02");
+	AddEntityCallback("PlayerExamine","vent2","Vent2Examine01");
+	AddUseCallback("venttool", "vent3", "VentComb03");
+	AddEntityCallback("PlayerInteract","ventlink1","InteractVentLink01");
+	AddEntityCallback("PlayerExamine","vent1","Vent1Examine01");
+	SetAreaCustomIcon("ventlink1", "DoorLink");
+	SetAreaCustomIcon("vent2", "DoorLink");
+	SetAreaCustomIcon("vent3", "DoorLink");
+
+	//locked door
+	AddEntityCallback("PlayerInteract","link02area","Link02Interact01");
+	//steam puzzle note
+	AddEntityCallback("PlayerExamine","steamarea","ExamineSteamArea01");
+	
+//----PARTICLES INIT---------------
+	CreateParticleSystem("steam1","Steam01","steam1a",1.3,1.4,1);
+	CreateParticleSystem("steam3","Steam01","steam3a",1.3,1.4,1);
+	
+//----VARIABLES--------------------
+	CreateLocalVar("Valve1",0);
+	CreateLocalVar("Valve2",0);
+	CreateLocalVar("Valve3",0);
+	CreateLocalVar("SteamDamage",0);
+	CreateLocalVar("steamwarn", 0);
+	
+	CreateLocalVar("VentToolCheck", 0);
+	CreateLocalVar("lockeddoortask", 0);
+}
+
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{	
+//----VENTILATION---------------
+	//Make sure player crouches in ventilation and controlls area
+	if(GetGlobalVar("corridor02_crouch") == 1) SetPlayerPose("Crouch");
+		SetGlobalVar("corridor02_crouch", 0);
+	if(GetGlobalVar("corridor02_vent01") == 1) SetGameEntityActive("ventlink1", false);
+		SetGlobalVar("corridor02_vent01", 0);
+	//Make sure player stands up when exciting ventilation from corridor01
+	if(GetGlobalVar("corridor02_stand") == 1) SetPlayerPose("Stand");
+		SetGlobalVar("corridor02_stand", 0);
+		
+	//Change Message if player has venttool	
+	if(HasItem("venttool") == true)
+		{
+		SetGameEntityDescriptionTrans("vent2", "Doors", "Ventilation02");
+		}
+		
+	StopMusic(0.1);
+	
+	//NOISE HORROR
+	if(GetGlobalVar("startnoise") == 1)
+		{
+		SetGameEntityActive("noisestart", true);
+		PlaySoundEntity("horror1",false);
+		StopSoundEntity("ambient1",false);
+		StopSoundEntity("ambient2",false);
+		
+		SetGlobalVar("startnoise", 0);
+		}
+		
+///////////////////////
+////START AUTO SAVE////
+
+	if(GetGlobalVar("autoload") == 3)
+	{
+		SetGlobalVar("autoload", 4);
+		AutoSave();
+	}
+	if(GetGlobalVar("autoload") == 5)
+	{
+		SetGlobalVar("autoload", 6);
+		AutoSave();
+	}
+////STOP AUTO SAVE////	
+//////////////////////
+
+}
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{	
+	//STEAM PUZZEL, STOP IT ON VALVE TURN
+	if (GetJointProperty("valve1_joint1", "Angle") >= 80 && GetJointProperty("valve1_joint1", "Angle") <= 110
+	&& GetLocalVar("Valve1") == 0)
+		{
+		SetLocalVar("Valve1", 1);
+		AddLocalVar("SteamDamage", 1);
+		
+		StopSoundEntity("steamS1",false);
+		PlaySoundEntity("steamstopS1",false);
+		KillParticleSystem("steam1");
+		KillParticleSystem("ministeam1");
+		SetGameEntityActive("stopsteam1", false);
+		SetObjectInteractMode("valve1","Static");
+		}
+	if (GetJointProperty("valve2_joint1", "Angle") >= 80 && GetJointProperty("valve2_joint1", "Angle") <= 110
+	&& GetLocalVar("Valve2") == 0)
+		{
+		SetLocalVar("Valve2", 1);
+		AddLocalVar("SteamDamage", 1);
+		
+		StopSoundEntity("steamS2",false);
+		PlaySoundEntity("steamstopS2",false);
+		KillParticleSystem("steam2");
+		SetObjectInteractMode("valve2","Static");
+		}
+	if (GetJointProperty("valve3_joint1", "Angle") >= 80 && GetJointProperty("valve3_joint1", "Angle") <= 110
+	&& GetLocalVar("Valve3") == 0)
+		{
+		SetLocalVar("Valve3", 1);
+		AddLocalVar("SteamDamage", 1);
+		
+		StopSoundEntity("steamS3",false);
+		PlaySoundEntity("steamstopS3",false);
+		KillParticleSystem("steam3");
+		KillParticleSystem("ministeam2");
+		SetGameEntityActive("stopsteam2", false);
+		SetObjectInteractMode("valve3","Static");
+		}
+		if (GetLocalVar("SteamDamage") == 3)
+			{
+			RemoveNotebookTask("TaskSteam");
+			SetGameEntityActive("removesteamarea", false);
+			SetGameEntityActive("steamarea", false);
+			}
+}

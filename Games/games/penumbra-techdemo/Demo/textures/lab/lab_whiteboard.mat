@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="DiffuseSpecular" PhysicsMaterial="Generic_Hard" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="lab_whiteboard.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

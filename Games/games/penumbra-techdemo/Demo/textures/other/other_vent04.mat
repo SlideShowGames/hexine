@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Diffuse" Bump="Metal" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="other_vent04.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="other_vent04_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

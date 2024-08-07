@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author>jens</author>
+      <authoring_tool>Maya 7.0 | ColladaMaya v0.87</authoring_tool>
+      <comments>Collada Maya Export Options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;exportCameraAsLookat=0;relativePaths=0;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;exportVertexColors=1;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=1;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file://C|/Documents and Settings/jens/Desktop/penumbra/_work_models/lights/ceilinglight1_rev2/ceilinglight1_rev2.mb</source_data>
+    </contributor>
+    <created>2006-04-07T15:48:39Z</created>
+    <modified>2006-04-07T15:48:39Z</modified>
+    <unit name="meter" meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file3-image" name="file3">
+      <init_from>file://C|/Documents and Settings/jens/Desktop/penumbra/redist/models/lights/light_ceilinglight01.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+    <material id="blinn1" name="blinn1">
+      <instance_effect url="#blinn1-fx"/>
+    </material>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx" name="lambert2">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.500000 0.500000 0.500000 1.000000</color>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="blinn1-fx" name="blinn1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file3-image" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">true</wrapU>
+                    <wrapV sid="wrapV0">true</wrapV>
+                    <mirrorU sid="mirrorU0">false</mirrorU>
+                    <mirrorV sid="mirrorV0">false</mirrorV>
+                    <coverageU sid="coverageU0">1.000000</coverageU>
+                    <coverageV sid="coverageV0">1.000000</coverageV>
+                    <translateFrameU sid="translateFrameU0">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV0">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame0">0</rotateFrame>
+                    <stagger sid="stagger0">false</stagger>
+                    <fast sid="fast0">false</fast>
+                    <repeatU sid="repeatU0">1.000000</repeatU>
+                    <repeatV sid="repeatV0">1.000000</repeatV>
+                    <offsetU sid="offsetU0">0</offsetU>
+                    <offsetV sid="offsetV0">0</offsetV>
+                    <rotateUV sid="rotateUV0">0</rotateUV>
+                    <noiseU sid="noiseU0">0</noiseU>
+                    <noiseV sid="noiseV0">0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.500000 0.500000 0.500000 1.000000</color>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="_collider_box_mrshapeShape-lib" name="_collider_box_mrshapeShape">
+      <mesh>
+        <source id="_collider_box_mrshapeShape-lib-Position">
+          <float_array count="24" id="_collider_box_mrshapeShape-lib-Position-array">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.500000 0.500000 0.500000
+0.500000 0.500000 0.500000
+-0.500000 0.500000 -0.500000
+0.500000 0.500000 -0.500000
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_mrshapeShape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_mrshapeShape-lib-Normal">
+          <float_array count="108" id="_collider_box_mrshapeShape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_mrshapeShape-lib-Normal-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_mrshapeShape-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_mrshapeShape-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_mrshapeShape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_mrshapeShape-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_mrshapeShape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert2" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_mrshapeShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_mrshapeShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_mrshapeShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 2 2 1 3 1 3 4 3 2 5 2 2 6 2 3 7 3 4 8 4 3 9 3 5 10 5 4 11 4 4 12 4 5 13 5 6 14 6 5 15 5 7 16 7 6 17 6 6 18 6 7 19 7 0 20 8 7 21 7 1 22 9 0 23 8 1 24 1 7 25 10 3 26 3 7 27 10 5 28 11 3 29 3 6 30 12 0 31 0 4 32 13 0 33 0 2 34 2 4 35 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="cel_lightShape-lib" name="cel_lightShape">
+      <mesh>
+        <source id="cel_lightShape-lib-Position">
+          <float_array count="48" id="cel_lightShape-lib-Position-array">
+-0.769344 0.008631 -0.096482
+0.769344 0.008631 -0.096482
+-0.769344 0.008631 0.096482
+0.769344 0.008631 0.096482
+-0.788995 0.000474 0.125024
+0.788995 0.000474 0.125024
+-0.839383 0.071355 0.201565
+0.839383 0.071355 0.201565
+-0.839383 0.071355 -0.201565
+0.839383 0.071355 -0.201565
+-0.788995 0.000474 -0.125024
+0.788995 0.000474 -0.125024
+-0.769344 0.008631 -0.096482
+0.769344 0.008631 -0.096482
+0.769344 0.008631 0.096482
+-0.769344 0.008631 0.096482
+</float_array>
+          <technique_common>
+            <accessor source="#cel_lightShape-lib-Position-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cel_lightShape-lib-Normal">
+          <float_array count="180" id="cel_lightShape-lib-Normal-array">
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -0.733714 0.679458
+0 -0.733714 0.679458
+0 -0.733714 0.679458
+0 -0.733714 0.679458
+0 -0.733714 0.679458
+0 -0.733714 0.679458
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 -0.733714 -0.679458
+0 -0.733714 -0.679458
+0 -0.733714 -0.679458
+0 -0.733714 -0.679458
+0 -0.733714 -0.679458
+0 -0.733714 -0.679458
+0.704653 -0.709552 0
+0.704653 -0.709552 0
+0.704653 -0.709552 0
+0.704653 -0.709552 0
+0.704653 -0.709552 0
+0.704653 -0.709552 0
+-0.704653 -0.709552 0
+-0.704653 -0.709552 0
+-0.704653 -0.709552 0
+-0.704653 -0.709552 0
+-0.704653 -0.709552 0
+-0.704653 -0.709552 0
+0 -0.961505 0.274788
+0 -0.961505 0.274788
+0 -0.961505 0.274788
+0 -0.961505 0.274788
+0 -0.961505 0.274788
+0 -0.961505 0.274788
+-0.281221 -0.959643 0
+-0.281221 -0.959643 0
+-0.281221 -0.959643 0
+-0.281221 -0.959643 0
+-0.281221 -0.959643 0
+-0.281221 -0.959643 0
+0 -0.961505 -0.274788
+0 -0.961505 -0.274788
+0 -0.961505 -0.274788
+0 -0.961505 -0.274788
+0 -0.961505 -0.274788
+0 -0.961505 -0.274788
+0.281221 -0.959643 0
+0.281221 -0.959643 0
+0.281221 -0.959643 0
+0.281221 -0.959643 0
+0.281221 -0.959643 0
+0.281221 -0.959643 0
+</float_array>
+          <technique_common>
+            <accessor source="#cel_lightShape-lib-Normal-array" count="60" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="cel_lightShape-lib-map1" name="map1">
+          <float_array count="64" id="cel_lightShape-lib-map1-array">
+0.082508 0.219085
+0.950966 0.219085
+0.082508 0.078799
+0.950966 0.078799
+0.041185 0.837515
+0.978661 0.832248
+0.070614 0.933242
+0.953829 0.921974
+0.082306 0.327965
+0.770346 0.327965
+0.082306 0.459510
+0.770346 0.459510
+0.039181 0.839506
+0.979103 0.831239
+0.069706 0.932137
+0.955012 0.920493
+0.080889 0.732930
+0.469423 0.727973
+0.155591 0.805097
+0.396586 0.802023
+0.080889 0.732930
+0.469423 0.727972
+0.155591 0.805096
+0.396586 0.802021
+0.050541 0.638482
+0.956995 0.638482
+0.065370 0.622998
+0.942166 0.622998
+0.956995 0.502836
+0.942166 0.518320
+0.050541 0.502836
+0.065370 0.518320
+</float_array>
+          <technique_common>
+            <accessor source="#cel_lightShape-lib-map1-array" count="32" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="cel_lightShape-lib-Vertex">
+          <input semantic="POSITION" source="#cel_lightShape-lib-Position"/>
+        </vertices>
+        <triangles material="blinn1" count="20">
+          <input semantic="VERTEX" offset="0" source="#cel_lightShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#cel_lightShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#cel_lightShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 2 2 1 3 1 3 4 3 2 5 2 7 6 4 6 7 5 5 8 6 4 9 7 5 10 6 6 11 5 6 12 8 7 13 9 8 14 10 7 15 9 9 16 11 8 17 10 8 18 12 9 19 13 10 20 14 9 21 13 11 22 15 10 23 14 9 24 16 7 25 17 11 26 18 5 27 19 11 28 18 7 29 17 6 30 20 8 31 21 4 32 22 10 33 23 4 34 22 8 35 21 10 36 24 11 37 25 12 38 26 11 39 25 13 40 27 12 41 26 11 42 25 5 43 28 13 44 27 5 45 28 14 46 29 13 47 27 5 48 28 4 49 30 14 50 29 4 51 30 15 52 31 14 53 29 4 54 30 10 55 24 15 56 31 10 57 24 12 58 26 15 59 31</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_bb_bb1_ceilinglight_halo01Shape-lib" name="_bb_bb1_ceilinglight_halo01Shape">
+      <mesh>
+        <source id="_bb_bb1_ceilinglight_halo01Shape-lib-Position">
+          <float_array count="24" id="_bb_bb1_ceilinglight_halo01Shape-lib-Position-array">
+-0.109703 -0.109703 0.109703
+0.109703 -0.109703 0.109703
+-0.109703 0.109703 0.109703
+0.109703 0.109703 0.109703
+-0.109703 0.109703 -0.109703
+0.109703 0.109703 -0.109703
+-0.109703 -0.109703 -0.109703
+0.109703 -0.109703 -0.109703
+</float_array>
+          <technique_common>
+            <accessor source="#_bb_bb1_ceilinglight_halo01Shape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_bb_bb1_ceilinglight_halo01Shape-lib-Normal">
+          <float_array count="72" id="_bb_bb1_ceilinglight_halo01Shape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_bb_bb1_ceilinglight_halo01Shape-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_bb_bb1_ceilinglight_halo01Shape-lib-map1" name="map1">
+          <float_array count="28" id="_bb_bb1_ceilinglight_halo01Shape-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_bb_bb1_ceilinglight_halo01Shape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_bb_bb1_ceilinglight_halo01Shape-lib-Vertex">
+          <input semantic="POSITION" source="#_bb_bb1_ceilinglight_halo01Shape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_bb_bb1_ceilinglight_halo01Shape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_bb_bb1_ceilinglight_halo01Shape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_bb_bb1_ceilinglight_halo01Shape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_sound_light1s_light_buzz_low_loopShape-lib" name="_sound_light1s_light_buzz_low_loopShape">
+      <mesh>
+        <source id="_sound_light1s_light_buzz_low_loopShape-lib-Position">
+          <float_array count="24" id="_sound_light1s_light_buzz_low_loopShape-lib-Position-array">
+-0.020000 -0.020000 0.020000
+0.020000 -0.020000 0.020000
+-0.020000 0.020000 0.020000
+0.020000 0.020000 0.020000
+-0.020000 0.020000 -0.020000
+0.020000 0.020000 -0.020000
+-0.020000 -0.020000 -0.020000
+0.020000 -0.020000 -0.020000
+</float_array>
+          <technique_common>
+            <accessor source="#_sound_light1s_light_buzz_low_loopShape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_sound_light1s_light_buzz_low_loopShape-lib-Normal">
+          <float_array count="72" id="_sound_light1s_light_buzz_low_loopShape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_sound_light1s_light_buzz_low_loopShape-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_sound_light1s_light_buzz_low_loopShape-lib-map1" name="map1">
+          <float_array count="28" id="_sound_light1s_light_buzz_low_loopShape-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_sound_light1s_light_buzz_low_loopShape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_sound_light1s_light_buzz_low_loopShape-lib-Vertex">
+          <input semantic="POSITION" source="#_sound_light1s_light_buzz_low_loopShape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_sound_light1s_light_buzz_low_loopShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_sound_light1s_light_buzz_low_loopShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_sound_light1s_light_buzz_low_loopShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_lights>
+    <light id="light1_ceilinglight01Shape-lib" name="light1_ceilinglight01Shape">
+      <technique_common>
+        <point>
+          <color sid="color">0.980661 1.000000 0.902000</color>
+          <constant_attenuation>1.000000</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <technique profile="MAYA">
+        <intensity sid="intensity">1.000000</intensity>
+      </technique>
+    </light>
+  </library_lights>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene" name="ceilinglight1_rev2">
+      <node id="_collider_box_mrshape" name="_collider_box_mrshape" sid="_collider_box_mrshape">
+        <translate sid="translate">0 0.035388 -0.001063</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1.707992 0.076532 0.420113</scale>
+        <instance_geometry url="#_collider_box_mrshapeShape-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert2" target="#lambert2"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="cel_light" name="cel_light" sid="cel_light">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <instance_geometry url="#cel_lightShape-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blinn1" target="#blinn1">
+                <bind semantic="UVSET0" target="#cel_lightShape-lib-map1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <node id="_bb_bb1_ceilinglight_halo01" name="_bb_bb1_ceilinglight_halo01" sid="_bb_bb1_ceilinglight_halo01">
+          <translate sid="translate">0 -0.019034 0</translate>
+          <rotate sid="rotateZ">0 0 1 -90.000076</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">1.000000 3.000000 1.000000</scale>
+          <instance_geometry url="#_bb_bb1_ceilinglight_halo01Shape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="light1_ceilinglight01" name="light1_ceilinglight01" sid="light1_ceilinglight01">
+          <translate sid="translate">0 -0.336887 0</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">5.000000 0.500000 1.000000</scale>
+          <instance_light url="#light1_ceilinglight01Shape-lib"/>
+        </node>
+        <node id="_sound_light1s_light_buzz_low_loop" name="_sound_light1s_light_buzz_low_loop" sid="_sound_light1s_light_buzz_low_loop">
+          <translate sid="translate">0 -0.061338 0</translate>
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <scale sid="scale">2.265271 2.265271 2.265271</scale>
+          <instance_geometry url="#_sound_light1s_light_buzz_low_loopShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="MAYA">
+          <start_time>0.041667</start_time>
+          <end_time>2.000000</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

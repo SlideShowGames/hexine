@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Metal" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="misc_ladder_cave.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="misc_ladder_cave_bump.png" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

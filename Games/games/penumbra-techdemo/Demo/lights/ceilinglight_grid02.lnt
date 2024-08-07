@@ -1,0 +1,10 @@
+<LIGHTENTITY>
+	<MAIN
+		ProjectionImage ="ceilinglight_grid02"
+		Aspect = 	 "1"
+		FalloffImage = 	 "ceilinglight01"
+		CastsShadows =   "true"
+		NearClipPlane =  "0.1"
+		Specular=	 "0"
+	/>
+</LIGHTENTITY>

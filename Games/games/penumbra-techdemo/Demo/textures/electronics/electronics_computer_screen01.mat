@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Flat" PhysicsMaterial="Default" />
+  <TextureUnits>
+    <Diffuse File="electronics_computer_screen01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

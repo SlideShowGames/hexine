@@ -1,0 +1,30 @@
+<ENTITY>
+	<MAIN 
+		Name="furniture_table_square" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Wood_Shelf_Small"
+		Mass="20"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "furniture_table_square"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Push"
+	/>
+	
+</ENTITY>

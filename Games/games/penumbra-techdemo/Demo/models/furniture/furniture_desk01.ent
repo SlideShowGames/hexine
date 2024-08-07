@@ -1,0 +1,92 @@
+<ENTITY>
+	<MAIN 
+		Name="furniture_desk01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "tableShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Wood"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.8"
+		LinearDamping = "0.8"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "leftdrawerShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Wood"
+		Mass="5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.9"
+		LinearDamping = "0.9"
+		MaxAngularSpeed = "2"
+		MaxLinearSpeed = "2"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<PHYSICS
+		SubName = "rightdrawerShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Wood"
+		Mass="5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.9"
+		LinearDamping = "0.9"
+		MaxAngularSpeed = "2"
+		MaxLinearSpeed = "2"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<JOINT
+		Name = "jointleft"
+	
+		MaxLimit_Sound = "wood_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = "wood_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "3"
+		
+		MoveSound = "wood_drawer_move"
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	/>
+	
+	<JOINT
+		Name = "jointright"
+	
+		MaxLimit_Sound = "wood_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "3"
+		
+		MinLimit_Sound = "wood_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "3"
+		
+		MoveSound = "wood_drawer_move"
+		MinMoveSpeed = "0.5"
+		MaxMoveSpeed = "3"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "furniture_desk01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+	/>
+	
+</ENTITY>

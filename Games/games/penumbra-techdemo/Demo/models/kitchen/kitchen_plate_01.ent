@@ -1,0 +1,30 @@
+<ENTITY>
+	<MAIN 
+		Name="kitchen_plate_01" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Ceramic"
+		Mass="1.5"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "kitchen_plate_01"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Grab"
+	/>
+	
+</ENTITY>

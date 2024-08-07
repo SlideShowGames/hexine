@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Diffuse" PhysicsMaterial="Metal" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="door_firedoor_1" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

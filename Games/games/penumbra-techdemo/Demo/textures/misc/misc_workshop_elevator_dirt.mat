@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Modulative" PhysicsMaterial="Default" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="misc_workshop_elevator_dirt.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

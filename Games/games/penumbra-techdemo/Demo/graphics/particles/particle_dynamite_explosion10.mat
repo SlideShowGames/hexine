@@ -1,0 +1,6 @@
+<Material>
+  <Main Type="Additive" PhysicsMaterial="Default" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="particle_dynamite_explosion10.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

@@ -1,0 +1,42 @@
+<ENTITY>
+	<MAIN 
+		Name="item_flare" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_flare"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_flare.bmp"
+		NameCat="Items" NameEntry ="Flare"
+		DescCat="Items" DescEntry ="FlareDesc"
+		
+		ItemType = "Flare"
+		
+		HasCount = "true"
+		Count = "1"
+		
+		PickUpSound = "pick_generic"
+	/>
+	
+</ENTITY>

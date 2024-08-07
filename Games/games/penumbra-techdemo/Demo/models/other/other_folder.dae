@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/COLLADASchema" version="1.3.1">
+  <asset>
+    <authoring_tool>Maya 6.5 | ColladaMaya v1.3.3 (0.74)</authoring_tool>
+    <source_data>file://C:/Documents and Settings/jens/Desktop/the_hatch/redist/models/other/other_folder.dae</source_data>
+    <up_axis>Y_UP</up_axis>
+    <unit name="meter" meter="1."/>
+    <author>jens</author>
+    <modified>2006-02-09T20:39:31Z</modified>
+  </asset>
+  <library type="IMAGE">
+    <image id="Map__12" name="Map__12" source="./other_folder.png"/>
+  </library>
+  <library type="TEXTURE">
+    <texture id="Map__12-DIFFUSE">
+      <param name="DIFFUSE" type="float3" flow="OUT"/>
+      <technique profile="COMMON">
+        <input semantic="IMAGE" source="#Map__12"/>
+      </technique>
+      <technique profile="MAYA">
+        <param name="wrapU" type="bool" flow="IN" sid="param0">TRUE</param>
+        <param name="wrapV" type="bool" flow="IN" sid="param1">TRUE</param>
+        <param name="mirrorU" type="bool" flow="IN" sid="param2">FALSE</param>
+        <param name="mirrorV" type="bool" flow="IN" sid="param3">FALSE</param>
+        <param name="coverageU" type="float" flow="IN" sid="param4">1.</param>
+        <param name="coverageV" type="float" flow="IN" sid="param5">1.</param>
+        <param name="translateFrameU" type="float" flow="IN" sid="param6">0</param>
+        <param name="translateFrameV" type="float" flow="IN" sid="param7">0</param>
+        <param name="rotateFrame" type="float" flow="IN" sid="param8">0</param>
+        <param name="stagger" type="bool" flow="IN" sid="param9">FALSE</param>
+        <param name="fast" type="bool" flow="IN" sid="param10">FALSE</param>
+        <param name="repeatU" type="float" flow="IN" sid="param11">1.</param>
+        <param name="repeatV" type="float" flow="IN" sid="param12">1.</param>
+        <param name="offsetU" type="float" flow="IN" sid="param13">0</param>
+        <param name="offsetV" type="float" flow="IN" sid="param14">0</param>
+        <param name="rotateUV" type="float" flow="IN" sid="param15">0</param>
+        <param name="noiseU" type="float" flow="IN" sid="param16">0</param>
+        <param name="noiseV" type="float" flow="IN" sid="param17">0</param>
+        <param name="BLEND_MODE" type="blend" flow="IN">NONE</param>
+      </technique>
+    </texture>
+  </library>
+  <library type="MATERIAL">
+    <material id="folder2" name="folder2">
+      <shader>
+        <technique profile="COMMON">
+          <pass>
+            <input semantic="TEXTURE" source="#Map__12-DIFFUSE"/>
+            <program url="PHONG">
+              <param name="DIFFUSE" type="float3" flow="IN" sid="diffuse">1. 1. 1.</param>
+              <param name="AMBIENT" type="float3" flow="IN" sid="ambient">0.588235 0.588235 0.588235</param>
+              <param name="TRANSPARENT" type="float3" flow="IN" sid="transparent">0 0 0</param>
+              <param name="TRANSPARENCY" type="float" flow="IN">1.</param>
+              <param name="EMISSION" type="float3" flow="IN" sid="emission">0 0 0</param>
+              <param name="SPECULAR" type="float3" flow="IN" sid="specular">0.9 0.9 0.9</param>
+              <param name="REFLECTIVE" type="float3" flow="IN" sid="reflective">0 0 0</param>
+              <param name="REFLECTIVITY" type="float" flow="IN" sid="reflectivity">0.5</param>
+              <param name="SHININESS" type="float" flow="IN" sid="shininess">10.</param>
+            </program>
+          </pass>
+        </technique>
+      </shader>
+    </material>
+    <material id="lambert2" name="lambert2">
+      <shader>
+        <technique profile="COMMON">
+          <pass>
+            <program url="LAMBERT">
+              <param name="DIFFUSE" type="float3" flow="IN" sid="diffuse">0.5 0.5 0.5</param>
+              <param name="AMBIENT" type="float3" flow="IN" sid="ambient">0 0 0</param>
+              <param name="TRANSPARENT" type="float3" flow="IN" sid="transparent">0 0 0</param>
+              <param name="TRANSPARENCY" type="float" flow="IN">1.</param>
+            </program>
+          </pass>
+        </technique>
+      </shader>
+    </material>
+  </library>
+  <library type="GEOMETRY">
+    <geometry id="folderShape-lib" name="folderShape">
+      <mesh>
+        <source id="folderShape-lib-Position">
+          <float_array id="folderShape-lib-Position-array" count="108">
+0.168521 3.26905e-003 0.119378
+0.168521 3.26905e-003 -5.71911e-002
+-0.150971 3.26906e-003 -7.25885e-002
+-0.150971 1.86049e-003 0.119748
+0.168521 1.8605e-003 -5.71911e-002
+-0.150971 1.86051e-003 -7.25885e-002
+0.168521 1.56255e-003 0.121401
+-0.150971 -1.13685e-003 0.119748
+0.168521 -1.13683e-003 0.119748
+0.168521 -8.38997e-004 0.121401
+0.168521 -1.13675e-003 -0.112799
+-0.150971 -1.13675e-003 -9.88566e-002
+0.168521 -3.26919e-003 0.119376
+0.168521 -2.54529e-003 -0.112799
+-0.150971 -2.54527e-003 -9.88566e-002
+0.105229 3.26916e-003 -5.71911e-002
+0.168521 1.86051e-003 0.119748
+0.105229 1.86049e-003 -5.71911e-002
+0.105229 -1.13675e-003 -0.112799
+0.105229 -2.54529e-003 -0.112799
+8.97025e-002 3.26918e-003 -7.25885e-002
+8.97025e-002 1.86048e-003 -7.25885e-002
+-0.150971 3.26905e-003 0.119378
+-0.150971 1.56255e-003 0.121401
+-0.150971 -8.39041e-004 0.121401
+-0.150971 -3.26919e-003 0.119376
+8.97025e-002 -1.13675e-003 -9.88566e-002
+8.97025e-002 -2.5453e-003 -9.88566e-002
+-0.159632 -9.23933e-004 8.79085e-002
+0.13639 -9.24035e-004 0.114386
+-0.14091 -9.23933e-004 -0.121399
+0.155111 -9.23927e-004 -9.49221e-002
+-0.168522 -5.72535e-004 9.33551e-002
+0.12794 -5.72528e-004 0.114326
+-0.153695 -5.7254e-004 -0.116265
+0.142768 -5.72535e-004 -9.5294e-002
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#folderShape-lib-Position-array" count="36" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <source id="folderShape-lib-Normal">
+          <float_array id="folderShape-lib-Normal-array" count="540">
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+-1. 2.19126e-006 0
+-1. 2.19126e-006 0
+-1. 6.9694e-006 0
+1. 6.03214e-006 0
+1. 6.03214e-006 0
+1. -3.01034e-006 0
+-4.45186e-008 0 -1.
+-4.45186e-008 0 -1.
+-4.45186e-008 0 -1.
+1. 6.03214e-006 0
+1. -3.01034e-006 0
+1. 2.28824e-007 0
+1. -3.01034e-006 0
+1. 2.28824e-007 0
+1. 2.28824e-007 0
+-1. 2.19126e-006 0
+-1. 1.60999e-006 0
+-1. 6.9694e-006 0
+-1. 6.9694e-006 0
+-1. 1.60999e-006 0
+-1. 1.60999e-006 0
+1. 2.28824e-007 0
+1. 2.28824e-007 0
+1. 3.20343e-006 0
+-1. 1.60999e-006 0
+-1. 1.60999e-006 0
+-1. -1.03285e-005 0
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+1. 2.71612e-006 0
+1. 3.20343e-006 0
+1. 2.71612e-006 0
+1. 2.71612e-006 0
+1. 3.20343e-006 0
+1. 2.71612e-006 0
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+-1. -5.24852e-007 0
+-1. -5.24852e-007 0
+-1. -5.24852e-007 0
+-1. -5.24852e-007 0
+-1. -5.24852e-007 0
+-1. -5.24852e-007 0
+-1.1639e-007 -0.999995 -3.31716e-003
+-1.1639e-007 -0.999995 -3.31716e-003
+-1.1639e-007 -0.999995 -3.31716e-003
+2.75613e-007 1. 5.30306e-007
+-4.00426e-007 1. 1.5889e-007
+2.75613e-007 1. 5.30306e-007
+2.75613e-007 1. 5.30306e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+-4.00426e-007 1. 1.5889e-007
+6.14399e-009 0.764393 0.644751
+2.75613e-007 1. 5.30306e-007
+6.14399e-009 0.764393 0.644751
+6.14399e-009 0.764393 0.644751
+2.75613e-007 1. 5.30306e-007
+-1.15939e-008 0 -1.
+-1.15939e-008 0 -1.
+-1.15939e-008 0 -1.
+-1.15939e-008 0 -1.
+-1.15939e-008 0 -1.
+-1.15939e-008 0 -1.
+7.31853e-008 -1. 9.46744e-008
+7.31853e-008 -1. 9.46744e-008
+-8.15333e-008 -1. -3.64269e-008
+-8.15333e-008 -1. -3.64269e-008
+7.31853e-008 -1. 9.46744e-008
+-8.15333e-008 -1. -3.64269e-008
+4.42043e-008 9.54521e-006 -1.
+4.42043e-008 9.54521e-006 -1.
+-4.45186e-008 0 -1.
+6.14399e-009 0.764393 0.644751
+1.65792e-009 -7.94209e-006 1.
+6.14399e-009 0.764393 0.644751
+1.65792e-009 -7.94209e-006 1.
+1.65792e-009 -7.94209e-006 1.
+6.14399e-009 0.764393 0.644751
+-1.1639e-007 -0.999995 -3.31716e-003
+4.12684e-008 -0.640029 0.768351
+1.65792e-009 -7.94209e-006 1.
+1.65792e-009 -7.94209e-006 1.
+4.12684e-008 -0.640029 0.768351
+1.65792e-009 -7.94209e-006 1.
+-3.937e-008 1. 4.20226e-007
+-3.937e-008 1. 4.20226e-007
+5.75331e-008 1. 3.24732e-007
+-3.937e-008 1. 4.20226e-007
+5.75331e-008 1. 3.24732e-007
+5.75331e-008 1. 3.24732e-007
+-5.09563e-008 0 -1.
+-5.09563e-008 0 -1.
+-5.09563e-008 0 -1.
+-5.09563e-008 0 -1.
+-5.09563e-008 0 -1.
+-5.09563e-008 0 -1.
+-4.83024e-013 -0.999995 -3.11786e-003
+4.12684e-008 -0.640029 0.768351
+-4.83024e-013 -0.999995 -3.11786e-003
+-4.83024e-013 -0.999995 -3.11786e-003
+4.12684e-008 -0.640029 0.768351
+-1.1639e-007 -0.999995 -3.31716e-003
+-1.15939e-008 0 -1.
+3.17366e-009 0 -1.
+-1.15939e-008 0 -1.
+3.17366e-009 0 -1.
+3.17366e-009 0 -1.
+-1.15939e-008 0 -1.
+-5.09563e-008 0 -1.
+1.9765e-008 -3.38533e-006 -1.
+-5.09563e-008 0 -1.
+1.9765e-008 -3.38533e-006 -1.
+1.9765e-008 -3.38533e-006 -1.
+-5.09563e-008 0 -1.
+-1.1639e-007 -0.999995 -3.31716e-003
+-1.1639e-007 -0.999995 -3.31716e-003
+-4.83024e-013 -0.999995 -3.11786e-003
+1.39059e-007 1. 2.68636e-007
+1.39059e-007 1. 2.68636e-007
+1.39059e-007 1. 2.68636e-007
+1.39059e-007 1. 2.68636e-007
+1.39059e-007 1. 2.68636e-007
+1.39059e-007 1. 2.68636e-007
+-1.80039e-008 1. -2.97224e-008
+-1.80039e-008 1. -2.97224e-008
+-1.80039e-008 1. -2.97224e-008
+-1.80039e-008 1. -2.97224e-008
+-1.80039e-008 1. -2.97224e-008
+-1.80039e-008 1. -2.97224e-008
+-1.39059e-007 -1. -2.68814e-007
+-1.39059e-007 -1. -2.68814e-007
+-1.39059e-007 -1. -2.68814e-007
+-1.39059e-007 -1. -2.68814e-007
+-1.39059e-007 -1. -2.68814e-007
+-1.39059e-007 -1. -2.68814e-007
+1.80039e-008 -1. 2.98343e-008
+1.80039e-008 -1. 2.98343e-008
+1.80039e-008 -1. 2.98343e-008
+1.80039e-008 -1. 2.98343e-008
+1.80039e-008 -1. 2.98343e-008
+1.80039e-008 -1. 2.98343e-008
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#folderShape-lib-Normal-array" count="180" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+          <technique profile="MAYA">
+            <param name="DOUBLE_SIDED" type="bool" flow="OUT">TRUE</param>
+          </technique>
+        </source>
+        <source id="folderShape-lib-folder-obj-mapchan-1" name="folder-obj-mapchan-1">
+          <float_array id="folderShape-lib-folder-obj-mapchan-1-array" count="110">
+0.5 0.7
+0.5 0.964317
+7.0492e-003 0.987366
+7.04915e-003 0.699446
+0.992951 0.699446
+0.5 0.964317
+0.5 0.964317
+0.992951 0.987366
+7.0492e-003 0.987366
+0.5 0.696971
+0.828634 0.578518
+0.5 0.699446
+0.5 0.696972
+0.5 0.696971
+0.5 0.336662
+0.402345 0.964317
+7.04925e-003 0.336662
+0.5 0.699446
+7.04925e-003 0.334187
+7.0491e-003 0.684775
+0.5 0.663903
+7.04925e-003 0.337217
+0.402345 0.964317
+0.378388 0.987366
+0.5 0.699446
+0.378388 0.987366
+7.04915e-003 0.7
+0.597655 0.964317
+7.04915e-003 0.696971
+7.0491e-003 0.684775
+0.5 0.663903
+7.04925e-003 0.336662
+0.104704 0.684775
+0.104704 0.684775
+0.5 0.334187
+0.5 0.337217
+0.128661 0.663903
+0.128661 0.663903
+0.621612 0.987366
+0.992951 0.696971
+0.992951 0.696972
+0.5 0.336662
+0.992951 0.684775
+0.5 0.663903
+0.992951 0.336662
+0.895296 0.684775
+0.871339 0.663903
+0.524041 0.322127
+0.971587 0.322127
+0.524041 1.32724e-002
+0.971587 1.32724e-002
+2.34104e-002 0.322127
+0.475959 0.322127
+2.34104e-002 1.32724e-002
+0.475959 1.32724e-002
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#folderShape-lib-folder-obj-mapchan-1-array" count="55" stride="2">
+              <param name="S" type="float" flow="OUT"/>
+              <param name="T" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <vertices id="folderShape-lib-Vertex">
+          <input semantic="POSITION" source="#folderShape-lib-Position"/>
+        </vertices>
+        <triangles material="#folder2" count="60">
+          <input semantic="VERTEX" idx="0" source="#folderShape-lib-Vertex"/>
+          <input semantic="NORMAL" idx="1" source="#folderShape-lib-Normal"/>
+          <input semantic="TEXCOORD" idx="2" source="#folderShape-lib-folder-obj-mapchan-1"/>
+          <p>15 0 15 20 1 23 22 2 26</p>
+          <p>20 3 23 2 4 2 22 5 26</p>
+          <p>16 6 17 4 7 5 0 8 0</p>
+          <p>1 9 1 0 10 0 4 11 5</p>
+          <p>20 12 23 21 13 25 2 14 2</p>
+          <p>21 15 25 5 16 8 2 17 2</p>
+          <p>3 18 3 22 19 26 5 20 8</p>
+          <p>22 21 26 2 22 2 5 23 8</p>
+          <p>17 24 27 3 25 4 21 26 38</p>
+          <p>3 27 4 5 28 7 21 29 38</p>
+          <p>22 30 26 3 31 3 23 32 28</p>
+          <p>16 33 17 0 34 0 6 35 13</p>
+          <p>7 36 10 3 37 4 8 38 11</p>
+          <p>16 39 24 6 40 9 8 41 11</p>
+          <p>6 42 9 9 43 12 8 44 11</p>
+          <p>3 45 4 7 46 10 23 47 39</p>
+          <p>23 48 39 7 49 10 24 50 40</p>
+          <p>8 51 16 9 52 18 12 53 21</p>
+          <p>24 54 34 7 55 14 25 56 35</p>
+          <p>8 57 44 26 58 46 7 59 41</p>
+          <p>26 60 46 11 61 43 7 62 41</p>
+          <p>8 63 31 12 64 21 10 65 19</p>
+          <p>10 66 19 12 67 21 13 68 29</p>
+          <p>26 69 36 27 70 37 11 71 20</p>
+          <p>27 72 37 14 73 30 11 74 20</p>
+          <p>7 75 10 11 76 20 25 77 35</p>
+          <p>11 78 20 14 79 30 25 80 35</p>
+          <p>14 81 30 27 82 37 25 83 35</p>
+          <p>1 84 1 15 85 15 0 86 0</p>
+          <p>0 87 0 15 88 15 22 89 26</p>
+          <p>22 90 26 23 91 28 0 92 0</p>
+          <p>23 93 28 6 94 13 0 95 0</p>
+          <p>4 96 5 17 97 22 1 98 1</p>
+          <p>17 99 22 15 100 15 1 101 1</p>
+          <p>4 102 6 16 103 24 17 104 27</p>
+          <p>17 105 27 16 106 24 3 107 4</p>
+          <p>16 108 24 8 109 11 3 110 4</p>
+          <p>23 111 39 24 112 40 6 113 9</p>
+          <p>24 114 40 9 115 12 6 116 9</p>
+          <p>25 117 35 12 118 21 24 119 34</p>
+          <p>24 120 34 12 121 21 9 122 18</p>
+          <p>26 123 46 8 124 44 18 125 45</p>
+          <p>8 126 44 10 127 42 18 128 45</p>
+          <p>13 129 29 19 130 33 10 131 19</p>
+          <p>19 132 33 18 133 32 10 134 19</p>
+          <p>13 135 29 12 136 21 19 137 33</p>
+          <p>19 138 33 12 139 21 25 140 35</p>
+          <p>17 141 22 21 142 25 15 143 15</p>
+          <p>21 144 25 20 145 23 15 146 15</p>
+          <p>19 147 33 27 148 37 18 149 32</p>
+          <p>27 150 37 26 151 36 18 152 32</p>
+          <p>25 153 35 27 154 37 19 155 33</p>
+          <p>28 156 47 29 157 48 30 158 49</p>
+          <p>29 159 48 31 160 50 30 161 49</p>
+          <p>32 162 51 33 163 52 34 164 53</p>
+          <p>33 165 52 35 166 54 34 167 53</p>
+          <p>29 168 48 28 169 47 31 170 50</p>
+          <p>28 171 47 30 172 49 31 173 50</p>
+          <p>33 174 52 32 175 51 35 176 54</p>
+          <p>32 177 51 34 178 53 35 179 54</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="_collider_box_Shape1-lib" name="_collider_box_Shape1">
+      <mesh>
+        <source id="_collider_box_Shape1-lib-Position">
+          <float_array id="_collider_box_Shape1-lib-Position-array" count="24">
+-0.5 -0.5 0.5
+0.5 -0.5 0.5
+-0.5 0.5 0.5
+0.5 0.5 0.5
+-0.5 0.5 -0.5
+0.5 0.5 -0.5
+-0.5 -0.5 -0.5
+0.5 -0.5 -0.5
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#_collider_box_Shape1-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+        </source>
+        <source id="_collider_box_Shape1-lib-Normal">
+          <float_array id="_collider_box_Shape1-lib-Normal-array" count="108">
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 0 1.
+0 1. 0
+0 1. 0
+0 1. 0
+0 1. 0
+0 1. 0
+0 1. 0
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 0 -1.
+0 -1. 0
+0 -1. 0
+0 -1. 0
+0 -1. 0
+0 -1. 0
+0 -1. 0
+1. 0 0
+1. 0 0
+1. 0 0
+1. 0 0
+1. 0 0
+1. 0 0
+-1. 0 0
+-1. 0 0
+-1. 0 0
+-1. 0 0
+-1. 0 0
+-1. 0 0
+</float_array>
+          <technique profile="COMMON">
+            <accessor source="#_collider_box_Shape1-lib-Normal-array" count="36" stride="3">
+              <param name="X" type="float" flow="OUT"/>
+              <param name="Y" type="float" flow="OUT"/>
+              <param name="Z" type="float" flow="OUT"/>
+            </accessor>
+          </technique>
+          <technique profile="MAYA">
+            <param name="DOUBLE_SIDED" type="bool" flow="OUT">TRUE</param>
+          </technique>
+        </source>
+        <vertices id="_collider_box_Shape1-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_Shape1-lib-Position"/>
+        </vertices>
+        <triangles material="#lambert2" count="12">
+          <input semantic="VERTEX" idx="0" source="#_collider_box_Shape1-lib-Vertex"/>
+          <input semantic="NORMAL" idx="1" source="#_collider_box_Shape1-lib-Normal"/>
+          <p>0 0 1 1 2 2</p>
+          <p>1 3 3 4 2 5</p>
+          <p>2 6 3 7 4 8</p>
+          <p>3 9 5 10 4 11</p>
+          <p>4 12 5 13 6 14</p>
+          <p>5 15 7 16 6 17</p>
+          <p>6 18 7 19 0 20</p>
+          <p>7 21 1 22 0 23</p>
+          <p>1 24 7 25 3 26</p>
+          <p>7 27 5 28 3 29</p>
+          <p>6 30 0 31 4 32</p>
+          <p>0 33 2 34 4 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library>
+  <scene name="other_folder">
+    <extra>
+      <technique profile="MAYA">
+        <param name="START_TIME" type="float" flow="IN">0</param>
+        <param name="END_TIME" type="float" flow="IN">3.</param>
+      </technique>
+    </extra>
+    <boundingbox>
+      <min>-0.169181 -1.35609e-002 -0.122583</min>
+      <max>0.169181 1.35609e-002 0.122583</max>
+    </boundingbox>
+    <node id="group1" name="group1">
+      <boundingbox>
+        <min>-0.169181 -1.35609e-002 -0.122583</min>
+        <max>0.169181 1.35609e-002 0.122583</max>
+      </boundingbox>
+      <node id="folder" name="folder">
+        <boundingbox>
+          <min>-0.168522 -3.26919e-003 -0.121399</min>
+          <max>0.168521 3.26918e-003 0.121401</max>
+        </boundingbox>
+        <instance url="#folderShape-lib"/>
+      </node>
+      <node id="_collider_box_1" name="_collider_box_1">
+        <boundingbox>
+          <min>-0.169181 -1.35609e-002 -0.122583</min>
+          <max>0.169181 1.35609e-002 0.122583</max>
+        </boundingbox>
+        <scale sid="scale">0.338363 2.71218e-002 0.245167</scale>
+        <instance url="#_collider_box_Shape1-lib"/>
+      </node>
+    </node>
+  </scene>
+</COLLADA>

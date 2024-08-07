@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Dyn_Metal_Case" UseAlpha="True" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="item_carbattery.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="item_carbattery_bump.tga" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

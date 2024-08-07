@@ -1,0 +1,38 @@
+<ENTITY>
+	<MAIN 
+		Name="item_note" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Generic_Hard"
+		Mass="1"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.2"
+		LinearDamping = "0.2"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_notebook"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile =""
+		NameCat="Items" NameEntry ="Note01"
+		DescCat="Items" DescEntry ="Note01Desc"
+		
+		ItemType = "Note"
+		CanBeDropped = "false"
+		
+		PickUpSound = "pick_note"
+	/>
+	
+</ENTITY>

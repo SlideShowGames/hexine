@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author>mthorzen</author>
+      <authoring_tool>Maya 7.0 | ColladaMaya v0.87</authoring_tool>
+      <comments>Collada Maya Export Options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;exportCameraAsLookat=0;relativePaths=1;
+exportLights=1;exportCameras=1;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;exportVertexColors=1;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=1;exportXRefs=0;
+dereferenceXRefs=1;cameraXFov=0;cameraYFov=1</comments>
+      <source_data>file://C|/Projekt/Hatch/Prologue/scenes/Misc/matchbox/matchboxbig_051130.ma</source_data>
+    </contributor>
+    <created>2006-05-02T10:16:01Z</created>
+    <modified>2006-05-02T10:16:01Z</modified>
+    <unit name="meter" meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="file1-image" name="file1">
+      <init_from>./misc_matchbox.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-image" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">true</wrapU>
+                    <wrapV sid="wrapV0">true</wrapV>
+                    <mirrorU sid="mirrorU0">false</mirrorU>
+                    <mirrorV sid="mirrorV0">false</mirrorV>
+                    <coverageU sid="coverageU0">1.000000</coverageU>
+                    <coverageV sid="coverageV0">1.000000</coverageV>
+                    <translateFrameU sid="translateFrameU0">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV0">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame0">0</rotateFrame>
+                    <stagger sid="stagger0">false</stagger>
+                    <fast sid="fast0">false</fast>
+                    <repeatU sid="repeatU0">1.000000</repeatU>
+                    <repeatV sid="repeatV0">1.000000</repeatV>
+                    <offsetU sid="offsetU0">0</offsetU>
+                    <offsetV sid="offsetV0">0</offsetV>
+                    <rotateUV sid="rotateUV0">0</rotateUV>
+                    <noiseU sid="noiseU0">0</noiseU>
+                    <noiseV sid="noiseV0">0</noiseV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent>
+              <color sid="transparent">0 0 0 1.000000</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="_collider_box_matchboxShape-lib" name="_collider_box_matchboxShape">
+      <mesh>
+        <source id="_collider_box_matchboxShape-lib-Position">
+          <float_array count="24" id="_collider_box_matchboxShape-lib-Position-array">
+-0.050000 -0.012500 0.035000
+0.050000 -0.012500 0.035000
+-0.050000 0.012500 0.035000
+0.050000 0.012500 0.035000
+-0.050000 0.012500 -0.035000
+0.050000 0.012500 -0.035000
+-0.050000 -0.012500 -0.035000
+0.050000 -0.012500 -0.035000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_matchboxShape-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="_collider_box_matchboxShape-lib-Normal">
+          <float_array count="72" id="_collider_box_matchboxShape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+-1.000000 0 0
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_matchboxShape-lib-Normal-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="_collider_box_matchboxShape-lib-map1" name="map1">
+          <float_array count="28" id="_collider_box_matchboxShape-lib-map1-array">
+0 0
+1.000000 0
+0 1.000000
+1.000000 1.000000
+0 2.000000
+1.000000 2.000000
+0 3.000000
+1.000000 3.000000
+0 4.000000
+1.000000 4.000000
+2.000000 0
+2.000000 1.000000
+-1.000000 0
+-1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#_collider_box_matchboxShape-lib-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="_collider_box_matchboxShape-lib-Vertex">
+          <input semantic="POSITION" source="#_collider_box_matchboxShape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="12">
+          <input semantic="VERTEX" offset="0" source="#_collider_box_matchboxShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#_collider_box_matchboxShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#_collider_box_matchboxShape-lib-map1"/>
+          <p>0 0 0 1 1 1 2 3 2 1 1 1 3 2 3 2 3 2 2 4 2 3 5 3 4 7 4 3 5 3 5 6 5 4 7 4 4 8 4 5 9 5 6 11 6 5 9 5 7 10 7 6 11 6 6 12 6 7 13 7 0 15 8 7 13 7 1 14 9 0 15 8 1 16 1 7 17 10 3 19 3 7 17 10 5 18 11 3 19 3 6 20 12 0 21 0 4 23 13 0 21 0 2 22 2 4 23 13</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="matchboxShape-lib" name="matchboxShape">
+      <mesh>
+        <source id="matchboxShape-lib-Position">
+          <float_array count="96" id="matchboxShape-lib-Position-array">
+0.049455 -0.011969 -0.034207
+0.049455 -0.011969 0.034207
+0.049455 0.011945 -0.034207
+0.049455 0.011945 0.034207
+-0.049455 -0.011945 -0.034207
+-0.049455 -0.011945 0.034207
+-0.049455 0.011969 0.034207
+-0.049455 0.011969 -0.034207
+0.049762 -0.011526 -0.033861
+0.049762 -0.011526 0.033861
+0.049762 0.011501 -0.033861
+0.049762 0.011501 0.033861
+-0.049762 -0.011501 -0.033861
+-0.049762 -0.011501 0.033861
+-0.049762 0.011526 0.033861
+-0.049762 0.011526 -0.033861
+-0.050000 -0.012500 0.034670
+-0.050000 -0.012170 0.035000
+0.050000 -0.012170 0.035000
+0.050000 -0.012500 0.034670
+-0.050000 0.012170 0.035000
+-0.050000 0.012500 0.034670
+0.050000 0.012500 0.034670
+0.050000 0.012170 0.035000
+-0.050000 0.012500 -0.034670
+-0.050000 0.012170 -0.035000
+0.050000 0.012170 -0.035000
+0.050000 0.012500 -0.034670
+-0.050000 -0.012170 -0.035000
+-0.050000 -0.012500 -0.034670
+0.050000 -0.012500 -0.034670
+0.050000 -0.012170 -0.035000
+</float_array>
+          <technique_common>
+            <accessor source="#matchboxShape-lib-Position-array" count="32" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="matchboxShape-lib-Normal">
+          <float_array count="336" id="matchboxShape-lib-Normal-array">
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 0 1.000000
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 1.000000 0
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 0 -1.000000
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0 -1.000000 0
+0.954488 -0.298251 0
+0.954488 -0.298251 0
+0.954486 0.298257 0
+0.954486 0.298257 0
+-0.954488 -0.298251 0
+-0.954488 -0.298251 0
+-0.954486 0.298257 0
+-0.954486 0.298257 0
+0.995348 0.096346 0
+0.995348 0.096346 0
+0.747475 -0.000000 -0.664290
+0.747475 -0.000000 -0.664290
+0.747475 -0.000000 -0.664290
+0.747475 -0.000000 -0.664290
+0.996384 -0.084966 0
+0.996384 -0.084966 0
+0.747475 -0.000000 0.664290
+0.747475 -0.000000 0.664290
+0.747475 -0.000000 0.664290
+0.747475 -0.000000 0.664290
+-0.996383 0.084974 0
+-0.996383 0.084974 0
+-0.747475 -0.000000 0.664290
+-0.747475 -0.000000 0.664290
+-0.747475 -0.000000 0.664290
+-0.747475 -0.000000 0.664290
+-0.995349 -0.096339 0
+-0.995349 -0.096339 0
+-0.747475 -0.000000 -0.664290
+-0.747475 -0.000000 -0.664290
+-0.747475 -0.000000 -0.664290
+-0.747475 -0.000000 -0.664290
+-0.824313 0 -0.566134
+-0.824313 0 -0.566134
+-0.824313 0 -0.566134
+-0.824313 0 -0.566134
+0.697631 0.716457 0
+0.697631 0.716457 0
+-0.697631 -0.716457 0
+-0.697631 -0.716457 0
+0.824313 0 -0.566134
+0.824313 0 -0.566134
+0.824313 0 -0.566134
+0.824313 0 -0.566134
+-0.824315 0 0.566132
+-0.824315 0 0.566132
+-0.824315 0 0.566132
+-0.824315 0 0.566132
+0.713812 -0.700338 0
+0.713812 -0.700338 0
+-0.713812 0.700338 0
+-0.713812 0.700338 0
+0.824315 0 0.566132
+0.824315 0 0.566132
+0.824315 0 0.566132
+0.824315 0 0.566132
+0 -0.707108 0.707106
+0 -0.707108 0.707106
+0 -0.707108 0.707106
+0 -0.707108 0.707106
+0 0.707108 0.707106
+0 0.707108 0.707106
+0 0.707108 0.707106
+0 0.707108 0.707106
+0 0.707108 -0.707106
+0 0.707108 -0.707106
+0 0.707108 -0.707106
+0 0.707108 -0.707106
+0 -0.707108 -0.707106
+0 -0.707108 -0.707106
+0 -0.707108 -0.707106
+0 -0.707108 -0.707106
+-0.797635 0.426486 -0.426483
+-0.797635 0.426486 -0.426483
+-0.797635 0.426486 -0.426483
+0.790405 0.433163 -0.433162
+0.790405 0.433163 -0.433162
+0.790405 0.433163 -0.433162
+-0.790405 -0.433163 -0.433162
+-0.790405 -0.433163 -0.433162
+-0.790405 -0.433163 -0.433162
+0.797635 -0.426486 -0.426483
+0.797635 -0.426486 -0.426483
+0.797635 -0.426486 -0.426483
+-0.790405 -0.433164 0.433162
+-0.790405 -0.433164 0.433162
+-0.790405 -0.433164 0.433162
+0.797634 -0.426487 0.426485
+0.797634 -0.426487 0.426485
+0.797634 -0.426487 0.426485
+-0.797634 0.426487 0.426485
+-0.797634 0.426487 0.426485
+-0.797634 0.426487 0.426485
+0.790405 0.433164 0.433162
+0.790405 0.433164 0.433162
+0.790405 0.433164 0.433162
+</float_array>
+          <technique_common>
+            <accessor source="#matchboxShape-lib-Normal-array" count="112" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+          <technique profile="MAYA">
+            <DOUBLE_SIDED>true</DOUBLE_SIDED>
+          </technique>
+        </source>
+        <source id="matchboxShape-lib-map1" name="map1">
+          <float_array count="104" id="matchboxShape-lib-map1-array">
+0.826083 0.236955
+0.175351 0.236954
+0.175352 0.015691
+0.826083 0.015691
+0.175351 0.236716
+0.826083 0.236717
+0.826083 0.015453
+0.175352 0.015453
+0.829404 0.241217
+0.172030 0.241217
+0.172031 0.011429
+0.829405 0.011429
+0.172030 0.240978
+0.829404 0.240979
+0.829404 0.011191
+0.172031 0.011191
+0.837027 0.243147
+0.890010 0.252488
+0.837027 0.009261
+0.833859 0.246315
+0.108000 0.252488
+0.167574 0.246314
+0.833860 0.006094
+0.167576 0.006093
+0.108000 0.797317
+0.890010 0.797317
+0.837027 0.009261
+0.837027 0.243147
+0.164408 0.009260
+0.890010 0.990242
+0.164407 0.243147
+0.108000 0.990242
+0.890010 0.797317
+0.167576 0.006093
+0.108000 0.797317
+0.833860 0.006094
+0.167574 0.246314
+0.108001 0.990270
+0.833859 0.246315
+0.108000 0.797317
+0.890010 0.797345
+0.164407 0.243147
+0.890010 0.990270
+0.164408 0.009260
+0.108000 0.252488
+0.890010 0.252488
+0.890010 0.797317
+0.108000 0.797317
+0.108000 0.252488
+0.890010 0.252488
+0.890010 0.252517
+0.108000 0.252517
+</float_array>
+          <technique_common>
+            <accessor source="#matchboxShape-lib-map1-array" count="52" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="matchboxShape-lib-Vertex">
+          <input semantic="POSITION" source="#matchboxShape-lib-Position"/>
+        </vertices>
+        <triangles material="lambert1" count="60">
+          <input semantic="VERTEX" offset="0" source="#matchboxShape-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#matchboxShape-lib-Normal"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#matchboxShape-lib-map1"/>
+          <p>17 0 24 18 1 25 20 3 31 18 1 25 23 2 29 20 3 31 21 4 17 22 5 20 24 7 40 22 5 20 27 6 39 24 7 40 25 8 32 26 9 34 28 11 42 26 9 34 31 10 37 28 11 42 29 12 44 30 13 45 16 15 47 30 13 45 19 14 46 16 15 47 9 16 0 8 17 1 11 19 3 8 17 1 10 18 2 11 19 3 12 20 4 13 21 5 15 23 7 13 21 5 14 22 6 15 23 7 1 24 8 0 25 9 9 16 0 0 25 9 8 17 1 9 16 0 0 26 9 2 27 10 8 29 1 2 27 10 10 28 2 8 29 1 2 30 10 3 31 11 10 18 2 3 31 11 11 19 3 10 18 2 3 32 11 1 33 8 11 35 3 1 33 8 9 34 0 11 35 3 4 36 12 5 37 13 12 20 4 5 37 13 13 21 5 12 20 4 5 38 13 6 39 14 13 41 5 6 39 14 14 40 6 13 41 5 6 42 14 7 43 15 14 22 6 7 43 15 15 23 7 14 22 6 7 44 15 4 45 12 15 47 7 4 45 12 12 46 4 15 47 7 17 49 16 20 50 18 5 48 13 5 48 13 20 50 18 6 51 14 19 52 19 30 53 21 1 24 8 1 24 8 30 53 21 0 25 9 21 54 22 24 55 23 6 42 14 6 42 14 24 55 23 7 43 15 23 57 26 18 58 27 3 56 11 3 56 11 18 58 27 1 59 8 28 62 30 4 63 12 25 61 28 7 60 15 25 61 28 4 63 12 27 64 33 22 65 35 2 30 10 2 30 10 22 65 35 3 31 11 29 66 36 16 67 38 4 36 12 4 36 12 16 67 38 5 37 13 26 70 43 2 71 10 31 69 41 0 68 9 31 69 41 2 71 10 17 72 24 16 73 47 18 75 25 16 73 47 19 74 46 18 75 25 21 76 17 20 77 50 22 79 20 20 77 50 23 78 51 22 79 20 25 80 32 24 81 40 26 83 34 24 81 40 27 82 39 26 83 34 29 84 44 28 85 48 30 87 45 28 85 48 31 86 49 30 87 45 5 88 13 16 89 38 17 90 16 1 91 8 18 92 27 19 93 19 6 94 14 20 95 18 21 96 22 3 97 11 22 98 35 23 99 26 7 100 15 24 101 23 25 102 28 2 103 10 26 104 43 27 105 33 4 106 12 28 107 30 29 108 36 0 109 9 30 110 21 31 111 41</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene" name="matchboxbig_051130">
+      <node id="group1" name="group1" sid="group1">
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <node id="_collider_box_matchbox" name="_collider_box_matchbox" sid="_collider_box_matchbox">
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <instance_geometry url="#_collider_box_matchboxShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#_collider_box_matchboxShape-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="group1_matchbox" name="matchbox" sid="group1_matchbox">
+          <rotate sid="rotateZ">0 0 1 0</rotate>
+          <rotate sid="rotateY">0 1 0 0</rotate>
+          <rotate sid="rotateX">1 0 0 0</rotate>
+          <instance_geometry url="#matchboxShape-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="lambert1" target="#lambert1">
+                  <bind semantic="UVSET0" target="#matchboxShape-lib-map1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="MAYA">
+          <start_time>0</start_time>
+          <end_time>6.250000</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

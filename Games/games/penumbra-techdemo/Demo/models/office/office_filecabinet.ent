@@ -1,0 +1,119 @@
+<ENTITY>
+	<MAIN 
+		Name="office_filecabinet" 
+		Type="Object" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		SubName = "cabinetShape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Metal_Case"
+		Mass="0"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+	/>
+	<PHYSICS
+		SubName = "drawer1Shape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Metal_Case"
+		Mass="3"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "1"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	<PHYSICS
+		SubName = "drawer2Shape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Metal_Case"
+		Mass="3"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "1"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	<PHYSICS
+		SubName = "drawer3Shape"
+		Collides = "true"
+		HasPhysics = "true"
+		Material="Dyn_Metal_Case"
+		Mass="3"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "1"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinuousCollision = "true"
+	/>
+	
+	<JOINT
+		Name = "joint1"
+	
+		MaxLimit_Sound = "metal_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "1"
+		
+		MinLimit_Sound = "metal_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "1"
+		
+		MoveSound = "metal_drawer_move"
+		MinMoveSpeed = "0.3"
+		MaxMoveSpeed = "1"
+	/>
+	
+	<JOINT
+		Name = "joint2"
+	
+		MaxLimit_Sound = "metal_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "1"
+		
+		MinLimit_Sound = "metal_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "1"
+		
+		MoveSound = "metal_drawer_move"
+		MinMoveSpeed = "0.3"
+		MaxMoveSpeed = "1"
+	/>
+	
+	<JOINT
+		Name = "joint3"
+	
+		MaxLimit_Sound = "metal_drawer_max"
+		MaxLimit_MinSpeed = "0.3"
+		MaxLimit_MaxSpeed = "1"
+		
+		MinLimit_Sound = "metal_drawer_min"
+		MinLimit_MinSpeed = "0.3"
+		MinLimit_MaxSpeed = "1"
+		
+		MoveSound = "metal_drawer_move"
+		MinMoveSpeed = "0.3"
+		MaxMoveSpeed = "1"
+	/>
+	
+	<GRAPHICS
+		ModelFile = "office_filecabinet"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		InteractMode = "Move"
+	/>
+	
+</ENTITY>

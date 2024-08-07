@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Wood" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="door_wood_hinge01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="door_wood_hinge04_bump.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>

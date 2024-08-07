@@ -1,0 +1,7 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Wood_Squeak" UseAlpha="False" />
+  <TextureUnits>
+    <Diffuse File="floor_wood_planks01" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+    <NMap File="floor_wood_planks01_bump" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" />
+  </TextureUnits>
+</Material>
