@@ -70,7 +70,7 @@
             Config.isAutoRunSet = DEFAULT_AUTO_RUN;//getAutoRun();
             Config.rootZipFile = DEFAULT_ROOT_ZIP_FILE;//getRootZipFile("root"); //MANUAL:"base.zip";
             Config.appZipFile = "files.zip";//getAppZipFile("app"); //MANUAL:"chomp.zip";
-            Config.Program = "東方紅魔郷.exe";//getExecutable(); //MANUAL:"CHOMP.EXE";
+            Config.Program = "th06e.exe";//getExecutable(); //MANUAL:"CHOMP.EXE";
             Config.WorkingDir = "";//getWorkingDirectory(); //MANUAL:"";
             Config.retrieveDlls = DEFAULT_RETRIEVE_REMOTE_DLL_FILES;//getRetrieveDlls();
             Config.isSoundEnabled = DEFAULT_SOUND_ENABLED;//getSound();
