@@ -25,7 +25,7 @@
         let DEFAULT_SOUND_ENABLED = true;
         let DEFAULT_ZLIB_ENABLED = false;
         let DEFAULT_RETRIEVE_REMOTE_DLL_FILES = false;
-        let DEFAULT_HOME_DIRECTORY = ROOT + "/home/username/th06/";
+        let DEFAULT_HOME_DIRECTORY = ROOT + "/home/username/files/";
         let DEFAULT_BPP = 32;
         let DEFAULT_ROOT_ZIP_FILE = "boxedwine_full.zip";//"boxedwine_with_dll.zip";//"boxedwine.zip";
         //params
@@ -68,8 +68,9 @@
         function setConfiguration() {
             Config.dirPrefix = DEFAULT_HOME_DIRECTORY;//getFileDirectory();
             Config.isAutoRunSet = DEFAULT_AUTO_RUN;//getAutoRun();
-            Config.rootZipFile = DEFAULT_ROOT_ZIP_FILE;//getRootZipFile("root"); //MANUAL:"base.zip";
+            Config.extraZipFiles = "";//getZipFileList("overlay"); //MANUAL:"dlls.zip;fonts.zip";
             Config.appZipFile = "files.zip";//getAppZipFile("app"); //MANUAL:"chomp.zip";
+            Config.rootZipFile = DEFAULT_ROOT_ZIP_FILE;//getRootZipFile("root"); //MANUAL:"base.zip";
             Config.Program = "th06e.exe";//getExecutable(); //MANUAL:"CHOMP.EXE";
             Config.WorkingDir = "";//getWorkingDirectory(); //MANUAL:"";
             Config.retrieveDlls = DEFAULT_RETRIEVE_REMOTE_DLL_FILES;//getRetrieveDlls();
